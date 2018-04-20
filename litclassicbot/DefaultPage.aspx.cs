@@ -33,7 +33,9 @@ namespace litclassicbot
 
             ShowRandomPartical();
 
-            LabelWelcome.Visible = false;
+            LabelWelcome1.Visible = false;
+            LabelWelcome2.Visible = false;
+            LabelWelcome3.Visible = false;
             LabelWordName.Visible = false;
             LabelWordValue.Visible = false;
             LabelWordName.Text = "";
@@ -49,7 +51,9 @@ namespace litclassicbot
 
             ShowRandomPoemPartical();
 
-            LabelWelcome.Visible = false;
+            LabelWelcome1.Visible = false;
+            LabelWelcome2.Visible = false;
+            LabelWelcome3.Visible = false;
             LabelWordName.Visible = false;
             LabelWordValue.Visible = false;
             LabelWordName.Text = "";
@@ -65,7 +69,9 @@ namespace litclassicbot
 
             ShowRandomWord();
 
-            LabelWelcome.Visible = false;
+            LabelWelcome1.Visible = false;
+            LabelWelcome2.Visible = false;
+            LabelWelcome3.Visible = false;
             LabelParticalLine.Text = "";
             LabelParticalTitle.Text = "";
             LabelParticalLine.Visible = false;

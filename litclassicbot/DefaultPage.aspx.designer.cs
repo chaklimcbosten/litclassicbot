@@ -49,13 +49,31 @@ namespace litclassicbot {
         protected global::System.Web.UI.WebControls.Button RandomWordButton;
         
         /// <summary>
-        /// LabelWelcome элемент управления.
+        /// LabelWelcome1 элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelWelcome;
+        protected global::System.Web.UI.WebControls.Label LabelWelcome1;
+        
+        /// <summary>
+        /// LabelWelcome2 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelWelcome2;
+        
+        /// <summary>
+        /// LabelWelcome3 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelWelcome3;
         
         /// <summary>
         /// LabelParticalLine элемент управления.
