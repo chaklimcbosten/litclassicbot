@@ -18,9 +18,9 @@
                 </div>
                 <div class="logo_column2">
                     <p class="logo_buttons">
-                        <asp:Button ID="RandomParticalButton" runat="server" Text="Случайная &quot;частица&quot;" OnClick="RandomParticalButton_Click" BackColor="Black" BorderStyle="Solid" Font-Bold="False" Font-Italic="False" Font-Names="'PT Sans'" Font-Overline="False" Font-Size="Small" Font-Strikeout="False" Font-Underline="False" ForeColor="White" Height="20px" BorderColor="Black" Width="100%" />
-                        <asp:Button ID="RandomPoemParticalButton" runat="server" OnClick="RandomPoemParticalButton_Click" Text="Случайная стихотворная &quot;частица&quot;" BackColor="Black" BorderStyle="Solid" Font-Bold="False" Font-Names="'PT Sans'" Font-Size="Small" ForeColor="White" Height="20px" BorderColor="Black" Width="100%" />
-                        <asp:Button ID="RandomWordButton" runat="server" OnClick="RandomWordButton_Click" Text="Случайное слово из словаря В.И.Даля" BackColor="Black" BorderStyle="Solid" Font-Bold="False" Font-Names="'PT Sans'" Font-Size="Small" ForeColor="White" Height="20px" BorderColor="Black" Width="100%" />
+                        <asp:Button ID="RandomParticalButton" runat="server" Text="Случайная &quot;частица&quot;" OnClick="RandomParticalButton_Click" BackColor="Black" BorderStyle="Solid" Font-Bold="False" Font-Italic="False" Font-Names="'PT Sans'" Font-Overline="False" Font-Size="Medium" Font-Strikeout="False" Font-Underline="False" ForeColor="White" Height="28px" BorderColor="Black" Width="160px" />
+                        <asp:Button ID="RandomPoemParticalButton" runat="server" OnClick="RandomPoemParticalButton_Click" Text="Случайная стихотворная &quot;частица&quot;" BackColor="Black" BorderStyle="Solid" Font-Bold="False" Font-Names="'PT Sans'" Font-Size="Medium" ForeColor="White" Height="26px" BorderColor="Black" Width="260px" />
+                        <asp:Button ID="RandomWordButton" runat="server" OnClick="RandomWordButton_Click" Text="Случайное слово из словаря В.И.Даля" BackColor="Black" BorderStyle="Solid" Font-Bold="False" Font-Names="'PT Sans'" Font-Size="Medium" ForeColor="White" Height="26px" BorderColor="Black" Width="285px" />
                     </p>
                 </div>
             </div>        
@@ -58,6 +58,14 @@
                 </p>
             </div>
         </div>
+        <footer>
+            <div class="footer-main">
+
+            </div>
+            <div class="footer-full">
+
+            </div>
+        </footer>
     </form>
 </body>
 </html>
