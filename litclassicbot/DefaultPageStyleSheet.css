@@ -96,11 +96,11 @@ header {
 .logo_column1 {
     float: left;
     display: inline-block;
-    width: 80%;
+    width: 400px;
 }
 
 .logo_column2 {
-    float: left;
+    float: right;
     display: inline-block;
     margin-top: -5px;
     width: 300px;

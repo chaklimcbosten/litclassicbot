@@ -7,6 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>LitClassic - сервис привлечения внимания к русской классической литературе</title>
     <link href="DefaultPageStyleSheet.css" rel="stylesheet" type="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
     <form id="form1" class="form" runat="server">
@@ -46,6 +47,7 @@
                 <p>
                     <asp:Label ID="LabelWordName" runat="server" Text="Здесь будет слово из толкового словаря живого великорусского словаря." Visible="False" Font-Bold="True" Font-Italic="True" Font-Size="Larger"></asp:Label>
                 </p>
+                <hr />
             </div>
             <div class="partical-title">                                 
                 <p>
@@ -58,14 +60,14 @@
                 </p>
             </div>
         </div>
-        <footer>
+<%--        <footer>
             <div class="footer-main">
 
             </div>
             <div class="footer-full">
 
             </div>
-        </footer>
+        </footer>--%>
     </form>
 </body>
 </html>
