@@ -1,2 +1,2 @@
 # litclassicbot
-Russian classic short literature particals.
+Short russian classic literature particals.
