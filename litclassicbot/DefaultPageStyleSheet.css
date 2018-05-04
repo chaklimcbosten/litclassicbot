@@ -114,3 +114,16 @@ footer {
     text-decoration: none;
     bottom: 0;
 }
+
+
+@media screen and (max-width:767px)
+{
+    .main {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .partical-title {
+        padding-left: 10px;
+    }
+}
