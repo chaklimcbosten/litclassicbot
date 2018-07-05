@@ -94,6 +94,7 @@ header {
 
 .word-value {
     width: 87%;
+    position:absolute;
 }
 
 .logo_column1 {
