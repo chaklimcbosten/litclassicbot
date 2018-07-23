@@ -62,8 +62,8 @@ namespace litclassicbot.Dialogs
 
                     List<string> listGetRandomPartical = new List<string>();
                     listGetRandomPartical = currentConnection.GetRandomPoemPartical(activity.Conversation.Id);
-                    string partical = listGetRandomPartical[1];
-                    string title = listGetRandomPartical[0];
+                    string partical = listGetRandomPartical[0];
+                    string title = listGetRandomPartical[1];
                     int indeLastLine = Convert.ToInt32(listGetRandomPartical[2]);
                     int bookID = Convert.ToInt32(listGetRandomPartical[4]);
                     var card = new HeroCard("Дальнейшие возможные действия:");
