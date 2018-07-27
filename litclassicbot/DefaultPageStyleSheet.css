@@ -16,7 +16,7 @@ form1 {
 header {
     position:fixed;
     width: 100%;
-    height: 100px;
+    height: 70px;
     background-color: black;
     text-decoration: none;
     /*position: static;*/
@@ -26,12 +26,12 @@ header {
 
 .head-main {
     width: 100%;
-    height: 100px;
+    height: 70px;
     /*min-height: calc(100vh - 50px);*/
     /*background-color: black;*/
     text-decoration: none;
     position: fixed;
-    z-index: 9999;
+    /*z-index: 9999;*/
 }
 
 .logo {
@@ -39,8 +39,8 @@ header {
     color: #fff;
     font-weight: bolder;
     height: 30px;
-    margin-top: 28px;
-    margin-bottom: 28px;
+    margin-top: 18px;
+    margin-bottom: 18px;
     letter-spacing: 13px;
     text-decoration: none;
     font-size: 155%;
@@ -50,21 +50,27 @@ header {
     display: inline-block;
     margin-left: 10px;
     margin-right: 10px;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    /*margin-bottom: 10px;
+    margin-top: 10px;*/
     width: 70px;
     height: 70px;
     float: left;
 }
 
-.logo_buttons {
+.logo-links {
+    letter-spacing: 3px;
+    text-decoration: none;
+    color: white;
+}
+
+/*.logo_buttons {
     float: left;
     text-align: left;
     margin-top: 10px;
-}
+}*/
 
 .main {
-    padding-top: 100px;
+    padding-top: 70px;
     padding-bottom: 150px;
     padding-left: 100px;
     padding-right: 50px;
@@ -77,6 +83,13 @@ header {
     margin-bottom: 10px;
 }
 
+.poem-partical-line {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
 .partical-title {
     font-size: large;
     font-style: italic;
@@ -84,6 +97,7 @@ header {
     text-align: left;
     float: right;
     padding-left: 40%;
+    margin-bottom: 120px;
 }
 
 .word-name {
@@ -94,7 +108,8 @@ header {
 
 .word-value {
     width: 87%;
-    position:absolute;
+    position: absolute;
+    margin-bottom: 120px;
 }
 
 .logo_column1 {
@@ -112,7 +127,7 @@ header {
 
 .footer {
     width: 100%;
-    height: 50px;
+    height: 115px;
     background-color: black;
     text-decoration: none;
     position: fixed;
@@ -123,14 +138,61 @@ header {
     /*position: absolute;*/
 }
 
+.footer-main {
+    /*display: block;*/
+    width: 100%;
+}
+
+.footer-buttons {
+    width: 100%;
+    /*display: block;*/
+    /*text-align: justify;*/
+}
+
+.footer-button-partical {
+    display: inline-block;
+    width: 110px;
+    height: 110px;
+    float: left;
+}
+
+.footer-button-poem-partical {
+    display: inline-block;
+    width: 140px;
+    height: 110px;
+    float: left;
+}
+
+.footer-button-word {
+    display: inline-block;
+    width: 140px;
+    height: 110px;
+    float: left;
+}
+
+.image-button-partical {
+    margin-left: 15px;
+}
+
+.image-button-poem-partical {
+    margin-left: 35px;
+}
+
+.image-button-word {
+    margin-left: 30px;
+}
+
+/*.footer-main {
+    visibility: hidden;
+}*/
+
 /*html {
     position: relative;
     min-height: 100%;
 }*/
 
 
-@media screen and (max-width:767px)
-{
+@media screen and (max-width:767px) {
     .main {
         padding-left: 10px;
         padding-right: 10px;
@@ -139,4 +201,54 @@ header {
     .partical-title {
         padding-left: 10px;
     }
+
+    .logo_buttons {
+        visibility: hidden;
+    }
+
+    footer {
+        width: 100%;
+        height: 30px;
+        background-color: black;
+        text-decoration: none;
+        position: fixed;
+        /*z-index: 101;*/
+        bottom: 0;
+        left: 0;
+        box-shadow: 0 -14px 28px rgba(0,0,0,0.25), 0 -7px 10px rgba(0,0,0,0.22);
+    }
+
+    .footer-button-partical {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        float: left;
+    }
+
+    .footer-button-poem-partical {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        float: left;
+    }
+
+    .footer-button-word {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        float: left;
+    }
+
+    .footer-button-partical-text {
+        visibility: hidden;
+    }
+
+    .footer-button-poem-partical-text {
+        visibility: hidden;
+    }
+
+    .footer-button-word-text {
+        visibility: hidden;
+    }
 }
+

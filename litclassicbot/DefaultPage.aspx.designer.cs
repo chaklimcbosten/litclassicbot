@@ -22,31 +22,31 @@ namespace litclassicbot {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// RandomParticalButton элемент управления.
+        /// LinkButtonAuthorization элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button RandomParticalButton;
+        protected global::System.Web.UI.WebControls.LinkButton LinkButtonAuthorization;
         
         /// <summary>
-        /// RandomPoemParticalButton элемент управления.
+        /// LinkButtonTelegramBot элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button RandomPoemParticalButton;
+        protected global::System.Web.UI.WebControls.LinkButton LinkButtonTelegramBot;
         
         /// <summary>
-        /// RandomWordButton элемент управления.
+        /// LinkButtonVKPublic элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button RandomWordButton;
+        protected global::System.Web.UI.WebControls.LinkButton LinkButtonVKPublic;
         
         /// <summary>
         /// LabelWelcome1 элемент управления.
@@ -85,6 +85,15 @@ namespace litclassicbot {
         protected global::System.Web.UI.WebControls.Label LabelParticalLine;
         
         /// <summary>
+        /// LabelPoemParticalLine элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelPoemParticalLine;
+        
+        /// <summary>
         /// LabelWordName элемент управления.
         /// </summary>
         /// <remarks>
@@ -110,5 +119,32 @@ namespace litclassicbot {
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LabelWordValue;
+        
+        /// <summary>
+        /// ImageButtonPartical элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ImageButtonPartical;
+        
+        /// <summary>
+        /// ImageButtonPoemPartical элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ImageButtonPoemPartical;
+        
+        /// <summary>
+        /// ImageButtonWord элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ImageButtonWord;
     }
 }

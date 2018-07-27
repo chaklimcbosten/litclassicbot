@@ -25,60 +25,63 @@ namespace litclassicbot
 
         }
 
-        // кнопка случайная "частица"
-        protected void RandomParticalButton_Click(object sender, EventArgs e)
-        {
-            //Label3.Visible = false;
-            //ReportParticalButton.Visible = true;
+        
+        //protected void RandomParticalButton_Click(object sender, EventArgs e)
+        //{
+        //    //Label3.Visible = false;
+        //    //ReportParticalButton.Visible = true;
 
-            ShowRandomPartical();
+        //    ShowRandomPartical();
 
-            LabelWelcome1.Visible = false;
-            LabelWelcome2.Visible = false;
-            LabelWelcome3.Visible = false;
-            LabelWordName.Visible = false;
-            LabelWordValue.Visible = false;
-            LabelWordName.Text = "";
-            LabelWordValue.Text = "";
-            LabelParticalLine.Visible = true;
-            LabelParticalTitle.Visible = true;
-        }
-        // кнопка случайная стихотворная "частица"
-        protected void RandomPoemParticalButton_Click(object sender, EventArgs e)
-        {
-            //Label3.Visible = false;
-            //ReportParticalButton.Visible = true;
+        //    LabelWelcome1.Visible = false;
+        //    LabelWelcome2.Visible = false;
+        //    LabelWelcome3.Visible = false;
+        //    LabelWordName.Visible = false;
+        //    LabelWordValue.Visible = false;
+        //    LabelPoemParticalLine.Visible = false;
+        //    LabelWordName.Text = "";
+        //    LabelWordValue.Text = "";
+        //    LabelParticalLine.Visible = true;
+        //    LabelParticalTitle.Visible = true;
+        //}
+        
+        //protected void RandomPoemParticalButton_Click(object sender, EventArgs e)
+        //{
+        //    //Label3.Visible = false;
+        //    //ReportParticalButton.Visible = true;
 
-            ShowRandomPoemPartical();
+        //    ShowRandomPoemPartical();
 
-            LabelWelcome1.Visible = false;
-            LabelWelcome2.Visible = false;
-            LabelWelcome3.Visible = false;
-            LabelWordName.Visible = false;
-            LabelWordValue.Visible = false;
-            LabelWordName.Text = "";
-            LabelWordValue.Text = "";
-            LabelParticalLine.Visible = true;
-            LabelParticalTitle.Visible = true;
-        }
-        // кнопка случайное слово
-        protected void RandomWordButton_Click(object sender, EventArgs e)
-        {
-            //Label3.Visible = false;
-            //ReportParticalButton.Visible = true;
+        //    LabelWelcome1.Visible = false;
+        //    LabelWelcome2.Visible = false;
+        //    LabelWelcome3.Visible = false;
+        //    LabelWordName.Visible = false;
+        //    LabelWordValue.Visible = false;
+        //    LabelParticalLine.Visible = false;
+        //    LabelWordName.Text = "";
+        //    LabelWordValue.Text = "";
+        //    LabelPoemParticalLine.Visible = true;
+        //    LabelParticalTitle.Visible = true;
+        //}
+        
+        //protected void RandomWordButton_Click(object sender, EventArgs e)
+        //{
+        //    //Label3.Visible = false;
+        //    //ReportParticalButton.Visible = true;
 
-            ShowRandomWord();
+        //    ShowRandomWord();
 
-            LabelWelcome1.Visible = false;
-            LabelWelcome2.Visible = false;
-            LabelWelcome3.Visible = false;
-            LabelParticalLine.Text = "";
-            LabelParticalTitle.Text = "";
-            LabelParticalLine.Visible = false;
-            LabelParticalTitle.Visible = false;
-            LabelWordName.Visible = true;
-            LabelWordValue.Visible = true;
-        }
+        //    LabelWelcome1.Visible = false;
+        //    LabelWelcome2.Visible = false;
+        //    LabelWelcome3.Visible = false;
+        //    LabelParticalLine.Text = "";
+        //    LabelParticalTitle.Text = "";
+        //    LabelParticalLine.Visible = false;
+        //    LabelParticalTitle.Visible = false;
+        //    LabelPoemParticalLine.Visible = false;
+        //    LabelWordName.Visible = true;
+        //    LabelWordValue.Visible = true;
+        //}
         // клавиша сообщить об ошибке
         //protected void ReportParticalButton_Click(object sender, EventArgs e)
         //{
@@ -132,7 +135,7 @@ namespace litclassicbot
             partical = partical.Replace("\n\r", "</p><p>");
             // замена символов новой строки на тег, выполняющий это в html
             title = title.Replace("\n\r", "<br>");
-            LabelParticalLine.Text = partical;
+            LabelPoemParticalLine.Text = partical;
             randomParticalButtonText = partical;
             LabelParticalTitle.Text = title;
             randomPoemParticalButtonText = title;
@@ -163,6 +166,72 @@ namespace litclassicbot
             LabelWordValue.Text = wordValue;
             randomPoemParticalButtonText = wordValue;
         }
+
+        // кнопка случайная "частица"
+        protected void ImageButtonPartical_Click(object sender, ImageClickEventArgs e)
+        {
+            ShowRandomPartical();
+
+            LabelWelcome1.Visible = false;
+            LabelWelcome2.Visible = false;
+            LabelWelcome3.Visible = false;
+            LabelWordName.Visible = false;
+            LabelWordValue.Visible = false;
+            LabelPoemParticalLine.Visible = false;
+            LabelWordName.Text = "";
+            LabelWordValue.Text = "";
+            LabelParticalLine.Visible = true;
+            LabelParticalTitle.Visible = true;
+        }
+
+        // кнопка случайная стихотворная "частица"
+        protected void ImageButtonPoemPartical_Click(object sender, ImageClickEventArgs e)
+        {
+            ShowRandomPoemPartical();
+
+            LabelWelcome1.Visible = false;
+            LabelWelcome2.Visible = false;
+            LabelWelcome3.Visible = false;
+            LabelWordName.Visible = false;
+            LabelWordValue.Visible = false;
+            LabelParticalLine.Visible = false;
+            LabelWordName.Text = "";
+            LabelWordValue.Text = "";
+            LabelPoemParticalLine.Visible = true;
+            LabelParticalTitle.Visible = true;
+        }
+        // кнопка случайное слово
+        protected void ImageButtonWord_Click(object sender, ImageClickEventArgs e)
+        {
+            ShowRandomWord();
+
+            LabelWelcome1.Visible = false;
+            LabelWelcome2.Visible = false;
+            LabelWelcome3.Visible = false;
+            LabelParticalLine.Text = "";
+            LabelParticalTitle.Text = "";
+            LabelParticalLine.Visible = false;
+            LabelParticalTitle.Visible = false;
+            LabelPoemParticalLine.Visible = false;
+            LabelWordName.Visible = true;
+            LabelWordValue.Visible = true;
+        }
+
+        protected void LinkButtonAuthorization_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void LinkButtonVKPublic_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("https://vk.com/litclassic");
+        }
+
+        protected void LinkButtonTelegramBot_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("https://t.me/litclassicbot");
+        }
+
         //private void ReportPartical()
         //{
         //    if (currentParticalID != -1)

@@ -376,7 +376,7 @@ namespace litclassicbot.Dialogs
                         " * /statistics - отображение общих значений статистики бота.\n\r" +
                         " * /help - помощь и прочие сведения.\n\r" +
                         "\n\rВсе **отзывы** можно оставлять, просто отправляя боту сообщения с припиской в любом месте сообщения слова **\"отзыв\"**." +
-                        "\n\rПомимо этого, есть и специальный почтовый адрес: **litclassic@protonmail.com**\n\r " +
+                        //"\n\rПомимо этого, есть и специальный почтовый адрес: **litclassic@protonmail.com**\n\r " +
                         "\n\rТакже существует специальный канал: t.me/litclassic");
                     //await context.PostAsync("Также существует специальный канал: t.me/litclassic"); 
                     //await context.PostAsync("Буду рад видеть все отзывы на litclassic@protonmail.com");
@@ -902,9 +902,6 @@ namespace litclassicbot.Dialogs
             }
 
             context.Wait(MessageReceivedAsync);
-
-
-
             //var oMycustomclassname = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(Json Object);
         }
 

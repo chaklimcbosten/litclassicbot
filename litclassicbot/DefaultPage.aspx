@@ -14,10 +14,10 @@
         <header>
             <div id="header-main">
                 <div class="logo_column1">
-                    <img class="logo_img" alt="" src="Content/main_logo.png" />
+                    <img class="logo_img" alt="" src="Content/header/main_logo.png" />
                     <h1 class="logo"> LITCLASSIC </h1>
                 </div>
-                <div class="logo_column2">
+<%--                <div class="logo_column2">
                     <p class="logo_buttons">
                         <asp:Button ID="RandomParticalButton" runat="server" 
                             Text="Случайная &quot;частица&quot;" OnClick="RandomParticalButton_Click" 
@@ -34,8 +34,13 @@
                             Font-Bold="False" Font-Names="'PT Sans'" Font-Size="Medium" ForeColor="White" 
                             Height="26px" BorderColor="Black" Width="285px" />
                     </p>
-                </div>
-            </div>        
+                </div>--%>
+            </div>
+            <div class="logo-links">
+                <asp:LinkButton ID="LinkButtonAuthorization" runat="server" OnClick="LinkButtonAuthorization_Click">Авторизация</asp:LinkButton>
+                <asp:LinkButton ID="LinkButtonTelegramBot" runat="server" OnClick="LinkButtonTelegramBot_Click">Бот для Telegram</asp:LinkButton>
+                <asp:LinkButton ID="LinkButtonVKPublic" runat="server" OnClick="LinkButtonVKPublic_Click">Бот и сообщество ВКонтакте</asp:LinkButton> 
+            </div>           
         </header>
         <div class="main">
             <div class="welcome-message">
@@ -54,6 +59,12 @@
                 <p>
                     <asp:Label ID="LabelParticalLine" runat="server" Text="Здесь будет текст произведения 
                         - &quot;частица&quot;." Visible="False" CssClass="partical-line"></asp:Label>
+                </p>
+            </div>
+            <div class="poem-partical-line">
+                <p>
+                    <asp:Label ID="LabelPoemParticalLine" runat="server" Text="Здесь будет текст произведения 
+                        - &quot;стихотворной частицы&quot;." Visible="False" CssClass="poem-partical-line"></asp:Label>
                 </p>
             </div>
             <div class="word-name">
@@ -80,7 +91,35 @@
         </div>
         <div class="footer">
             <div class="footer-main">
-
+                <div class="footer-buttons">
+                    <div class="footer-button-partical">
+                        <asp:ImageButton ID="ImageButtonPartical" runat="server" ImageUrl="Content/footer/partical_icon.png" 
+                            BorderWidth="10px" Height="60px" AlternateText="Случайная &quot;частица&quot;" 
+                            CssClass="image-button-partical" OnClick="ImageButtonPartical_Click" 
+                            ToolTip="Случайная &quot;частица&quot;" />
+                        <div class="footer-button-partical-text">
+                            <p style="color: #FFFFFF; text-align: center; font-size: small; margin-top: -10px;">Случайная "частица"</p>
+                        </div>
+                    </div>
+                    <div class="footer-button-poem-partical">
+                        <asp:ImageButton ID="ImageButtonPoemPartical" runat="server" ImageUrl="Content/footer/poem_partical_icon.png" 
+                            BorderWidth="10px" Height="60px" AlternateText="Случайная стихотворная &quot;частица&quot;" 
+                            CssClass="image-button-poem-partical" OnClick="ImageButtonPoemPartical_Click" 
+                            ToolTip="Случайная стихотворная &quot;частица&quot;" />
+                        <div class="footer-button-poem-partical-text">
+                            <p style="color: #FFFFFF; text-align: center; font-size: small; margin-top: -10px;">Случайная стихотворная "частица"</p>
+                        </div>
+                    </div>
+                    <div class="footer-button-word">
+                        <asp:ImageButton ID="ImageButtonWord" runat="server" ImageUrl="Content/footer/word_icon.png" 
+                            BorderWidth="10px" Height="60px" AlternateText="Случайное слово из словаря В.И.Даля" 
+                            CssClass="image-button-word" OnClick="ImageButtonWord_Click" 
+                            ToolTip="Случайное слово из словаря В.И.Даля" />
+                        <div class="footer-button-word-text">
+                            <p style="color: #FFFFFF; text-align: center; font-size: small; margin-top: -10px;">Случайное слово из словаря В.И.Даля</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="footer-full">
 
