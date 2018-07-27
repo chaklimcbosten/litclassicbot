@@ -37,9 +37,12 @@
                 </div>--%>
             </div>
             <div class="logo-links">
-                <asp:LinkButton ID="LinkButtonAuthorization" runat="server" OnClick="LinkButtonAuthorization_Click" CssClass="link-button-authorization">Авторизация</asp:LinkButton>
-                <asp:LinkButton ID="LinkButtonTelegramBot" runat="server" OnClick="LinkButtonTelegramBot_Click" CssClass="link-button-telegram-bot">Бот для Telegram</asp:LinkButton>
-                <asp:LinkButton ID="LinkButtonVKPublic" runat="server" OnClick="LinkButtonVKPublic_Click" CssClass="link-button-vk-bot">Бот и сообщество ВКонтакте</asp:LinkButton> 
+                <asp:LinkButton ID="LinkButtonAuthorization" runat="server" OnClick="LinkButtonAuthorization_Click" 
+                    CssClass="link-button-authorization">Авторизация</asp:LinkButton>
+                <asp:LinkButton ID="LinkButtonTelegramBot" runat="server" OnClick="LinkButtonTelegramBot_Click" 
+                    CssClass="link-button-telegram-bot">Бот для Telegram</asp:LinkButton>
+                <asp:LinkButton ID="LinkButtonVKPublic" runat="server" OnClick="LinkButtonVKPublic_Click" 
+                    CssClass="link-button-vk-bot">Бот и сообщество ВКонтакте</asp:LinkButton> 
             </div>           
         </header>
         <div class="main">
@@ -93,17 +96,16 @@
             <div class="footer-main">
                 <div class="footer-buttons">
                     <div class="footer-button-partical">
-                        <asp:ImageButton ID="ImageButtonPartical" runat="server" ImageUrl="Content/footer/partical_icon.png" 
-                            BorderWidth="10px" Height="60px" AlternateText="Случайная &quot;частица&quot;" 
-                            CssClass="image-button-partical" OnClick="ImageButtonPartical_Click" 
-                            ToolTip="Случайная &quot;частица&quot;" />
+                            <asp:ImageButton ID="ImageButtonPartical" runat="server" ImageUrl="Content/footer/partical_icon.png" 
+                                AlternateText="Случайная &quot;частица&quot;" CssClass="image-button-partical" 
+                                OnClick="ImageButtonPartical_Click" ToolTip="Случайная &quot;частица&quot;" BorderWidth="10px" />
                         <div class="footer-button-partical-text">
                             <p style="color: #FFFFFF; text-align: center; font-size: small; margin-top: -10px;">Случайная "частица"</p>
                         </div>
                     </div>
                     <div class="footer-button-poem-partical">
                         <asp:ImageButton ID="ImageButtonPoemPartical" runat="server" ImageUrl="Content/footer/poem_partical_icon.png" 
-                            BorderWidth="10px" Height="60px" AlternateText="Случайная стихотворная &quot;частица&quot;" 
+                            BorderWidth="10px" AlternateText="Случайная стихотворная &quot;частица&quot;" 
                             CssClass="image-button-poem-partical" OnClick="ImageButtonPoemPartical_Click" 
                             ToolTip="Случайная стихотворная &quot;частица&quot;" />
                         <div class="footer-button-poem-partical-text">
@@ -112,7 +114,7 @@
                     </div>
                     <div class="footer-button-word">
                         <asp:ImageButton ID="ImageButtonWord" runat="server" ImageUrl="Content/footer/word_icon.png" 
-                            BorderWidth="10px" Height="60px" AlternateText="Случайное слово из словаря В.И.Даля" 
+                            BorderWidth="10px" AlternateText="Случайное слово из словаря В.И.Даля" 
                             CssClass="image-button-word" OnClick="ImageButtonWord_Click" 
                             ToolTip="Случайное слово из словаря В.И.Даля" />
                         <div class="footer-button-word-text">
