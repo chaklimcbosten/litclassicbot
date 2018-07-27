@@ -59,8 +59,36 @@ header {
 
 .logo-links {
     letter-spacing: 3px;
+    /*text-decoration: none;
+    color: white;*/
+}
+
+.link-button-authorization {
     text-decoration: none;
     color: white;
+    margin-right: 20px;
+    margin-left: 40px;
+    float: right;
+    height: 30px;
+    margin-top: 18px;
+}
+
+.link-button-telegram-bot {
+    text-decoration: none;
+    color: white;
+    margin-left: 40px;
+    float: right;
+    height: 30px;
+    margin-top: 18px;
+}
+
+.link-button-vk-bot {
+    text-decoration: none;
+    color: white;
+    margin-left: 40px;
+    float: right;
+    height: 30px;
+    margin-top: 18px;
 }
 
 /*.logo_buttons {
@@ -68,7 +96,6 @@ header {
     text-align: left;
     margin-top: 10px;
 }*/
-
 .main {
     padding-top: 70px;
     padding-bottom: 150px;
@@ -193,6 +220,10 @@ header {
 
 
 @media screen and (max-width:767px) {
+    .logo-links {
+        visibility: hidden;
+    }
+    
     .main {
         padding-left: 10px;
         padding-right: 10px;

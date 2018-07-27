@@ -37,9 +37,9 @@
                 </div>--%>
             </div>
             <div class="logo-links">
-                <asp:LinkButton ID="LinkButtonAuthorization" runat="server" OnClick="LinkButtonAuthorization_Click">Авторизация</asp:LinkButton>
-                <asp:LinkButton ID="LinkButtonTelegramBot" runat="server" OnClick="LinkButtonTelegramBot_Click">Бот для Telegram</asp:LinkButton>
-                <asp:LinkButton ID="LinkButtonVKPublic" runat="server" OnClick="LinkButtonVKPublic_Click">Бот и сообщество ВКонтакте</asp:LinkButton> 
+                <asp:LinkButton ID="LinkButtonAuthorization" runat="server" OnClick="LinkButtonAuthorization_Click" CssClass="link-button-authorization">Авторизация</asp:LinkButton>
+                <asp:LinkButton ID="LinkButtonTelegramBot" runat="server" OnClick="LinkButtonTelegramBot_Click" CssClass="link-button-telegram-bot">Бот для Telegram</asp:LinkButton>
+                <asp:LinkButton ID="LinkButtonVKPublic" runat="server" OnClick="LinkButtonVKPublic_Click" CssClass="link-button-vk-bot">Бот и сообщество ВКонтакте</asp:LinkButton> 
             </div>           
         </header>
         <div class="main">
