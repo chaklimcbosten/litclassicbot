@@ -1,6 +1,8 @@
-﻿body {
+﻿
+body {
     font-family: 'PT Sans';
-    background-color: #f2f2f2;
+    /*background-color: #f2f2f2;*/
+    background-color: white;
     margin: 0px;
     padding: 0px;
     font-style: normal;
@@ -89,6 +91,7 @@ header {
     padding-right: 50px;
     text-align: justify;
     text-indent: 3%;
+
 }
 
 .partical-line {
@@ -208,6 +211,7 @@ header {
 
 
 @media screen and (max-width:767px) {
+    
     .logo-links {
         visibility: hidden;
     }

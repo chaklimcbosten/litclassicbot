@@ -8,6 +8,7 @@
     <title>LitClassic - сервис привлечения внимания к русской классической литературе</title>
     <link href="DefaultPageStyleSheet.css" rel="stylesheet" type="text/css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
 </head>
 <body>
     <form id="form1" class="form" runat="server">
@@ -17,24 +18,6 @@
                     <img class="logo_img" alt="" src="Content/header/main_logo.png" />
                     <h1 class="logo"> LITCLASSIC </h1>
                 </div>
-<%--                <div class="logo_column2">
-                    <p class="logo_buttons">
-                        <asp:Button ID="RandomParticalButton" runat="server" 
-                            Text="Случайная &quot;частица&quot;" OnClick="RandomParticalButton_Click" 
-                            BackColor="Black" BorderStyle="Solid" Font-Bold="False" Font-Italic="False" 
-                            Font-Names="'PT Sans'" Font-Overline="False" Font-Size="Medium" 
-                            Font-Strikeout="False" Font-Underline="False" ForeColor="White" 
-                            Height="28px" BorderColor="Black" Width="160px" />
-                        <asp:Button ID="RandomPoemParticalButton" runat="server" 
-                            OnClick="RandomPoemParticalButton_Click" Text="Случайная стихотворная &quot;частица&quot;" 
-                            BackColor="Black" BorderStyle="Solid" Font-Bold="False" Font-Names="'PT Sans'" 
-                            Font-Size="Medium" ForeColor="White" Height="26px" BorderColor="Black" Width="260px" />
-                        <asp:Button ID="RandomWordButton" runat="server" OnClick="RandomWordButton_Click" 
-                            Text="Случайное слово из словаря В.И.Даля" BackColor="Black" BorderStyle="Solid" 
-                            Font-Bold="False" Font-Names="'PT Sans'" Font-Size="Medium" ForeColor="White" 
-                            Height="26px" BorderColor="Black" Width="285px" />
-                    </p>
-                </div>--%>
             </div>
             <div class="logo-links">
                 <asp:LinkButton ID="LinkButtonAuthorization" runat="server" OnClick="LinkButtonAuthorization_Click" 
