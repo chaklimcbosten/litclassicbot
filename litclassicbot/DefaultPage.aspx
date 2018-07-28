@@ -12,6 +12,9 @@
 </head>
 <body>
     <form id="form1" class="form" runat="server">
+
+
+        
         <header>
             <div id="header-main">
                 <div class="logo_column1">
@@ -28,53 +31,36 @@
                     CssClass="link-button-vk-bot">Бот и сообщество ВКонтакте</asp:LinkButton> 
             </div>           
         </header>
+
+
+
         <div class="main">
-            <div class="welcome-message">
-                <p>
-                    <asp:Label ID="LabelWelcome1" runat="server" Text="Добро пожаловать!"></asp:Label>
-                </p>
-                <p>
-                    <asp:Label ID="LabelWelcome2" runat="server" Text="В правом верхнем углу - 
-                        все доступные функции."></asp:Label>
-                </p>
-                <p>
-                    <asp:Label ID="LabelWelcome3" runat="server" Text="Пользуйтесь во благо!"></asp:Label>
-                </p>
-            </div>
-            <div class="partical-line">
-                <p>
-                    <asp:Label ID="LabelParticalLine" runat="server" Text="Здесь будет текст произведения 
-                        - &quot;частица&quot;." Visible="False" CssClass="partical-line"></asp:Label>
-                </p>
-            </div>
-            <div class="poem-partical-line">
-                <p>
-                    <asp:Label ID="LabelPoemParticalLine" runat="server" Text="Здесь будет текст произведения 
-                        - &quot;стихотворной частицы&quot;." Visible="False" CssClass="poem-partical-line"></asp:Label>
-                </p>
-            </div>
-            <div class="word-name">
-                <p>
-                    <asp:Label ID="LabelWordName" runat="server" Text="Здесь будет слово из толкового 
-                        словаря живого великорусского словаря." Visible="False" Font-Bold="True" 
-                        Font-Italic="True" Font-Size="Larger"></asp:Label>
-                </p>
-                <hr />
-            </div>
-            <div class="partical-title">                                 
-                <p>
-                    <asp:Label ID="LabelParticalTitle" runat="server" Text="Здесь будет описание 
-                        произведения и книги." ForeColor="Black" Visible="False" Font-Bold="True" 
-                        Font-Italic="True"></asp:Label>              
-                </p>
-            </div>
-            <div class="word-value">  
-                <p> 
-                    <asp:Label ID="LabelWordValue" runat="server" Text="Здесь будет значение слова 
-                        из словаря В.И.Даля." Font-Size="Medium" ForeColor="Black" Visible="False"></asp:Label>
-                </p>
-            </div>
+            <asp:Label ID="LabelWelcome1" runat="server" Text="Добро пожаловать!"></asp:Label>
+            <asp:Label ID="LabelWelcome2" runat="server" Text="В правом верхнем углу - 
+                все доступные функции."></asp:Label>
+            <asp:Label ID="LabelWelcome3" runat="server" Text="Пользуйтесь во благо!"></asp:Label>
+
+            <asp:Label ID="LabelSubtitleParticalLine" runat="server" Text="О сайте" 
+                CssClass="label-subtitle-partical-line"></asp:Label>
+
+            <asp:Label ID="LabelParticalLine" runat="server" Text="Здесь будет текст произведения 
+                - &quot;частица&quot;." Visible="False"></asp:Label>
+            <asp:Label ID="LabelPoemParticalLine" runat="server" Text="Здесь будет текст произведения 
+                - &quot;стихотворной частицы&quot;." Visible="False"></asp:Label>
+            <asp:Label ID="LabelWordName" runat="server" Text="Здесь будет слово из толкового 
+                словаря живого великорусского словаря." Visible="False"></asp:Label>
+
+            <asp:Label ID="LabelSubtitleParticalTitle" runat="server" Text="О создателях" 
+                CssClass="label-subtitle-partical-title"></asp:Label>
+
+            <asp:Label ID="LabelParticalTitle" runat="server" Text="Здесь будет описание 
+                произведения и книги." Visible="False"></asp:Label>              
+            <asp:Label ID="LabelWordValue" runat="server" Text="Здесь будет значение слова 
+                из словаря В.И.Даля." Visible="False"></asp:Label>
         </div>
+
+
+
         <div class="footer">
             <div class="footer-main">
                 <div class="footer-buttons">
@@ -83,7 +69,7 @@
                                 AlternateText="Случайная &quot;частица&quot;" CssClass="image-button-partical" 
                                 OnClick="ImageButtonPartical_Click" ToolTip="Случайная &quot;частица&quot;" BorderWidth="10px" />
                         <div class="footer-button-partical-text">
-                            <p style="color: #FFFFFF; text-align: center; font-size: small; margin-top: -10px;">Случайная "частица"</p>
+                            <p style="color: black; text-align: center; font-size: small; margin-top: -10px;">Случайная "частица"</p>
                         </div>
                     </div>
                     <div class="footer-button-poem-partical">
@@ -92,7 +78,7 @@
                             CssClass="image-button-poem-partical" OnClick="ImageButtonPoemPartical_Click" 
                             ToolTip="Случайная стихотворная &quot;частица&quot;" />
                         <div class="footer-button-poem-partical-text">
-                            <p style="color: #FFFFFF; text-align: center; font-size: small; margin-top: -10px;">Случайная стихотворная "частица"</p>
+                            <p style="color: black; text-align: center; font-size: small; margin-top: -10px;">Случайная стихотворная "частица"</p>
                         </div>
                     </div>
                     <div class="footer-button-word">
@@ -101,7 +87,7 @@
                             CssClass="image-button-word" OnClick="ImageButtonWord_Click" 
                             ToolTip="Случайное слово из словаря В.И.Даля" />
                         <div class="footer-button-word-text">
-                            <p style="color: #FFFFFF; text-align: center; font-size: small; margin-top: -10px;">Случайное слово из словаря В.И.Даля</p>
+                            <p style="color: black; text-align: center; font-size: small; margin-top: -10px;">Случайное слово из словаря В.И.Даля</p>
                         </div>
                     </div>
                 </div>

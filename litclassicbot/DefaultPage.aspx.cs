@@ -106,15 +106,22 @@ namespace litclassicbot
             // для отправки сообщения об ошибке
             currentParticalID = Convert.ToInt32(listGetRandomPartical[3]);
             int bookID = Convert.ToInt32(listGetRandomPartical[4]);
+            // создаёт "обёрточный" класс для всего содержания "частицы"
+            string beginPartical = "<div class=\"label-partical-line\">";
+            string endPartical = "</div>";
             // замена символов новой строки на тег, выполняющий это в html
-            //partical = partical.Replace("\n\r", "<br>");
-            partical = partical.Replace("\n\r", "</p><p>");
+            partical = beginPartical + partical.Replace("\n\r", "</p><p>") + endPartical;
+            // создаёт "обёрточный" класс для всего содержания сведения о "частице"
+            string beginTitle = "<div class=\"label-partical-title\">";
+            string endTitle = "</div>";
             // замена символов новой строки на тег, выполняющий это в html
-            title = title.Replace("\n\r", "<br>");
+            title = beginTitle + title.Replace("\n\r", "<br>") + endTitle;
             LabelParticalLine.Text = partical;
             randomParticalButtonText = partical;
             LabelParticalTitle.Text = title;
             randomPoemParticalButtonText = title;
+            LabelSubtitleParticalLine.Text = "Случайная \"частица\"";
+            LabelSubtitleParticalTitle.Text = "Сведения о \"частице\"";
         }
         private void ShowRandomPoemPartical()
         {
@@ -130,15 +137,22 @@ namespace litclassicbot
             // для отправки сообщения об ошибке
             currentParticalID = Convert.ToInt32(listGetRandomPartical[3]);
             int bookID = Convert.ToInt32(listGetRandomPartical[4]);
+            // создаёт "обёрточный" класс для всего содержания "частицы"
+            string beginPartical = "<div class=\"label-poem-partical-line\">";
+            string endPartical = "</div>";
             // замена символов новой строки на тег, выполняющий это в html
-            //partical = partical.Replace("\n\r", "<br>");
-            partical = partical.Replace("\n\r", "</p><p>");
+            partical = beginPartical + partical.Replace("\n\r", "</p><p>") + endPartical;
+            // создаёт "обёрточный" класс для всего содержания сведения о "частице"
+            string beginTitle = "<div class=\"label-partical-title\">";
+            string endTitle = "</div>";
             // замена символов новой строки на тег, выполняющий это в html
-            title = title.Replace("\n\r", "<br>");
+            title = beginTitle + title.Replace("\n\r", "<br>") + endTitle;
             LabelPoemParticalLine.Text = partical;
             randomParticalButtonText = partical;
             LabelParticalTitle.Text = title;
             randomPoemParticalButtonText = title;
+            LabelSubtitleParticalLine.Text = "Случайная стихотворная \"частица\"";
+            LabelSubtitleParticalTitle.Text = "Сведения о \"частице\"";
         }
         private void ShowRandomWord()
         {
@@ -157,14 +171,22 @@ namespace litclassicbot
             // получение первой буквы слова
             // может быть, проще её получать из имени?
             string wordFirstLetter = listGetWord[3];
+            // создаёт "обёрточный" класс для всего содержания значения слова
+            string beginWordName = "<div class=\"label-word-name\">";
+            string endWordName = "</div>";
             // замена символов новой строки на тег, выполняющий это в html
-            wordName = wordName.Replace("\n\r", "<br>");
+            wordName = beginWordName + wordName.Replace("\n\r", "<br>") + endWordName;
+            // создаёт "обёрточный" класс для всего содержания значения слова
+            string beginWordValue = "<div class=\"label-word-value\">";
+            string endWordValue = "</div>";
             // замена символов новой строки на тег, выполняющий это в html
-            wordValue = wordValue.Replace("\n\r", "<br>");
+            wordValue = beginWordValue + wordValue.Replace("\n\r", "<br>") + endWordValue;
             LabelWordName.Text = wordName;
             randomParticalButtonText = wordName;
             LabelWordValue.Text = wordValue;
             randomPoemParticalButtonText = wordValue;
+            LabelSubtitleParticalLine.Text = "Случайное слово";
+            LabelSubtitleParticalTitle.Text = "Значение слова";
         }
 
         // кнопка случайная "частица"
