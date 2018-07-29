@@ -34,16 +34,16 @@
 
 
         <div class="main">
-            <asp:Label ID="LabelSubtitleMain" runat="server" Text="Главная страница" 
-                CssClass="label-subtitle-main"></asp:Label>
+            <p><asp:Label ID="LabelSubtitleMain" runat="server" Text="Главная страница" 
+                CssClass="label-subtitle-main"></asp:Label></p>
 
             <asp:Label ID="LabelWelcome1" runat="server" Text="Добро пожаловать!"></asp:Label>
             <asp:Label ID="LabelWelcome2" runat="server" Text="В правом верхнем углу - 
                 все доступные функции."></asp:Label>
             <asp:Label ID="LabelWelcome3" runat="server" Text="Пользуйтесь во благо!"></asp:Label>
 
-            <asp:Label ID="LabelSubtitleParticalLine" runat="server" Text="О сайте" 
-                CssClass="label-subtitle-partical-line"></asp:Label>
+            <p><asp:Label ID="LabelSubtitleParticalLine" runat="server" Text="О сайте" 
+                CssClass="label-subtitle-partical-line"></asp:Label></p>
 
             <asp:Label ID="LabelParticalLine" runat="server" Text="Здесь будет текст произведения 
                 - &quot;частица&quot;." Visible="False"></asp:Label>
@@ -52,8 +52,8 @@
             <asp:Label ID="LabelWordName" runat="server" Text="Здесь будет слово из толкового 
                 словаря живого великорусского языка В.И.Даля." Visible="False"></asp:Label>
 
-            <asp:Label ID="LabelSubtitleParticalTitle" runat="server" Text="О создателях" 
-                CssClass="label-subtitle-partical-title"></asp:Label>
+            <p><asp:Label ID="LabelSubtitleParticalTitle" runat="server" Text="О создателях" 
+                CssClass="label-subtitle-partical-title"></asp:Label></p>
 
             <asp:Label ID="LabelParticalTitle" runat="server" Text="Здесь будет описание 
                 произведения и книги." Visible="False"></asp:Label>              

@@ -13,11 +13,11 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 84%;
+    width: 80%;
     height: 70px;
     background-color: white;
-    padding-left: 8%;
-    padding-right: 8%;
+    padding-left: 10%;
+    padding-right: 10%;
     /*8 dp*/ 
     /*box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 3px rgba(0,0,0,0.12), 0 4px 5px 0 rgba(0,0,0,0.20);*/
     /*6 dp*/
@@ -127,11 +127,11 @@ header {
 }
 
 .main {
-    width: 84%;
+    width: 80%;
     margin-top: 90px;
     margin-bottom: 100px;
-    margin-left: 8%;
-    margin-right: 8%;
+    margin-left: 10%;
+    margin-right: 10%;
     text-align: justify;
     font-size: 16px;
     font-weight: 400;
@@ -239,11 +239,11 @@ header {
 }*/
 
 .footer {
-    width: 84%;
+    width: 80%;
     height: 70px;
     background-color: white;
-    padding-left: 8%;
-    padding-right: 8%;
+    padding-left: 10%;
+    padding-right: 10%;
     text-decoration: none;
     position: fixed;
     bottom: 0;
