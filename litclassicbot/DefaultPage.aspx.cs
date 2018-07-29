@@ -245,7 +245,7 @@ namespace litclassicbot
 
         protected void LinkButtonMainPage_Click(object sender, EventArgs e)
         {
-            //Response.Redirect();
+            Response.Redirect("DefaultPage.aspx");
         }
 
         protected void LinkButtonVKPublic_Click(object sender, EventArgs e)
