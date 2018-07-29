@@ -8,8 +8,8 @@
     <title>LitClassic - сервис привлечения внимания к русской классической литературе</title>
     <link href="DefaultPageStyleSheet.css" rel="stylesheet" type="text/css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&amp;subset=cyrillic-ext" rel="stylesheet">  
-    <%--<link href="https://fonts.googleapis.com/css?family=Roboto:300&amp;subset=cyrillic-ext" rel="stylesheet">--%> 
+    <%--<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&amp;subset=cyrillic-ext" rel="stylesheet">--%>  
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300&amp;subset=cyrillic-ext" rel="stylesheet"> 
 </head>
 <body>
     <form class="form1" runat="server">
