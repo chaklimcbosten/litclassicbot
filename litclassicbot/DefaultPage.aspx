@@ -28,6 +28,8 @@
                     CssClass="link-button-telegram-bot">БОТ ДЛЯ TELEGRAM</asp:LinkButton>
                 <asp:LinkButton ID="LinkButtonVKPublic" runat="server" OnClick="LinkButtonVKPublic_Click" 
                     CssClass="link-button-vk-bot">СООБЩЕСТВО ВКОНТАКТЕ</asp:LinkButton> 
+                <asp:LinkButton ID="LinkButtonMainPage" runat="server" OnClick="LinkButtonMainPage_Click" 
+                    CssClass="link-button-main-page">О САЙТЕ</asp:LinkButton>
             </div>           
         </header>
 
@@ -37,10 +39,10 @@
             <p><asp:Label ID="LabelSubtitleMain" runat="server" Text="Главная страница" 
                 CssClass="label-subtitle-main"></asp:Label></p>
 
-            <asp:Label ID="LabelWelcome1" runat="server" Text="Добро пожаловать!"></asp:Label>
+<%--            <asp:Label ID="LabelWelcome1" runat="server" Text="Добро пожаловать!"></asp:Label>
             <asp:Label ID="LabelWelcome2" runat="server" Text="В правом верхнем углу - 
                 все доступные функции."></asp:Label>
-            <asp:Label ID="LabelWelcome3" runat="server" Text="Пользуйтесь во благо!"></asp:Label>
+            <asp:Label ID="LabelWelcome3" runat="server" Text="Пользуйтесь во благо!"></asp:Label>--%>
 
             <p><asp:Label ID="LabelSubtitleParticalLine" runat="server" Text="О сайте" 
                 CssClass="label-subtitle-partical-line"></asp:Label></p>

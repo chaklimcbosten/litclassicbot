@@ -197,9 +197,9 @@ namespace litclassicbot
         {
             ShowRandomPartical();
 
-            LabelWelcome1.Visible = false;
-            LabelWelcome2.Visible = false;
-            LabelWelcome3.Visible = false;
+            //LabelWelcome1.Visible = false;
+            //LabelWelcome2.Visible = false;
+            //LabelWelcome3.Visible = false;
             LabelWordName.Visible = false;
             LabelWordValue.Visible = false;
             LabelPoemParticalLine.Visible = false;
@@ -214,9 +214,9 @@ namespace litclassicbot
         {
             ShowRandomPoemPartical();
 
-            LabelWelcome1.Visible = false;
-            LabelWelcome2.Visible = false;
-            LabelWelcome3.Visible = false;
+            //LabelWelcome1.Visible = false;
+            //LabelWelcome2.Visible = false;
+            //LabelWelcome3.Visible = false;
             LabelWordName.Visible = false;
             LabelWordValue.Visible = false;
             LabelParticalLine.Visible = false;
@@ -230,9 +230,9 @@ namespace litclassicbot
         {
             ShowRandomWord();
 
-            LabelWelcome1.Visible = false;
-            LabelWelcome2.Visible = false;
-            LabelWelcome3.Visible = false;
+            //LabelWelcome1.Visible = false;
+            //LabelWelcome2.Visible = false;
+            //LabelWelcome3.Visible = false;
             LabelParticalLine.Text = "";
             LabelParticalTitle.Text = "";
             LabelParticalLine.Visible = false;
@@ -242,9 +242,10 @@ namespace litclassicbot
             LabelWordValue.Visible = true;
         }
 
-        protected void LinkButtonAuthorization_Click(object sender, EventArgs e)
-        {
 
+        protected void LinkButtonMainPage_Click(object sender, EventArgs e)
+        {
+            //Response.Redirect();
         }
 
         protected void LinkButtonVKPublic_Click(object sender, EventArgs e)
@@ -257,14 +258,19 @@ namespace litclassicbot
             Response.Redirect("https://t.me/litclassicbot");
         }
 
+        protected void LinkButtonAuthorization_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
         protected void ButtonPartical_Click(object sender, EventArgs e)
         {
             ShowRandomPartical();
 
-            LabelWelcome1.Visible = false;
-            LabelWelcome2.Visible = false;
-            LabelWelcome3.Visible = false;
+            //LabelWelcome1.Visible = false;
+            //LabelWelcome2.Visible = false;
+            //LabelWelcome3.Visible = false;
             LabelWordName.Visible = false;
             LabelWordValue.Visible = false;
             LabelPoemParticalLine.Visible = false;
@@ -279,9 +285,9 @@ namespace litclassicbot
         {
             ShowRandomPoemPartical();
 
-            LabelWelcome1.Visible = false;
-            LabelWelcome2.Visible = false;
-            LabelWelcome3.Visible = false;
+            //LabelWelcome1.Visible = false;
+            //LabelWelcome2.Visible = false;
+            //LabelWelcome3.Visible = false;
             LabelWordName.Visible = false;
             LabelWordValue.Visible = false;
             LabelParticalLine.Visible = false;
@@ -297,9 +303,9 @@ namespace litclassicbot
         {
             ShowRandomWord();
 
-            LabelWelcome1.Visible = false;
-            LabelWelcome2.Visible = false;
-            LabelWelcome3.Visible = false;
+            //LabelWelcome1.Visible = false;
+            //LabelWelcome2.Visible = false;
+            //LabelWelcome3.Visible = false;
             LabelParticalLine.Text = "";
             LabelParticalTitle.Text = "";
             LabelParticalLine.Visible = false;
@@ -308,6 +314,7 @@ namespace litclassicbot
             LabelWordName.Visible = true;
             LabelWordValue.Visible = true;
         }
+
 
         //private void ReportPartical()
         //{
