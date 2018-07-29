@@ -18,6 +18,8 @@ header {
     background-color: white;
     padding-left: 8%;
     padding-right: 8%;
+    /*8 dp*/ 
+    /*box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 3px rgba(0,0,0,0.12), 0 4px 5px 0 rgba(0,0,0,0.20);*/
     /*6 dp*/
     box-shadow: 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12), 0 3px 5px 0 rgba(0,0,0,0.20);
     /*4 dp*/
@@ -50,40 +52,82 @@ header {
 
 .logo-links {
     display: inline-block;
-    letter-spacing: 0.15px;
+    letter-spacing: 0.75px;
     float: right;
-    font-size: 20px;
-    font-weight: normal;
+    font-size: 14px;
+    font-weight: 400;
 }
 
 .link-button-authorization {
-    text-decoration: none;
+    /*text-decoration: none;
     color: black;
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 20px;
     margin-right: 0px;
     float: right;
-    height: 30px;
+    height: 30px;*/
+    text-decoration: none;
+    color: black;
+    margin-left: 20px;
+    margin-right: 0px;
+    margin-top: 17px;
+    margin-bottom: 17px;
+    float: right;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 14px;
+    padding-right: 14px;
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+.link-button-authorization:hover {
+    background-color: whitesmoke;
 }
 
 .link-button-telegram-bot {
     text-decoration: none;
     color: black;
-    margin: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 17px;
+    margin-bottom: 17px;
     float: right;
-    height: 30px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 14px;
+    padding-right: 14px;
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+.link-button-telegram-bot:hover {
+    background-color: whitesmoke;
 }
 
 .link-button-vk-bot {
     text-decoration: none;
     color: black;
-    margin: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 17px;
+    margin-bottom: 17px;
     float: right;
-    height: 30px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 14px;
+    padding-right: 14px;
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+.link-button-vk-bot:hover {
+    background-color: whitesmoke;
 }
 
 .main {
+    width: 84%;
     margin-top: 90px;
     margin-bottom: 100px;
     margin-left: 8%;
@@ -95,22 +139,37 @@ header {
     letter-spacing: 0.5px;
 }
 
-.label-subtitle-partical-line {
+.label-subtitle-main {
+    width: 100%;
     margin-top: 1%;
     margin-bottom: 1%;
     color: black;
-    font-size: 24px;
+    font-size: 48px;
     font-weight: 400;
     letter-spacing: 0px;
 }
 
-.label-subtitle-partical-title {
+.label-subtitle-partical-line {
+    width: 100%;
     margin-top: 1%;
     margin-bottom: 1%;
     color: black;
-    font-size: 24px;
+    font-size: 34px;
     font-weight: 400;
-    letter-spacing: 0px;
+    letter-spacing: 0.25px;
+}
+
+.label-subtitle-partical-title {
+    width: 100%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    color: black;
+    font-size: 34px;
+    font-weight: 400;
+    letter-spacing: 0.25px;
+    /*font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.1px;*/
 }
 
 .label-partical-line {
@@ -138,7 +197,7 @@ header {
     /*text-align: left;
     float: right;
     padding-left: 40%;*/
-    margin-bottom: 140px;
+    /*margin-bottom: 140px;*/
     margin-top: 20px;
     background-color: black;
     border-radius: 20px;
@@ -162,7 +221,7 @@ header {
 }
 
 .label-word-value {
-    margin-bottom: 145px;
+    /*margin-bottom: 145px;*/
     margin-top: 20px;
     background-color: black;
     border-radius: 20px;
@@ -179,11 +238,11 @@ header {
 }*/
 
 .footer {
-    width: 100%;
-    height: 115px;
+    width: 84%;
+    height: 70px;
+    background-color: white;
     padding-left: 8%;
     padding-right: 8%;
-    background-color: white;
     text-decoration: none;
     position: fixed;
     bottom: 0;
@@ -218,23 +277,23 @@ header {
 
 .footer-button-partical {
     display: inline-block;
-    width: 110px;
+    /*width: 110px;
     height: 110px;
-    float: left;
+    float: left;*/
 }
 
 .footer-button-poem-partical {
     display: inline-block;
-    width: 140px;
+    /*width: 140px;
     height: 110px;
-    float: left;
+    float: left;*/
 }
 
 .footer-button-word {
     display: inline-block;
-    width: 140px;
+    /*width: 140px;
     height: 110px;
-    float: left;
+    float: left;*/
 }
 
 .image-button-partical {
@@ -247,6 +306,81 @@ header {
 
 .image-button-word {
     margin-left: 30px;
+}
+
+.button-partical {
+    letter-spacing: 0.75px;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    margin-left: 0px;
+    margin-right: 20px;
+    margin-top: 17px;
+    margin-bottom: 17px;
+    float: left;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 14px;
+    padding-right: 14px;
+    border: 2px solid black;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.button-partical:hover {
+    background-color: whitesmoke;
+}
+
+.button-poem-partical {
+    letter-spacing: 0.75px;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 17px;
+    margin-bottom: 17px;
+    float: left;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 14px;
+    padding-right: 14px;
+    border: 2px solid black;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.button-poem-partical:hover {
+    background-color: whitesmoke;
+}
+
+.button-word {
+    letter-spacing: 0.75px;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 17px;
+    margin-bottom: 17px;
+    float: left;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 14px;
+    padding-right: 14px;
+    border: 2px solid black;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.button-word:hover {
+    background-color: whitesmoke;
 }
 
 

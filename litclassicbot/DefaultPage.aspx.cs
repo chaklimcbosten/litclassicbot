@@ -120,7 +120,8 @@ namespace litclassicbot
             randomParticalButtonText = partical;
             LabelParticalTitle.Text = title;
             randomPoemParticalButtonText = title;
-            LabelSubtitleParticalLine.Text = "Случайная \"частица\"";
+            LabelSubtitleMain.Text = "Случайная \"частица\"";
+            LabelSubtitleParticalLine.Text = "\"Частица\"";
             LabelSubtitleParticalTitle.Text = "Сведения о \"частице\"";
         }
         private void ShowRandomPoemPartical()
@@ -151,7 +152,8 @@ namespace litclassicbot
             randomParticalButtonText = partical;
             LabelParticalTitle.Text = title;
             randomPoemParticalButtonText = title;
-            LabelSubtitleParticalLine.Text = "Случайная стихотворная \"частица\"";
+            LabelSubtitleMain.Text = "Случайная стихотворная \"частица\"";
+            LabelSubtitleParticalLine.Text = "\"Частица\"";
             LabelSubtitleParticalTitle.Text = "Сведения о \"частице\"";
         }
         private void ShowRandomWord()
@@ -185,7 +187,8 @@ namespace litclassicbot
             randomParticalButtonText = wordName;
             LabelWordValue.Text = wordValue;
             randomPoemParticalButtonText = wordValue;
-            LabelSubtitleParticalLine.Text = "Случайное слово";
+            LabelSubtitleMain.Text = "Случайное слово из толкового словаря живого, великорусского языка Владимира Ивановича Даля";
+            LabelSubtitleParticalLine.Text = "Слово";
             LabelSubtitleParticalTitle.Text = "Значение слова";
         }
 
@@ -252,6 +255,58 @@ namespace litclassicbot
         protected void LinkButtonTelegramBot_Click(object sender, EventArgs e)
         {
             Response.Redirect("https://t.me/litclassicbot");
+        }
+
+
+        protected void ButtonPartical_Click(object sender, EventArgs e)
+        {
+            ShowRandomPartical();
+
+            LabelWelcome1.Visible = false;
+            LabelWelcome2.Visible = false;
+            LabelWelcome3.Visible = false;
+            LabelWordName.Visible = false;
+            LabelWordValue.Visible = false;
+            LabelPoemParticalLine.Visible = false;
+            LabelWordName.Text = "";
+            LabelWordValue.Text = "";
+            LabelParticalLine.Visible = true;
+            LabelParticalTitle.Visible = true;
+        }
+
+
+        protected void ButtonPoemPartical_Click(object sender, EventArgs e)
+        {
+            ShowRandomPoemPartical();
+
+            LabelWelcome1.Visible = false;
+            LabelWelcome2.Visible = false;
+            LabelWelcome3.Visible = false;
+            LabelWordName.Visible = false;
+            LabelWordValue.Visible = false;
+            LabelParticalLine.Visible = false;
+            LabelWordName.Text = "";
+            LabelWordValue.Text = "";
+            LabelPoemParticalLine.Visible = true;
+            LabelParticalTitle.Visible = true;
+            //ButtonPoemPartical.BackColor = whitesmoke;
+        }
+
+
+        protected void ButtonWord_Click(object sender, EventArgs e)
+        {
+            ShowRandomWord();
+
+            LabelWelcome1.Visible = false;
+            LabelWelcome2.Visible = false;
+            LabelWelcome3.Visible = false;
+            LabelParticalLine.Text = "";
+            LabelParticalTitle.Text = "";
+            LabelParticalLine.Visible = false;
+            LabelParticalTitle.Visible = false;
+            LabelPoemParticalLine.Visible = false;
+            LabelWordName.Visible = true;
+            LabelWordValue.Visible = true;
         }
 
         //private void ReportPartical()

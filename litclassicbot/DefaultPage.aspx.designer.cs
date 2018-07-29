@@ -40,6 +40,15 @@ namespace litclassicbot {
         protected global::System.Web.UI.WebControls.LinkButton LinkButtonVKPublic;
         
         /// <summary>
+        /// LabelSubtitleMain элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelSubtitleMain;
+        
+        /// <summary>
         /// LabelWelcome1 элемент управления.
         /// </summary>
         /// <remarks>
@@ -130,30 +139,30 @@ namespace litclassicbot {
         protected global::System.Web.UI.WebControls.Label LabelWordValue;
         
         /// <summary>
-        /// ImageButtonPartical элемент управления.
+        /// ButtonPartical элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButtonPartical;
+        protected global::System.Web.UI.WebControls.Button ButtonPartical;
         
         /// <summary>
-        /// ImageButtonPoemPartical элемент управления.
+        /// ButtonPoemPartical элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButtonPoemPartical;
+        protected global::System.Web.UI.WebControls.Button ButtonPoemPartical;
         
         /// <summary>
-        /// ImageButtonWord элемент управления.
+        /// ButtonWord элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButtonWord;
+        protected global::System.Web.UI.WebControls.Button ButtonWord;
     }
 }
