@@ -24,10 +24,10 @@
             <div class="logo-links">
                 <asp:LinkButton ID="LinkButtonAuthorization" runat="server" OnClick="LinkButtonAuthorization_Click" 
                     CssClass="link-button-authorization">АВТОРИЗАЦИЯ</asp:LinkButton>
-                <asp:LinkButton ID="LinkButtonTelegramBot" runat="server" OnClick="LinkButtonTelegramBot_Click" 
-                    CssClass="link-button-telegram-bot">БОТ ДЛЯ TELEGRAM</asp:LinkButton>
-                <asp:LinkButton ID="LinkButtonVKPublic" runat="server" OnClick="LinkButtonVKPublic_Click" 
-                    CssClass="link-button-vk-bot">СООБЩЕСТВО ВКОНТАКТЕ</asp:LinkButton> 
+                <asp:LinkButton ID="LinkButtonTelegramBot" runat="server" CssClass="link-button-telegram-bot" 
+                    OnClientClick="window.open('https://t.me/litclassicbot')">БОТ ДЛЯ TELEGRAM</asp:LinkButton>
+                <asp:LinkButton ID="LinkButtonVKPublic" runat="server" CssClass="link-button-vk" 
+                    OnClientClick="window.open('https://vk.com/litclassic')">СООБЩЕСТВО ВКОНТАКТЕ</asp:LinkButton> 
                 <asp:LinkButton ID="LinkButtonMainPage" runat="server" OnClick="LinkButtonMainPage_Click" 
                     CssClass="link-button-main-page">О САЙТЕ</asp:LinkButton>
             </div>           
@@ -40,7 +40,7 @@
                 CssClass="label-subtitle-main"></asp:Label></p>
 
             <p><asp:Label ID="LabelSubtitleParticalLine" runat="server" 
-                CssClass="label-subtitle-partical-line"></asp:Label></p>
+                CssClass="label-subtitle-partical-line" Visible="False"></asp:Label></p>
 
             <asp:Label ID="LabelSubtitleAboutSite" runat="server" Text="О сайте"
                 CssClass="label-subtitle-about-site"></asp:Label>
