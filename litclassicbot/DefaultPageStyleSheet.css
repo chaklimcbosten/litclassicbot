@@ -194,6 +194,68 @@ header {
     letter-spacing: 0.1px;*/
 }
 
+
+
+
+.label-subtitle-about-site {
+    width: 100%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    color: black;
+    font-size: 34px;
+    font-weight: 400;
+    letter-spacing: 0.25px;
+}
+
+.label-subtitle-navigation {
+    width: 100%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    color: black;
+    font-size: 34px;
+    font-weight: 400;
+    letter-spacing: 0.25px;
+}
+
+.label-subtitle-statistics {
+    width: 100%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    color: black;
+    font-size: 34px;
+    font-weight: 400;
+    letter-spacing: 0.25px;
+}
+
+.label-subtitle-gratitudes {
+    width: 100%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    color: black;
+    font-size: 34px;
+    font-weight: 400;
+    letter-spacing: 0.25px;
+}
+
+.label-about-site {
+    color: black;
+}
+
+.label-navigation {
+    color: black;
+}
+
+.label-statistics {
+    color: black;
+}
+
+.label-gratitudes {
+    color: black;
+}
+
+
+
+
 .label-partical-line {
     margin-bottom: 20px;
     margin-top: 20px;
@@ -409,6 +471,12 @@ header {
 
 @media screen and (max-width:767px) {
     
+    header {
+        width: 90%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
     .logo-links {
         visibility: hidden;
     }
@@ -418,7 +486,10 @@ header {
     }
     
     .main {
-        margin-bottom: 60px;
+        /*margin-bottom: 60px;*/
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
     }
 
     .label-partical-line {
@@ -426,25 +497,25 @@ header {
     }
 
     .footer {
-        height: 60px;
+        /*height: 60px;*/
     }
 
 
     .footer-button-partical {
-        height: 60px;
-        width: 60px;
+        /*height: 60px;
+        width: 60px;*/
     }
     .footer-button-poem-partical {
-        height: 60px;
-        width: 60px;
+        /*height: 60px;
+        width: 60px;*/
     }
     .footer-button-word {
-        height: 60px;
-        width: 60px;
+        /*height: 60px;
+        width: 60px;*/
     }
 
 
-    .image-button-partical {
+    /*.image-button-partical {
         height: 40px;
         width: 40px;
         margin-left: 0px;
@@ -458,10 +529,10 @@ header {
         height: 40px;
         width: 40px;
         margin-left: 0px;
-    }
+    }*/
 
 
-    .footer-button-partical-text {
+    /*.footer-button-partical-text {
         visibility: hidden;
     }
     .footer-button-poem-partical-text {
@@ -469,6 +540,30 @@ header {
     }
     .footer-button-word-text {
         visibility: hidden;
+    }*/
+
+    .label-subtitle-partical-line {
+        padding: 5%;
+    }
+
+    .label-partical-line {
+        padding: 5%;
+    }
+
+    .label-subtitle-partical-title {
+        padding: 5%;
+    }
+
+    .label-partical-title {
+        padding: 5%;
+    }
+
+    .label-word-name {
+        padding: 5%;
+    }
+
+    .label-word-value {
+        padding: 5%;
     }
 }
 

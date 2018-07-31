@@ -67,6 +67,24 @@ namespace litclassicbot {
         protected global::System.Web.UI.WebControls.Label LabelSubtitleParticalLine;
         
         /// <summary>
+        /// LabelSubtitleAboutSite элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelSubtitleAboutSite;
+        
+        /// <summary>
+        /// LabelAboutSite элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelAboutSite;
+        
+        /// <summary>
         /// LabelParticalLine элемент управления.
         /// </summary>
         /// <remarks>
@@ -94,6 +112,24 @@ namespace litclassicbot {
         protected global::System.Web.UI.WebControls.Label LabelWordName;
         
         /// <summary>
+        /// LabelSubtitleNavigation элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelSubtitleNavigation;
+        
+        /// <summary>
+        /// LabelNavigation элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelNavigation;
+        
+        /// <summary>
         /// LabelSubtitleParticalTitle элемент управления.
         /// </summary>
         /// <remarks>
@@ -119,6 +155,42 @@ namespace litclassicbot {
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LabelWordValue;
+        
+        /// <summary>
+        /// LabelSubtitleStatistics элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelSubtitleStatistics;
+        
+        /// <summary>
+        /// LabelStatistics элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelStatistics;
+        
+        /// <summary>
+        /// LabelSubtitleGratitudes элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelSubtitleGratitudes;
+        
+        /// <summary>
+        /// LabelGratitudes элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelGratitudes;
         
         /// <summary>
         /// ButtonPartical элемент управления.
