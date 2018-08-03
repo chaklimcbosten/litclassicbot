@@ -152,9 +152,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\footer\partical_icon.png" />
-    <Content Include="Content\footer\poem_partical_icon.png" />
-    <Content Include="Content\footer\word_icon.png" />
+    <Content Include="Content\footer\partical-icon.png" />
+    <Content Include="Content\footer\poem-partical-icon.png" />
+    <Content Include="Content\header\main-logo-png-v3.png" />
     <Content Include="Scripts\AJAX-function.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />

@@ -100,14 +100,6 @@ header {
 
 
 .link-button-authorization {
-    /*text-decoration: none;
-    color: black;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    margin-right: 0px;
-    float: right;
-    height: 30px;*/
     text-decoration: none;
     color: black;
     margin-left: 7px;
@@ -189,9 +181,6 @@ header {
     font-size: 34px;
     font-weight: 400;
     letter-spacing: 0.25px;
-    /*font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.1px;*/
 }
 
 
@@ -278,10 +267,6 @@ header {
 }
 
 .label-partical-title {
-    /*text-align: left;
-    float: right;
-    padding-left: 40%;*/
-    /*margin-bottom: 140px;*/
     margin-top: 20px;
     background-color: black;
     border-radius: 20px;
@@ -295,7 +280,6 @@ header {
     margin-bottom: 20px;
     margin-top: 20px;
     font-size: 34px;
-    /*color: white;*/
     letter-spacing: 0.25px;
     background-color: black;
     border-radius: 20px;
@@ -305,7 +289,6 @@ header {
 }
 
 .label-word-value {
-    /*margin-bottom: 145px;*/
     margin-top: 20px;
     background-color: black;
     border-radius: 20px;
@@ -314,12 +297,6 @@ header {
     padding: 2%;
     color: white;
 }
-
-/*.logo_column1 {
-    float: left;
-    display: inline-block;
-    width: 400px;
-}*/
 
 .footer {
     width: 80%;
@@ -333,7 +310,6 @@ header {
     left: 0;
     /*6 dp*/
     box-shadow: 0 -6px 10px 0 rgba(0,0,0,0.14), 0 -1px 18px 0 rgba(0,0,0,0.12), 0 -3px 5px 0 rgba(0,0,0,0.20);
-    /*border-top: 1px solid white;*/
 }
 
 .footer-main {
@@ -344,52 +320,16 @@ header {
     width: 100%;
 }
 
-.image-button-partical {
-    height: 60px;
-    width: 60px;
-}
-
-.image-button-poem-partical {
-    height: 60px;
-    width: 60px;
-}
-
-.image-button-word {
-    height: 60px;
-    width: 60px;
-}
-
 .footer-button-partical {
     display: inline-block;
-    /*width: 110px;
-    height: 110px;
-    float: left;*/
 }
 
 .footer-button-poem-partical {
     display: inline-block;
-    /*width: 140px;
-    height: 110px;
-    float: left;*/
 }
 
 .footer-button-word {
     display: inline-block;
-    /*width: 140px;
-    height: 110px;
-    float: left;*/
-}
-
-.image-button-partical {
-    /*margin-left: 15px;*/
-}
-
-.image-button-poem-partical {
-    margin-left: 35px;
-}
-
-.image-button-word {
-    margin-left: 30px;
 }
 
 .button-partical {
@@ -467,106 +407,133 @@ header {
     background-color: whitesmoke;
 }
 
+.footer-images-buttons {
+    display: none;
+}
+
 
 
 @media screen and (max-width:767px) {
     
     header {
         width: 96%;
+        height: 50px;
         padding-left: 2%;
         padding-right: 2%;
     }
-
     .header-main {
         width: 100%;
     }
-
+    .logo_img {
+        width: 50px;
+        height: 50px;
+        float: left;
+    }
     .logo-links {
         visibility: hidden;
     }
-
     .logo {
         margin-left: 2%;
         margin-right: 2%;
+        margin-bottom: 4px;
+        margin-top: 4px;
     }
-    
+
+
     .main {
-        /*margin-bottom: 60px;*/
         width: 96%;
         margin-left: 2%;
         margin-right: 2%;
+        margin-top: 60px;
+        margin-bottom: 70px;
     }
+
 
     .footer {
         width: 96%;
+        height: 50px;
         padding-left: 2%;
         padding-right: 2%;
     }
-
-
-    .footer-button-partical {
-        /*height: 60px;
-        width: 60px;*/
+    .footer-buttons {
+        display: none;
     }
-    .footer-button-poem-partical {
-        /*height: 60px;
-        width: 60px;*/
-    }
-    .footer-button-word {
-        /*height: 60px;
-        width: 60px;*/
+    .footer-images-buttons {
+        width: 100%;
+        display: inline-block;
     }
 
 
-    /*.image-button-partical {
-        height: 40px;
-        width: 40px;
-        margin-left: 0px;
-    }
-    .image-button-poem-partical {
-        height: 40px;
-        width: 40px;
-        margin-left: 0px;
-    }
-    .image-button-word {
-        height: 40px;
-        width: 40px;
-        margin-left: 0px;
-    }*/
-
-
-    /*.footer-button-partical-text {
-        visibility: hidden;
-    }
-    .footer-button-poem-partical-text {
-        visibility: hidden;
-    }
-    .footer-button-word-text {
-        visibility: hidden;
-    }*/
 
     .label-subtitle-partical-line {
         padding: 5%;
     }
-
     .label-partical-line {
         padding: 5%;
     }
-
     .label-subtitle-partical-title {
         padding: 5%;
     }
-
     .label-partical-title {
         padding: 5%;
     }
-
     .label-word-name {
         padding: 5%;
     }
-
     .label-word-value {
         padding: 5%;
     }
+
+
+    .image-button-partical {
+        display: inline-block;
+        height: 24px;
+        width: 24px;
+        padding: 8px;
+        margin-left: 3px;
+        margin-right: 2%;
+        margin-top: 3px;
+        margin-bottom: 6px;
+        float: right;
+        border: 2px solid white;
+        border-radius: 22px;
+    }
+        .image-button-partical:hover {
+            background-color: whitesmoke;
+        }
+    .image-button-poem-partical {
+        display: inline-block;
+        height: 24px;
+        width: 24px;
+        padding: 8px;
+        margin-left: 3px;
+        margin-right: 3px;
+        margin-top: 3px;
+        margin-bottom: 6px;
+        float: right;
+        border: 2px solid white;
+        border-radius: 22px;
+    }
+
+        .image-button-poem-partical:hover {
+            background-color: whitesmoke;
+        }
+    .image-button-word {
+        display: inline-block;
+        height: 24px;
+        width: 24px;
+        padding: 8px;
+        margin-left: 3px;
+        margin-right: 3px;
+        margin-top: 3px;
+        margin-bottom: 6px;
+        float: right;
+        border: 2px solid white;
+        border-radius: 22px;
+    }
+
+        .image-button-word:hover {
+            background-color: whitesmoke;
+        }
 }
 

@@ -18,7 +18,7 @@
         
         <header>
             <div class="header-main">
-                <img class="logo_img" src="Content/header/main_logo.png" />
+                <img class="logo_img" src="Content/header/main-logo-png-v3.png" />
                 <h1 class="logo"> LITCLASSIC </h1>
             </div>
             <div class="logo-links">
@@ -81,37 +81,31 @@
             <div class="footer-main">
                 <div class="footer-buttons">
                     <div class="footer-button-partical">
-                        <%--<asp:ImageButton ID="ImageButtonPartical" runat="server" ImageUrl="Content/footer/partical_icon.png" 
-                            AlternateText="Случайная &quot;частица&quot;" CssClass="image-button-partical" 
-                            OnClick="ImageButtonPartical_Click" ToolTip="Случайная &quot;частица&quot;" BorderWidth="10px" />
-                        <div class="footer-button-partical-text">
-                            <p style="color: black; text-align: center; font-size: small; margin-top: -10px;">Случайная "частица"</p>
-                        </div>--%>
                         <asp:Button ID="ButtonPartical" runat="server" Text="СЛУЧАЙНАЯ &quot;ЧАСТИЦА&quot;" 
                             OnClick="ButtonPartical_Click" CssClass="button-partical" />
                     </div>
-                    <div class="footer-button-poem-partical">
-                        <%--<asp:ImageButton ID="ImageButtonPoemPartical" runat="server" ImageUrl="Content/footer/poem_partical_icon.png" 
-                            BorderWidth="10px" AlternateText="Случайная стихотворная &quot;частица&quot;" 
-                            CssClass="image-button-poem-partical" OnClick="ImageButtonPoemPartical_Click" 
-                            ToolTip="Случайная стихотворная &quot;частица&quot;" />
-                        <div class="footer-button-poem-partical-text">
-                            <p style="color: black; text-align: center; font-size: small; margin-top: -10px;">Случайная стихотворная "частица"</p>
-                        </div>--%>
+                    <div class="footer-button-poem-partical">                       
                         <asp:Button ID="ButtonPoemPartical" runat="server" Text="СЛУЧАЙНАЯ СТИХОТВОРНАЯ &quot;ЧАСТИЦА&quot;" 
                             OnClick="ButtonPoemPartical_Click" CssClass="button-poem-partical" />
                     </div>
-                    <div class="footer-button-word">
-                        <%--<asp:ImageButton ID="ImageButtonWord" runat="server" ImageUrl="Content/footer/word_icon.png" 
-                            BorderWidth="10px" AlternateText="Случайное слово из словаря В.И.Даля" 
-                            CssClass="image-button-word" OnClick="ImageButtonWord_Click" 
-                            ToolTip="Случайное слово из словаря В.И.Даля" />
-                        <div class="footer-button-word-text">
-                            <p style="color: black; text-align: center; font-size: small; margin-top: -10px;">Случайное слово из словаря В.И.Даля</p>
-                        </div>--%>
+                    <div class="footer-button-word">                  
                         <asp:Button ID="ButtonWord" runat="server" Text="СЛУЧАЙНОЕ СЛОВО ИЗ СЛОВАРЯ В.И.ДАЛЯ" 
                             OnClick="ButtonWord_Click" CssClass="button-word" />
                     </div>
+                </div>
+                <div class="footer-images-buttons">
+                    <div class="image-button-partical">
+                        <asp:ImageButton ID="ImageButtonPartical" runat="server" OnClick="ImageButtonPartical_Click"
+                            ImageUrl="Content/footer/partical-icon.png" Height="24px"/>
+                    </div>
+                    <div class="image-button-poem-partical">
+                        <asp:ImageButton ID="ImageButtonPoemPartical" runat="server" OnClick="ImageButtonPoemPartical_Click"
+                            ImageUrl="Content/footer/poem-partical-icon.png" Height="24px"/>
+                    </div>
+                    <div class="image-button-word">
+                        <asp:ImageButton ID="ImageButtonWord" runat="server" OnClick="ImageButtonWord_Click" 
+                            Height="24px" />
+                    </div>           
                 </div>
             </div>
             <div class="footer-full">
