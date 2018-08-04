@@ -156,6 +156,7 @@
     <Content Include="Content\footer\poem-partical-icon.png" />
     <Content Include="Content\footer\word-icon.png" />
     <Content Include="Content\header\main-logo-png-v3.png" />
+    <Content Include="Content\icons\copy-to-clip-board-icon.png" />
     <Content Include="Scripts\AJAX-function.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
