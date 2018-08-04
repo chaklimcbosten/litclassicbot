@@ -154,6 +154,7 @@
   <ItemGroup>
     <Content Include="Content\footer\partical-icon.png" />
     <Content Include="Content\footer\poem-partical-icon.png" />
+    <Content Include="Content\footer\word-icon.png" />
     <Content Include="Content\header\main-logo-png-v3.png" />
     <Content Include="Scripts\AJAX-function.js" />
     <Content Include="Content\bootstrap.css" />
@@ -168,6 +169,8 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Fakes Include="Fakes\Microsoft.Bot.Builder.fakes" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

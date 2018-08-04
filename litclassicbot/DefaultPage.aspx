@@ -104,7 +104,7 @@
                     </div>
                     <div class="image-button-word">
                         <asp:ImageButton ID="ImageButtonWord" runat="server" OnClick="ImageButtonWord_Click" 
-                            Height="24px" />
+                            ImageUrl="Content/footer/word-icon.png" Height="24px" />
                     </div>           
                 </div>
             </div>
