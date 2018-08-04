@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>LitClassic - сервис привлечения внимания к русской классической литературе</title>
+    <title>LITCLASSIC - сервис привлечения внимания к русской классической литературе</title>
     <link href="DefaultPageStyleSheet.css" rel="stylesheet" type="text/css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%--<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&amp;subset=cyrillic-ext" rel="stylesheet">--%>  
