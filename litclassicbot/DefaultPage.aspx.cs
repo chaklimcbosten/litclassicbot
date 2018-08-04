@@ -270,6 +270,7 @@ namespace litclassicbot
             LabelWordName.Text = "";
             LabelWordValue.Text = "";
             LabelParticalLine.Visible = true;
+            LabelSubtitleParticalLine.Visible = true;
             LabelSubtitleParticalTitle.Visible = true;
             LabelParticalTitle.Visible = true;
         }
@@ -293,6 +294,7 @@ namespace litclassicbot
             LabelWordName.Text = "";
             LabelWordValue.Text = "";
             LabelPoemParticalLine.Visible = true;
+            LabelSubtitleParticalLine.Visible = true;
             LabelSubtitleParticalTitle.Visible = true;
             LabelParticalTitle.Visible = true;
         }
@@ -359,6 +361,7 @@ namespace litclassicbot
             LabelWordName.Text = "";
             LabelWordValue.Text = "";
             LabelParticalLine.Visible = true;
+            LabelSubtitleParticalLine.Visible = true;
             LabelSubtitleParticalTitle.Visible = true;
             LabelParticalTitle.Visible = true;
         }
@@ -382,6 +385,7 @@ namespace litclassicbot
             LabelWordName.Text = "";
             LabelWordValue.Text = "";
             LabelPoemParticalLine.Visible = true;
+            LabelSubtitleParticalLine.Visible = true;
             LabelSubtitleParticalTitle.Visible = true;
             LabelParticalTitle.Visible = true;
             //ButtonPoemPartical.BackColor = whitesmoke;
