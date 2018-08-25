@@ -106,6 +106,10 @@
                         <asp:ImageButton ID="ImageButtonWord" runat="server" OnClick="ImageButtonWord_Click" 
                             ImageUrl="Content/footer/word-icon.png" Height="24px" />
                     </div>           
+                    <div class="image-button-copy-to-clipboard">
+                        <asp:ImageButton ID="ImageButton1" runat="server" OnClick="ImageButtonCopyToClipboard_Click" 
+                            ImageUrl="Content/icons/copy-to-clipboard-icon.png" Height="24" />
+                    </div>
                 </div>
             </div>
             <div class="footer-full">
