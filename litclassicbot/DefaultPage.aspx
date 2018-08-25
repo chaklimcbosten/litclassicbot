@@ -47,6 +47,11 @@
             
             <asp:Label ID="LabelAboutSite" runat="server" CssClass="label-about-site"></asp:Label>
 
+            <asp:Label ID="LabelSubtitlePartical" runat="server" Text="О частицах"
+                CssClass="label-subtitle-partical"></asp:Label>
+
+            <asp:Label ID="LabelPartical" runat="server" CssClass="label-partical"></asp:Label>
+
             <asp:Label ID="LabelParticalLine" runat="server" Visible="False"></asp:Label>
             <asp:Label ID="LabelPoemParticalLine" runat="server" Visible="False"></asp:Label>
             <asp:Label ID="LabelWordName" runat="server" Visible="False"></asp:Label>
