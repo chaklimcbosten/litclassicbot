@@ -211,6 +211,15 @@ namespace litclassicbot {
         protected global::System.Web.UI.WebControls.Label LabelGratitudes;
         
         /// <summary>
+        /// LabelToCopy элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelToCopy;
+        
+        /// <summary>
         /// ButtonPartical элемент управления.
         /// </summary>
         /// <remarks>
@@ -263,14 +272,5 @@ namespace litclassicbot {
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton ImageButtonWord;
-        
-        /// <summary>
-        /// ImageButton1 элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
     }
 }

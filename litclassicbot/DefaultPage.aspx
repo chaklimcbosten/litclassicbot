@@ -9,7 +9,8 @@
     <link href="DefaultPageStyleSheet.css" rel="stylesheet" type="text/css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%--<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&amp;subset=cyrillic-ext" rel="stylesheet">--%>  
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300&amp;subset=cyrillic-ext" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300&amp;subset=cyrillic-ext" rel="stylesheet" /> 
+    <%--<script src="Scripts/clipboard.min.js"></script>--%>
 </head>
 <body>
     <form class="form1" runat="server">
@@ -32,6 +33,8 @@
                     CssClass="link-button-main-page">О САЙТЕ</asp:LinkButton>
             </div>           
         </header>
+
+
 
 
 
@@ -78,6 +81,29 @@
                 CssClass="label-subtitle-gratitudes"></asp:Label>
 
             <asp:Label ID="LabelGratitudes" runat="server" CssClass="label-gratitudes"></asp:Label>
+
+
+
+            <asp:Label ID="LabelToCopy" runat="server" Visible="False"></asp:Label>
+
+            <div class="image-button-copy-to-clipboard">
+                <button id="btn" data-clipboard-target="label-partical-line"> </button>
+
+                <script src="Scripts/clipboard.min.js"></script>
+                <script>
+                    var LabelToCopy = document.getElementById('LabelToCopy');
+                    var clipboard = new ClipboardJS(LabelToCopy);
+                    clipboard.on('success', function (e) {
+                        console.log(e);
+                    });
+                    clipboard.on('error', function (e) {
+                        console.log(e);
+                    });
+                </script>
+
+<%--                <asp:ImageButton ID="ImageButton1" runat="server" OnClick="ImageButtonCopyToClipboard_Click" 
+                    ImageUrl="Content/icons/copy-to-clipboard-icon.png" Height="24" />--%>
+            </div>
         </div>
 
 
@@ -111,10 +137,6 @@
                         <asp:ImageButton ID="ImageButtonWord" runat="server" OnClick="ImageButtonWord_Click" 
                             ImageUrl="Content/footer/word-icon.png" Height="24px" />
                     </div>           
-                    <div class="image-button-copy-to-clipboard">
-                        <asp:ImageButton ID="ImageButton1" runat="server" OnClick="ImageButtonCopyToClipboard_Click" 
-                            ImageUrl="Content/icons/copy-to-clipboard-icon.png" Height="24" />
-                    </div>
                 </div>
             </div>
             <div class="footer-full">

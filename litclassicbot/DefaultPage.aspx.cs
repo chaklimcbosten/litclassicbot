@@ -32,7 +32,7 @@ namespace litclassicbot
                 "но лишь добровольно посвятившая себя добру фантазия приносит настоящие, ценные плоды. " +
                 "Как быть фантазии в современном, столь изощрённым на самые разные мелочи мире? " +
                 "На чём остановить её интерес во столь красочном, поглощающем внимание интернете? " +
-                "Моя \"проба перва\" - в интернете можно создать систему, которая бы точно и метко направляла бы фантазию ко всему верному, " +
+                "Моя \"проба пера\" - в интернете можно создать систему, которая бы точно и метко направляла бы фантазию ко всему верному, " +
                 "сливаясь при этом по своей комфортности и привлекательности с остальным виртуальным пространством.</p>";
             LabelPartical.Text = "<p>Вы словно открываете книгу на случайной странице. " +
                 "Неизвестная она для Вас и новая ли, читанная, но позабытая ли - её страница хоть чуть-чуть увлекает Вас. " +
@@ -45,7 +45,8 @@ namespace litclassicbot
                 "но что скрыто было по неизвестным причинам от Вашего внимания доселе?</p>" +
                 "<p>Восстанавливая упущения школьной программы, ценя дорогое, утекающее в дела время, " +
                 "здесь не нужно искать книги, знать, какие прочесть в первую очередь, т.к. всё - уже собрано и подготовлено. " +
-                "В книгах этих лица русской литературы и русской души - Аксаков, Батюшков, Пушкин, Гоголь, Лермонтов, Достоевский, Одоевский, Державин и другие - " +
+                "В книгах этих лица русской литературы и русской души, ревнители Правды, стойкие и трудолюбивые воины Отечества" +
+                " - Пушкин, Гоголь, Достоевский, Лермонтов, Державин, Аксаков, Жуковский, Ломоносов и другие - " +
                 "помогают вспомнить себя и свой труд, посвящённый не силе безначального искусства, " +
                 "но человеческому пути к более чистому и светлому состоянию.</p>";
             LabelNavigation.Text = "<p>В верхней части сайта - \"шапке\" - клавиши навигации и ссылок.</p>" +
@@ -75,8 +76,8 @@ namespace litclassicbot
             currentParticalID = Convert.ToInt32(listGetRandomPartical[3]);
             int bookID = Convert.ToInt32(listGetRandomPartical[4]);
             // создаёт "обёрточный" класс для всего содержания "частицы"
-            string beginPartical = "<div class=\"label-partical-line\">";
-            string endPartical = "</div>";
+            string beginPartical = "<div class=\"label-partical-line\"><p>";
+            string endPartical = "</p></div>";
             // замена символов новой строки на тег, выполняющий это в html
             partical = beginPartical + partical.Replace("\n\r", "</p><p>") + endPartical;
             // создаёт "обёрточный" класс для всего содержания сведения о "частице"
@@ -91,6 +92,8 @@ namespace litclassicbot
             LabelSubtitleMain.Text = "Случайная \"частица\"";
             LabelSubtitleParticalLine.Text = "\"Частица\"";
             LabelSubtitleParticalTitle.Text = "Сведения о \"частице\"";
+
+            LabelToCopy.Text = partical;
         }
         private void ShowRandomPoemPartical()
         {
@@ -107,8 +110,8 @@ namespace litclassicbot
             currentParticalID = Convert.ToInt32(listGetRandomPartical[3]);
             int bookID = Convert.ToInt32(listGetRandomPartical[4]);
             // создаёт "обёрточный" класс для всего содержания "частицы"
-            string beginPartical = "<div class=\"label-poem-partical-line\">";
-            string endPartical = "</div>";
+            string beginPartical = "<div class=\"label-poem-partical-line\"><p>";
+            string endPartical = "</p></div>";
             // замена символов новой строки на тег, выполняющий это в html
             partical = beginPartical + partical.Replace("\n\r", "</p><p>") + endPartical;
             // создаёт "обёрточный" класс для всего содержания сведения о "частице"
@@ -273,6 +276,8 @@ namespace litclassicbot
 
             LabelSubtitleAboutSite.Visible = false;
             LabelAboutSite.Visible = false;
+            LabelSubtitlePartical.Visible = false;
+            LabelPartical.Visible = false;
             LabelSubtitleNavigation.Visible = false;
             LabelNavigation.Visible = false;
             LabelSubtitleStatistics.Visible = false;
@@ -297,6 +302,8 @@ namespace litclassicbot
 
             LabelSubtitleAboutSite.Visible = false;
             LabelAboutSite.Visible = false;
+            LabelSubtitlePartical.Visible = false;
+            LabelPartical.Visible = false;
             LabelSubtitleNavigation.Visible = false;
             LabelNavigation.Visible = false;
             LabelSubtitleStatistics.Visible = false;
@@ -320,6 +327,8 @@ namespace litclassicbot
 
             LabelSubtitleAboutSite.Visible = false;
             LabelAboutSite.Visible = false;
+            LabelSubtitlePartical.Visible = false;
+            LabelPartical.Visible = false;
             LabelSubtitleNavigation.Visible = false;
             LabelNavigation.Visible = false;
             LabelSubtitleStatistics.Visible = false;
@@ -369,6 +378,8 @@ namespace litclassicbot
 
             LabelSubtitleAboutSite.Visible = false;
             LabelAboutSite.Visible = false;
+            LabelSubtitlePartical.Visible = false;
+            LabelPartical.Visible = false;
             LabelSubtitleNavigation.Visible = false;
             LabelNavigation.Visible = false;
             LabelSubtitleStatistics.Visible = false;
@@ -393,6 +404,8 @@ namespace litclassicbot
 
             LabelSubtitleAboutSite.Visible = false;
             LabelAboutSite.Visible = false;
+            LabelSubtitlePartical.Visible = false;
+            LabelPartical.Visible = false;
             LabelSubtitleNavigation.Visible = false;
             LabelNavigation.Visible = false;
             LabelSubtitleStatistics.Visible = false;
@@ -418,6 +431,8 @@ namespace litclassicbot
 
             LabelSubtitleAboutSite.Visible = false;
             LabelAboutSite.Visible = false;
+            LabelSubtitlePartical.Visible = false;
+            LabelPartical.Visible = false;
             LabelSubtitleNavigation.Visible = false;
             LabelNavigation.Visible = false;
             LabelSubtitleStatistics.Visible = false;
