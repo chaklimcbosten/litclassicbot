@@ -8,7 +8,6 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>LITCLASSIC - сервис привлечения внимания к русской классической литературе</title>
-    <%--<link href="Content/CSS/MasterStyleSheet.css" rel="stylesheet" type="text/css"/>--%>
     <link href="Content/CSS/StyleSheet.css" rel="stylesheet" type="text/css"/>
     <%--Не знаю, нужна ли следующая строка--%>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,14 +26,20 @@
                 <div class="logo"> LITCLASSIC </div>
             </div>
             <div class="logo-links">
-                <asp:LinkButton ID="LinkButtonAuthorization" runat="server" OnClick="LinkButtonAuthorization_Click" 
+                <a href="~/" runat="server" class="link-button-authorization">АВТОРИЗАЦИЯ</a>
+                <a href="https://t.me/litclassicbot" target="_blank" runat="server" 
+                    class="link-button-authorization">БОТ ДЛЯ TELEGRAM</a>
+                <a href="https://vk.com/litclassic" target="_blank" runat="server" 
+                    class="link-button-authorization">СООБЩЕСТВО ВКОНТАКТЕ</a>
+                <a href="~/" runat="server" class="link-button-authorization">О САЙТЕ</a>
+<%--                <asp:LinkButton ID="LinkButtonAuthorization" runat="server" OnClick="LinkButtonAuthorization_Click" 
                     CssClass="link-button-authorization">АВТОРИЗАЦИЯ</asp:LinkButton>
                 <asp:LinkButton ID="LinkButtonTelegramBot" runat="server" CssClass="link-button-telegram-bot" 
                     OnClientClick="window.open('https://t.me/litclassicbot')">БОТ ДЛЯ TELEGRAM</asp:LinkButton>
                 <asp:LinkButton ID="LinkButtonVKPublic" runat="server" CssClass="link-button-vk" 
                     OnClientClick="window.open('https://vk.com/litclassic')">СООБЩЕСТВО ВКОНТАКТЕ</asp:LinkButton> 
                 <asp:LinkButton ID="LinkButtonMainPage" runat="server" OnClick="LinkButtonMainPage_Click" 
-                    CssClass="link-button-main-page">О САЙТЕ</asp:LinkButton>
+                    CssClass="link-button-main-page">О САЙТЕ</asp:LinkButton>--%>
             </div>           
         </header>
 
