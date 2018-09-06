@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DefaultPage.aspx.cs" Inherits="litclassicbot.FirstWebPage" %>
+﻿<%--<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DefaultPage.aspx.cs" Inherits="litclassicbot.FirstWebPage" %>
 
 <!DOCTYPE html>
 
@@ -8,50 +8,35 @@
     <title>LITCLASSIC - сервис привлечения внимания к русской классической литературе</title>
     <link href="DefaultPageStyleSheet.css" rel="stylesheet" type="text/css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <%--<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&amp;subset=cyrillic-ext" rel="stylesheet">--%>  
     <link href="https://fonts.googleapis.com/css?family=Roboto:300&amp;subset=cyrillic-ext" rel="stylesheet" /> 
-    <%--<script src="Scripts/clipboard.min.js"></script>--%>
 </head>
 <body>
     <form class="form1" runat="server">
-
+--%>
 
         
-        <header>
-            <div class="header-main">
-                <img class="logo_img" src="Content/header/main-logo-png-v3.png" />
-                <h1 class="logo"> LITCLASSIC </h1>
-            </div>
-            <div class="logo-links">
-                <asp:LinkButton ID="LinkButtonAuthorization" runat="server" OnClick="LinkButtonAuthorization_Click" 
-                    CssClass="link-button-authorization">АВТОРИЗАЦИЯ</asp:LinkButton>
-                <asp:LinkButton ID="LinkButtonTelegramBot" runat="server" CssClass="link-button-telegram-bot" 
-                    OnClientClick="window.open('https://t.me/litclassicbot')">БОТ ДЛЯ TELEGRAM</asp:LinkButton>
-                <asp:LinkButton ID="LinkButtonVKPublic" runat="server" CssClass="link-button-vk" 
-                    OnClientClick="window.open('https://vk.com/litclassic')">СООБЩЕСТВО ВКОНТАКТЕ</asp:LinkButton> 
-                <asp:LinkButton ID="LinkButtonMainPage" runat="server" OnClick="LinkButtonMainPage_Click" 
-                    CssClass="link-button-main-page">О САЙТЕ</asp:LinkButton>
-            </div>           
-        </header>
+<%@ Page Title="LITCLASSIC" Language="C#" MasterPageFile="~/litclassic.Master" AutoEventWireup="true" CodeBehind="DefaultPage.aspx.cs" Inherits="litclassicbot._Default" %>
+
+    <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
 
 
 
 
         <div class="main">
-            <p><asp:Label ID="LabelSubtitleMain" runat="server" Text="Главная страница" 
-                CssClass="label-subtitle-main"></asp:Label></p>
+            <h1><asp:Label ID="LabelSubtitleMain" runat="server" Text="Главная страница" 
+                CssClass="label-subtitle-main"></asp:Label></h1>
 
             <p><asp:Label ID="LabelSubtitleParticalLine" runat="server" 
                 CssClass="label-subtitle-partical-line" Visible="False"></asp:Label></p>
 
-            <asp:Label ID="LabelSubtitleAboutSite" runat="server" Text="О сайте"
-                CssClass="label-subtitle-about-site"></asp:Label>
+            <h2><asp:Label ID="LabelSubtitleAboutSite" runat="server" Text="О сайте"
+                CssClass="label-subtitle-about-site"></asp:Label></h2>
             
             <asp:Label ID="LabelAboutSite" runat="server" CssClass="label-about-site"></asp:Label>
 
-            <asp:Label ID="LabelSubtitlePartical" runat="server" Text="О частицах"
-                CssClass="label-subtitle-partical"></asp:Label>
+            <h2><asp:Label ID="LabelSubtitlePartical" runat="server" Text="О частицах"
+                CssClass="label-subtitle-partical"></asp:Label></h2>
 
             <asp:Label ID="LabelPartical" runat="server" CssClass="label-partical"></asp:Label>
 
@@ -59,8 +44,8 @@
             <asp:Label ID="LabelPoemParticalLine" runat="server" Visible="False"></asp:Label>
             <asp:Label ID="LabelWordName" runat="server" Visible="False"></asp:Label>
 
-            <asp:Label ID="LabelSubtitleNavigation" runat="server" Text="Навигация" 
-                CssClass="label-subtitle-navigation"></asp:Label>
+            <h2><asp:Label ID="LabelSubtitleNavigation" runat="server" Text="Навигация" 
+                CssClass="label-subtitle-navigation"></asp:Label></h2>
 
             <asp:Label ID="LabelNavigation" runat="server" CssClass="label-navigation"></asp:Label>
 
@@ -72,13 +57,13 @@
             <asp:Label ID="LabelWordValue" runat="server" Text="Здесь будет значение слова 
                 из словаря В.И.Даля." Visible="False"></asp:Label>
 
-            <asp:Label ID="LabelSubtitleStatistics" runat="server" Text="Статистика" 
-                CssClass="label-subtitle-statistics"></asp:Label>
+            <h2><asp:Label ID="LabelSubtitleStatistics" runat="server" Text="Статистика" 
+                CssClass="label-subtitle-statistics"></asp:Label></h2>
             
             <asp:Label ID="LabelStatistics" runat="server" CssClass="label-statistics"></asp:Label>
 
-            <asp:Label ID="LabelSubtitleGratitudes" runat="server" Text="Благодарности" 
-                CssClass="label-subtitle-gratitudes"></asp:Label>
+            <h2><asp:Label ID="LabelSubtitleGratitudes" runat="server" Text="Благодарности" 
+                CssClass="label-subtitle-gratitudes"></asp:Label></h2>
 
             <asp:Label ID="LabelGratitudes" runat="server" CssClass="label-gratitudes"></asp:Label>
 
@@ -91,7 +76,7 @@
 
                 <script src="Scripts/clipboard.min.js"></script>
                 <script>
-                    var LabelToCopy = document.getElementById('LabelToCopy');
+                    var LabelToCopy = document.getElementById("label-to-copy");
                     var clipboard = new ClipboardJS(LabelToCopy);
                     clipboard.on('success', function (e) {
                         console.log(e);
@@ -105,7 +90,6 @@
                     ImageUrl="Content/icons/copy-to-clipboard-icon.png" Height="24" />--%>
             </div>
         </div>
-
 
 
         <div class="footer">
@@ -143,6 +127,9 @@
 
             </div>
         </div>
-    </form>
+        
+
+    </asp:Content>
+<%--    </form>
 </body>
-</html>
+</html>--%>

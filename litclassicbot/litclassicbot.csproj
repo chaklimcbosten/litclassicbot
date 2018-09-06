@@ -152,6 +152,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\CSS\MasterStyleSheet.css" />
     <Content Include="Content\footer\partical-icon.png" />
     <Content Include="Content\footer\poem-partical-icon.png" />
     <Content Include="Content\footer\word-icon.png" />
@@ -164,12 +165,13 @@
     <Content Include="Content\Site.css" />
     <Content Include="default.htm" />
     <Content Include="DefaultPage.aspx" />
-    <Content Include="DefaultPageStyleSheet.css" />
+    <Content Include="Content\CSS\StyleSheet.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Fakes Include="Fakes\Microsoft.Bot.Builder.fakes" />
+    <Content Include="litclassic.Master" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <None Include="Properties\PublishProfiles\litclassicApp - FTP.pubxml" />
@@ -206,6 +208,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="litclassic.Master.cs">
+      <DependentUpon>litclassic.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="litclassic.Master.designer.cs">
+      <DependentUpon>litclassic.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -8,13 +8,13 @@ using System.Web.UI.WebControls;
 
 namespace litclassicbot
 {
-    public partial class FirstWebPage : System.Web.UI.Page
+    public partial class _Default : Page
     {
         private int currentParticalID = -1;
         private string randomParticalButtonText;
         private string randomPoemParticalButtonText;
 
-
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             GetTotalStatistics();
@@ -93,7 +93,7 @@ namespace litclassicbot
             LabelSubtitleParticalLine.Text = "\"Частица\"";
             LabelSubtitleParticalTitle.Text = "Сведения о \"частице\"";
 
-            LabelToCopy.Text = partical;
+            LabelToCopy.Text = "<div id=\"label-to-copy\">" + partical + "</div>";
         }
         private void ShowRandomPoemPartical()
         {
@@ -448,7 +448,6 @@ namespace litclassicbot
             LabelSubtitleParticalTitle.Visible = true;
             LabelWordValue.Visible = true;
         }
-
 
         //private void ReportPartical()
         //{
