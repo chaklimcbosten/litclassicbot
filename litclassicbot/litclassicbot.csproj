@@ -173,7 +173,9 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Words.aspx" />
+    <Content Include="Words.aspx">
+      <BrowseToURL>~/Words.aspx</BrowseToURL>
+    </Content>
     <Fakes Include="Fakes\Microsoft.Bot.Builder.fakes" />
     <Content Include="litclassic.Master" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />

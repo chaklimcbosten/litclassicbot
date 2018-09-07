@@ -18,7 +18,7 @@
     <form id="form1" runat="server">
         <header>
             <div class="header-main">
-                <img class="logo_img" src="Content/header/main-logo-png-v3.png" />
+                <a href="~/" runat="server"><img class="logo_img" src="Content/header/main-logo-png-v3.png" /></a>
                 <div class="logo"> LITCLASSIC </div>
             </div>
             <div class="logo-links">

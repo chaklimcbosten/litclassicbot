@@ -443,5 +443,9 @@ ASALocalRun/
 .localhistory/
 
 /litclassicbot/Web.config
+
 /litclassicbot/Dialogs/BotDBConnect.cs
+
 /litclassicbot/Classes/BotDBConnect.cs
+
+BotDBConnect.cs
