@@ -201,7 +201,6 @@
     <Compile Include="Classes\BotDBConnect.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\NextQuoteController.cs" />
-    <Compile Include="Dialogs\BotDBConnect.cs" />
     <Compile Include="Dialogs\RootDialog.cs" />
     <Compile Include="Dialogs\Title.cs" />
     <Compile Include="DefaultPage.aspx.cs">
