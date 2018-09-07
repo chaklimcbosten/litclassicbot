@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
 
-namespace litclassicbot.Dialogs
+namespace litclassicbot.Classes
 {
     public class BotDBConnect
     {

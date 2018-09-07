@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
 using System.Linq;
+using litclassicbot.Classes;
 
 namespace litclassicbot.Dialogs
 {
