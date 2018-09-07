@@ -3,8 +3,6 @@
 <!DOCTYPE html>
 
 <html>
-
-
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>LITCLASSIC - сервис привлечения внимания к русской классической литературе</title>
@@ -16,8 +14,6 @@
     </asp:ContentPlaceHolder>
 </head>
 
-
-
 <body>
     <form id="form1" runat="server">
         <header>
@@ -28,33 +24,41 @@
             <div class="logo-links">
                 <a href="~/" runat="server" class="link-button-authorization">АВТОРИЗАЦИЯ</a>
                 <a href="https://t.me/litclassicbot" target="_blank" runat="server" 
-                    class="link-button-authorization">БОТ ДЛЯ TELEGRAM</a>
+                    class="link-button-telegram-bot">БОТ ДЛЯ TELEGRAM</a>
                 <a href="https://vk.com/litclassic" target="_blank" runat="server" 
-                    class="link-button-authorization">СООБЩЕСТВО ВКОНТАКТЕ</a>
-                <a href="~/" runat="server" class="link-button-authorization">О САЙТЕ</a>
-<%--                <asp:LinkButton ID="LinkButtonAuthorization" runat="server" OnClick="LinkButtonAuthorization_Click" 
-                    CssClass="link-button-authorization">АВТОРИЗАЦИЯ</asp:LinkButton>
-                <asp:LinkButton ID="LinkButtonTelegramBot" runat="server" CssClass="link-button-telegram-bot" 
-                    OnClientClick="window.open('https://t.me/litclassicbot')">БОТ ДЛЯ TELEGRAM</asp:LinkButton>
-                <asp:LinkButton ID="LinkButtonVKPublic" runat="server" CssClass="link-button-vk" 
-                    OnClientClick="window.open('https://vk.com/litclassic')">СООБЩЕСТВО ВКОНТАКТЕ</asp:LinkButton> 
-                <asp:LinkButton ID="LinkButtonMainPage" runat="server" OnClick="LinkButtonMainPage_Click" 
-                    CssClass="link-button-main-page">О САЙТЕ</asp:LinkButton>--%>
+                    class="link-button-vk">СООБЩЕСТВО ВКОНТАКТЕ</a>
+                <a href="~/" runat="server" class="link-button-main-page">О САЙТЕ</a>
             </div>           
         </header>
 
-
-
-
         <div>
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
         </div>
 
-
-
-
-        
+         <div class="footer">
+            <div class="footer-main">
+                <div class="footer-buttons">
+                    <div class="footer-button-partical">
+                        <a class="button-partical" href="Particals.aspx">ЧАСТИЦЫ</a>
+                    </div>
+                    <div class="footer-button-word">                  
+                        <a class="button-word" href="Words.aspx">СЛОВАРЬ В.И.ДАЛЯ</a>
+                    </div>
+                </div>
+                <div class="footer-images-buttons">
+                    <div class="image-button-partical">
+                        <a href="Particals.aspx"><img src="Content/footer/partical-icon.png" height="24" width="24"/></a>
+                    </div>
+<%--                <div class="image-button-poem-partical">
+                        <asp:ImageButton ID="ImageButtonPoemPartical" runat="server" OnClick="ImageButtonPoemPartical_Click"
+                            ImageUrl="Content/footer/poem-partical-icon.png" Height="24px"/>
+                    </div>--%>
+                    <div class="image-button-word">
+                        <a href="Words.aspx"><img src="Content/footer/word-icon.png" height="24" width="24"/></a>
+                    </div>           
+                </div>
+            </div>
+         </div>       
     </form>
 </body>
 </html>

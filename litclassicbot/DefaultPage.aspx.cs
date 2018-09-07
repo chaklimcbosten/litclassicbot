@@ -13,7 +13,7 @@ namespace litclassicbot
         private int currentParticalID = -1;
         private string randomParticalButtonText;
         private string randomPoemParticalButtonText;
-
+        public string copyToClipboard = "";
         
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -61,107 +61,107 @@ namespace litclassicbot
         }
 
 
-        private void ShowRandomPartical()
-        {
-            BotDBConnect currentConnection = new BotDBConnect();
+        //private void ShowRandomPartical()
+        //{
+        //    BotDBConnect currentConnection = new BotDBConnect();
 
-            currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
+        //    currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
 
-            List<string> listGetRandomPartical = new List<string>();
-            listGetRandomPartical = currentConnection.GetRandomPartical("web");
-            string partical = listGetRandomPartical[0];
-            string title = listGetRandomPartical[1];
-            int indeLastLine = Convert.ToInt32(listGetRandomPartical[2]);
-            // для отправки сообщения об ошибке
-            currentParticalID = Convert.ToInt32(listGetRandomPartical[3]);
-            int bookID = Convert.ToInt32(listGetRandomPartical[4]);
-            // создаёт "обёрточный" класс для всего содержания "частицы"
-            string beginPartical = "<div class=\"label-partical-line\"><p>";
-            string endPartical = "</p></div>";
-            // замена символов новой строки на тег, выполняющий это в html
-            partical = beginPartical + partical.Replace("\n\r", "</p><p>") + endPartical;
-            // создаёт "обёрточный" класс для всего содержания сведения о "частице"
-            string beginTitle = "<div class=\"label-partical-title\">";
-            string endTitle = "</div>";
-            // замена символов новой строки на тег, выполняющий это в html
-            title = beginTitle + title.Replace("\n\r", "<br>") + endTitle;
-            LabelParticalLine.Text = partical;
-            randomParticalButtonText = partical;
-            LabelParticalTitle.Text = title;
-            randomPoemParticalButtonText = title;
-            LabelSubtitleMain.Text = "Случайная \"частица\"";
-            LabelSubtitleParticalLine.Text = "\"Частица\"";
-            LabelSubtitleParticalTitle.Text = "Сведения о \"частице\"";
+        //    List<string> listGetRandomPartical = new List<string>();
+        //    listGetRandomPartical = currentConnection.GetRandomPartical("web");
+        //    string partical = listGetRandomPartical[0];
+        //    string title = listGetRandomPartical[1];
+        //    int indeLastLine = Convert.ToInt32(listGetRandomPartical[2]);
+        //    // для отправки сообщения об ошибке
+        //    currentParticalID = Convert.ToInt32(listGetRandomPartical[3]);
+        //    int bookID = Convert.ToInt32(listGetRandomPartical[4]);
+        //    // создаёт "обёрточный" класс для всего содержания "частицы"
+        //    string beginPartical = "<div class=\"label-partical-line\"><p>";
+        //    string endPartical = "</p></div>";
+        //    // замена символов новой строки на тег, выполняющий это в html
+        //    partical = beginPartical + partical.Replace("\n\r", "</p><p>") + endPartical;
+        //    // создаёт "обёрточный" класс для всего содержания сведения о "частице"
+        //    string beginTitle = "<div class=\"label-partical-title\">";
+        //    string endTitle = "</div>";
+        //    // замена символов новой строки на тег, выполняющий это в html
+        //    title = beginTitle + title.Replace("\n\r", "<br>") + endTitle;
+        //    LabelParticalLine.Text = partical;
+        //    randomParticalButtonText = partical;
+        //    LabelParticalTitle.Text = title;
+        //    randomPoemParticalButtonText = title;
+        //    LabelSubtitleMain.Text = "Случайная \"частица\"";
+        //    LabelSubtitleParticalLine.Text = "\"Частица\"";
+        //    LabelSubtitleParticalTitle.Text = "Сведения о \"частице\"";
+        //    LabelToCopy.Text = "<div id=\"ltc\">\"Частица\":\n" + partical + "\nСведения о \"частице\":\n" + title + "</div>";
+        //    copyToClipboard = "\"Частица\":\n" + partical + "\nСведения о \"частице\":\n" + title;
+        //}
+        //private void ShowRandomPoemPartical()
+        //{
+        //    BotDBConnect currentConnection = new BotDBConnect();
 
-            LabelToCopy.Text = "<div id=\"label-to-copy\">" + partical + "</div>";
-        }
-        private void ShowRandomPoemPartical()
-        {
-            BotDBConnect currentConnection = new BotDBConnect();
+        //    currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
 
-            currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
+        //    List<string> listGetRandomPartical = new List<string>();
+        //    listGetRandomPartical = currentConnection.GetRandomPoemPartical("web");
+        //    string partical = listGetRandomPartical[0];
+        //    string title = listGetRandomPartical[1];
+        //    int indeLastLine = Convert.ToInt32(listGetRandomPartical[2]);
+        //    // для отправки сообщения об ошибке
+        //    currentParticalID = Convert.ToInt32(listGetRandomPartical[3]);
+        //    int bookID = Convert.ToInt32(listGetRandomPartical[4]);
+        //    // создаёт "обёрточный" класс для всего содержания "частицы"
+        //    string beginPartical = "<div class=\"label-poem-partical-line\"><p>";
+        //    string endPartical = "</p></div>";
+        //    // замена символов новой строки на тег, выполняющий это в html
+        //    partical = beginPartical + partical.Replace("\n\r", "</p><p>") + endPartical;
+        //    // создаёт "обёрточный" класс для всего содержания сведения о "частице"
+        //    string beginTitle = "<div class=\"label-partical-title\">";
+        //    string endTitle = "</div>";
+        //    // замена символов новой строки на тег, выполняющий это в html
+        //    title = beginTitle + title.Replace("\n\r", "<br>") + endTitle;
+        //    LabelPoemParticalLine.Text = partical;
+        //    randomParticalButtonText = partical;
+        //    LabelParticalTitle.Text = title;
+        //    randomPoemParticalButtonText = title;
+        //    LabelSubtitleMain.Text = "Случайная стихотворная \"частица\"";
+        //    LabelSubtitleParticalLine.Text = "\"Частица\"";
+        //    LabelSubtitleParticalTitle.Text = "Сведения о \"частице\"";
+        //}
+        //private void ShowRandomWord()
+        //{
+        //    BotDBConnect currentConnection = new BotDBConnect();
 
-            List<string> listGetRandomPartical = new List<string>();
-            listGetRandomPartical = currentConnection.GetRandomPoemPartical("web");
-            string partical = listGetRandomPartical[0];
-            string title = listGetRandomPartical[1];
-            int indeLastLine = Convert.ToInt32(listGetRandomPartical[2]);
-            // для отправки сообщения об ошибке
-            currentParticalID = Convert.ToInt32(listGetRandomPartical[3]);
-            int bookID = Convert.ToInt32(listGetRandomPartical[4]);
-            // создаёт "обёрточный" класс для всего содержания "частицы"
-            string beginPartical = "<div class=\"label-poem-partical-line\"><p>";
-            string endPartical = "</p></div>";
-            // замена символов новой строки на тег, выполняющий это в html
-            partical = beginPartical + partical.Replace("\n\r", "</p><p>") + endPartical;
-            // создаёт "обёрточный" класс для всего содержания сведения о "частице"
-            string beginTitle = "<div class=\"label-partical-title\">";
-            string endTitle = "</div>";
-            // замена символов новой строки на тег, выполняющий это в html
-            title = beginTitle + title.Replace("\n\r", "<br>") + endTitle;
-            LabelPoemParticalLine.Text = partical;
-            randomParticalButtonText = partical;
-            LabelParticalTitle.Text = title;
-            randomPoemParticalButtonText = title;
-            LabelSubtitleMain.Text = "Случайная стихотворная \"частица\"";
-            LabelSubtitleParticalLine.Text = "\"Частица\"";
-            LabelSubtitleParticalTitle.Text = "Сведения о \"частице\"";
-        }
-        private void ShowRandomWord()
-        {
-            BotDBConnect currentConnection = new BotDBConnect();
+        //    currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
 
-            currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
-
-            List<string> listGetWord = new List<string>();
-            listGetWord = currentConnection.GetRandomWord("web");
-            // получение имени слова
-            string wordName = listGetWord[0];
-            // получение значения слова
-            string wordValue = listGetWord[1];
-            // получение ссылок слова
-            string wordLinks = listGetWord[2];
-            // получение первой буквы слова
-            // может быть, проще её получать из имени?
-            string wordFirstLetter = listGetWord[3];
-            // создаёт "обёрточный" класс для всего содержания значения слова
-            string beginWordName = "<div class=\"label-word-name\">";
-            string endWordName = "</div>";
-            // замена символов новой строки на тег, выполняющий это в html
-            wordName = beginWordName + wordName.Replace("\n\r", "<br>") + endWordName;
-            // создаёт "обёрточный" класс для всего содержания значения слова
-            string beginWordValue = "<div class=\"label-word-value\">";
-            string endWordValue = "</div>";
-            // замена символов новой строки на тег, выполняющий это в html
-            wordValue = beginWordValue + wordValue.Replace("\n\r", "<br>") + endWordValue;
-            LabelWordName.Text = wordName;
-            randomParticalButtonText = wordName;
-            LabelWordValue.Text = wordValue;
-            randomPoemParticalButtonText = wordValue;
-            LabelSubtitleMain.Text = "Случайное слово из толкового словаря живого, великорусского языка Владимира Ивановича Даля";
-            LabelSubtitleParticalLine.Text = "Слово";
-            LabelSubtitleParticalTitle.Text = "Значение слова";
-        }
+        //    List<string> listGetWord = new List<string>();
+        //    listGetWord = currentConnection.GetRandomWord("web");
+        //    // получение имени слова
+        //    string wordName = listGetWord[0];
+        //    // получение значения слова
+        //    string wordValue = listGetWord[1];
+        //    // получение ссылок слова
+        //    string wordLinks = listGetWord[2];
+        //    // получение первой буквы слова
+        //    // может быть, проще её получать из имени?
+        //    string wordFirstLetter = listGetWord[3];
+        //    // создаёт "обёрточный" класс для всего содержания значения слова
+        //    string beginWordName = "<div class=\"label-word-name\">";
+        //    string endWordName = "</div>";
+        //    // замена символов новой строки на тег, выполняющий это в html
+        //    wordName = beginWordName + wordName.Replace("\n\r", "<br>") + endWordName;
+        //    // создаёт "обёрточный" класс для всего содержания значения слова
+        //    string beginWordValue = "<div class=\"label-word-value\">";
+        //    string endWordValue = "</div>";
+        //    // замена символов новой строки на тег, выполняющий это в html
+        //    wordValue = beginWordValue + wordValue.Replace("\n\r", "<br>") + endWordValue;
+        //    LabelWordName.Text = wordName;
+        //    randomParticalButtonText = wordName;
+        //    LabelWordValue.Text = wordValue;
+        //    randomPoemParticalButtonText = wordValue;
+        //    LabelSubtitleMain.Text = "Случайное слово из толкового словаря живого, великорусского языка Владимира Ивановича Даля";
+        //    LabelSubtitleParticalLine.Text = "Слово";
+        //    LabelSubtitleParticalTitle.Text = "Значение слова";
+        //}
 
         private void GetTotalStatistics()
         {
@@ -270,85 +270,85 @@ namespace litclassicbot
         }
 
         // кнопка случайная "частица"
-        protected void ImageButtonPartical_Click(object sender, ImageClickEventArgs e)
-        {
-            ShowRandomPartical();
+        //protected void ImageButtonPartical_Click(object sender, ImageClickEventArgs e)
+        //{
+        //    ShowRandomPartical();
 
-            LabelSubtitleAboutSite.Visible = false;
-            LabelAboutSite.Visible = false;
-            LabelSubtitlePartical.Visible = false;
-            LabelPartical.Visible = false;
-            LabelSubtitleNavigation.Visible = false;
-            LabelNavigation.Visible = false;
-            LabelSubtitleStatistics.Visible = false;
-            LabelStatistics.Visible = false;
-            LabelSubtitleGratitudes.Visible = false;
-            LabelGratitudes.Visible = false;
-            LabelWordName.Visible = false;
-            LabelWordValue.Visible = false;
-            LabelPoemParticalLine.Visible = false;
-            LabelWordName.Text = "";
-            LabelWordValue.Text = "";
-            LabelParticalLine.Visible = true;
-            LabelSubtitleParticalLine.Visible = true;
-            LabelSubtitleParticalTitle.Visible = true;
-            LabelParticalTitle.Visible = true;
-        }
+        //    LabelSubtitleAboutSite.Visible = false;
+        //    LabelAboutSite.Visible = false;
+        //    LabelSubtitlePartical.Visible = false;
+        //    LabelPartical.Visible = false;
+        //    LabelSubtitleNavigation.Visible = false;
+        //    LabelNavigation.Visible = false;
+        //    LabelSubtitleStatistics.Visible = false;
+        //    LabelStatistics.Visible = false;
+        //    LabelSubtitleGratitudes.Visible = false;
+        //    LabelGratitudes.Visible = false;
+        //    LabelWordName.Visible = false;
+        //    LabelWordValue.Visible = false;
+        //    LabelPoemParticalLine.Visible = false;
+        //    LabelWordName.Text = "";
+        //    LabelWordValue.Text = "";
+        //    LabelParticalLine.Visible = true;
+        //    LabelSubtitleParticalLine.Visible = true;
+        //    LabelSubtitleParticalTitle.Visible = true;
+        //    LabelParticalTitle.Visible = true;
+        //}
 
-        // кнопка случайная стихотворная "частица"
-        protected void ImageButtonPoemPartical_Click(object sender, ImageClickEventArgs e)
-        {
-            ShowRandomPoemPartical();
+        //// кнопка случайная стихотворная "частица"
+        //protected void ImageButtonPoemPartical_Click(object sender, ImageClickEventArgs e)
+        //{
+        //    ShowRandomPoemPartical();
 
-            LabelSubtitleAboutSite.Visible = false;
-            LabelAboutSite.Visible = false;
-            LabelSubtitlePartical.Visible = false;
-            LabelPartical.Visible = false;
-            LabelSubtitleNavigation.Visible = false;
-            LabelNavigation.Visible = false;
-            LabelSubtitleStatistics.Visible = false;
-            LabelStatistics.Visible = false;
-            LabelSubtitleGratitudes.Visible = false;
-            LabelGratitudes.Visible = false;
-            LabelWordName.Visible = false;
-            LabelWordValue.Visible = false;
-            LabelParticalLine.Visible = false;
-            LabelWordName.Text = "";
-            LabelWordValue.Text = "";
-            LabelPoemParticalLine.Visible = true;
-            LabelSubtitleParticalLine.Visible = true;
-            LabelSubtitleParticalTitle.Visible = true;
-            LabelParticalTitle.Visible = true;
-        }
-        // кнопка случайное слово
-        protected void ImageButtonWord_Click(object sender, ImageClickEventArgs e)
-        {
-            ShowRandomWord();
+        //    LabelSubtitleAboutSite.Visible = false;
+        //    LabelAboutSite.Visible = false;
+        //    LabelSubtitlePartical.Visible = false;
+        //    LabelPartical.Visible = false;
+        //    LabelSubtitleNavigation.Visible = false;
+        //    LabelNavigation.Visible = false;
+        //    LabelSubtitleStatistics.Visible = false;
+        //    LabelStatistics.Visible = false;
+        //    LabelSubtitleGratitudes.Visible = false;
+        //    LabelGratitudes.Visible = false;
+        //    LabelWordName.Visible = false;
+        //    LabelWordValue.Visible = false;
+        //    LabelParticalLine.Visible = false;
+        //    LabelWordName.Text = "";
+        //    LabelWordValue.Text = "";
+        //    LabelPoemParticalLine.Visible = true;
+        //    LabelSubtitleParticalLine.Visible = true;
+        //    LabelSubtitleParticalTitle.Visible = true;
+        //    LabelParticalTitle.Visible = true;
+        //}
+        //// кнопка случайное слово
+        //protected void ImageButtonWord_Click(object sender, ImageClickEventArgs e)
+        //{
+        //    ShowRandomWord();
 
-            LabelSubtitleAboutSite.Visible = false;
-            LabelAboutSite.Visible = false;
-            LabelSubtitlePartical.Visible = false;
-            LabelPartical.Visible = false;
-            LabelSubtitleNavigation.Visible = false;
-            LabelNavigation.Visible = false;
-            LabelSubtitleStatistics.Visible = false;
-            LabelStatistics.Visible = false;
-            LabelSubtitleGratitudes.Visible = false;
-            LabelGratitudes.Visible = false;
-            LabelParticalLine.Text = "";
-            LabelParticalTitle.Text = "";
-            LabelParticalLine.Visible = false;
-            LabelParticalTitle.Visible = false;
-            LabelPoemParticalLine.Visible = false;
-            LabelWordName.Visible = true;
-            LabelSubtitleParticalTitle.Visible = true;
-            LabelWordValue.Visible = true;
-        }
-        // кнопка копировать в буфер обмена
-        protected void ImageButtonCopyToClipboard_Click(object sender, ImageClickEventArgs e)
-        {
+        //    LabelSubtitleAboutSite.Visible = false;
+        //    LabelAboutSite.Visible = false;
+        //    LabelSubtitlePartical.Visible = false;
+        //    LabelPartical.Visible = false;
+        //    LabelSubtitleNavigation.Visible = false;
+        //    LabelNavigation.Visible = false;
+        //    LabelSubtitleStatistics.Visible = false;
+        //    LabelStatistics.Visible = false;
+        //    LabelSubtitleGratitudes.Visible = false;
+        //    LabelGratitudes.Visible = false;
+        //    LabelParticalLine.Text = "";
+        //    LabelParticalTitle.Text = "";
+        //    LabelParticalLine.Visible = false;
+        //    LabelParticalTitle.Visible = false;
+        //    LabelPoemParticalLine.Visible = false;
+        //    LabelWordName.Visible = true;
+        //    LabelSubtitleParticalTitle.Visible = true;
+        //    LabelWordValue.Visible = true;
+        //}
+        //// кнопка копировать в буфер обмена
+        //protected void ImageButtonCopyToClipboard_Click(object sender, ImageClickEventArgs e)
+        //{
 
-        }
+        //}
 
 
         protected void LinkButtonMainPage_Click(object sender, EventArgs e)
@@ -366,88 +366,88 @@ namespace litclassicbot
         //    Response.Redirect("https://t.me/litclassicbot");
         //}
 
-        protected void LinkButtonAuthorization_Click(object sender, EventArgs e)
-        {
+        //protected void LinkButtonAuthorization_Click(object sender, EventArgs e)
+        //{
 
-        }
-
-
-        protected void ButtonPartical_Click(object sender, EventArgs e)
-        {
-            ShowRandomPartical();
-
-            LabelSubtitleAboutSite.Visible = false;
-            LabelAboutSite.Visible = false;
-            LabelSubtitlePartical.Visible = false;
-            LabelPartical.Visible = false;
-            LabelSubtitleNavigation.Visible = false;
-            LabelNavigation.Visible = false;
-            LabelSubtitleStatistics.Visible = false;
-            LabelStatistics.Visible = false;
-            LabelSubtitleGratitudes.Visible = false;
-            LabelGratitudes.Visible = false;
-            LabelWordName.Visible = false;
-            LabelWordValue.Visible = false;
-            LabelPoemParticalLine.Visible = false;
-            LabelWordName.Text = "";
-            LabelWordValue.Text = "";
-            LabelParticalLine.Visible = true;
-            LabelSubtitleParticalLine.Visible = true;
-            LabelSubtitleParticalTitle.Visible = true;
-            LabelParticalTitle.Visible = true;
-        }
+        //}
 
 
-        protected void ButtonPoemPartical_Click(object sender, EventArgs e)
-        {
-            ShowRandomPoemPartical();
+        //protected void ButtonPartical_Click(object sender, EventArgs e)
+        //{
+        //    ShowRandomPartical();
 
-            LabelSubtitleAboutSite.Visible = false;
-            LabelAboutSite.Visible = false;
-            LabelSubtitlePartical.Visible = false;
-            LabelPartical.Visible = false;
-            LabelSubtitleNavigation.Visible = false;
-            LabelNavigation.Visible = false;
-            LabelSubtitleStatistics.Visible = false;
-            LabelStatistics.Visible = false;
-            LabelSubtitleGratitudes.Visible = false;
-            LabelGratitudes.Visible = false;
-            LabelWordName.Visible = false;
-            LabelWordValue.Visible = false;
-            LabelParticalLine.Visible = false;
-            LabelWordName.Text = "";
-            LabelWordValue.Text = "";
-            LabelPoemParticalLine.Visible = true;
-            LabelSubtitleParticalLine.Visible = true;
-            LabelSubtitleParticalTitle.Visible = true;
-            LabelParticalTitle.Visible = true;
-            //ButtonPoemPartical.BackColor = whitesmoke;
-        }
+        //    LabelSubtitleAboutSite.Visible = false;
+        //    LabelAboutSite.Visible = false;
+        //    LabelSubtitlePartical.Visible = false;
+        //    LabelPartical.Visible = false;
+        //    LabelSubtitleNavigation.Visible = false;
+        //    LabelNavigation.Visible = false;
+        //    LabelSubtitleStatistics.Visible = false;
+        //    LabelStatistics.Visible = false;
+        //    LabelSubtitleGratitudes.Visible = false;
+        //    LabelGratitudes.Visible = false;
+        //    LabelWordName.Visible = false;
+        //    LabelWordValue.Visible = false;
+        //    LabelPoemParticalLine.Visible = false;
+        //    LabelWordName.Text = "";
+        //    LabelWordValue.Text = "";
+        //    LabelParticalLine.Visible = true;
+        //    LabelSubtitleParticalLine.Visible = true;
+        //    LabelSubtitleParticalTitle.Visible = true;
+        //    LabelParticalTitle.Visible = true;
+        //}
 
 
-        protected void ButtonWord_Click(object sender, EventArgs e)
-        {
-            ShowRandomWord();
+        //protected void ButtonPoemPartical_Click(object sender, EventArgs e)
+        //{
+        //    ShowRandomPoemPartical();
 
-            LabelSubtitleAboutSite.Visible = false;
-            LabelAboutSite.Visible = false;
-            LabelSubtitlePartical.Visible = false;
-            LabelPartical.Visible = false;
-            LabelSubtitleNavigation.Visible = false;
-            LabelNavigation.Visible = false;
-            LabelSubtitleStatistics.Visible = false;
-            LabelStatistics.Visible = false;
-            LabelSubtitleGratitudes.Visible = false;
-            LabelGratitudes.Visible = false;
-            LabelParticalLine.Text = "";
-            LabelParticalTitle.Text = "";
-            LabelParticalLine.Visible = false;
-            LabelParticalTitle.Visible = false;
-            LabelPoemParticalLine.Visible = false;
-            LabelWordName.Visible = true;
-            LabelSubtitleParticalTitle.Visible = true;
-            LabelWordValue.Visible = true;
-        }
+        //    LabelSubtitleAboutSite.Visible = false;
+        //    LabelAboutSite.Visible = false;
+        //    LabelSubtitlePartical.Visible = false;
+        //    LabelPartical.Visible = false;
+        //    LabelSubtitleNavigation.Visible = false;
+        //    LabelNavigation.Visible = false;
+        //    LabelSubtitleStatistics.Visible = false;
+        //    LabelStatistics.Visible = false;
+        //    LabelSubtitleGratitudes.Visible = false;
+        //    LabelGratitudes.Visible = false;
+        //    LabelWordName.Visible = false;
+        //    LabelWordValue.Visible = false;
+        //    LabelParticalLine.Visible = false;
+        //    LabelWordName.Text = "";
+        //    LabelWordValue.Text = "";
+        //    LabelPoemParticalLine.Visible = true;
+        //    LabelSubtitleParticalLine.Visible = true;
+        //    LabelSubtitleParticalTitle.Visible = true;
+        //    LabelParticalTitle.Visible = true;
+        //    //ButtonPoemPartical.BackColor = whitesmoke;
+        //}
+
+
+        //protected void ButtonWord_Click(object sender, EventArgs e)
+        //{
+        //    ShowRandomWord();
+
+        //    LabelSubtitleAboutSite.Visible = false;
+        //    LabelAboutSite.Visible = false;
+        //    LabelSubtitlePartical.Visible = false;
+        //    LabelPartical.Visible = false;
+        //    LabelSubtitleNavigation.Visible = false;
+        //    LabelNavigation.Visible = false;
+        //    LabelSubtitleStatistics.Visible = false;
+        //    LabelStatistics.Visible = false;
+        //    LabelSubtitleGratitudes.Visible = false;
+        //    LabelGratitudes.Visible = false;
+        //    LabelParticalLine.Text = "";
+        //    LabelParticalTitle.Text = "";
+        //    LabelParticalLine.Visible = false;
+        //    LabelParticalTitle.Visible = false;
+        //    LabelPoemParticalLine.Visible = false;
+        //    LabelWordName.Visible = true;
+        //    LabelSubtitleParticalTitle.Visible = true;
+        //    LabelWordValue.Visible = true;
+        //}
 
         //private void ReportPartical()
         //{

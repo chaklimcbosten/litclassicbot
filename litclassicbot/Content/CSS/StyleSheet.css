@@ -99,7 +99,8 @@ header {
 }
 
 
-.main {
+.main,
+.MainContent {
     width: 80%;
     margin-top: 90px;
     margin-bottom: 100px;
@@ -113,7 +114,8 @@ header {
     line-height: 1.5;
 }
 
-.label-subtitle-main {
+.label-subtitle-main,
+h1 {
     width: 100%;
     margin-top: 1%;
     margin-bottom: 1%;
@@ -123,34 +125,14 @@ header {
     letter-spacing: 0px;
 }
 
-.label-subtitle-partical-line {
-    width: 100%;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    color: black;
-    font-size: 34px;
-    font-weight: 400;
-    letter-spacing: 0.25px;
-}
-
-.label-subtitle-partical-title {
-    width: 100%;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    color: black;
-    font-size: 34px;
-    font-weight: 400;
-    letter-spacing: 0.25px;
-}
-
-
-
-
+.label-subtitle-partical-line,
+.label-subtitle-partical-title,
 .label-subtitle-about-site,
 .label-subtitle-partical,
 .label-subtitle-navigation,
 .label-subtitle-statistics,
-.label-subtitle-gratitudes {
+.label-subtitle-gratitudes,
+h2 {
     width: 100%;
     margin-top: 1%;
     margin-bottom: 1%;
@@ -159,8 +141,6 @@ header {
     font-weight: 400;
     letter-spacing: 0.25px;
 }
-
-
 
 .label-about-site,
 .label-partical,
@@ -170,14 +150,12 @@ header {
     color: black;
 }
 
-
-
-
 .label-partical-line,
 .label-poem-partical-line,
 .label-partical-title,
-.label-word-name {
-    margin-top: 20px;
+.label-word-name,
+.label-word-value {
+    /*margin-top: 20px;*/
     background-color: black;
     border-radius: 20px;
     /*4 dp*/
@@ -186,12 +164,13 @@ header {
 }
 
 .label-partical-line,
-.label-word-name {
-    margin-bottom: 20px;
+.label-word-name,
+.label-poem-partical-line {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .label-poem-partical-line {
-    margin-bottom: 20px;
     text-align: center;
 }
 
@@ -253,6 +232,7 @@ header {
     border: 2px solid black;
     border-radius: 3px;
     cursor: pointer;
+    text-decoration: none;
 }
     .button-partical:hover,
     .button-poem-partical:hover,
@@ -274,7 +254,7 @@ header {
 
 
 
-@media screen and (max-width:767px) {
+@media screen and (max-width:1190px) {
     
     header {
         width: 96%;
@@ -300,15 +280,13 @@ header {
         margin-top: 4px;
     }
 
-
     .main {
         width: 96%;
         margin-left: 2%;
         margin-right: 2%;
-        margin-top: 70px;
+        margin-top: 55px;
         margin-bottom: 70px;
     }
-
 
     .footer {
         width: 96%;
@@ -324,23 +302,27 @@ header {
         display: inline-block;
     }
 
-
-
     .label-subtitle-about-site,
     .label-subtitle-partical,
     .label-subtitle-navigation,
     .label-subtitle-statistics,
-    .label-subtitle-gratitudes {
+    .label-subtitle-gratitudes,
+    h2 {
         font-size: 20px;
         font-weight: 500;
         letter-spacing: 0.15px;
+        margin-top: 2%;
+        margin-bottom: 2%;
     }
     .label-subtitle-main,
     .label-subtitle-partical-line,
-    .label-subtitle-partical-title {
+    .label-subtitle-partical-title,
+    h1 {
         font-size: 24px;
         font-weight: 400;
         letter-spacing: 0px;
+        margin-top: 2%;
+        margin-bottom: 2%;
     }
     .label-partical-line,
     .label-partical-title,
@@ -353,6 +335,10 @@ header {
         letter-spacing: 0px;
     }
 
+    p {
+        margin: 0;
+        margin-bottom: 2%;
+    }
 
     .image-button-partical,
     .image-button-poem-partical,

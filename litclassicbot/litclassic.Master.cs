@@ -14,25 +14,5 @@ namespace litclassicbot
         {
 
         }
-
-        protected void LinkButtonMainPage_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("https://litclassic.com");
-        }
-
-        //protected void LinkButtonVKPublic_Click(object sender, EventArgs e)
-        //{
-        //    Response.Redirect("https://vk.com/litclassic");
-        //}
-
-        //protected void LinkButtonTelegramBot_Click(object sender, EventArgs e)
-        //{
-        //    Response.Redirect("https://t.me/litclassicbot");
-        //}
-
-        protected void LinkButtonAuthorization_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

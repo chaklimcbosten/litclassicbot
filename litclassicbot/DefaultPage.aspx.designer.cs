@@ -22,15 +22,6 @@ namespace litclassicbot {
         protected global::System.Web.UI.WebControls.Label LabelSubtitleMain;
         
         /// <summary>
-        /// LabelSubtitleParticalLine элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelSubtitleParticalLine;
-        
-        /// <summary>
         /// LabelSubtitleAboutSite элемент управления.
         /// </summary>
         /// <remarks>
@@ -67,33 +58,6 @@ namespace litclassicbot {
         protected global::System.Web.UI.WebControls.Label LabelPartical;
         
         /// <summary>
-        /// LabelParticalLine элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelParticalLine;
-        
-        /// <summary>
-        /// LabelPoemParticalLine элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelPoemParticalLine;
-        
-        /// <summary>
-        /// LabelWordName элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelWordName;
-        
-        /// <summary>
         /// LabelSubtitleNavigation элемент управления.
         /// </summary>
         /// <remarks>
@@ -110,33 +74,6 @@ namespace litclassicbot {
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LabelNavigation;
-        
-        /// <summary>
-        /// LabelSubtitleParticalTitle элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelSubtitleParticalTitle;
-        
-        /// <summary>
-        /// LabelParticalTitle элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelParticalTitle;
-        
-        /// <summary>
-        /// LabelWordValue элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelWordValue;
         
         /// <summary>
         /// LabelSubtitleStatistics элемент управления.
@@ -182,59 +119,5 @@ namespace litclassicbot {
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LabelToCopy;
-        
-        /// <summary>
-        /// ButtonPartical элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonPartical;
-        
-        /// <summary>
-        /// ButtonPoemPartical элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonPoemPartical;
-        
-        /// <summary>
-        /// ButtonWord элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonWord;
-        
-        /// <summary>
-        /// ImageButtonPartical элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButtonPartical;
-        
-        /// <summary>
-        /// ImageButtonPoemPartical элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButtonPoemPartical;
-        
-        /// <summary>
-        /// ImageButtonWord элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButtonWord;
     }
 }
