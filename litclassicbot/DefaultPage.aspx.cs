@@ -11,9 +11,6 @@ namespace litclassicbot
 {
     public partial class _Default : Page
     {
-        private int currentParticalID = -1;
-        private string randomParticalButtonText;
-        private string randomPoemParticalButtonText;
         public string copyToClipboard = "";
         
         protected void Page_Load(object sender, EventArgs e)

@@ -46,12 +46,11 @@
 
 
 
-        <asp:Label ID="LabelToCopy" runat="server" Visible="False"></asp:Label>
+        <%--<asp:Label ID="LabelToCopy" runat="server" Visible="False"></asp:Label>
 
         <div class="image-button-copy-to-clipboard">
             <button id="btn" data-clipboard-target="label-partical-line"> </button>
 
-            <%--<script src="Scripts/clipboard.min.js"></script>--%>
             <script>
                 var copyText = document.getElementById('.label-partical-line');
 
@@ -67,6 +66,6 @@
                 //    console.log(e);
                 //});
             </script>
-        </div>
+        </div>--%>
     </div>
 </asp:Content>
