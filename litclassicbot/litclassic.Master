@@ -9,7 +9,6 @@
     <link href="Content/CSS/StyleSheet.css" rel="stylesheet" type="text/css"/>
     <%--Не знаю, нужна ли следующая строка--%>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="yandex-verification" content="495be478cc47b7d0" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300&amp;subset=cyrillic-ext" rel="stylesheet" /> 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
