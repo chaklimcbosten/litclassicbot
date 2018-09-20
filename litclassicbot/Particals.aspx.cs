@@ -38,6 +38,10 @@ namespace litclassicbot
             string endPartical = "</p></div>";
             // замена символов новой строки на тег, выполняющий это в html
             partical = beginPartical + partical.Replace("\n\r", "</p><p>") + endPartical;
+            partical = partical.Replace("$$strong-open$$", "<strong>");
+            partical = partical.Replace("$$emphasis-open$$", "<emphasis>");
+            partical = partical.Replace("$$strong-close$$", "</strong>");
+            partical = partical.Replace("$$emphasis-close$$", "</emphasis>");
             // создаёт "обёрточный" класс для всего содержания сведения о "частице"
             string beginTitle = "<div class=\"label-partical-title\">";
             string endTitle = "</div>";
@@ -66,6 +70,10 @@ namespace litclassicbot
             string endPartical = "</p></div>";
             // замена символов новой строки на тег, выполняющий это в html
             partical = beginPartical + partical.Replace("\n\r", "</p><p>") + endPartical;
+            partical = partical.Replace("$$strong-open$$", "<strong>");
+            partical = partical.Replace("$$emphasis-open$$", "<emphasis>");
+            partical = partical.Replace("$$strong-close$$", "</strong>");
+            partical = partical.Replace("$$emphasis-close$$", "</emphasis>");
             // создаёт "обёрточный" класс для всего содержания сведения о "частице"
             string beginTitle = "<div class=\"label-partical-title\">";
             string endTitle = "</div>";
@@ -74,5 +82,17 @@ namespace litclassicbot
             LabelPoemParticalLine.Text = partical;
             LabelParticalTitle.Text = title;
         }
+        private void ReportPartical()
+        {
+            BotDBConnect currentConnection = new BotDBConnect();
+
+            currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
+            currentConnection.WriteNewParticalReportByParticalID(currentParticalID.ToString());
+        }
+
+        //protected void Button1_Click(object sender, EventArgs e)
+        //{
+        //    ReportPartical();
+        //}
     }
 }

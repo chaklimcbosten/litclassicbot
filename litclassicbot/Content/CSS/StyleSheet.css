@@ -13,11 +13,11 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 80%;
+    width: 70%;
     height: 70px;
     background-color: white;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 15%;
+    padding-right: 15%;
     /*8 dp*/ 
     /*box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 3px rgba(0,0,0,0.12), 0 4px 5px 0 rgba(0,0,0,0.20);*/
     /*6 dp*/
@@ -101,11 +101,11 @@ header {
 
 .main,
 .MainContent {
-    width: 80%;
+    width: 70%;
     margin-top: 90px;
     margin-bottom: 100px;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 15%;
+    margin-right: 15%;
     text-align: justify;
     font-size: 16px;
     font-weight: 400;
@@ -186,12 +186,17 @@ h2 {
 }
 
 
+.partical-settings {
+    color: black;
+}
+
+
 .footer {
-    width: 80%;
+    width: 70%;
     height: 70px;
     background-color: white;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 15%;
+    padding-right: 15%;
     text-decoration: none;
     position: fixed;
     bottom: 0;
@@ -205,17 +210,30 @@ h2 {
     width: 100%;
 }
 
+.footer-buttons-left-column,
+.footer-buttons-right-column {
+    display: inline-block;
+}
+.footer-buttons-right-column {
+    float: right;
+    width: 50%;
+}
+.footer-buttons-left-column {
+    width: 49%;
+}
 
-.footer-button-partical,
-.footer-button-poem-partical,
-.footer-button-word {
+
+.footer-button {
     display: inline-block;
 }
 
 
 .button-partical,
-.button-poem-partical,
-.button-word {
+.button-word,
+.button-proverb,
+.button-read-next,
+.button-report,
+.button-reload {
     letter-spacing: 0.75px;
     font-size: 14px;
     font-weight: 400;
@@ -225,7 +243,7 @@ h2 {
     margin-right: 7px;
     margin-top: 17px;
     margin-bottom: 17px;
-    float: left;
+    /*float: left;*/
     padding-top: 7px;
     padding-bottom: 7px;
     padding-left: 14px;
@@ -237,15 +255,27 @@ h2 {
 }
     .button-partical:hover,
     .button-poem-partical:hover,
-    .button-word:hover {
+    .button-word:hover,
+    .button-proverb:hover,
+    .button-read-next:hover,
+    .button-report:hover,
+    .button-reload:hover {
         background-color: whitesmoke;
     }
 .button-partical {
     margin-left: 0px;
+    float: left;
 }
-.button-poem-partical,
-.button-word {
+.button-word,
+.button-proverb {
     margin-left: 7px;
+    float: left;
+}
+.button-reload,
+.button-read-next,
+.button-report
+{
+    float: right;
 }
 
 
@@ -255,7 +285,7 @@ h2 {
 
 
 
-@media screen and (max-width:1190px) {
+@media screen and (max-width:1390px) {
     
     header {
         width: 96%;

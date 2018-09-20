@@ -22,29 +22,47 @@ namespace litclassicbot
 
             currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
 
-            List<string> listGetWord = new List<string>();
-            listGetWord = currentConnection.GetRandomWord("web");
+            List<List<string>> listListsGetRandomWord = new List<List<string>>();
+            //List<string> listGetWord = new List<string>();
+            listListsGetRandomWord = currentConnection.GetRandomWord("web");
             // получение имени слова
-            string wordName = listGetWord[0];
+            string mainWordName = listListsGetRandomWord[0][0];
             // получение значения слова
-            string wordValue = listGetWord[1];
+            string mainWordValue = listListsGetRandomWord[0][1];
             // получение ссылок слова
-            string wordLinks = listGetWord[2];
+            //string wordLinks = listListsGetRandomWord[0][2];
             // получение первой буквы слова
             // может быть, проще её получать из имени?
-            string wordFirstLetter = listGetWord[3];
+            //string wordFirstLetter = listListsGetRandomWord[0][3];
             // создаёт "обёрточный" класс для всего содержания значения слова
-            string beginWordName = "<div class=\"label-word-name\">";
-            string endWordName = "</div>";
+            string beginMainWordName = "<div class=\"label-word-name\">";
+            string endMainWordName = "</div>";
             // замена символов новой строки на тег, выполняющий это в html
-            wordName = beginWordName + wordName.Replace("\n\r", "<br>") + endWordName;
+            mainWordName = beginMainWordName + mainWordName.Replace("\n\r", "<br>") + endMainWordName;
             // создаёт "обёрточный" класс для всего содержания значения слова
             string beginWordValue = "<div class=\"label-word-value\">";
             string endWordValue = "</div>";
             // замена символов новой строки на тег, выполняющий это в html
-            wordValue = beginWordValue + wordValue.Replace("\n\r", "<br>") + endWordValue;
-            LabelWordValue.Text = wordValue;
-            LabelWordName.Text = wordName;
+            mainWordValue = beginWordValue + mainWordValue.Replace("\n\r", "<br>") + endWordValue;
+            LabelWordValue.Text = mainWordValue;
+            LabelWordName.Text = mainWordName;
+
+            if (listListsGetRandomWord.Count > 1)
+            {
+                LabelWordLinks.Visible = true;
+
+                for (int i = 1; i < listListsGetRandomWord.Count; i++) 
+                {
+                    string subWordName = listListsGetRandomWord[i][0];
+                    string subWordValue = listListsGetRandomWord[i][1];
+                    string beginSubWord = "<div class=\"content-main-page\"><p>";
+                    string endSubWord = "</p></div>";
+                    string subWord = beginSubWord + subWordName + " - "
+                        + subWordValue.Replace("\n\r", "<br>") + endSubWord;
+                    //string subWord = "<h2>" + subWordName + "</h2>" + beginWordValue + subWordValue + endWordValue;
+                    LabelWordLinks.Text += subWord;
+                }
+            }
         }
     }
 }

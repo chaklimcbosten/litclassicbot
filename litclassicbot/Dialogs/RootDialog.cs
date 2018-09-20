@@ -64,6 +64,10 @@ namespace litclassicbot.Dialogs
                     List<string> listGetRandomPartical = new List<string>();
                     listGetRandomPartical = currentConnection.GetRandomPoemPartical(activity.Conversation.Id);
                     string partical = listGetRandomPartical[0];
+                    partical = partical.Replace("$$strong-open$$", "**");
+                    partical = partical.Replace("$$emphasis-open$$", "*");
+                    partical = partical.Replace("$$strong-close$$", "**");
+                    partical = partical.Replace("$$emphasis-close$$", "*");
                     string title = listGetRandomPartical[1];
                     int indeLastLine = Convert.ToInt32(listGetRandomPartical[2]);
                     int bookID = Convert.ToInt32(listGetRandomPartical[4]);
@@ -126,6 +130,10 @@ namespace litclassicbot.Dialogs
                     List<string> listGetRandomPartical = new List<string>();
                     listGetRandomPartical = currentConnection.GetRandomPartical(activity.Conversation.Id);
                     string partical = listGetRandomPartical[0];
+                    partical = partical.Replace("$$strong-open$$", "**");
+                    partical = partical.Replace("$$emphasis-open$$", "*");
+                    partical = partical.Replace("$$strong-close$$", "**");
+                    partical = partical.Replace("$$emphasis-close$$", "*");
                     string title = listGetRandomPartical[1];
                     int indeLastLine = Convert.ToInt32(listGetRandomPartical[2]);
                     int bookID = Convert.ToInt32(listGetRandomPartical[4]);
@@ -186,29 +194,30 @@ namespace litclassicbot.Dialogs
 
                     currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
 
-                    List<string> listGetWord = new List<string>();
-                    listGetWord = currentConnection.GetRandomWord(activity.Conversation.Id);
+                    List<List<string>> listListsGetRandomWord = new List<List<string>>();
+                    listListsGetRandomWord = currentConnection.GetRandomWord(activity.Conversation.Id);
                     // получение имени слова
-                    string wordName = listGetWord[0];
+                    string wordName = listListsGetRandomWord[0][0];
                     // получение значения слова
-                    string wordValue = listGetWord[1];
+                    string wordValue = listListsGetRandomWord[0][1];
                     // получение ссылок слова
-                    string wordLinks = listGetWord[2];
+                    //string wordLinks = listListsGetRandomWord[0][2];
                     // получение первой буквы слова
                     // может быть, проще её получать из имени?
-                    string wordFirstLetter = listGetWord[3];
+                    //string wordFirstLetter = listListsGetRandomWord[0][3];
                     string wordMessage = "**" + wordName + "**\n\r" +
                         "*Значение слова:*\n\r" + wordValue;
+                    string subWordsMessage = "";
 
-                    //if (wordLinks != "")
-                    //{
-                    //    wordMessage += "\n\r*Ссылки:*\n\r";
-
-                    //    foreach (string link in wordLinks.Split(';'))
-                    //    {
-
-                    //    }
-                    //}
+                    if (listListsGetRandomWord.Count > 1)
+                    {
+                        foreach (List<string> listWord in listListsGetRandomWord)
+                        {
+                            string subWordName = listWord[0];
+                            string subWordValue = listWord[1];
+                            subWordsMessage += "**Упомянутые в ссылках слова.**\n\r*" + subWordName + "* - " + subWordValue + "\n\r"; 
+                        }
+                    }
 
                     var card = new HeroCard("Дальнейшие возможные действия:");
                     card.Buttons = new List<CardAction>()
@@ -242,6 +251,7 @@ namespace litclassicbot.Dialogs
                     });
 
                     await context.PostAsync(wordMessage);
+                    await context.PostAsync(subWordsMessage);
                     await context.PostAsync(reply);
                 }
                 catch
