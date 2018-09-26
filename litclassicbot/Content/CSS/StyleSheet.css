@@ -216,10 +216,11 @@ h2 {
 }
 .footer-buttons-right-column {
     float: right;
-    width: 50%;
+    width: 60%;
 }
 .footer-buttons-left-column {
-    width: 49%;
+    float: left;
+    width: 39%;
 }
 
 
@@ -263,7 +264,6 @@ h2 {
     text-decoration: none;
 }
     .button-partical:hover,
-    .button-poem-partical:hover,
     .button-word:hover,
     .button-proverb:hover,
     .button-read-next:hover,
