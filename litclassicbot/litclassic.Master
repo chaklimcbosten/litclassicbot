@@ -68,13 +68,13 @@
                 <div class="footer-buttons">
                     <%--левая колонка кнопок--%>
                     <div class="footer-buttons-left-column">
-                        <div class="footer-button">
+                        <div class="footer-button-left">
                             <a class="button-partical" href="Particals.aspx">"ЧАСТИЦЫ"</a>
                         </div>
-                        <div class="footer-button">                  
+                        <div class="footer-button-left">                  
                             <a class="button-word" href="Words.aspx">СЛОВАРЬ В.И.ДАЛЯ</a>
                         </div>
-                        <div class="footer-button">                  
+                        <div class="footer-button-left">                  
                             <a class="button-proverb" href="Proverbs.aspx">ПОСЛОВИЦЫ</a>
                         </div>
                     </div>

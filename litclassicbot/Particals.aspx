@@ -17,7 +17,6 @@
         <asp:Label ID="LabelParticalTitle" runat="server"></asp:Label>  
         <%--<asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />--%>
         <h2>Копировать, сохранить, поделиться "частицей"</h2>
-        <h2>Читать далее</h2>
         <h2>О процессе формирования "частиц"</h2>
     </div>  
 <%--    <div class="footer">
@@ -60,15 +59,19 @@
 </asp:Content>
 
 <asp:Content ID="FooterContent" ContentPlaceHolderID="FooterContent" runat="server"> 
-    <div class="footer-button">           
-        <asp:Button ID="ButtonParticalReport" runat="server" Text="СООБЩИТЬ ОБ ОШИБКЕ" 
-            CssClass="button-report" />
-    </div>
-    <div class="footer-button">           
-        <a class="button-read-next" href="Proverbs.aspx">ЧИТАТЬ ДАЛЕЕ</a>
-    </div>
-    <div class="footer-button">           
+    <div class="footer-button-right">           
         <a class="button-reload" href="Particals.aspx">ОБНОВИТЬ</a>
     </div>
+    <div class="footer-button-right">           
+        <a class="button-read-next" href="Reader.aspx">ЧИТАТЬ ДАЛЕЕ</a>
+    </div>
+    <div class="footer-button-right">           
+        <asp:Button ID="ButtonParticalSave" runat="server" Text="СОХРАНИТЬ" 
+            CssClass="button-padrtical-save" />
+    </div> 
+    <div class="footer-button-right">           
+        <asp:Button ID="ButtonParticalReport" runat="server" Text="СООБЩИТЬ ОБ ОШИБКЕ" 
+            CssClass="button-report" />
+    </div>  
 </asp:Content>
 
