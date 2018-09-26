@@ -67,7 +67,7 @@
     </div>
     <div class="footer-button-right">           
         <asp:Button ID="ButtonParticalSave" runat="server" Text="СОХРАНИТЬ" 
-            CssClass="button-padrtical-save" />
+            CssClass="button-partical-save" />
     </div> 
     <div class="footer-button-right">           
         <asp:Button ID="ButtonParticalReport" runat="server" Text="СООБЩИТЬ ОБ ОШИБКЕ" 

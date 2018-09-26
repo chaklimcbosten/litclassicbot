@@ -233,13 +233,15 @@ h2 {
 }
 
 
+/*левая колонка*/
 .button-partical,
 .button-word,
 .button-proverb,
+/*правая колонка*/
 .button-read-next,
+.button-read-previous,
 .button-report,
 .button-reload,
-.button-read-previous,
 .button-partical-save {
     letter-spacing: 0.75px;
     font-size: 14px;
@@ -247,7 +249,7 @@ h2 {
     background-color: white;
     font-family: 'Roboto', sans-serif;
     color: black;
-    margin-right: 7px;
+    /*margin-right: 7px;*/
     margin-top: 17px;
     margin-bottom: 17px;
     /*float: left;*/
@@ -271,19 +273,18 @@ h2 {
     .button-partical-save:hover {
         background-color: whitesmoke;
     }
-.button-partical {
-    margin-left: 0px;
-    float: left;
-}
+.button-partical,
 .button-word,
 .button-proverb {
-    margin-left: 7px;
+    margin-right: 14px;
     float: left;
 }
-.button-reload,
 .button-read-next,
+.button-read-previous,
 .button-report,
-.button-read-previous {
+.button-reload,
+.button-partical-save {
+    margin-left: 14px;
     float: right;
 }
 
