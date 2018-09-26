@@ -33,3 +33,9 @@
             </div>
          </div>--%>    
 </asp:Content>
+
+<asp:Content ID="FooterContent" ContentPlaceHolderID="FooterContent" runat="server"> 
+    <div class="footer-button">           
+        <a class="button-reload" href="Words.aspx">ОБНОВИТЬ</a>
+    </div>
+</asp:Content>

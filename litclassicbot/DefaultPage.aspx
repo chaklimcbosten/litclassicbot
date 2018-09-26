@@ -45,16 +45,6 @@
 
         </div>
 
-                        <asp:Menu ID="Menu1" runat="server">
-                    <Items>
-                        <asp:MenuItem Text="Создать элемент 1" Value="Создать элемент 1"></asp:MenuItem>
-                        <asp:MenuItem Text="Создать элемент 2" Value="Создать элемент 2"></asp:MenuItem>
-                        <asp:MenuItem Text="Создать элемент 3" Value="Создать элемент 3"></asp:MenuItem>
-                        <asp:MenuItem Text="Создать элемент 4" Value="Создать элемент 4"></asp:MenuItem>
-                    </Items>
-                </asp:Menu>
-
-        <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
 
         <%--<asp:Label ID="LabelToCopy" runat="server" Visible="False"></asp:Label>
 

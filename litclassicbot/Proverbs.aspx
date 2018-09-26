@@ -6,3 +6,9 @@
         <h2>Пословица</h2>
     </div>
 </asp:Content>
+
+<asp:Content ID="FooterContent" ContentPlaceHolderID="FooterContent" runat="server"> 
+    <div class="footer-button">           
+        <a class="button-reload" href="Proverbs.aspx">ОБНОВИТЬ</a>
+    </div>
+</asp:Content>

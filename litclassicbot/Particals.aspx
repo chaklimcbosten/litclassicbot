@@ -59,3 +59,16 @@
          </div>  --%>  
 </asp:Content>
 
+<asp:Content ID="FooterContent" ContentPlaceHolderID="FooterContent" runat="server"> 
+    <div class="footer-button">           
+        <asp:Button ID="ButtonParticalReport" runat="server" Text="СООБЩИТЬ ОБ ОШИБКЕ" 
+            CssClass="button-report" />
+    </div>
+    <div class="footer-button">           
+        <a class="button-read-next" href="Proverbs.aspx">ЧИТАТЬ ДАЛЕЕ</a>
+    </div>
+    <div class="footer-button">           
+        <a class="button-reload" href="Particals.aspx">ОБНОВИТЬ</a>
+    </div>
+</asp:Content>
+
