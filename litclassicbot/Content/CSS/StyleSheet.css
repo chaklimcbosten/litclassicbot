@@ -28,18 +28,16 @@ header {
 
 .header-main {
     float: left;
-    display: inline-block;
+    display: flex;
 }
 
 .logo_img {
-    display: inline-block;
     width: 70px;
     height: 70px;
     float: left;
 }
 
 .logo {
-    display: inline-block;
     color: black;
     margin-left: 20px;
     margin-right: 20px;
@@ -51,7 +49,6 @@ header {
 }
 
 .logo-links {
-    display: inline-block;
     letter-spacing: 0.75px;
     float: right;
     font-size: 14px;
@@ -212,9 +209,10 @@ h2 {
 
 .footer-buttons-left-column,
 .footer-buttons-right-column {
-    display: inline-block;
+    display: flex;
 }
 .footer-buttons-right-column {
+    flex-direction: row-reverse;
     float: right;
     width: 60%;
 }
@@ -225,11 +223,11 @@ h2 {
 
 
 .footer-button-left {
-    display: inline-block;
+    display: flex;
     float: left;
 }
 .footer-button-right {
-    display: inline-block;
+    display: flex;
     float: right;
 }
 
@@ -340,7 +338,7 @@ h2 {
     }
     .footer-images-buttons {
         width: 100%;
-        display: inline-block;
+        display: flex;
     }
 
     .label-subtitle-about-site,
@@ -384,7 +382,7 @@ h2 {
     .image-button-partical,
     .image-button-poem-partical,
     .image-button-word {
-        display: inline-block;
+        /*display: flex;*/
         height: 24px;
         width: 24px;
         padding: 8px;

@@ -24,9 +24,9 @@
             <div class="logo-links">
                 <a href="Authorization.aspx" runat="server" class="link-button-authorization">АВТОРИЗАЦИЯ</a>
                 <a href="https://t.me/litclassicbot" target="_blank" runat="server" 
-                    class="link-button-telegram-bot">БОТ ДЛЯ TELEGRAM</a>
+                    class="link-button-telegram-bot">TELEGRAM</a>
                 <a href="https://vk.com/litclassic" target="_blank" runat="server" 
-                    class="link-button-vk">СООБЩЕСТВО ВКОНТАКТЕ</a>
+                    class="link-button-vk">VK</a>
                 <a href="~/" runat="server" class="link-button-main-page">О САЙТЕ</a>
             </div>           
         </header>
@@ -72,7 +72,7 @@
                             <a class="button-partical" href="Particals.aspx">"ЧАСТИЦЫ"</a>
                         </div>
                         <div class="footer-button-left">                  
-                            <a class="button-word" href="Words.aspx">СЛОВАРЬ В.И.ДАЛЯ</a>
+                            <a class="button-word" href="Words.aspx">СЛОВАРЬ</a>
                         </div>
                         <div class="footer-button-left">                  
                             <a class="button-proverb" href="Proverbs.aspx">ПОСЛОВИЦЫ</a>
