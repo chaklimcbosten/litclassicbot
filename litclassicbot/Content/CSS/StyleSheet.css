@@ -122,10 +122,10 @@ h1 {
     letter-spacing: 0px;
 }
 
-.label-subtitle-partical-line,
-.label-subtitle-partical-title,
+.label-subtitle-particle-line,
+.label-subtitle-particle-title,
 .label-subtitle-about-site,
-.label-subtitle-partical,
+.label-subtitle-particle,
 .label-subtitle-navigation,
 .label-subtitle-statistics,
 .label-subtitle-gratitudes,
@@ -140,7 +140,7 @@ h2 {
 }
 
 .label-about-site,
-.label-partical,
+.label-particle,
 .label-navigation,
 .label-statistics,
 .label-gratitudes,
@@ -148,9 +148,9 @@ h2 {
     color: black;
 }
 
-.label-partical-line,
-.label-poem-partical-line,
-.label-partical-title,
+.label-particle-line,
+.label-poem-particle-line,
+.label-particle-title,
 .label-word-name,
 .label-word-value {
     /*margin-top: 20px;*/
@@ -161,18 +161,18 @@ h2 {
     padding: 2%;
 }
 
-.label-partical-line,
+.label-particle-line,
 .label-word-name,
-.label-poem-partical-line {
+.label-poem-particle-line {
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-.label-poem-partical-line {
+.label-poem-particle-line {
     text-align: center;
 }
 
-.label-partical-title,
+.label-particle-title,
 .label-word-value {
     color: white;
 }
@@ -183,7 +183,7 @@ h2 {
 }
 
 
-.partical-settings {
+.particle-settings {
     color: black;
 }
 
@@ -233,7 +233,7 @@ h2 {
 
 
 /*левая колонка*/
-.button-partical,
+.button-particle,
 .button-word,
 .button-proverb,
 /*правая колонка*/
@@ -241,7 +241,7 @@ h2 {
 .button-read-previous,
 .button-report,
 .button-reload,
-.button-partical-save {
+.button-particle-save {
     letter-spacing: 0.75px;
     font-size: 14px;
     font-weight: 400;
@@ -261,17 +261,17 @@ h2 {
     cursor: pointer;
     text-decoration: none;
 }
-    .button-partical:hover,
+    .button-particle:hover,
     .button-word:hover,
     .button-proverb:hover,
     .button-read-next:hover,
     .button-read-previous:hover,
     .button-report:hover,
     .button-reload:hover,
-    .button-partical-save:hover {
+    .button-particle-save:hover {
         background-color: whitesmoke;
     }
-.button-partical,
+.button-particle,
 .button-word,
 .button-proverb {
     margin-right: 14px;
@@ -281,7 +281,7 @@ h2 {
 .button-read-previous,
 .button-report,
 .button-reload,
-.button-partical-save {
+.button-particle-save {
     margin-left: 14px;
     float: right;
 }
@@ -342,7 +342,7 @@ h2 {
     }
 
     .label-subtitle-about-site,
-    .label-subtitle-partical,
+    .label-subtitle-particle,
     .label-subtitle-navigation,
     .label-subtitle-statistics,
     .label-subtitle-gratitudes,
@@ -354,8 +354,8 @@ h2 {
         margin-bottom: 2%;
     }
     .label-subtitle-main,
-    .label-subtitle-partical-line,
-    .label-subtitle-partical-title,
+    .label-subtitle-particle-line,
+    .label-subtitle-particle-title,
     h1 {
         font-size: 24px;
         font-weight: 400;
@@ -363,8 +363,8 @@ h2 {
         margin-top: 2%;
         margin-bottom: 2%;
     }
-    .label-partical-line,
-    .label-partical-title,
+    .label-particle-line,
+    .label-particle-title,
     .label-word-value {
         padding: 5%;
     }
@@ -379,8 +379,8 @@ h2 {
         margin-bottom: 2%;
     }
 
-    .image-button-partical,
-    .image-button-poem-partical,
+    .image-button-particle,
+    .image-button-poem-particle,
     .image-button-word {
         /*display: flex;*/
         height: 24px;
@@ -393,15 +393,15 @@ h2 {
         border: 2px solid white;
         border-radius: 22px;
     }
-        .image-button-partical:hover,
-        .image-button-poem-partical:hover,
+        .image-button-particle:hover,
+        .image-button-poem-particle:hover,
         .image-button-word:hover {
             background-color: whitesmoke;
         }
-    .image-button-partical {
+    .image-button-particle {
         margin-right: 2%;
     }
-    .image-button-poem-partical,
+    .image-button-poem-particle,
     .image-button-word {
         margin-right: 3px;
     }

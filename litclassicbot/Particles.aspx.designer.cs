@@ -39,7 +39,7 @@ public partial class Particles {
     protected global::System.Web.UI.WebControls.CheckBox CheckBox3;
     
     /// <summary>
-    /// LabelParticleLine элемент управления.
+    /// ParticleLine элемент управления.
     /// </summary>
     /// <remarks>
     /// Автоматически создаваемое поле.
@@ -66,20 +66,20 @@ public partial class Particles {
     protected global::System.Web.UI.WebControls.Label LabelParticleTitle;
     
     /// <summary>
-    /// ButtonParticalSave элемент управления.
+    /// ButtonParticleSave элемент управления.
     /// </summary>
     /// <remarks>
     /// Автоматически создаваемое поле.
     /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Button ButtonParticalSave;
+    protected global::System.Web.UI.WebControls.Button ButtonParticleSave;
     
     /// <summary>
-    /// ButtonParticalReport элемент управления.
+    /// ButtonParticleReport элемент управления.
     /// </summary>
     /// <remarks>
     /// Автоматически создаваемое поле.
     /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Button ButtonParticalReport;
+    protected global::System.Web.UI.WebControls.Button ButtonParticleReport;
 }
