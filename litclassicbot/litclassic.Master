@@ -69,7 +69,7 @@
                     <%--левая колонка кнопок--%>
                     <div class="footer-buttons-left-column">
                         <div class="footer-button-left">
-                            <a class="button-partical" href="Particals.aspx">"ЧАСТИЦЫ"</a>
+                            <a class="button-partical" href="Particles.aspx">"ЧАСТИЦЫ"</a>
                         </div>
                         <div class="footer-button-left">                  
                             <a class="button-word" href="Words.aspx">СЛОВАРЬ</a>
@@ -87,7 +87,7 @@
                 </div>
                 <div class="footer-images-buttons">
                     <div class="image-button-partical">
-                        <a href="Particals.aspx"><img src="Content/footer/partical-icon.png" height="24" width="24"/></a>
+                        <a href="Particles.aspx"><img src="Content/footer/particle-icon.png" height="24" width="24"/></a>
                     </div>
                     <div class="image-button-word">
                         <a href="Words.aspx"><img src="Content/footer/word-icon.png" height="24" width="24"/></a>

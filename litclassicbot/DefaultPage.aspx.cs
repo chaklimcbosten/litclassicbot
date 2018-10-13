@@ -157,16 +157,16 @@ namespace litclassicbot
                 else if (listGetTtotalStatistics[5].Last() == '1') authors = "русского автора";
                 else authors = "русских авторов";
 
-                string particalCall;
+                string particleCall;
 
                 // если предпоследнее число - 1
                 if ((listGetTtotalStatistics[7].Length > 1)
-                    && (listGetTtotalStatistics[7][listGetTtotalStatistics[0].Count() - 2] == '1')) particalCall = "раз";
+                    && (listGetTtotalStatistics[7][listGetTtotalStatistics[0].Count() - 2] == '1')) particleCall = "раз";
                 // проверка последнего числа
                 else if ((listGetTtotalStatistics[7].Last() == '2')
                     | (listGetTtotalStatistics[7].Last() == '3')
-                    | (listGetTtotalStatistics[7].Last() == '4')) particalCall = "раза";
-                else particalCall = "раз";
+                    | (listGetTtotalStatistics[7].Last() == '4')) particleCall = "раза";
+                else particleCall = "раз";
 
                 string errors;
 
@@ -211,7 +211,7 @@ namespace litclassicbot
                     "Эти \"частицы\" покрывают {2}% общего содержания используемых книг. " +
                     "Стихов в книгах от их общего содержания - примерно {3}%. " +
                     "Стихотворных \"частиц\" от общего числа \"частиц\" - {4}%.</p> " +
-                    "<p>{7} " + particalCall + " была вызвана команда получения случайной \"частицы\". " +
+                    "<p>{7} " + particleCall + " была вызвана команда получения случайной \"частицы\". " +
                     "Функцией сообщения о найденных ошибках воспользовались {6} " + errors + ". " +
                     "{8} " + favourites + " было добавлено в список \"избранных\".</p>" +
                     "<p>Ботом в Telegram воспользовались {10} " + users + ".</p>" +

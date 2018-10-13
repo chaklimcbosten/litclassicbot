@@ -9,15 +9,15 @@ using litclassicbot.Classes;
 
 namespace litclassicbot
 {
-    public partial class Particals : System.Web.UI.Page
+    public partial class Particles : System.Web.UI.Page
     {
-        private int currentParticalID = -1;
+        private int currentParticleID = -1;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
-                ShowRandomPartical();
+                ShowRandomParticles();
             }
             catch
             {
@@ -26,75 +26,75 @@ namespace litclassicbot
         }
 
 
-        private void ShowRandomPartical()
+        private void ShowRandomParticles()
         {
             BotDBConnect currentConnection = new BotDBConnect();
 
             currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
 
-            List<string> listGetRandomPartical = new List<string>();
-            listGetRandomPartical = currentConnection.GetRandomPartical("web");
-            string partical = listGetRandomPartical[0];
-            string title = listGetRandomPartical[1];
-            int indeLastLine = Convert.ToInt32(listGetRandomPartical[2]);
+            List<string> listGetRandomParticle = new List<string>();
+            listGetRandomParticle = currentConnection.GetRandomParticle("web");
+            string particle = listGetRandomParticle[0];
+            string title = listGetRandomParticle[1];
+            int indeLastLine = Convert.ToInt32(listGetRandomParticle[2]);
             // для отправки сообщения об ошибке
-            currentParticalID = Convert.ToInt32(listGetRandomPartical[3]);
-            int bookID = Convert.ToInt32(listGetRandomPartical[4]);
+            currentParticleID = Convert.ToInt32(listGetRandomParticle[3]);
+            int bookID = Convert.ToInt32(listGetRandomParticle[4]);
             // создаёт "обёрточный" класс для всего содержания "частицы"
-            string beginPartical = "<div class=\"label-partical-line\"><p>";
-            string endPartical = "</p></div>";
+            string beginParticle = "<div class=\"label-partical-line\"><p>";
+            string endParticle = "</p></div>";
             // замена символов новой строки на тег, выполняющий это в html
-            partical = beginPartical + partical.Replace("\n\r", "</p><p>") + endPartical;
-            partical = partical.Replace("$$strong-open$$", "<strong>");
-            partical = partical.Replace("$$emphasis-open$$", "<emphasis>");
-            partical = partical.Replace("$$strong-close$$", "</strong>");
-            partical = partical.Replace("$$emphasis-close$$", "</emphasis>");
+            particle = beginParticle + particle.Replace("\n\r", "</p><p>") + endParticle;
+            particle = particle.Replace("$$strong-open$$", "<strong>");
+            particle = particle.Replace("$$emphasis-open$$", "<emphasis>");
+            particle = particle.Replace("$$strong-close$$", "</strong>");
+            particle = particle.Replace("$$emphasis-close$$", "</emphasis>");
             // создаёт "обёрточный" класс для всего содержания сведения о "частице"
             string beginTitle = "<div class=\"label-partical-title\">";
             string endTitle = "</div>";
             // замена символов новой строки на тег, выполняющий это в html
             title = beginTitle + title.Replace("\n\r", "<br>") + endTitle;
-            LabelParticalLine.Text = partical;
+            LabelParticleLine.Text = particle;
             //randomParticalButtonText = partical;
-            LabelParticalTitle.Text = title;
+            LabelParticleTitle.Text = title;
         }
-        private void ShowRandomPoemPartical()
+        private void ShowRandomPoemParticle()
         {
             BotDBConnect currentConnection = new BotDBConnect();
 
             currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
 
-            List<string> listGetRandomPartical = new List<string>();
-            listGetRandomPartical = currentConnection.GetRandomPoemPartical("web");
-            string partical = listGetRandomPartical[0];
-            string title = listGetRandomPartical[1];
-            int indeLastLine = Convert.ToInt32(listGetRandomPartical[2]);
+            List<string> listGetRandomParticle = new List<string>();
+            listGetRandomParticle = currentConnection.GetRandomPoemParticle("web");
+            string particle = listGetRandomParticle[0];
+            string title = listGetRandomParticle[1];
+            int indeLastLine = Convert.ToInt32(listGetRandomParticle[2]);
             // для отправки сообщения об ошибке
-            currentParticalID = Convert.ToInt32(listGetRandomPartical[3]);
-            int bookID = Convert.ToInt32(listGetRandomPartical[4]);
+            currentParticleID = Convert.ToInt32(listGetRandomParticle[3]);
+            int bookID = Convert.ToInt32(listGetRandomParticle[4]);
             // создаёт "обёрточный" класс для всего содержания "частицы"
-            string beginPartical = "<div class=\"label-poem-partical-line\"><p>";
-            string endPartical = "</p></div>";
+            string beginParticle = "<div class=\"label-poem-partical-line\"><p>";
+            string endParticle = "</p></div>";
             // замена символов новой строки на тег, выполняющий это в html
-            partical = beginPartical + partical.Replace("\n\r", "</p><p>") + endPartical;
-            partical = partical.Replace("$$strong-open$$", "<strong>");
-            partical = partical.Replace("$$emphasis-open$$", "<emphasis>");
-            partical = partical.Replace("$$strong-close$$", "</strong>");
-            partical = partical.Replace("$$emphasis-close$$", "</emphasis>");
+            particle = beginParticle + particle.Replace("\n\r", "</p><p>") + endParticle;
+            particle = particle.Replace("$$strong-open$$", "<strong>");
+            particle = particle.Replace("$$emphasis-open$$", "<emphasis>");
+            particle = particle.Replace("$$strong-close$$", "</strong>");
+            particle = particle.Replace("$$emphasis-close$$", "</emphasis>");
             // создаёт "обёрточный" класс для всего содержания сведения о "частице"
             string beginTitle = "<div class=\"label-partical-title\">";
             string endTitle = "</div>";
             // замена символов новой строки на тег, выполняющий это в html
             title = beginTitle + title.Replace("\n\r", "<br>") + endTitle;
-            LabelPoemParticalLine.Text = partical;
-            LabelParticalTitle.Text = title;
+            LabelPoemParticleLine.Text = particle;
+            LabelParticleTitle.Text = title;
         }
-        private void ReportPartical()
+        private void ReportParticle()
         {
             BotDBConnect currentConnection = new BotDBConnect();
 
             currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
-            currentConnection.WriteNewParticalReportByParticalID(currentParticalID.ToString());
+            currentConnection.WriteNewParticleReportByParticleID(currentParticleID.ToString());
         }
 
         //protected void Button1_Click(object sender, EventArgs e)

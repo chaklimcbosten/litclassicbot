@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Частицы. LITCLASSIC" Language="C#" MasterPageFile="~/litclassic.Master" AutoEventWireup="true" CodeBehind="Particals.aspx.cs" Inherits="litclassicbot.Particals" %>
+﻿<%@ Page Title="Частицы. LITCLASSIC" Language="C#" MasterPageFile="~/litclassic.Master" AutoEventWireup="true" CodeBehind="Particles.aspx.cs" Inherits="Particles" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server"> 
     <div class="main">
@@ -11,10 +11,10 @@
             <%--<asp:CheckBox ID="CheckBox4" runat="server" Text="Указатели" />--%>
         </div>
         <h2>Текст "частицы"</h2>
-        <asp:Label ID="LabelParticalLine" runat="server"></asp:Label>
-        <asp:Label ID="LabelPoemParticalLine" runat="server"></asp:Label>
+        <asp:Label ID="LabelParticleLine" runat="server"></asp:Label>
+        <asp:Label ID="LabelPoemParticleLine" runat="server"></asp:Label>
         <h2>Сведения о "частице"</h2>
-        <asp:Label ID="LabelParticalTitle" runat="server"></asp:Label>  
+        <asp:Label ID="LabelParticleTitle" runat="server"></asp:Label>  
         <%--<asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />--%>
         <h2>Копировать, сохранить, поделиться "частицей"</h2>
         <h2>О процессе формирования "частиц"</h2>

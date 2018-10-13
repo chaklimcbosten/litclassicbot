@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using litclassicbot.Classes;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
+using System;
+using System.Collections.Generic;
 using System.Linq;
-using litclassicbot.Classes;
+using System.Threading.Tasks;
 
 namespace litclassicbot.Dialogs
 {
@@ -61,16 +61,16 @@ namespace litclassicbot.Dialogs
 
                     currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
 
-                    List<string> listGetRandomPartical = new List<string>();
-                    listGetRandomPartical = currentConnection.GetRandomPoemPartical(activity.Conversation.Id);
-                    string partical = listGetRandomPartical[0];
-                    partical = partical.Replace("$$strong-open$$", "**");
-                    partical = partical.Replace("$$emphasis-open$$", "*");
-                    partical = partical.Replace("$$strong-close$$", "**");
-                    partical = partical.Replace("$$emphasis-close$$", "*");
-                    string title = listGetRandomPartical[1];
-                    int indeLastLine = Convert.ToInt32(listGetRandomPartical[2]);
-                    int bookID = Convert.ToInt32(listGetRandomPartical[4]);
+                    List<string> listGetRandomParticle = new List<string>();
+                    listGetRandomParticle = currentConnection.GetRandomPoemParticle(activity.Conversation.Id);
+                    string particle = listGetRandomParticle[0];
+                    particle = particle.Replace("$$strong-open$$", "**");
+                    particle = particle.Replace("$$emphasis-open$$", "*");
+                    particle = particle.Replace("$$strong-close$$", "**");
+                    particle = particle.Replace("$$emphasis-close$$", "*");
+                    string title = listGetRandomParticle[1];
+                    int indeLastLine = Convert.ToInt32(listGetRandomParticle[2]);
+                    int bookID = Convert.ToInt32(listGetRandomParticle[4]);
                     var card = new HeroCard("Дальнейшие возможные действия:");
                     card.Buttons = new List<CardAction>()
         {
@@ -109,7 +109,7 @@ namespace litclassicbot.Dialogs
                         Content = card
                     });
 
-                    await context.PostAsync(partical);
+                    await context.PostAsync(particle);
                     await context.PostAsync("Сведения о частице:\n\r" + title);
                     await context.PostAsync(reply);
                 }
@@ -127,16 +127,16 @@ namespace litclassicbot.Dialogs
 
                     currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
 
-                    List<string> listGetRandomPartical = new List<string>();
-                    listGetRandomPartical = currentConnection.GetRandomPartical(activity.Conversation.Id);
-                    string partical = listGetRandomPartical[0];
-                    partical = partical.Replace("$$strong-open$$", "**");
-                    partical = partical.Replace("$$emphasis-open$$", "*");
-                    partical = partical.Replace("$$strong-close$$", "**");
-                    partical = partical.Replace("$$emphasis-close$$", "*");
-                    string title = listGetRandomPartical[1];
-                    int indeLastLine = Convert.ToInt32(listGetRandomPartical[2]);
-                    int bookID = Convert.ToInt32(listGetRandomPartical[4]);
+                    List<string> listGetRandomParticle = new List<string>();
+                    listGetRandomParticle = currentConnection.GetRandomParticle(activity.Conversation.Id);
+                    string particle = listGetRandomParticle[0];
+                    particle = particle.Replace("$$strong-open$$", "**");
+                    particle = particle.Replace("$$emphasis-open$$", "*");
+                    particle = particle.Replace("$$strong-close$$", "**");
+                    particle = particle.Replace("$$emphasis-close$$", "*");
+                    string title = listGetRandomParticle[1];
+                    int indeLastLine = Convert.ToInt32(listGetRandomParticle[2]);
+                    int bookID = Convert.ToInt32(listGetRandomParticle[4]);
                     var card = new HeroCard("Дальнейшие возможные действия:");
                     card.Buttons = new List<CardAction>()
         {
@@ -175,7 +175,7 @@ namespace litclassicbot.Dialogs
                         Content = card
                     });
 
-                    await context.PostAsync(partical);
+                    await context.PostAsync(particle);
                     await context.PostAsync("Сведения о частице:\n\r" + title);
                     await context.PostAsync(reply);
 
@@ -308,12 +308,12 @@ namespace litclassicbot.Dialogs
 
                     currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
 
-                    List<string> listGetRandomPartical = new List<string>();
-                    listGetRandomPartical = currentConnection.GetRandomPoemPartical(activity.Conversation.Id);
-                    string partical = listGetRandomPartical[1];
-                    string title = listGetRandomPartical[0];
-                    int indeLastLine = Convert.ToInt32(listGetRandomPartical[2]);
-                    int bookID = Convert.ToInt32(listGetRandomPartical[4]);
+                    List<string> listGetRandomParticle = new List<string>();
+                    listGetRandomParticle = currentConnection.GetRandomPoemParticle(activity.Conversation.Id);
+                    string particle = listGetRandomParticle[1];
+                    string title = listGetRandomParticle[0];
+                    int indeLastLine = Convert.ToInt32(listGetRandomParticle[2]);
+                    int bookID = Convert.ToInt32(listGetRandomParticle[4]);
                     var card = new HeroCard("Дальнейшие возможные действия:");
                     card.Buttons = new List<CardAction>()
         {
@@ -352,7 +352,7 @@ namespace litclassicbot.Dialogs
                         Content = card
                     });
 
-                    await context.PostAsync(partical);
+                    await context.PostAsync(particle);
                     await context.PostAsync("Сведения о частице:\n\r" + title);
                     await context.PostAsync(reply);
                 }
@@ -619,7 +619,7 @@ namespace litclassicbot.Dialogs
                     BotDBConnect currentConnection = new BotDBConnect();
 
                     currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
-                    currentConnection.WriteNewFavouritePartical(activity.Conversation.Id);
+                    currentConnection.WriteNewFavouriteParticle(activity.Conversation.Id);
                     await context.PostAsync("Частица добавлена в избранное!");
                 }
                 catch
@@ -649,7 +649,7 @@ namespace litclassicbot.Dialogs
                     BotDBConnect currentConnection = new BotDBConnect();
 
                     currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
-                    currentConnection.WriteNewParticalReportByConversationID(activity.Conversation.Id);
+                    currentConnection.WriteNewParticleReportByConversationID(activity.Conversation.Id);
                     await context.PostAsync("Сообщение об ошибке отправлено!");
                 }
                 catch
@@ -670,13 +670,13 @@ namespace litclassicbot.Dialogs
                     currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
 
                     // список получаемых данных из базы
-                    List<int> listFavouriteParticalsID = new List<int>();
-                    List<string> listFavouriteParticalsTitles = new List<string>();
+                    List<int> listFavouriteParticlesID = new List<int>();
+                    List<string> listFavouriteParticlesTitles = new List<string>();
                     // присвоение bookID
                     int bookID = Convert.ToInt32(activity.Text.Split('D')[1]);
-                    listFavouriteParticalsID = currentConnection.GetFavouriteParticalsID(Convert.ToInt32(bookID), activity.Conversation.Id);
+                    listFavouriteParticlesID = currentConnection.GetFavouriteParticlesID(Convert.ToInt32(bookID), activity.Conversation.Id);
                     // строка сообщения со списком книг
-                    string stringFavouriteParticals = "Избранные Вами частицы:\n\r";
+                    string stringFavouriteParticles = "Избранные Вами частицы:\n\r";
                     // переменная-разделитель
                     //string[] stringSeparator = new string[] { "////" };
 
@@ -689,29 +689,29 @@ namespace litclassicbot.Dialogs
                     //        ":** " + listFavouriteParticalsID[iListFavouriteParticlasByBookID].Split(stringSeparator, StringSplitOptions.None)[0] + "\n\r";
                     //}
 
-                    listFavouriteParticalsTitles = currentConnection.GetParticalsTitles(listFavouriteParticalsID);
+                    listFavouriteParticlesTitles = currentConnection.GetParticlesTitles(listFavouriteParticlesID);
 
-                    for (int iListFavouriteParticalsTitles = 0;
-                        iListFavouriteParticalsTitles < listFavouriteParticalsTitles.Count;
-                        iListFavouriteParticalsTitles++)
+                    for (int iListFavouriteParticlesTitles = 0;
+                        iListFavouriteParticlesTitles < listFavouriteParticlesTitles.Count;
+                        iListFavouriteParticlesTitles++)
                     {
-                        stringFavouriteParticals += "* **№" + (iListFavouriteParticalsTitles + 1)
-                            + ":** " + listFavouriteParticalsTitles[iListFavouriteParticalsTitles] + "\n\r";
+                        stringFavouriteParticles += "* **№" + (iListFavouriteParticlesTitles + 1)
+                            + ":** " + listFavouriteParticlesTitles[iListFavouriteParticlesTitles] + "\n\r";
                     }
 
                     var card = new HeroCard("Клавиша с соответствующим частице номером пришлёт выбранную частицу.");
                     card.Buttons = new List<CardAction>();
 
                     // создание нужного количества клавиш
-                    for (int iListFavouriteParticalsID = 0;
-                        iListFavouriteParticalsID < listFavouriteParticalsID.Count();
-                        iListFavouriteParticalsID++)
+                    for (int iListFavouriteParticlesID = 0;
+                        iListFavouriteParticlesID < listFavouriteParticlesID.Count();
+                        iListFavouriteParticlesID++)
                     {
                         CardAction newCardAction = new CardAction()
                         {
-                            Title = "№" + Convert.ToString(iListFavouriteParticalsID + 1),
+                            Title = "№" + Convert.ToString(iListFavouriteParticlesID + 1),
                             Type = ActionTypes.PostBack,
-                            Value = "getPartical" + listFavouriteParticalsID[iListFavouriteParticalsID]
+                            Value = "getPartical" + listFavouriteParticlesID[iListFavouriteParticlesID]
                         };
 
                         card.Buttons.Add(newCardAction);
@@ -735,7 +735,7 @@ namespace litclassicbot.Dialogs
                     });
 
                     // отправка сообщения со списком заголовков частиц
-                    await context.PostAsync(stringFavouriteParticals);
+                    await context.PostAsync(stringFavouriteParticles);
                     // отправка сообщения с клавишами
                     await context.PostAsync(reply);
                 }
@@ -753,15 +753,15 @@ namespace litclassicbot.Dialogs
                     currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
 
                     // список получаемых данных из базы
-                    List<string> partical = new List<string>();
-                    // присвоение particalID
-                    int particalID = Convert.ToInt32(activity.Text.Split('l')[1]);
-                    partical = currentConnection.GetPartical(particalID);
+                    List<string> particle = new List<string>();
+                    // присвоение particleID
+                    int particleID = Convert.ToInt32(activity.Text.Split('l')[1]);
+                    particle = currentConnection.GetParticle(particleID);
 
-                    string line = partical[0];
-                    string title = partical[1];
-                    int indeLastLine = Convert.ToInt32(partical[2]);
-                    int bookID = Convert.ToInt32(partical[4]);
+                    string line = particle[0];
+                    string title = particle[1];
+                    int indeLastLine = Convert.ToInt32(particle[2]);
+                    int bookID = Convert.ToInt32(particle[4]);
                     var card = new HeroCard("Дальнейшие возможные действия:");
                     card.Buttons = new List<CardAction>()
         {
@@ -769,7 +769,7 @@ namespace litclassicbot.Dialogs
                 {
                     Title = "Удалить из избранных данную частицу.",
                     Type = ActionTypes.PostBack,
-                    Value = "deleteFavouritePartical " + particalID
+                    Value = "deleteFavouritePartical " + particleID
                 },
                 new CardAction()
                 {
@@ -801,10 +801,10 @@ namespace litclassicbot.Dialogs
                 try
                 {
                     BotDBConnect currentConnection = new BotDBConnect();
-                    int particalID = Convert.ToInt32(activity.Text.Split(' ')[1]);
+                    int particleID = Convert.ToInt32(activity.Text.Split(' ')[1]);
 
                     currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
-                    currentConnection.DeleteFavouritePartical(particalID, activity.Conversation.Id);
+                    currentConnection.DeleteFavouriteParticle(particleID, activity.Conversation.Id);
 
                     var card = new HeroCard("Данная частица успешно удалена из списка избранных.");
                     card.Buttons = new List<CardAction>()
@@ -928,7 +928,7 @@ namespace litclassicbot.Dialogs
             Array.Resize(ref listLines, listLines.Length - 1);
 
             // -- формирование списков частей заголовка строк --
-            string particalTitle = "";
+            string particleTitle = "";
             List<string> listFinalTitles = new List<string>();
             // список списка отдельных частей заголовков
             List<List<string>> listPartsOfTitles = new List<List<string>>();
@@ -976,14 +976,14 @@ namespace litclassicbot.Dialogs
             firstTitle.CreateTitle();
 
             // создание строки заголовка
-            particalTitle = BuildParticalsTitle(firstTitle);
+            particleTitle = BuildParticlesTitle(firstTitle);
             // -- формирование первой версии заголовка --
 
 
 
             // -- формирование окончательной версии заголовка --
             string[] largePartsOfTitle;
-            largePartsOfTitle = particalTitle.Split(';');
+            largePartsOfTitle = particleTitle.Split(';');
 
             // убирает лишний последний элемент массива, который неминуемо возникает пустым, т.к. заголовок оканчивается на ";"
             Array.Resize(ref largePartsOfTitle, largePartsOfTitle.Length - 1);
@@ -1022,7 +1022,7 @@ namespace litclassicbot.Dialogs
                         // если однотипная часть заголовка лишь одна, т.е. объединять нечего
                         if (firstIndexComponent != lastIndexComponent)
                         {
-                            particalTitle = ReplaceFirst(particalTitle, partForReplace, firstIndexComponent + '-' + lastIndexComponent + ' ' + component + "; ");
+                            particleTitle = ReplaceFirst(particleTitle, partForReplace, firstIndexComponent + '-' + lastIndexComponent + ' ' + component + "; ");
                         }
 
                         iLargePartsOfTitle--;
@@ -1036,9 +1036,9 @@ namespace litclassicbot.Dialogs
 
 
             // добавление строки заголовка в общий список заголовков
-            return particalTitle;
+            return particleTitle;
         }
-        private string BuildParticalsTitle(Title title)
+        private string BuildParticlesTitle(Title title)
         {
             string titleString = "";
             titleString += title.GetTitleString();
@@ -1047,7 +1047,7 @@ namespace litclassicbot.Dialogs
             //{
             foreach (Title elementTitle in title.GetListTitles())
             {
-                titleString += BuildParticalsTitle(elementTitle);
+                titleString += BuildParticlesTitle(elementTitle);
             }
             //}
 
