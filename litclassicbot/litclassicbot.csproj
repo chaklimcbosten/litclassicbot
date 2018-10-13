@@ -158,6 +158,7 @@
     <Content Include="Content\footer\word-icon.png" />
     <Content Include="Content\header\main-logo-png-v3.png" />
     <Content Include="Content\icons\copy-to-clipboard-icon.png" />
+    <Content Include="ErrorPage.aspx" />
     <Content Include="Particals.aspx" />
     <Content Include="Authorization.aspx" />
     <Content Include="Reader.aspx" />
@@ -206,6 +207,13 @@
     <Compile Include="Classes\BotDBConnect.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\NextQuoteController.cs" />
+    <Compile Include="ErrorPage.aspx.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.designer.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\RootDialog.cs" />
     <Compile Include="Dialogs\Title.cs" />
     <Compile Include="DefaultPage.aspx.cs">
