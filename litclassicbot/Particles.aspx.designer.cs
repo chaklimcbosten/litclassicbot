@@ -7,79 +7,81 @@
 // </автоматически создаваемое>
 //------------------------------------------------------------------------------
 
-
-
-public partial class Particles {
+namespace litclassicbot {
     
-    /// <summary>
-    /// CheckBox1 элемент управления.
-    /// </summary>
-    /// <remarks>
-    /// Автоматически создаваемое поле.
-    /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
     
-    /// <summary>
-    /// CheckBox2 элемент управления.
-    /// </summary>
-    /// <remarks>
-    /// Автоматически создаваемое поле.
-    /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.CheckBox CheckBox2;
-    
-    /// <summary>
-    /// CheckBox3 элемент управления.
-    /// </summary>
-    /// <remarks>
-    /// Автоматически создаваемое поле.
-    /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.CheckBox CheckBox3;
-    
-    /// <summary>
-    /// ParticleLine элемент управления.
-    /// </summary>
-    /// <remarks>
-    /// Автоматически создаваемое поле.
-    /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label LabelParticleLine;
-    
-    /// <summary>
-    /// LabelPoemParticleLine элемент управления.
-    /// </summary>
-    /// <remarks>
-    /// Автоматически создаваемое поле.
-    /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label LabelPoemParticleLine;
-    
-    /// <summary>
-    /// LabelParticleTitle элемент управления.
-    /// </summary>
-    /// <remarks>
-    /// Автоматически создаваемое поле.
-    /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label LabelParticleTitle;
-    
-    /// <summary>
-    /// ButtonParticleSave элемент управления.
-    /// </summary>
-    /// <remarks>
-    /// Автоматически создаваемое поле.
-    /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Button ButtonParticleSave;
-    
-    /// <summary>
-    /// ButtonParticleReport элемент управления.
-    /// </summary>
-    /// <remarks>
-    /// Автоматически создаваемое поле.
-    /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Button ButtonParticleReport;
+    public partial class Particles {
+        
+        /// <summary>
+        /// CheckBox1 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
+        
+        /// <summary>
+        /// CheckBox2 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CheckBox2;
+        
+        /// <summary>
+        /// CheckBox3 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CheckBox3;
+        
+        /// <summary>
+        /// LabelParticleLine элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelParticleLine;
+        
+        /// <summary>
+        /// LabelPoemParticleLine элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelPoemParticleLine;
+        
+        /// <summary>
+        /// LabelParticleTitle элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelParticleTitle;
+        
+        /// <summary>
+        /// ButtonParticleSave элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonParticleSave;
+        
+        /// <summary>
+        /// ButtonParticleReport элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonParticleReport;
+    }
 }

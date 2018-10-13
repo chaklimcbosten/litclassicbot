@@ -159,8 +159,8 @@
     <Content Include="Content\header\main-logo-png-v3.png" />
     <Content Include="Content\icons\copy-to-clipboard-icon.png" />
     <Content Include="ErrorPage.aspx" />
-    <Content Include="Particles.aspx" />
     <Content Include="Authorization.aspx" />
+    <Content Include="Particles.aspx" />
     <Content Include="Reader.aspx" />
     <Content Include="Scripts\AJAX-function.js" />
     <Content Include="Content\bootstrap.css" />
@@ -233,13 +233,6 @@
     <Compile Include="litclassic.Master.designer.cs">
       <DependentUpon>litclassic.Master</DependentUpon>
     </Compile>
-    <Compile Include="Particles.aspx.cs">
-      <DependentUpon>Particles.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Particles.aspx.designer.cs">
-      <DependentUpon>Particles.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Authorization.aspx.cs">
       <DependentUpon>Authorization.aspx</DependentUpon>
@@ -247,6 +240,13 @@
     </Compile>
     <Compile Include="Authorization.aspx.designer.cs">
       <DependentUpon>Authorization.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Particles.aspx.cs">
+      <DependentUpon>Particles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Particles.aspx.designer.cs">
+      <DependentUpon>Particles.aspx</DependentUpon>
     </Compile>
     <Compile Include="Reader.aspx.cs">
       <DependentUpon>Reader.aspx</DependentUpon>

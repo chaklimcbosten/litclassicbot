@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Частицы. LITCLASSIC" Language="C#" MasterPageFile="~/litclassic.Master" AutoEventWireup="true" CodeBehind="Particles.aspx.cs" Inherits="Particles" %>
+﻿<%@ Page Title="Частицы. LITCLASSIC" Language="C#" MasterPageFile="~/litclassic.Master" AutoEventWireup="true" CodeBehind="Particles.aspx.cs" Inherits="litclassicbot.Particles" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server"> 
     <div class="main">
@@ -47,7 +47,7 @@
          </div>  --%>
         </div>
         <h2>Текст "частицы"</h2>
-        <asp:Label ID="ParticleLine" runat="server"></asp:Label>
+        <asp:Label ID="LabelParticleLine" runat="server"></asp:Label>
         <asp:Label ID="LabelPoemParticleLine" runat="server"></asp:Label>
         <h2>Сведения о "частице"</h2>
         <asp:Label ID="LabelParticleTitle" runat="server"></asp:Label>
@@ -146,4 +146,5 @@
             CssClass="button-report" />
     </div>  
 </asp:Content>
+
 

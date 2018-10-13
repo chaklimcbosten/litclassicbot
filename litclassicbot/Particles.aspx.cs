@@ -41,7 +41,7 @@ namespace litclassicbot
             currentParticleID = Convert.ToInt32(listGetRandomParticle[3]);
             int bookID = Convert.ToInt32(listGetRandomParticle[4]);
             // создаёт "обёрточный" класс для всего содержания "частицы"
-            string beginParticle = "<div class=\"label-partical-line\"><p>";
+            string beginParticle = "<div class=\"label-particle-line\"><p>";
             string endParticle = "</p></div>";
             // замена символов новой строки на тег, выполняющий это в html
             particle = beginParticle + particle.Replace("\n\r", "</p><p>") + endParticle;
@@ -50,7 +50,7 @@ namespace litclassicbot
             particle = particle.Replace("$$strong-close$$", "</strong>");
             particle = particle.Replace("$$emphasis-close$$", "</emphasis>");
             // создаёт "обёрточный" класс для всего содержания сведения о "частице"
-            string beginTitle = "<div class=\"label-partical-title\">";
+            string beginTitle = "<div class=\"label-particle-title\">";
             string endTitle = "</div>";
             // замена символов новой строки на тег, выполняющий это в html
             title = beginTitle + title.Replace("\n\r", "<br>") + endTitle;
@@ -73,7 +73,7 @@ namespace litclassicbot
             currentParticleID = Convert.ToInt32(listGetRandomParticle[3]);
             int bookID = Convert.ToInt32(listGetRandomParticle[4]);
             // создаёт "обёрточный" класс для всего содержания "частицы"
-            string beginParticle = "<div class=\"label-poem-partical-line\"><p>";
+            string beginParticle = "<div class=\"label-poem-particle-line\"><p>";
             string endParticle = "</p></div>";
             // замена символов новой строки на тег, выполняющий это в html
             particle = beginParticle + particle.Replace("\n\r", "</p><p>") + endParticle;
@@ -82,7 +82,7 @@ namespace litclassicbot
             particle = particle.Replace("$$strong-close$$", "</strong>");
             particle = particle.Replace("$$emphasis-close$$", "</emphasis>");
             // создаёт "обёрточный" класс для всего содержания сведения о "частице"
-            string beginTitle = "<div class=\"label-partical-title\">";
+            string beginTitle = "<div class=\"label-particle-title\">";
             string endTitle = "</div>";
             // замена символов новой строки на тег, выполняющий это в html
             title = beginTitle + title.Replace("\n\r", "<br>") + endTitle;
