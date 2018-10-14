@@ -215,11 +215,11 @@ h2 {
 .footer-buttons-right-column {
     flex-direction: row-reverse;
     float: right;
-    width: 60%;
+    width: 480px;
 }
 .footer-buttons-left-column {
     float: left;
-    width: 39%;
+    width: 390px;
 }
 
 .footer-left-text {
