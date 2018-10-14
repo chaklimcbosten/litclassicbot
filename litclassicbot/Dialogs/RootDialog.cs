@@ -42,8 +42,8 @@ namespace litclassicbot.Dialogs
                         "Команды боту можно отправлять, вводя их с помощью клавиатуры в поле ввода диалога, либо нажав на клавишу со значком \"/\" в поле ввода, " +
                         "а затем по нужной команде во всплывшем списке доступных команд.\n\r" +
                         "Для ознакомления предлагаю две основные команды бота, вызвать которые можно нажав по ним в данном сообщении:\n\r" +
-                        "/newpartical - бот пришлёт случайно выбранную частицу из всех имеющихся в его базе;\n\r" +
-                        "/newpoempartical - бот пришлёт случайно выбранную частицу из всех имеющихся стихотворных частиц в его базе.\n\r\n\r" +
+                        "/newparticle - бот пришлёт случайно выбранную частицу из всех имеющихся в его базе;\n\r" +
+                        "/newpoemparticle - бот пришлёт случайно выбранную частицу из всех имеющихся стихотворных частиц в его базе.\n\r\n\r" +
                         "**Приятного и полезного пользования!**";
 
                     await context.PostAsync(start);
@@ -53,7 +53,7 @@ namespace litclassicbot.Dialogs
                     await context.PostAsync("Какие-то неполадки в исполнении кода команды /start...");
                 }
             }
-            else if ((activity.Text == "/newpoempartical") || (activity.Text.ToLower().Contains("стих")) | (activity.Text.ToLower().Contains("стиш")))
+            else if ((activity.Text == "/newpoemparticle") || (activity.Text.ToLower().Contains("стих")) | (activity.Text.ToLower().Contains("стиш")))
             {
                 try
                 {
@@ -78,13 +78,13 @@ namespace litclassicbot.Dialogs
                 {
                     Title = "Сообщить об ошибке.",
                     Type = ActionTypes.PostBack,
-                    Value = "reportPartical"
+                    Value = "reportParticle"
                 },
                 new CardAction()
                 {
                     Title = "Добавить в \"избранное\".",
                     Type = ActionTypes.PostBack,
-                    Value = "addParticalToFavourites"
+                    Value = "addParticleToFavourites"
                 },
                 new CardAction()
                 {
@@ -97,7 +97,7 @@ namespace litclassicbot.Dialogs
                     Title = "Ещё \"частица\".",
                     Type = ActionTypes.PostBack,
                     //Value = "readNext " + indeLastLine + " " + bookID
-                    Value = "/newpoempartical"
+                    Value = "/newpoemparticle"
                 }
         };
 
@@ -115,10 +115,10 @@ namespace litclassicbot.Dialogs
                 }
                 catch
                 {
-                    await context.PostAsync("Какие-то неполадки в исполнении кода команды /newpoempartical...");
+                    await context.PostAsync("Какие-то неполадки в исполнении кода команды /newpoemparticle...");
                 }
             }
-            else if ((activity.Text == "/newpartical") || (activity.Text.ToLower().Contains("частиц")))
+            else if ((activity.Text == "/newparticle") || (activity.Text.ToLower().Contains("частиц")))
             {
                 //context.Forward()                             
                 try
@@ -144,13 +144,13 @@ namespace litclassicbot.Dialogs
                 {
                     Title = "Сообщить об ошибке.",
                     Type = ActionTypes.PostBack,
-                    Value = "reportPartical"
+                    Value = "reportParticle"
                 },
                 new CardAction()
                 {
                     Title = "Добавить в \"избранное\".",
                     Type = ActionTypes.PostBack,
-                    Value = "addParticalToFavourites"
+                    Value = "addParticleToFavourites"
                 },
                 new CardAction()
                 {
@@ -163,7 +163,7 @@ namespace litclassicbot.Dialogs
                     Title = "Ещё \"частица\".",
                     Type = ActionTypes.PostBack,
                     //Value = "readNext " + indeLastLine + " " + bookID
-                    Value = "/newpartical"
+                    Value = "/newparticle"
                 }
         };
 
@@ -183,7 +183,7 @@ namespace litclassicbot.Dialogs
                 }
                 catch
                 {
-                    await context.PostAsync("Какие-то неполадки в исполнении кода команды /newpartical...");
+                    await context.PostAsync("Какие-то неполадки в исполнении кода команды /newparticle...");
                 }
             }
             else if ((activity.Text == "/newword") || (activity.Text.ToLower().Contains("слов")))
@@ -259,48 +259,7 @@ namespace litclassicbot.Dialogs
                     await context.PostAsync("Какие-то неполадки в исполнении кода команды /newword...");
                 }
             }
-            //        else if (activity.Text == "/newpartical")
-            //        {                          
-            //            try
-            //            {
-            //                BotDBConnect currentConnection = new BotDBConnect();
-
-            //                currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
-
-            //                List<string> listGetRandomPartical = new List<string>();
-            //                listGetRandomPartical = currentConnection.GetRandomPartical(Convert.ToInt32(activity.Conversation.Id));
-            //                string partical = listGetRandomPartical[1];
-            //                string title = listGetRandomPartical[0];
-            //                int indeLastLine = Convert.ToInt32(listGetRandomPartical[2]);
-            //                int bookID = Convert.ToInt32(listGetRandomPartical[4]);
-
-            //                var reply = activity.CreateReply("Сведения о частице:\n\r" + title);
-            //                reply.Type = ActivityTypes.Message;
-            //                reply.TextFormat = TextFormatTypes.Plain;
-
-            //                reply.SuggestedActions = new SuggestedActions()
-            //                {
-            //                    Actions = new List<CardAction>()
-            //{
-            //    new CardAction(){ Title = "Сообщить об ошибке.", Type=ActionTypes.PostBack, Value="reportPartical" },
-            //    new CardAction(){ Title = "Добавить в \"избранное\".", Type=ActionTypes.PostBack, Value="addParticalToFavourites" },
-            //    new CardAction(){ Title = "Скачать книгу.", Type=ActionTypes.PostBack, Value="download " + bookID },
-            //    new CardAction(){ Title = "Новая частица.", Type=ActionTypes.PostBack, Value="/newpartical" }
-            //}
-            //                };
-
-            //                await context.PostAsync(partical);
-            //                //await context.PostAsync("Сведения о частице:\n\r" + title);
-            //                await context.PostAsync(reply);
-
-            //                //reply.ChannelData = { "custom Telegram JSON"};
-            //            }
-            //            catch
-            //            {
-            //                await context.PostAsync("Какие-то неполадки с кодом в команде /newpartical...");
-            //            }
-            //        }
-            else if (activity.Text == "/newnonartpartical")
+            else if (activity.Text == "/newnonartparticle")
             {
                 try
                 {
@@ -321,13 +280,13 @@ namespace litclassicbot.Dialogs
                 {
                     Title = "Сообщить об ошибке.",
                     Type = ActionTypes.PostBack,
-                    Value = "reportPartical"
+                    Value = "reportParticle"
                 },
                 new CardAction()
                 {
                     Title = "Добавить в \"избранное\".",
                     Type = ActionTypes.PostBack,
-                    Value = "addParticalToFavourites"
+                    Value = "addParticleToFavourites"
                 },
                 new CardAction()
                 {
@@ -340,7 +299,7 @@ namespace litclassicbot.Dialogs
                     Title = "Новая не художественная \"частица\".",
                     Type = ActionTypes.PostBack,
                     //Value = "readNext " + indeLastLine + " " + bookID
-                    Value = "/newnonartpartical"
+                    Value = "/newnonartparticle"
                 }
         };
 
@@ -358,7 +317,7 @@ namespace litclassicbot.Dialogs
                 }
                 catch
                 {
-                    await context.PostAsync("Какие-то неполадки с кодом в команде /newnonartpartical...");
+                    await context.PostAsync("Какие-то неполадки с кодом в команде /newnonartparticle...");
                 }               
             }
             else if ((activity.Text == "/help") || (activity.Text.ToLower().Contains("помощ")))
@@ -372,15 +331,15 @@ namespace litclassicbot.Dialogs
                     //await context.PostAsync($"You sent {activity.Text} which was {length} characters");
 
                     await context.PostAsync("- Бот находится в очень ранней стадии разработки.\n\r \n\r- Доступные **команды**:\n\r" +
-                        " * /newpartical - получение новой, случайно выбранной, \"частицы\" из всех имеющихся \"частиц\" в базе данных. " +
+                        " * /newparticle - получение новой, случайно выбранной, \"частицы\" из всех имеющихся \"частиц\" в базе данных. " +
                         "После её получения можно добавить её в список избранных \"частиц\", нажав на соответствующую клавишу. " +
                         "Можно получить ссылку на скачивание книги, из которой изначально была создана эта \"частица\", в формате FB2, для чего также есть специальная кнопка." +
                         "Если \"частица\" некорректно обрывается или начинается, содержит неясные символы, слишком коротка, можно оправить сообщение об ошибке, нажав соответствующую предложенную кнопку." +
                         "Наконец, последняя кнопка позволят продублировать эту команду, снова получив новую \"частицу\".\n\r" +
-                        " * /newpoempartical - получение новой стихотворной частицы. Команда аналогична предыдущей с разницей лишь в том, что \"частица\" выбирается случайно не из всех," +
+                        " * /newpoemparticle - получение новой стихотворной частицы. Команда аналогична предыдущей с разницей лишь в том, что \"частица\" выбирается случайно не из всех," +
                         "имеющихся в базе данных, а лишь из тех, что являются стихотворными или в большем соотношении к своему объёму содержат стихотворные строфы." +
                         "Также различия в том, что одна из предложенных после полученя клавиш предлагает получение новой именно стихотворной \"частицы\".\n\r" +
-                        //"\n\r/newnonartpartical - получение новой не художественной частицы," +
+                        //"\n\r/newnonartparticle - получение новой не художественной частицы," +
                         //"\n\r/authors - список авторов книг," +
                         " * /favourites - список \"избранных\" \"частиц\". Для удобства сначала Вам будет предложен список книг, " +
                         "из которых Вы добавляли в избранное частицы, а из них затем уже можно будет выбрать избранные частицы.\n\r" +
@@ -516,7 +475,7 @@ namespace litclassicbot.Dialogs
                             {
                                 Title = "№" + Convert.ToString(iListFavourites + 1),
                                 Type = ActionTypes.PostBack,
-                                Value = "getFavouriteParticalsByBookID" + listFavourites[iListFavourites].Split(stringSeparator, StringSplitOptions.None).Last()
+                                Value = "getFavouriteParticlesByBookID" + listFavourites[iListFavourites].Split(stringSeparator, StringSplitOptions.None).Last()
                             };
 
                             card.Buttons.Add(newCardAction);
@@ -612,7 +571,7 @@ namespace litclassicbot.Dialogs
                     await context.PostAsync("Какие-то неполадки с кодом чтения книги далее...");
                 }               
             }
-            else if (activity.Text == "addParticalToFavourites")
+            else if (activity.Text == "addParticleToFavourites")
             {
                 try
                 {
@@ -642,7 +601,7 @@ namespace litclassicbot.Dialogs
                     await context.PostAsync("Какие-то неполадки в исполнении кода отправления сообщения об ошибке...");
                 }
             }
-            else if (activity.Text == "reportPartical")
+            else if (activity.Text == "reportParticle")
             {
                 try
                 {
@@ -661,7 +620,7 @@ namespace litclassicbot.Dialogs
             {
                 await context.PostAsync("Ага, понял.");
             }
-            else if (activity.Text.Contains("getFavouriteParticalsByBookID"))
+            else if (activity.Text.Contains("getFavouriteParticlesByBookID"))
             {
                 try
                 {
@@ -682,11 +641,11 @@ namespace litclassicbot.Dialogs
 
                     // заполнение строки сообщения со списком заголовков частиц
                     //for (int iListFavouriteParticlasByBookID = 0; 
-                    //    iListFavouriteParticlasByBookID < listFavouriteParticalsID.Count(); 
+                    //    iListFavouriteParticlasByBookID < listFavouriteParticlesID.Count(); 
                     //    iListFavouriteParticlasByBookID++)
                     //{
-                    //    stringFavouriteParticals += "**№" + (iListFavouriteParticlasByBookID + 1) + 
-                    //        ":** " + listFavouriteParticalsID[iListFavouriteParticlasByBookID].Split(stringSeparator, StringSplitOptions.None)[0] + "\n\r";
+                    //    stringFavouriteParticles += "**№" + (iListFavouriteParticlasByBookID + 1) + 
+                    //        ":** " + listFavouriteParticlesID[iListFavouriteParticlasByBookID].Split(stringSeparator, StringSplitOptions.None)[0] + "\n\r";
                     //}
 
                     listFavouriteParticlesTitles = currentConnection.GetParticlesTitles(listFavouriteParticlesID);
@@ -711,7 +670,7 @@ namespace litclassicbot.Dialogs
                         {
                             Title = "№" + Convert.ToString(iListFavouriteParticlesID + 1),
                             Type = ActionTypes.PostBack,
-                            Value = "getPartical" + listFavouriteParticlesID[iListFavouriteParticlesID]
+                            Value = "getParticle" + listFavouriteParticlesID[iListFavouriteParticlesID]
                         };
 
                         card.Buttons.Add(newCardAction);
@@ -744,7 +703,7 @@ namespace litclassicbot.Dialogs
                     await context.PostAsync("Какие-то неполадки в исполнении кода получения списка книг, из которых были выбраны избранные частицы...");
                 }               
             }
-            else if (activity.Text.Contains("getPartical"))
+            else if (activity.Text.Contains("getParticle"))
             {
                 try
                 {
@@ -769,7 +728,7 @@ namespace litclassicbot.Dialogs
                 {
                     Title = "Удалить из избранных данную частицу.",
                     Type = ActionTypes.PostBack,
-                    Value = "deleteFavouritePartical " + particleID
+                    Value = "deleteFavouriteParticle " + particleID
                 },
                 new CardAction()
                 {
@@ -796,7 +755,7 @@ namespace litclassicbot.Dialogs
                     await context.PostAsync("Какие-то неполадки в исполнении кода команды получения частицы из избранного...");
                 }              
             }
-            else if (activity.Text.Contains("deleteFavouritePartical"))
+            else if (activity.Text.Contains("deleteFavouriteParticle"))
             {
                 try
                 {
@@ -893,14 +852,14 @@ namespace litclassicbot.Dialogs
                 {
                     await context.PostAsync("Ботом можно пользоваться, отправляя ему следующие **команды**:\n\r" +
                         //"**Основные команды:**\n\r" +
-                        " * /newpartical - бот пришлёт случайно выбранную частицу;\n\r" +
-                        " * /newpoempartical - бот пришлёт случайно выбранную стихотворную частицу;\n\r" +
+                        " * /newparticle - бот пришлёт случайно выбранную частицу;\n\r" +
+                        " * /newpoemparticle - бот пришлёт случайно выбранную стихотворную частицу;\n\r" +
                         " * /favourites - бот пришлёт список книг, частицы которых Вы добавили в свой список избранных; из этого списка затем можно выбрать частицы, добавленные Вами;\n\r" +
                         //"**Прочие команды:**\n\r" +
                         " * /statistics - бот пришлёт данные статистики его пользования и его базы книг;\n\r" +
                         " * /help - бот пришлёт справочную и прочую информацию о себе.");
                     //await context.PostAsync("Доступные команды:" +
-                    //    "\n\r/newpartical - получение новой частицы," +
+                    //    "\n\r/newparticle - получение новой частицы," +
                     //    "\n\r/authors - список авторов книг," +
                     //    "\n\r/favourites - список \"избранных\" \"частиц\"," +
                     //    "\n\r/statistics - отображение общей статистики," +
@@ -1030,7 +989,7 @@ namespace litclassicbot.Dialogs
                 }
             }
 
-            //particalTitle = particalTitle.Replace("; ", ";\n");
+            //particleTitle = particleTitle.Replace("; ", ";\n");
             // -- формирование окончательной версии заголовка --
 
 
