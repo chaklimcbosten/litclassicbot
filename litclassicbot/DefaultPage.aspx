@@ -44,29 +44,6 @@
         <div class="content-main-page">
 
         </div>
-
-
-        <%--<asp:Label ID="LabelToCopy" runat="server" Visible="False"></asp:Label>
-
-        <div class="image-button-copy-to-clipboard">
-            <button id="btn" data-clipboard-target="label-partical-line"> </button>
-
-            <script>
-                var copyText = document.getElementById('.label-partical-line');
-
-                copyText.select();
-
-                document.execCommand("copy");
-                //var LabelToCopy = document.getElementById("label-to-copy");
-                //var clipboard = new ClipboardJS(LabelToCopy);
-                //clipboard.on('success', function (e) {
-                //    console.log(e);
-                //});
-                //clipboard.on('error', function (e) {
-                //    console.log(e);
-                //});
-            </script>
-        </div>--%>
     </div>
     
 </asp:Content>

@@ -190,7 +190,7 @@ h2 {
 
 .footer {
     width: 70%;
-    height: 70px;
+    height: 90px;
     background-color: white;
     padding-left: 15%;
     padding-right: 15%;
@@ -210,6 +210,7 @@ h2 {
 .footer-buttons-left-column,
 .footer-buttons-right-column {
     display: flex;
+    flex-direction: column;
 }
 .footer-buttons-right-column {
     flex-direction: row-reverse;
@@ -219,6 +220,17 @@ h2 {
 .footer-buttons-left-column {
     float: left;
     width: 39%;
+}
+
+.footer-left-text {
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: left;
+}
+.footer-right-text {
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align:right;
 }
 
 
@@ -249,8 +261,8 @@ h2 {
     font-family: 'Roboto', sans-serif;
     color: black;
     /*margin-right: 7px;*/
-    margin-top: 17px;
-    margin-bottom: 17px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     /*float: left;*/
     padding-top: 7px;
     padding-bottom: 7px;
@@ -339,6 +351,13 @@ h2 {
     .footer-images-buttons {
         width: 100%;
         display: flex;
+        flex-direction: row;
+    }
+    .footer-images-buttons-left-column {
+        flex-direction: row;
+    }
+    .footer-images-buttons-right-column {
+        flex-direction: row;
     }
 
     .label-subtitle-about-site,
