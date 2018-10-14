@@ -372,7 +372,7 @@ h2 {
         flex-direction: row;
     }
     .footer-images-buttons-right-column {
-        flex-direction: row;
+        flex-direction: row-reverse;
     }
 
     .label-subtitle-about-site,
@@ -400,17 +400,17 @@ h2 {
     .label-particle-line,
     .label-particle-title,
     .label-word-value {
-        padding: 5%;
+        padding: 15px;
     }
     .label-word-name {
-        padding: 5%;
+        padding: 15px;
         font-size: 24px;
         letter-spacing: 0px;
     }
 
     p {
         margin: 0;
-        margin-bottom: 2%;
+        margin-bottom: 2px;
     }
 
     .image-button-particle,
@@ -423,7 +423,6 @@ h2 {
         margin-left: 3px;      
         margin-top: 3px;
         margin-bottom: 6px;
-        float: right;
         border: 2px solid white;
         border-radius: 22px;
     }
@@ -438,7 +437,7 @@ h2 {
             background-color: lightgrey;
         }
     .image-button-particle {
-        margin-right: 2%;
+        margin-right: 3px;
     }
     .image-button-poem-particle,
     .image-button-word {
