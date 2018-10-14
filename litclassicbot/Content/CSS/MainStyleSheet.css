@@ -71,12 +71,17 @@ header {
     border: 2px solid black;
     border-radius: 3px;
 }
-
     .link-button-telegram-bot:hover,
     .link-button-vk:hover,
     .link-button-authorization:hover,
     .link-button-main-page:hover {
         background-color: whitesmoke;
+    }
+    .link-button-telegram-bot:active,
+    .link-button-vk:active,
+    .link-button-authorization:active,
+    .link-button-main-page:active {
+        background-color: lightgrey;
     }
 
 .link-button-telegram-bot,
@@ -283,6 +288,16 @@ h2 {
     .button-particle-save:hover {
         background-color: whitesmoke;
     }
+    .button-particle:active,
+    .button-word:active,
+    .button-proverb:active,
+    .button-read-next:active,
+    .button-read-previous:active,
+    .button-report:active,
+    .button-reload:active,
+    .button-particle-save:active {
+        background-color: lightgrey;
+    }
 .button-particle,
 .button-word,
 .button-proverb {
@@ -416,6 +431,11 @@ h2 {
         .image-button-poem-particle:hover,
         .image-button-word:hover {
             background-color: whitesmoke;
+        }
+        .image-button-particle:active,
+        .image-button-poem-particle:active,
+        .image-button-word:active {
+            background-color: lightgrey;
         }
     .image-button-particle {
         margin-right: 2%;
