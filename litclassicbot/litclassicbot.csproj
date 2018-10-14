@@ -152,6 +152,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\CSS\ErrorPageStyleSheet.css" />
     <Content Include="Content\CSS\MasterStyleSheet.css" />
     <Content Include="Content\footer\particle-icon.png" />
     <Content Include="Content\footer\poem-particle-icon.png" />
@@ -160,8 +161,8 @@
     <Content Include="Content\icons\apple-fav-icon.png" />
     <Content Include="Content\icons\copy-to-clipboard-icon.png" />
     <Content Include="Content\icons\favicon.png" />
-    <Content Include="ErrorPage.aspx" />
     <Content Include="Authorization.aspx" />
+    <Content Include="ErrorPage.aspx" />
     <Content Include="Particles.aspx" />
     <Content Include="Reader.aspx" />
     <Content Include="Scripts\AJAX-function.js" />
@@ -173,7 +174,7 @@
     <Content Include="DefaultPage.aspx">
       <BrowseToURL>~/DefaultPage.aspx</BrowseToURL>
     </Content>
-    <Content Include="Content\CSS\StyleSheet.css" />
+    <Content Include="Content\CSS\MainStyleSheet.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
@@ -209,13 +210,6 @@
     <Compile Include="Classes\BotDBConnect.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\NextQuoteController.cs" />
-    <Compile Include="ErrorPage.aspx.cs">
-      <DependentUpon>ErrorPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ErrorPage.aspx.designer.cs">
-      <DependentUpon>ErrorPage.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Dialogs\RootDialog.cs" />
     <Compile Include="Dialogs\Title.cs" />
     <Compile Include="DefaultPage.aspx.cs">
@@ -224,6 +218,13 @@
     </Compile>
     <Compile Include="DefaultPage.aspx.designer.cs">
       <DependentUpon>DefaultPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.designer.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
