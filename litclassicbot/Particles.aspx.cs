@@ -15,9 +15,41 @@ namespace litclassicbot
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Cookies["litclassic-cookie"]["theme-type-0"] = "true";
-            Response.Cookies["litclassic-cookie"]["theme-type-1"] = "false";
-            Response.Cookies["litclassic-cookie"]["theme-type-2"] = "false";
+            if (Request.Cookies["litclassic-cookie"] != null)
+            {
+                if (Server.HtmlEncode(Request.Cookies["litclassic-cookie"]["theme-type-0"]) == "1")
+                    CheckBoxThemeType0.Checked = true;
+                else CheckBoxThemeType0.Checked = false;
+                if (Server.HtmlEncode(Request.Cookies["litclassic-cookie"]["theme-type-1"]) == "1")
+                    CheckBoxThemeType1.Checked = true;
+                else CheckBoxThemeType1.Checked = false;
+                if (Server.HtmlEncode(Request.Cookies["litclassic-cookie"]["theme-type-2"]) == "1")
+                    CheckBoxThemeType2.Checked = true;
+                else CheckBoxThemeType2.Checked = false;
+
+                if (Request.Cookies["litclassic-cookie"]["theme-type-0"] == "1")
+                    CheckBoxThemeType0.Checked = true;
+                else CheckBoxThemeType0.Checked = false;
+                if (Request.Cookies["litclassic-cookie"]["theme-type-1"] == "1")
+                    CheckBoxThemeType1.Checked = true;
+                else CheckBoxThemeType1.Checked = false;
+                if (Request.Cookies["litclassic-cookie"]["theme-type-2"] == "1")
+                    CheckBoxThemeType2.Checked = true;
+                else CheckBoxThemeType2.Checked = false;
+            }
+            else
+            {
+                if (CheckBoxThemeType0.Checked)
+                    Response.Cookies["litclassic-cookie"]["theme-type-0"] = "1";
+                else Response.Cookies["litclassic-cookie"]["theme-type-0"] = "0";
+                if (CheckBoxThemeType1.Checked)
+                    Response.Cookies["litclassic-cookie"]["theme-type-1"] = "1";
+                else Response.Cookies["litclassic-cookie"]["theme-type-1"] = "0";
+                if (CheckBoxThemeType2.Checked)
+                    Response.Cookies["litclassic-cookie"]["theme-type-2"] = "1";
+                else Response.Cookies["litclassic-cookie"]["theme-type-2"] = "0";
+            }
+
             Response.Cookies["litclassic-cookie-user-info"]["last-visit"] = DateTime.Now.ToString();
             Response.Cookies["litclassic-cookie"].Expires = DateTime.Now.AddYears(3);
             Response.Cookies["litclassic-cookie-user-info"].Expires = DateTime.Now.AddYears(3);
@@ -37,6 +69,8 @@ namespace litclassicbot
 
         private void ShowRandomParticles()
         {
+            CheckCheckBoxes();
+
             BotDBConnect currentConnection = new BotDBConnect();
 
             currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
@@ -105,18 +139,64 @@ namespace litclassicbot
             currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
             currentConnection.WriteNewParticleReportByParticleID(currentParticleID.ToString());
         }
+        private void CheckCheckBoxes()
+        {
+            // нельзя оставлять все чекбоксы пустыми
+            if ((CheckBoxThemeType0.Checked == false)
+                && (CheckBoxThemeType1.Checked == false)
+                && (CheckBoxThemeType2.Checked == false))
+                CheckBoxThemeType0.Checked = true;
+        }
+
+
 
         protected void CheckBoxThemeType0_CheckedChanged(object sender, EventArgs e)
         {
+            if (CheckBoxThemeType0.Checked)
+                Response.Cookies["litclassic-cookie"]["theme-type-0"] = "1";
+            else Response.Cookies["litclassic-cookie"]["theme-type-0"] = "0";
+            if (CheckBoxThemeType1.Checked)
+                Response.Cookies["litclassic-cookie"]["theme-type-1"] = "1";
+            else Response.Cookies["litclassic-cookie"]["theme-type-1"] = "0";
+            if (CheckBoxThemeType2.Checked)
+                Response.Cookies["litclassic-cookie"]["theme-type-2"] = "1";
+            else Response.Cookies["litclassic-cookie"]["theme-type-2"] = "0";
 
+            Response.Cookies["litclassic-cookie-user-info"]["last-visit"] = DateTime.Now.ToString();
+            Response.Cookies["litclassic-cookie"].Expires = DateTime.Now.AddYears(3);
+            Response.Cookies["litclassic-cookie-user-info"].Expires = DateTime.Now.AddYears(3);
         }
         protected void CheckBoxThemeType1_CheckedChanged(object sender, EventArgs e)
         {
+            if (CheckBoxThemeType0.Checked)
+                Response.Cookies["litclassic-cookie"]["theme-type-0"] = "1";
+            else Response.Cookies["litclassic-cookie"]["theme-type-0"] = "0";
+            if (CheckBoxThemeType1.Checked)
+                Response.Cookies["litclassic-cookie"]["theme-type-1"] = "1";
+            else Response.Cookies["litclassic-cookie"]["theme-type-1"] = "0";
+            if (CheckBoxThemeType2.Checked)
+                Response.Cookies["litclassic-cookie"]["theme-type-2"] = "1";
+            else Response.Cookies["litclassic-cookie"]["theme-type-2"] = "0";
 
+            Response.Cookies["litclassic-cookie-user-info"]["last-visit"] = DateTime.Now.ToString();
+            Response.Cookies["litclassic-cookie"].Expires = DateTime.Now.AddYears(3);
+            Response.Cookies["litclassic-cookie-user-info"].Expires = DateTime.Now.AddYears(3);
         }
         protected void CheckBoxThemeType2_CheckedChanged(object sender, EventArgs e)
         {
+            if (CheckBoxThemeType0.Checked)
+                Response.Cookies["litclassic-cookie"]["theme-type-0"] = "1";
+            else Response.Cookies["litclassic-cookie"]["theme-type-0"] = "0";
+            if (CheckBoxThemeType1.Checked)
+                Response.Cookies["litclassic-cookie"]["theme-type-1"] = "1";
+            else Response.Cookies["litclassic-cookie"]["theme-type-1"] = "0";
+            if (CheckBoxThemeType2.Checked)
+                Response.Cookies["litclassic-cookie"]["theme-type-2"] = "1";
+            else Response.Cookies["litclassic-cookie"]["theme-type-2"] = "0";
 
+            Response.Cookies["litclassic-cookie-user-info"]["last-visit"] = DateTime.Now.ToString();
+            Response.Cookies["litclassic-cookie"].Expires = DateTime.Now.AddYears(3);
+            Response.Cookies["litclassic-cookie-user-info"].Expires = DateTime.Now.AddYears(3);
         }
 
         //protected void Button1_Click(object sender, EventArgs e)
