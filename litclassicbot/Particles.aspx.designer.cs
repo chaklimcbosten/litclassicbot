@@ -13,31 +13,31 @@ namespace litclassicbot {
     public partial class Particles {
         
         /// <summary>
-        /// CheckBox1 элемент управления.
+        /// CheckBoxThemeType0 элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
+        protected global::System.Web.UI.WebControls.CheckBox CheckBoxThemeType0;
         
         /// <summary>
-        /// CheckBox2 элемент управления.
+        /// CheckBoxThemeType1 элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox2;
+        protected global::System.Web.UI.WebControls.CheckBox CheckBoxThemeType1;
         
         /// <summary>
-        /// CheckBox3 элемент управления.
+        /// CheckBoxThemeType2 элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox3;
+        protected global::System.Web.UI.WebControls.CheckBox CheckBoxThemeType2;
         
         /// <summary>
         /// LabelParticleLine элемент управления.

@@ -15,13 +15,20 @@ namespace litclassicbot
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Response.Cookies["litclassic-cookie"]["theme-type-0"] = "true";
+            Response.Cookies["litclassic-cookie"]["theme-type-1"] = "false";
+            Response.Cookies["litclassic-cookie"]["theme-type-2"] = "false";
+            Response.Cookies["litclassic-cookie-user-info"]["last-visit"] = DateTime.Now.ToString();
+            Response.Cookies["litclassic-cookie"].Expires = DateTime.Now.AddYears(3);
+            Response.Cookies["litclassic-cookie-user-info"].Expires = DateTime.Now.AddYears(3);
+
             try
             {
-                ShowRandomParticles();
+                //ShowRandomParticles();
             }
             catch
             {
-
+                //Server.Transfer("ErrorPage.aspx?handler=Application_Error%20-%20Global.asax", true);
             }
         }
 
@@ -95,6 +102,19 @@ namespace litclassicbot
 
             currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
             currentConnection.WriteNewParticleReportByParticleID(currentParticleID.ToString());
+        }
+
+        protected void CheckBoxThemeType0_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+        protected void CheckBoxThemeType1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+        protected void CheckBoxThemeType2_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
 
         //protected void Button1_Click(object sender, EventArgs e)
