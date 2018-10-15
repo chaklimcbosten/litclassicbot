@@ -22,9 +22,11 @@ namespace litclassicbot
             Response.Cookies["litclassic-cookie"].Expires = DateTime.Now.AddYears(3);
             Response.Cookies["litclassic-cookie-user-info"].Expires = DateTime.Now.AddYears(3);
 
+            ShowRandomParticles();
+
             try
             {
-                //ShowRandomParticles();
+                
             }
             catch
             {
