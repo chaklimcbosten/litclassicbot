@@ -24,17 +24,73 @@ namespace litclassicbot
             // 4. Cookie обнуляется при обновлении страницы после п.1.
 
             // если у пользователя разрешены cookie - использовать их
-            // если не разрешены - использовать сеанс
+            // сверять затем их с базой, привязать к логину (пока без пароля)
+            // если не разрешены - использовать сеансы без использования cookie
 
-            if ((int)Session["particleID"] != -1)
+            if (Request.Browser.Cookies)
+            {
+
+            }
+            else
+            {
+
+            }
+
+
+            if (Session.IsNewSession)
             {
                 ShowRandomParticle();
 
                 Session["particleID"] = currentParticleID;
+                Session["theme-type-0"] = true;
+                Session["theme-type-1"] = false;
+                Session["theme-type-2"] = false;
             }
             else
             {
-                ShowParticle((int)Session["particleID"]);
+                // сессия может быть уже создана, но particleID в ней может ещё не быть
+                try
+                {
+                    // если "частице" не задан ID, надо получить новый ID
+                    if ((int)Session["particleID"] == -1)
+                    {
+                        ShowRandomParticle();
+
+                        Session["particleID"] = currentParticleID;
+
+                        if ((bool)Session["theme-type-0"]) CheckBoxThemeType0.Checked = true;
+                        else CheckBoxThemeType0.Checked = false;
+
+                        if ((bool)Session["theme-type-1"]) CheckBoxThemeType1.Checked = true;
+                        else CheckBoxThemeType1.Checked = false;
+
+                        if ((bool)Session["theme-type-2"]) CheckBoxThemeType2.Checked = true;
+                        else CheckBoxThemeType2.Checked = false;
+                    }
+                    // если "частице" задан ID
+                    else
+                    {
+                        ShowParticle((int)Session["particleID"]);
+
+                        if ((bool)Session["theme-type-0"]) CheckBoxThemeType0.Checked = true;
+                        else CheckBoxThemeType0.Checked = false;
+
+                        if ((bool)Session["theme-type-1"]) CheckBoxThemeType1.Checked = true;
+                        else CheckBoxThemeType1.Checked = false;
+
+                        if ((bool)Session["theme-type-2"]) CheckBoxThemeType2.Checked = true;
+                        else CheckBoxThemeType2.Checked = false;
+                    }
+                }
+                catch
+                {
+                    ShowRandomParticle();
+
+                    Session["particleID"] = currentParticleID;
+                    Session["theme-type-0"] = true;
+                    Session["theme-type-1"] = false;
+                    Session["theme-type-2"] = false;
+                }
             }
 
             if (Request.Cookies["litclassic-cookie"] != null)
@@ -75,7 +131,7 @@ namespace litclassicbot
             currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
 
             List<string> listGetParticle = new List<string>();
-            listGetParticle = currentConnection.GetParticle(particleID);
+            listGetParticle = currentConnection.GetParticle("web", particleID);
             string particle = listGetParticle[0];
             string title = listGetParticle[1];
             int indeLastLine = Convert.ToInt32(listGetParticle[2]);
@@ -154,15 +210,35 @@ namespace litclassicbot
 
         protected void CheckBoxThemeType0_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (CheckBoxThemeType0.Checked) Session["theme-type-0"] = true;
+            else Session["theme-type-0"] = false;
         }
         protected void CheckBoxThemeType1_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (CheckBoxThemeType1.Checked) Session["theme-type-1"] = true;
+            else Session["theme-type-1"] = false;
         }
         protected void CheckBoxThemeType2_CheckedChanged(object sender, EventArgs e)
         {
+            if (CheckBoxThemeType2.Checked) Session["theme-type-2"] = true;
+            else Session["theme-type-2"] = false;
+        }
 
+        protected void ButtonParticleReload_Click(object sender, EventArgs e)
+        {
+            if (CheckBoxThemeType0.Checked) Session["theme-type-0"] = true;
+            else Session["theme-type-0"] = false;
+
+            if (CheckBoxThemeType1.Checked) Session["theme-type-1"] = true;
+            else Session["theme-type-1"] = false;
+
+            if (CheckBoxThemeType2.Checked) Session["theme-type-2"] = true;
+            else Session["theme-type-2"] = false;
+
+            //обнуляет сохранённую "частицу"
+            Session["particleID"] = -1;
+
+            Response.Redirect("Particles.aspx");
         }
 
         //protected void Button1_Click(object sender, EventArgs e)

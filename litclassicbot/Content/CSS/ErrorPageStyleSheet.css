@@ -12,7 +12,7 @@ h1 {
     width: 100%;
     color: black;
     font-size: 48px;
-    font-weight: 400;
+    font-weight: 300;
     letter-spacing: 0px;
 }
 
@@ -20,7 +20,7 @@ h2 {
     width: 100%;
     color: black;
     font-size: 34px;
-    font-weight: 400;
+    font-weight: 300;
     letter-spacing: 0.25px;
 }
 
@@ -33,7 +33,7 @@ h2 {
     color: black;
     letter-spacing: 0.5px;
     font-size: 34px;
-    font-weight: 400;
+    font-weight: 300;
     text-decoration: none;
     margin-left: 20px;
     margin-right: 20px;

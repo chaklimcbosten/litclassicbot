@@ -12,14 +12,7 @@ namespace litclassicbot
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
-            {
-                ShowRandomWord();
-            }
-            catch
-            {
-
-            }
+            ShowRandomWord();
         }
 
 

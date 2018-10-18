@@ -1,4 +1,33 @@
-﻿
+﻿/*@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/Roboto/RobotoLight/RobotoLight.eot");
+    src: url("../fonts/Roboto/RobotoLight/RobotoLight.eot?#iefix") format("embedded-opentype"), 
+        url("../fonts/Roboto/RobotoLight/RobotoLight.woff") format("woff"), 
+        url("../fonts/Roboto/RobotoLight/RobotoLight.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto/Roboto-LightItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto/Roboto-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto/Roboto-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}*/
+
+
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: white;
@@ -45,14 +74,14 @@ header {
     margin-top: 14px;
     letter-spacing: 0.25px;
     font-size: 34px;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .logo-links {
     letter-spacing: 0.75px;
     float: right;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .link-button-telegram-bot,
@@ -110,7 +139,7 @@ header {
     margin-right: 15%;
     text-align: justify;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 300;
     color: white;
     letter-spacing: 0.5px;
     line-height: 1.5;
@@ -123,7 +152,7 @@ h1 {
     margin-bottom: 1%;
     color: black;
     font-size: 48px;
-    font-weight: 400;
+    font-weight: 300;
     letter-spacing: 0px;
 }
 
@@ -140,7 +169,7 @@ h2 {
     margin-bottom: 1%;
     color: black;
     font-size: 34px;
-    font-weight: 400;
+    font-weight: 300;
     letter-spacing: 0.25px;
 }
 
@@ -232,11 +261,13 @@ h2 {
     margin-top: 10px;
     margin-bottom: 0;
     text-align: left;
+    font-weight: 300;
 }
 .footer-right-text {
     margin-top: 10px;
     margin-bottom: 0;
-    text-align:right;
+    text-align: right;
+    font-weight: 300;
 }
 
 
@@ -262,7 +293,7 @@ h2 {
 .button-particle-save {
     letter-spacing: 0.75px;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 300;
     background-color: white;
     font-family: 'Roboto', sans-serif;
     color: black;
@@ -406,7 +437,7 @@ h2 {
     .label-subtitle-particle-title,
     h1 {
         font-size: 24px;
-        font-weight: 400;
+        font-weight: 300;
         letter-spacing: 0px;
         margin-top: 10px;
         margin-bottom: 10px;

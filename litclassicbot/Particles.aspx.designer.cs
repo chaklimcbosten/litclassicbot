@@ -67,6 +67,15 @@ namespace litclassicbot {
         protected global::System.Web.UI.WebControls.Label LabelParticleTitle;
         
         /// <summary>
+        /// ButtonParticleReload элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonParticleReload;
+        
+        /// <summary>
         /// ButtonParticleSave элемент управления.
         /// </summary>
         /// <remarks>

@@ -589,7 +589,7 @@ namespace litclassicbot.Dialogs
                     List<string> particle = new List<string>();
                     // присвоение particleID
                     int particleID = Convert.ToInt32(activity.Text.Split('l')[1]);
-                    particle = currentConnection.GetParticle(particleID);
+                    particle = currentConnection.GetParticle(activity.Conversation.Id, particleID);
 
                     string line = particle[0];
                     string title = particle[1];

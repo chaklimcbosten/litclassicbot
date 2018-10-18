@@ -185,6 +185,18 @@
     </Content>
     <Fakes Include="Fakes\Microsoft.Bot.Builder.fakes" />
     <Content Include="litclassic.Master" />
+    <Content Include="fonts\Roboto\RobotoBold\RobotoBold.eot" />
+    <Content Include="fonts\Roboto\RobotoBold\RobotoBold.ttf" />
+    <Content Include="fonts\Roboto\RobotoBold\RobotoBold.woff" />
+    <Content Include="fonts\Roboto\RobotoLight\RobotoLight.eot" />
+    <Content Include="fonts\Roboto\RobotoLight\RobotoLight.ttf" />
+    <Content Include="fonts\Roboto\RobotoLight\RobotoLight.woff" />
+    <Content Include="fonts\Roboto\RobotoMedium\RobotoMedium.eot" />
+    <Content Include="fonts\Roboto\RobotoMedium\RobotoMedium.ttf" />
+    <Content Include="fonts\Roboto\RobotoMedium\RobotoMedium.woff" />
+    <Content Include="fonts\Roboto\RobotoRegular\RobotoRegular.eot" />
+    <Content Include="fonts\Roboto\RobotoRegular\RobotoRegular.ttf" />
+    <Content Include="fonts\Roboto\RobotoRegular\RobotoRegular.woff" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <None Include="Properties\PublishProfiles\litclassicApp - FTP.pubxml" />
