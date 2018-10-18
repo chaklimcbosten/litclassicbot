@@ -52,72 +52,7 @@ namespace litclassicbot.Dialogs
                 {
                     await context.PostAsync("Какие-то неполадки в исполнении кода команды /start...");
                 }
-            }
-            else if ((activity.Text == "/newpoemparticle") || (activity.Text.ToLower().Contains("стих")) | (activity.Text.ToLower().Contains("стиш")))
-            {
-                try
-                {
-                    BotDBConnect currentConnection = new BotDBConnect();
-
-                    currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
-
-                    List<string> listGetRandomParticle = new List<string>();
-                    listGetRandomParticle = currentConnection.GetRandomPoemParticle(activity.Conversation.Id);
-                    string particle = listGetRandomParticle[0];
-                    particle = particle.Replace("$$strong-open$$", "**");
-                    particle = particle.Replace("$$emphasis-open$$", "*");
-                    particle = particle.Replace("$$strong-close$$", "**");
-                    particle = particle.Replace("$$emphasis-close$$", "*");
-                    string title = listGetRandomParticle[1];
-                    int indeLastLine = Convert.ToInt32(listGetRandomParticle[2]);
-                    int bookID = Convert.ToInt32(listGetRandomParticle[4]);
-                    var card = new HeroCard("Дальнейшие возможные действия:");
-                    card.Buttons = new List<CardAction>()
-        {
-                new CardAction()
-                {
-                    Title = "Сообщить об ошибке.",
-                    Type = ActionTypes.PostBack,
-                    Value = "reportParticle"
-                },
-                new CardAction()
-                {
-                    Title = "Добавить в \"избранное\".",
-                    Type = ActionTypes.PostBack,
-                    Value = "addParticleToFavourites"
-                },
-                new CardAction()
-                {
-                    Title = "Скачать книгу.",
-                    Type = ActionTypes.PostBack,
-                    Value = "download " + bookID
-                },
-                new CardAction()
-                {
-                    Title = "Ещё \"частица\".",
-                    Type = ActionTypes.PostBack,
-                    //Value = "readNext " + indeLastLine + " " + bookID
-                    Value = "/newpoemparticle"
-                }
-        };
-
-                    var reply = activity.CreateReply("");
-                    reply.Attachments = new List<Attachment>();
-                    reply.Attachments.Add(new Attachment()
-                    {
-                        ContentType = HeroCard.ContentType,
-                        Content = card
-                    });
-
-                    await context.PostAsync(particle);
-                    await context.PostAsync("Сведения о частице:\n\r" + title);
-                    await context.PostAsync(reply);
-                }
-                catch
-                {
-                    await context.PostAsync("Какие-то неполадки в исполнении кода команды /newpoemparticle...");
-                }
-            }
+            }          
             else if ((activity.Text == "/newparticle") || (activity.Text.ToLower().Contains("частиц")))
             {
                 //context.Forward()                             
@@ -258,68 +193,7 @@ namespace litclassicbot.Dialogs
                 {
                     await context.PostAsync("Какие-то неполадки в исполнении кода команды /newword...");
                 }
-            }
-            else if (activity.Text == "/newnonartparticle")
-            {
-                try
-                {
-                    BotDBConnect currentConnection = new BotDBConnect();
-
-                    currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
-
-                    List<string> listGetRandomParticle = new List<string>();
-                    listGetRandomParticle = currentConnection.GetRandomPoemParticle(activity.Conversation.Id);
-                    string particle = listGetRandomParticle[1];
-                    string title = listGetRandomParticle[0];
-                    int indeLastLine = Convert.ToInt32(listGetRandomParticle[2]);
-                    int bookID = Convert.ToInt32(listGetRandomParticle[4]);
-                    var card = new HeroCard("Дальнейшие возможные действия:");
-                    card.Buttons = new List<CardAction>()
-        {
-                new CardAction()
-                {
-                    Title = "Сообщить об ошибке.",
-                    Type = ActionTypes.PostBack,
-                    Value = "reportParticle"
-                },
-                new CardAction()
-                {
-                    Title = "Добавить в \"избранное\".",
-                    Type = ActionTypes.PostBack,
-                    Value = "addParticleToFavourites"
-                },
-                new CardAction()
-                {
-                    Title = "Скачать книгу.",
-                    Type = ActionTypes.PostBack,
-                    Value = "download " + bookID
-                },
-                new CardAction()
-                {
-                    Title = "Новая не художественная \"частица\".",
-                    Type = ActionTypes.PostBack,
-                    //Value = "readNext " + indeLastLine + " " + bookID
-                    Value = "/newnonartparticle"
-                }
-        };
-
-                    var reply = activity.CreateReply("");
-                    reply.Attachments = new List<Attachment>();
-                    reply.Attachments.Add(new Attachment()
-                    {
-                        ContentType = HeroCard.ContentType,
-                        Content = card
-                    });
-
-                    await context.PostAsync(particle);
-                    await context.PostAsync("Сведения о частице:\n\r" + title);
-                    await context.PostAsync(reply);
-                }
-                catch
-                {
-                    await context.PostAsync("Какие-то неполадки с кодом в команде /newnonartparticle...");
-                }               
-            }
+            }           
             else if ((activity.Text == "/help") || (activity.Text.ToLower().Contains("помощ")))
             {
                 try
