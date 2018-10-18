@@ -5,9 +5,9 @@
         <h1>Случайная "частица"</h1>
         <h2>Настройки получения "частиц"</h2>
         <div class="particle-settings">
-            <asp:CheckBox ID="CheckBoxThemeType0" runat="server" Text="Основные произведения" Checked="True" OnCheckedChanged="CheckBoxThemeType0_CheckedChanged"/>
-            <asp:CheckBox ID="CheckBoxThemeType1" runat="server" Text="Прочие произведения, заметки, письма и пр." OnCheckedChanged="CheckBoxThemeType1_CheckedChanged" />
-            <asp:CheckBox ID="CheckBoxThemeType2" runat="server" Text="Примечания, приложения, комментарии и пр." OnCheckedChanged="CheckBoxThemeType2_CheckedChanged" />
+            <asp:CheckBox ID="CheckBoxThemeType0" runat="server" Text="Основные произведения" OnCheckedChanged="CheckBoxThemeType0_CheckedChanged"/>
+            <asp:CheckBox ID="CheckBoxThemeType1" runat="server" Text="Прочие произведения, заметки, письма и пр." OnCheckedChanged="CheckBoxThemeType1_CheckedChanged"/>
+            <asp:CheckBox ID="CheckBoxThemeType2" runat="server" Text="Примечания, приложения, комментарии и пр." OnCheckedChanged="CheckBoxThemeType2_CheckedChanged"/>
         </div>
         <h2>Текст "частицы"</h2>
         <asp:Label ID="LabelParticleLine" runat="server"></asp:Label>
