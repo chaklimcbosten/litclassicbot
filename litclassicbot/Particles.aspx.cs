@@ -86,31 +86,15 @@ namespace litclassicbot
                     // если у текущей сесси нет данных
                     if (Session["particleID"] == null)
                     {
-                        SetNewRandomIDParticle();
-                        ShowParticle(currentParticleID);
-
                         Session["theme-type-0"] = true;
                         Session["theme-type-1"] = false;
                         Session["theme-type-2"] = false;
                     }
                     // если у текущей сессии уже есть данные
-                    else
-                    {
-                        // если есть данные настроек - изменяются чебкоксы
-                        CheckParticleSettingsSession();
+                    else CheckParticleSettingsSession();
 
-                        //// если ID "частицы" сброшен или не назначен
-                        //if ((int)Session["particleID"] == -1)
-                        //{
-                        SetNewRandomIDParticle();
-                        ShowParticle(currentParticleID);
-                        //}
-                        //// если ID "частицы" назначен
-                        //else
-                        //{
-                        //    ShowParticle((int)Session["particleID"]);
-                        //}
-                    }
+                    SetNewRandomIDParticle();
+                    ShowParticle(currentParticleID);
                 }
             }           
         }
