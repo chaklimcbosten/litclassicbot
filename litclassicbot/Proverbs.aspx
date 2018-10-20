@@ -1,4 +1,6 @@
-﻿<%@ Page Title="Пословицы и поговорки, собранные В.И.Далем. LITCLASSIC" Language="C#" MasterPageFile="~/litclassic.Master" AutoEventWireup="true" CodeBehind="Proverbs.aspx.cs" Inherits="litclassicbot.Proverbs" %>
+﻿<%@ Page Title="Пословицы и поговорки, собранные В.И.Далем. LITCLASSIC" Language="C#" 
+    MasterPageFile="~/litclassic.Master" AutoEventWireup="true" CodeBehind="Proverbs.aspx.cs" 
+    Inherits="litclassicbot.Proverbs" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">   
     <div class="main">

@@ -13,6 +13,24 @@ namespace litclassicbot {
     public partial class Words {
         
         /// <summary>
+        /// ScriptManagerWordsPage элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManagerWordsPage;
+        
+        /// <summary>
+        /// UpdatePanelWord элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanelWord;
+        
+        /// <summary>
         /// LabelWordName элемент управления.
         /// </summary>
         /// <remarks>
@@ -38,5 +56,14 @@ namespace litclassicbot {
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LabelWordLinks;
+        
+        /// <summary>
+        /// ButtonWordReload элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonWordReload;
     }
 }

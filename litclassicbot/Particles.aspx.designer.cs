@@ -13,13 +13,13 @@ namespace litclassicbot {
     public partial class Particles {
         
         /// <summary>
-        /// ScriptManagerParticlePage элемент управления.
+        /// ScriptManagerParticlesPage элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManagerParticlePage;
+        protected global::System.Web.UI.ScriptManager ScriptManagerParticlesPage;
         
         /// <summary>
         /// UpdatePanelParticleSettings элемент управления.

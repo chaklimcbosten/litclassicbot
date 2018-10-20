@@ -1,9 +1,8 @@
-﻿<%@ Page Title="Частицы. LITCLASSIC" Language="C#" MasterPageFile="~/litclassic.Master" AutoEventWireup="true" CodeBehind="Particles.aspx.cs" Inherits="litclassicbot.Particles" %>
+﻿<%@ Page Title="Частицы. LITCLASSIC" Language="C#" MasterPageFile="~/litclassic.Master" 
+    AutoEventWireup="true" CodeBehind="Particles.aspx.cs" Inherits="litclassicbot.Particles" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
-    <asp:ScriptManager ID="ScriptManagerParticlePage" runat="server"></asp:ScriptManager>
-
+    <asp:ScriptManager ID="ScriptManagerParticlesPage" runat="server"></asp:ScriptManager>
     <div class="main">
         <h1>Случайная "частица"</h1>
         <h2>Настройки получения "частиц"</h2>
@@ -19,15 +18,8 @@
                     <asp:CheckBox ID="CheckBoxThemeType2" runat="server" 
                         Text="Примечания, приложения, комментарии и пр." OnCheckedChanged="CheckBoxThemeType2_CheckedChanged" 
                         ClientIDMode="Static"/>
-                    <input id="Checkbox1" type="checkbox" />
-                    <input id="Checkbox2" type="checkbox" />
-                    <input id="Checkbox3" type="checkbox" />
                  </Contenttemplate>
             </asp:UpdatePanel>
-
-            
-
-
         </div>
         <asp:UpdatePanel ID="UpdatePanelParticle" runat="server" UpdateMode="Conditional">
             <ContentTemplate>

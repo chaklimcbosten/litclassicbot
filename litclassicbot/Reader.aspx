@@ -1,4 +1,5 @@
-﻿<%@ Page Title="Чтение книг. LITCLASSIC" Language="C#" MasterPageFile="~/litclassic.Master" AutoEventWireup="true" CodeBehind="Reader.aspx.cs" Inherits="litclassicbot.Reader" %>
+﻿<%@ Page Title="Чтение книг. LITCLASSIC" Language="C#" MasterPageFile="~/litclassic.Master" 
+    AutoEventWireup="true" CodeBehind="Reader.aspx.cs" Inherits="litclassicbot.Reader" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">   
     <div class="main">

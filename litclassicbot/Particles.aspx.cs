@@ -33,8 +33,8 @@ namespace litclassicbot
 
         private void ScriptManagerSetting()
         {
-            // UpdatePanelParticle
-            ScriptManagerParticlePage.RegisterAsyncPostBackControl(ButtonParticleReload);
+            // UpdatePanelParticlesPage
+            ScriptManagerParticlesPage.RegisterAsyncPostBackControl(ButtonParticleReload);
         }
         private void PageSetting()
         {
@@ -47,12 +47,12 @@ namespace litclassicbot
                     Response.Cookies["litclassic-cookie-user-info"].Expires = DateTime.Now.AddYears(3);
 
                     // первое посещение, если cookie не созданы
-                    if (Request.Cookies["litclassic-particle-cookie"] == null)
+                    if (Request.Cookies["litclassic-cookie-particle"] == null)
                     {
-                        Response.Cookies["litclassic-particle-cookie"]["theme-type-0"] = "1";
-                        Response.Cookies["litclassic-particle-cookie"]["theme-type-1"] = "0";
-                        Response.Cookies["litclassic-particle-cookie"]["theme-type-2"] = "0";
-                        Response.Cookies["litclassic-particle-cookie"].Expires = DateTime.Now.AddYears(3);
+                        Response.Cookies["litclassic-cookie-particle"]["theme-type-0"] = "1";
+                        Response.Cookies["litclassic-cookie-particle"]["theme-type-1"] = "0";
+                        Response.Cookies["litclassic-cookie-particle"]["theme-type-2"] = "0";
+                        Response.Cookies["litclassic-cookie-particle"].Expires = DateTime.Now.AddYears(3);
 
                         SetNewRandomIDParticle();
                         ShowParticle(currentParticleID);
@@ -64,19 +64,19 @@ namespace litclassicbot
                         CheckParticleSettingsCookie();
 
                         // если cookie-файла с ID "частицы" нет, или этот ID обнулён
-                        if ((Server.HtmlEncode(Request.Cookies["litclassic-particle-cookie"]["particleID"]) == null))
+                        if ((Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["particleID"]) == null))
                         {
                             SetNewRandomIDParticle();
                             ShowParticle(currentParticleID);
 
-                            Response.Cookies["litclassic-particle-cookie"]["particleID"] 
+                            Response.Cookies["litclassic-cookie-particle"]["particleID"] 
                                 = Convert.ToString(currentParticleID);
                         }
                         // если ID "частицы" задан
                         else
                         {
                             ShowParticle(Convert.ToInt32(Server.HtmlEncode(
-                                Request.Cookies["litclassic-particle-cookie"]["particleID"])));
+                                Request.Cookies["litclassic-cookie-particle"]["particleID"])));
                         }
                     }
                 }
@@ -100,57 +100,57 @@ namespace litclassicbot
         }
         private void CheckParticleSettingsCookie()
         {
-            if (Request.Cookies["litclassic-particle-cookie"]["theme-type-0"] != null)
+            if (Request.Cookies["litclassic-cookie-particle"]["theme-type-0"] != null)
             {
-                if (Server.HtmlEncode(Request.Cookies["litclassic-particle-cookie"]["theme-type-0"]) == "1")
+                if (Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["theme-type-0"]) == "1")
                     CheckBoxThemeType0.Checked = true;
-                else if (Server.HtmlEncode(Request.Cookies["litclassic-particle-cookie"]["theme-type-0"]) == "0")
+                else if (Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["theme-type-0"]) == "0")
                     CheckBoxThemeType0.Checked = false;
             }
             else
             {
                 CheckBoxThemeType0.Checked = true;
-                Response.Cookies["litclassic-particle-cookie"]["theme-type-0"] = "1";
+                Response.Cookies["litclassic-cookie-particle"]["theme-type-0"] = "1";
             }
 
-            if (Request.Cookies["litclassic-particle-cookie"]["theme-type-1"] != null)
+            if (Request.Cookies["litclassic-cookie-particle"]["theme-type-1"] != null)
             {
-                if (Server.HtmlEncode(Request.Cookies["litclassic-particle-cookie"]["theme-type-1"]) == "1")
+                if (Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["theme-type-1"]) == "1")
                     CheckBoxThemeType1.Checked = true;
-                else if (Server.HtmlEncode(Request.Cookies["litclassic-particle-cookie"]["theme-type-1"]) == "0")
+                else if (Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["theme-type-1"]) == "0")
                     CheckBoxThemeType1.Checked = false;
             }
             else
             {
                 CheckBoxThemeType1.Checked = false;
-                Response.Cookies["litclassic-particle-cookie"]["theme-type-1"] = "0";
+                Response.Cookies["litclassic-cookie-particle"]["theme-type-1"] = "0";
             }
 
-            if (Request.Cookies["litclassic-particle-cookie"]["theme-type-2"] != null)
+            if (Request.Cookies["litclassic-cookie-particle"]["theme-type-2"] != null)
             {
-                if (Server.HtmlEncode(Request.Cookies["litclassic-particle-cookie"]["theme-type-2"]) == "1")
+                if (Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["theme-type-2"]) == "1")
                     CheckBoxThemeType2.Checked = true;
-                else if (Server.HtmlEncode(Request.Cookies["litclassic-particle-cookie"]["theme-type-2"]) == "0")
+                else if (Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["theme-type-2"]) == "0")
                     CheckBoxThemeType2.Checked = false;
             }
             else
             {
                 CheckBoxThemeType2.Checked = false;
-                Response.Cookies["litclassic-particle-cookie"]["theme-type-2"] = "0";
+                Response.Cookies["litclassic-cookie-particle"]["theme-type-2"] = "0";
             }
         }
         private void SetParticleSettingsCookie()
         {
-            if (CheckBoxThemeType0.Checked) Response.Cookies["litclassic-particle-cookie"]["theme-type-0"] = "1";
-            else if (!CheckBoxThemeType0.Checked) Response.Cookies["litclassic-particle-cookie"]["theme-type-0"] = "0";
+            if (CheckBoxThemeType0.Checked) Response.Cookies["litclassic-cookie-particle"]["theme-type-0"] = "1";
+            else if (!CheckBoxThemeType0.Checked) Response.Cookies["litclassic-cookie-particle"]["theme-type-0"] = "0";
 
-            if (CheckBoxThemeType1.Checked) Response.Cookies["litclassic-particle-cookie"]["theme-type-1"] = "1";
-            else if (!CheckBoxThemeType1.Checked) Response.Cookies["litclassic-particle-cookie"]["theme-type-1"] = "0";
+            if (CheckBoxThemeType1.Checked) Response.Cookies["litclassic-cookie-particle"]["theme-type-1"] = "1";
+            else if (!CheckBoxThemeType1.Checked) Response.Cookies["litclassic-cookie-particle"]["theme-type-1"] = "0";
 
-            if (CheckBoxThemeType2.Checked) Response.Cookies["litclassic-particle-cookie"]["theme-type-2"] = "1";
-            else if (!CheckBoxThemeType2.Checked) Response.Cookies["litclassic-particle-cookie"]["theme-type-2"] = "0";
+            if (CheckBoxThemeType2.Checked) Response.Cookies["litclassic-cookie-particle"]["theme-type-2"] = "1";
+            else if (!CheckBoxThemeType2.Checked) Response.Cookies["litclassic-cookie-particle"]["theme-type-2"] = "0";
 
-            Response.Cookies["litclassic-particle-cookie"].Expires = DateTime.Now.AddYears(3);
+            Response.Cookies["litclassic-cookie-particle"].Expires = DateTime.Now.AddYears(3);
             Response.Cookies["litclassic-cookie-user-info"]["last-visit"] = DateTime.Now.ToString();
             Response.Cookies["litclassic-cookie-user-info"].Expires = DateTime.Now.AddYears(3);
         }
@@ -249,11 +249,10 @@ namespace litclassicbot
             currentParticleID = currentConnection.GetRandomParticleID();
 
             // если браузер поддерживает cookie
-            if (Request.Browser.Cookies) Response.Cookies["litclassic-particle-cookie"]["particleID"] 
+            if (Request.Browser.Cookies) Response.Cookies["litclassic-cookie-particle"]["particleID"] 
                     = Convert.ToString(currentParticleID);
             // если браузер не поддерживает cookie
-            else Session["particleID"] = currentParticleID;
-            
+            else Session["particleID"] = currentParticleID;           
         }
         private void ReportParticle()
         {
@@ -283,7 +282,6 @@ namespace litclassicbot
             SetNewRandomIDParticle();
             ShowParticle(currentParticleID);
             UpdatePanelParticle.Update();
-            //UpdatePanelParticleSettings.Update();
         }
         protected void CheckBoxThemeType0_CheckedChanged(object sender, EventArgs e)
         {
