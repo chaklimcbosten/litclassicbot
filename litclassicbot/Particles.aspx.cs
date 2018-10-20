@@ -11,9 +11,6 @@ namespace litclassicbot
 {
     public partial class Particles : System.Web.UI.Page
     {
-        // "частица" должна быть одна, должна открываться та же самая при каждом заходе на страницу "частиц"
-        // смена "частицы" будет происходить только лишь при нажатии клавиши "обновить"
-
         private int currentParticleID = -1;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -27,86 +24,95 @@ namespace litclassicbot
             // сверять затем их с базой, привязать к логину (пока без пароля)
             // если не разрешены - использовать сеансы без использования cookie
 
-            // регистрация асинхронного запроса в ScriptManager
-            ScriptManagerParticlePage.RegisterAsyncPostBackControl(ButtonParticleReload);
-            //ScriptManagerParticlePage.RegisterAsyncPostBackControl(CheckBoxThemeType1);
-
+            // регистрация асинхронных запросов в ScriptManager
+            ScriptManagerSetting();
+            // настройка персонализации страницы, если она открывается впервые
             PageSetting();
         }
 
 
+        private void ScriptManagerSetting()
+        {
+            // UpdatePanelParticle
+            ScriptManagerParticlePage.RegisterAsyncPostBackControl(ButtonParticleReload);
+        }
         private void PageSetting()
         {
-            // если браузер поддерживает cookie
-            if (Request.Browser.Cookies)
+            if (!IsPostBack)
             {
-                Response.Cookies["litclassic-cookie-user-info"]["last-visit"] = DateTime.Now.ToString();
-                Response.Cookies["litclassic-cookie-user-info"].Expires = DateTime.Now.AddYears(3);
-
-                // первое посещение, если cookie не созданы
-                if (Request.Cookies["litclassic-particle-cookie"] == null)
+                // если браузер поддерживает cookie
+                if (Request.Browser.Cookies)
                 {
-                    Response.Cookies["litclassic-particle-cookie"]["theme-type-0"] = "1";
-                    Response.Cookies["litclassic-particle-cookie"]["theme-type-1"] = "0";
-                    Response.Cookies["litclassic-particle-cookie"]["theme-type-2"] = "0";
-                    Response.Cookies["litclassic-particle-cookie"].Expires = DateTime.Now.AddYears(3);
+                    Response.Cookies["litclassic-cookie-user-info"]["last-visit"] = DateTime.Now.ToString();
+                    Response.Cookies["litclassic-cookie-user-info"].Expires = DateTime.Now.AddYears(3);
 
-                    SetNewRandomIDParticle();
-                    ShowParticle(currentParticleID);
-                }
-                // cookie-файл существует
-                else
-                {
-                    // изменяются настройки
-                    CheckParticleSettingsCookie();
-
-                    // если cookie-файла с ID "частицы" нет, или этот ID обнулён
-                    if ((Server.HtmlEncode(Request.Cookies["litclassic-particle-cookie"]["particleID"]) == null))
+                    // первое посещение, если cookie не созданы
+                    if (Request.Cookies["litclassic-particle-cookie"] == null)
                     {
+                        Response.Cookies["litclassic-particle-cookie"]["theme-type-0"] = "1";
+                        Response.Cookies["litclassic-particle-cookie"]["theme-type-1"] = "0";
+                        Response.Cookies["litclassic-particle-cookie"]["theme-type-2"] = "0";
+                        Response.Cookies["litclassic-particle-cookie"].Expires = DateTime.Now.AddYears(3);
+
                         SetNewRandomIDParticle();
                         ShowParticle(currentParticleID);
-
-                        Response.Cookies["litclassic-particle-cookie"]["particleID"] = Convert.ToString(currentParticleID);
                     }
-                    // если ID "частицы" задан
+                    // cookie-файл существует
                     else
                     {
-                        ShowParticle(Convert.ToInt32(Server.HtmlEncode(Request.Cookies["litclassic-particle-cookie"]["particleID"])));
+                        // изменяются настройки
+                        CheckParticleSettingsCookie();
+
+                        // если cookie-файла с ID "частицы" нет, или этот ID обнулён
+                        if ((Server.HtmlEncode(Request.Cookies["litclassic-particle-cookie"]["particleID"]) == null))
+                        {
+                            SetNewRandomIDParticle();
+                            ShowParticle(currentParticleID);
+
+                            Response.Cookies["litclassic-particle-cookie"]["particleID"] 
+                                = Convert.ToString(currentParticleID);
+                        }
+                        // если ID "частицы" задан
+                        else
+                        {
+                            ShowParticle(Convert.ToInt32(Server.HtmlEncode(
+                                Request.Cookies["litclassic-particle-cookie"]["particleID"])));
+                        }
                     }
                 }
-            }
-            // если браузер не поддерживает cookie
-            else
-            {
-                // если у текущей сесси нет данных
-                if (Session["particleID"] == null)
-                {
-                    SetNewRandomIDParticle();
-                    ShowParticle(currentParticleID);
-
-                    Session["theme-type-0"] = true;
-                    Session["theme-type-1"] = false;
-                    Session["theme-type-2"] = false;
-                }
-                // если у текущей сессии уже есть данные
+                // если браузер не поддерживает cookie
                 else
                 {
-                    // если есть данные настроек - изменяются чебкоксы
-                    CheckParticleSettingsSession();
-
-                    //// если ID "частицы" сброшен или не назначен
-                    //if ((int)Session["particleID"] == -1)
-                    //{
+                    // если у текущей сесси нет данных
+                    if (Session["particleID"] == null)
+                    {
                         SetNewRandomIDParticle();
                         ShowParticle(currentParticleID);
-                    //}
-                    //// если ID "частицы" назначен
-                    //else
-                    //{
-                    //    ShowParticle((int)Session["particleID"]);
-                    //}
+
+                        Session["theme-type-0"] = true;
+                        Session["theme-type-1"] = false;
+                        Session["theme-type-2"] = false;
+                    }
+                    // если у текущей сессии уже есть данные
+                    else
+                    {
+                        // если есть данные настроек - изменяются чебкоксы
+                        CheckParticleSettingsSession();
+
+                        //// если ID "частицы" сброшен или не назначен
+                        //if ((int)Session["particleID"] == -1)
+                        //{
+                        SetNewRandomIDParticle();
+                        ShowParticle(currentParticleID);
+                        //}
+                        //// если ID "частицы" назначен
+                        //else
+                        //{
+                        //    ShowParticle((int)Session["particleID"]);
+                        //}
+                    }
                 }
-            }
+            }           
         }
         private void CheckParticleSettingsCookie()
         {
@@ -188,8 +194,6 @@ namespace litclassicbot
         }
         private void ShowParticle(int particleID)
         {
-            CheckCheckBoxes();
-
             BotDBConnect currentConnection = new BotDBConnect();
 
             currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
@@ -222,8 +226,6 @@ namespace litclassicbot
         }
         private void ShowRandomParticle()
         {
-            CheckCheckBoxes();
-
             BotDBConnect currentConnection = new BotDBConnect();
 
             currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
