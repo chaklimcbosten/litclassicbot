@@ -19,13 +19,14 @@
                     <asp:CheckBox ID="CheckBoxThemeType2" runat="server" 
                         Text="Примечания, приложения, комментарии и пр." OnCheckedChanged="CheckBoxThemeType2_CheckedChanged" 
                         ClientIDMode="Static"/>
+                    <input id="Checkbox1" type="checkbox" />
+                    <input id="Checkbox2" type="checkbox" />
+                    <input id="Checkbox3" type="checkbox" />
                  </Contenttemplate>
             </asp:UpdatePanel>
 
             
-            <input id="Checkbox1" type="checkbox" />
-            <input id="Checkbox2" type="checkbox" />
-            <input id="Checkbox3" type="checkbox" />
+
 
         </div>
         <asp:UpdatePanel ID="UpdatePanelParticle" runat="server" UpdateMode="Conditional">
