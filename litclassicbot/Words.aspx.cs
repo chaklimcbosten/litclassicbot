@@ -12,10 +12,19 @@ namespace litclassicbot
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            PageSetting();
             ShowRandomWord();
         }
 
 
+        private void PageSetting()
+        {
+            if (Request.Browser.Cookies)
+            {
+                Response.Cookies["litclassic-cookie-user-info"]["last-visit"] = DateTime.Now.ToString();
+                Response.Cookies["litclassic-cookie-user-info"].Expires = DateTime.Now.AddYears(3);
+            }
+        }
         private void ShowRandomWord()
         {
             BotDBConnect currentConnection = new BotDBConnect();
