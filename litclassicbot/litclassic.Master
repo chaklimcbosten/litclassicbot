@@ -10,7 +10,7 @@
     <%--Не знаю, нужна ли следующая строка--%>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%--<link href="https://fonts.googleapis.com/css?family=Roboto:300&amp;subset=cyrillic-ext" rel="stylesheet" />--%> 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,500,500i&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,500,500i&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet" /> 
     <link rel="apple-touch-icon" href="Content/icons/fav-apple-icon.png" />
     <link rel="icon" type="image/png" href="Content/icons/favicon.png" />
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -19,6 +19,8 @@
 
 <body>
     <form id="form1" runat="server">
+
+
         <header>
             <div class="header-main">
                 <a href="~/" runat="server"><img class="logo_img" src="Content/header/main-logo-png-v3.png" /></a>

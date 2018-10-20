@@ -13,6 +13,24 @@ namespace litclassicbot {
     public partial class Particles {
         
         /// <summary>
+        /// ScriptManagerParticlePage элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManagerParticlePage;
+        
+        /// <summary>
+        /// UpdatePanelParticleSettings элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanelParticleSettings;
+        
+        /// <summary>
         /// CheckBoxThemeType0 элемент управления.
         /// </summary>
         /// <remarks>
@@ -38,6 +56,15 @@ namespace litclassicbot {
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox CheckBoxThemeType2;
+        
+        /// <summary>
+        /// UpdatePanelParticle элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanelParticle;
         
         /// <summary>
         /// LabelParticleLine элемент управления.
