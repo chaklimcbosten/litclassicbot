@@ -10,7 +10,12 @@
 </asp:Content>
 
 <asp:Content ID="FooterContent" ContentPlaceHolderID="FooterContent" runat="server"> 
-    <div class="footer-button-right">           
-        <a class="button-reload" href="Proverbs.aspx">ОБНОВИТЬ</a>
+    <div class="footer-right-column-top">
+        <p class="footer-right-text">Опции текущего раздела:</p>
+    </div>
+    <div class="footer-right-column-bottom">
+        <div class="footer-button-right">           
+            <a class="button-reload" href="Proverbs.aspx">ОБНОВИТЬ</a>
+        </div>
     </div>
 </asp:Content>

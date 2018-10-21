@@ -177,6 +177,7 @@ namespace litclassicbot
 
         protected void ButtonWordReload_Click(object sender, EventArgs e)
         {
+            LabelWordLinks.Text = "";
             SetNewRandomIDWord();
             ShowWord(currentWordID);
             UpdatePanelWord.Update();
