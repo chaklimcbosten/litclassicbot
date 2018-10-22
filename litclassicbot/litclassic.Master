@@ -50,13 +50,13 @@
                         </div>
                         <div class="footer-left-column-bottom">
                             <div class="footer-button-left">
-                                <a class="button-particle" href="Particles.aspx">"ЧАСТИЦЫ"</a>
+                                <a class="button-footer-left-column" href="Particles.aspx">"ЧАСТИЦЫ"</a>
                             </div>
                             <div class="footer-button-left">                  
-                                <a class="button-word" href="Words.aspx">СЛОВАРЬ</a>
+                                <a class="button-footer-left-column" href="Words.aspx">СЛОВАРЬ</a>
                             </div>
                             <div class="footer-button-left">                  
-                                <a class="button-proverb" href="Proverbs.aspx">ПОСЛОВИЦЫ</a>
+                                <a class="button-footer-left-column" href="Proverbs.aspx">ПОСЛОВИЦЫ</a>
                             </div>
                         </div>                      
                     </div>

@@ -15,7 +15,7 @@
     </div>
     <div class="footer-right-column-bottom">
         <div class="footer-button-right">           
-            <a class="button-reload" href="Proverbs.aspx">ОБНОВИТЬ</a>
+            <a class="button-footer-right-column" href="Proverbs.aspx">ОБНОВИТЬ</a>
         </div>
     </div>
 </asp:Content>

@@ -108,19 +108,19 @@
     </div>
     <div class="footer-right-column-bottom">
         <div class="footer-button-right">           
-            <asp:Button ID="ButtonParticleReload" runat="server" Text="ОБНОВИТЬ" CssClass="button-reload" 
-                OnClick="ButtonParticleReload_Click" />
+            <asp:Button ID="ButtonParticleReload" runat="server" Text="ОБНОВИТЬ" 
+                CssClass="button-footer-right-column" OnClick="ButtonParticleReload_Click" />
         </div>
         <div class="footer-button-right">           
-            <a class="button-read-next" href="Reader.aspx">ЧИТАТЬ</a>
+            <a class="button-footer-right-column" href="Reader.aspx">ЧИТАТЬ</a>
         </div>
         <div class="footer-button-right">           
             <asp:Button ID="ButtonParticleSave" runat="server" Text="СОХРАНИТЬ" 
-                CssClass="button-particle-save" />
+                CssClass="button-footer-right-column" />
         </div> 
         <div class="footer-button-right">           
             <asp:Button ID="ButtonParticleReport" runat="server" Text="ОШИБКА!" 
-                CssClass="button-report" />
+                CssClass="button-footer-right-column" />
         </div>  
     </div>   
 </asp:Content>

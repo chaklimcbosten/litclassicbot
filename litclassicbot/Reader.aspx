@@ -16,11 +16,11 @@
     <div class="footer-right-column-bottom">
         <div class="footer-button-right">
             <asp:Button ID="ButtonReadNext" runat="server" Text="ЧИТАТЬ ДАЛЕЕ" 
-                CssClass="button-read-next" />
+                CssClass="button-footer-right-column" />
         </div>
         <div class="footer-button-right">
             <asp:Button ID="ButtonReadPrevious" runat="server" Text="ЧИТАТЬ ПРЕДЫДУЩЕЕ" 
-                CssClass="button-read-previous" />
+                CssClass="button-footer-right-column" />
         </div>       
     </div>
 </asp:Content>
