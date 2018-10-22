@@ -27,12 +27,12 @@
                 <div class="logo"> LITCLASSIC </div>
             </div>
             <div class="logo-links">
-                <a href="Authorization.aspx" runat="server" class="link-button-authorization">АВТОРИЗАЦИЯ</a>
+                <a href="Authorization.aspx" runat="server" class="link-button">АВТОРИЗАЦИЯ</a>
                 <a href="https://t.me/litclassicbot" target="_blank" runat="server" 
-                    class="link-button-telegram-bot">TELEGRAM</a>
+                    class="link-button">TELEGRAM</a>
                 <a href="https://vk.com/litclassic" target="_blank" runat="server" 
-                    class="link-button-vk">VK</a>
-                <a href="~/" runat="server" class="link-button-main-page">О САЙТЕ</a>
+                    class="link-button">VK</a>
+                <a href="~/" runat="server" class="link-button">О САЙТЕ</a>
             </div>           
         </header>
 
