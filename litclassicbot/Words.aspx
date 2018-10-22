@@ -13,7 +13,7 @@
                 <h2>Значение слова</h2>
                 <asp:Label ID="LabelWordValue" runat="server"></asp:Label>
                 <asp:Label ID="LabelWordLinks" runat="server" Visible="False">
-                    <h2>Упомянутые в ссылках слова</h2></asp:Label>
+                <h2>Упомянутые в ссылках слова</h2></asp:Label>
             </ContentTemplate>
         </asp:UpdatePanel>
         

@@ -32,7 +32,6 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: white;
 }
-
 .form1 {
     background-color: #FFFFFF;
     width: 100%;
@@ -54,7 +53,6 @@ header {
     /*4 dp*/
     /*box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.20);*/
 }
-
 .header-main {
     float: left;
     display: flex;
@@ -65,7 +63,6 @@ header {
     height: 70px;
     float: left;
 }
-
 .logo {
     color: black;
     margin-left: 20px;
@@ -76,7 +73,6 @@ header {
     font-size: 34px;
     font-weight: 300;
 }
-
 .logo-links {
     letter-spacing: 0.75px;
     float: right;
@@ -112,23 +108,19 @@ header {
     .link-button-main-page:active {
         background-color: lightgrey;
     }
-
 .link-button-telegram-bot,
 .link-button-vk {
     margin-right: 7px;
     margin-left: 7px;
 }
-
 .link-button-authorization {
     margin-right: 0px;
     margin-left: 7px;
 }
-
 .link-button-main-page {
     margin-left: 4px;
     margin-right: 4px;
 }
-
 
 .main,
 .MainContent {
@@ -145,7 +137,6 @@ header {
     line-height: 1.5;
 }
 
-.label-subtitle-main,
 h1 {
     width: 100%;
     margin-top: 1%;
@@ -156,13 +147,6 @@ h1 {
     letter-spacing: 0px;
 }
 
-.label-subtitle-particle-line,
-.label-subtitle-particle-title,
-.label-subtitle-about-site,
-.label-subtitle-particle,
-.label-subtitle-navigation,
-.label-subtitle-statistics,
-.label-subtitle-gratitudes,
 h2 {
     width: 100%;
     margin-top: 1%;
@@ -173,55 +157,36 @@ h2 {
     letter-spacing: 0.25px;
 }
 
-.label-about-site,
-.label-particle,
-.label-navigation,
-.label-statistics,
-.label-gratitudes,
 .content-main-page {
     color: black;
 }
 
-.label-particle-line,
-.label-poem-particle-line,
-.label-particle-title,
-.label-word-name,
-.label-word-value {
-    /*margin-top: 20px;*/
+.black-label-word-name,
+.black-label-main-content {
     background-color: black;
     border-radius: 20px;
     /*4 dp*/
     box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.20);
     padding: 2%;
-}
-
-.label-particle-line,
-.label-word-name,
-.label-poem-particle-line {
+    color: white;
     padding-top: 10px;
     padding-bottom: 10px;
 }
-
-.label-poem-particle-line {
-    text-align: center;
-}
-
-.label-particle-title,
-.label-word-value {
-    color: white;
-}
-
-.label-word-name {
+.black-label-word-name {
     font-size: 34px;
     letter-spacing: 0.25px;
 }
 
-
-
 .particle-settings {
     color: black;
+    display: flex;
 }
-
+.particle-settings-theme-types-column {
+    flex-direction: column;
+}
+.particle-settings-authors-numbers-column {
+    flex-direction: column;
+}
 
 .footer {
     width: 70%;
@@ -270,7 +235,6 @@ h2 {
     font-weight: 300;
 }
 
-
 .footer-button-left {
     display: flex;
     float: left;
@@ -279,7 +243,6 @@ h2 {
     display: flex;
     float: right;
 }
-
 
 /*левая колонка*/
 .button-particle,
@@ -345,11 +308,9 @@ h2 {
     float: right;
 }
 
-
 .footer-images-buttons {
     display: none;
 }
-
 
 
 @media screen and (max-width:1390px) {
@@ -360,7 +321,6 @@ h2 {
         padding-left: 2%;
         padding-right: 2%;
     }
-
     .header-main {
         width: 100%;
     }
@@ -370,11 +330,9 @@ h2 {
         height: 50px;
         float: left;
     }
-
     .logo-links {
         visibility: hidden;
     }
-
     .logo {
         margin-left: 2%;
         margin-right: 2%;
@@ -397,44 +355,32 @@ h2 {
         padding-right: 2%;
         display: flex;
     }
-
     .footer-buttons {
         display: none;
     }
-
     .footer-images-buttons {
         width: 100%;
         display: flex;
         flex-direction: row;
     }
-
     .footer-images-buttons-left-column {
         display: flex;
         flex-direction: row;
         width: 200px;
     }
-
     .footer-images-buttons-right-column {
         display: flex;
         flex-direction: row-reverse;
     }
 
-    .label-subtitle-about-site,
-    .label-subtitle-particle,
-    .label-subtitle-navigation,
-    .label-subtitle-statistics,
-    .label-subtitle-gratitudes,
     h2 {
         font-size: 20px;
-        font-weight: 500;
+        font-weight: 300;
         letter-spacing: 0.15px;
         margin-top: 10px;
         margin-bottom: 10px;
     }
 
-    .label-subtitle-main,
-    .label-subtitle-particle-line,
-    .label-subtitle-particle-title,
     h1 {
         font-size: 24px;
         font-weight: 300;
@@ -443,13 +389,10 @@ h2 {
         margin-bottom: 10px;
     }
 
-    .label-particle-line,
-    .label-particle-title,
-    .label-word-value {
+    .black-label-main-content {
         padding: 15px;
     }
-
-    .label-word-name {
+    .black-label-word-name {
         padding: 15px;
         font-size: 24px;
         letter-spacing: 0px;

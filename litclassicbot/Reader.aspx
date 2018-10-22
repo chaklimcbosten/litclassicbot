@@ -14,7 +14,6 @@
         <p class="footer-right-text">Опции текущего раздела:</p>
     </div>
     <div class="footer-right-column-bottom">
-<%--    <div class="footer-button">--%>
         <div class="footer-button-right">
             <asp:Button ID="ButtonReadNext" runat="server" Text="ЧИТАТЬ ДАЛЕЕ" 
                 CssClass="button-read-next" />
@@ -23,6 +22,5 @@
             <asp:Button ID="ButtonReadPrevious" runat="server" Text="ЧИТАТЬ ПРЕДЫДУЩЕЕ" 
                 CssClass="button-read-previous" />
         </div>       
-<%--    </div>--%>
     </div>
 </asp:Content>

@@ -58,6 +58,87 @@ namespace litclassicbot {
         protected global::System.Web.UI.WebControls.CheckBox CheckBoxThemeType2;
         
         /// <summary>
+        /// CheckBoxAuthor0 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CheckBoxAuthor0;
+        
+        /// <summary>
+        /// CheckBoxAuthor1 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CheckBoxAuthor1;
+        
+        /// <summary>
+        /// CheckBoxAuthor2 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CheckBoxAuthor2;
+        
+        /// <summary>
+        /// CheckBoxAuthor3 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CheckBoxAuthor3;
+        
+        /// <summary>
+        /// CheckBoxAuthor4 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CheckBoxAuthor4;
+        
+        /// <summary>
+        /// CheckBoxAuthor5 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CheckBoxAuthor5;
+        
+        /// <summary>
+        /// CheckBoxAuthor6 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CheckBoxAuthor6;
+        
+        /// <summary>
+        /// CheckBoxAuthor7 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CheckBoxAuthor7;
+        
+        /// <summary>
+        /// CheckBoxAuthor8 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CheckBoxAuthor8;
+        
+        /// <summary>
         /// UpdatePanelParticle элемент управления.
         /// </summary>
         /// <remarks>
@@ -74,15 +155,6 @@ namespace litclassicbot {
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LabelParticleLine;
-        
-        /// <summary>
-        /// LabelPoemParticleLine элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelPoemParticleLine;
         
         /// <summary>
         /// LabelParticleTitle элемент управления.

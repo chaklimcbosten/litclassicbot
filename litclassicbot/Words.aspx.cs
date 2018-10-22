@@ -97,13 +97,13 @@ namespace litclassicbot
             // получение значения слова
             string mainWordValue = listListsGetRandomWord[0][1];
             // создаёт "обёрточный" класс для всего содержания значения слова
-            string beginMainWordName = "<div class=\"label-word-name\">";
+            string beginMainWordName = "<div class=\"black-label-word-name\">";
             string endMainWordName = "</div>";
             // замена символов новой строки на тег, выполняющий это в html
             mainWordName = beginMainWordName + mainWordName.Replace("\n\r", "<br>") + endMainWordName;
             // создаёт "обёрточный" класс для всего содержания значения слова
-            string beginWordValue = "<div class=\"label-word-value\">";
-            string endWordValue = "</div>";
+            string beginWordValue = "<div class=\"black-label-main-content\"><p>";
+            string endWordValue = "</p></div>";
             // замена символов новой строки на тег, выполняющий это в html
             mainWordValue = beginWordValue + mainWordValue.Replace("\n\r", "<br>") + endWordValue;
             LabelWordValue.Text = mainWordValue;
