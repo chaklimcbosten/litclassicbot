@@ -34,7 +34,7 @@ namespace litclassicbot
             PageSetting();
         }
 
-
+        
         private void ScriptManagerSetting()
         {
             // UpdatePanelParticlesPage
@@ -56,6 +56,15 @@ namespace litclassicbot
                         Response.Cookies["litclassic-cookie-particle"]["theme-type-0"] = "1";
                         Response.Cookies["litclassic-cookie-particle"]["theme-type-1"] = "0";
                         Response.Cookies["litclassic-cookie-particle"]["theme-type-2"] = "0";
+                        Response.Cookies["litclassic-cookie-particle"]["author-number-0"] = "1";
+                        Response.Cookies["litclassic-cookie-particle"]["author-number-1"] = "1";
+                        Response.Cookies["litclassic-cookie-particle"]["author-number-2"] = "1";
+                        Response.Cookies["litclassic-cookie-particle"]["author-number-3"] = "1";
+                        Response.Cookies["litclassic-cookie-particle"]["author-number-4"] = "1";
+                        Response.Cookies["litclassic-cookie-particle"]["author-number-5"] = "1";
+                        Response.Cookies["litclassic-cookie-particle"]["author-number-6"] = "1";
+                        Response.Cookies["litclassic-cookie-particle"]["author-number-7"] = "1";
+                        Response.Cookies["litclassic-cookie-particle"]["author-number-8"] = "1";
                         Response.Cookies["litclassic-cookie-particle"].Expires = DateTime.Now.AddYears(3);
 
                         SetNewRandomIDParticle();
@@ -93,6 +102,15 @@ namespace litclassicbot
                         Session["theme-type-0"] = true;
                         Session["theme-type-1"] = false;
                         Session["theme-type-2"] = false;
+                        Session["author-number-0"] = true;
+                        Session["author-number-1"] = true;
+                        Session["author-number-2"] = true;
+                        Session["author-number-3"] = true;
+                        Session["author-number-4"] = true;
+                        Session["author-number-5"] = true;
+                        Session["author-number-6"] = true;
+                        Session["author-number-7"] = true;
+                        Session["author-number-8"] = true;
                     }
                     // если у текущей сессии уже есть данные
                     else CheckParticleSettingsSession();
@@ -104,6 +122,7 @@ namespace litclassicbot
         }
         private void CheckParticleSettingsCookie()
         {
+            // theme-type-0
             if (Request.Cookies["litclassic-cookie-particle"]["theme-type-0"] != null)
             {
                 if (Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["theme-type-0"]) == "1")
@@ -116,7 +135,7 @@ namespace litclassicbot
                 CheckBoxThemeType0.Checked = true;
                 Response.Cookies["litclassic-cookie-particle"]["theme-type-0"] = "1";
             }
-
+            // theme-type-1
             if (Request.Cookies["litclassic-cookie-particle"]["theme-type-1"] != null)
             {
                 if (Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["theme-type-1"]) == "1")
@@ -129,7 +148,7 @@ namespace litclassicbot
                 CheckBoxThemeType1.Checked = false;
                 Response.Cookies["litclassic-cookie-particle"]["theme-type-1"] = "0";
             }
-
+            // theme-type-2
             if (Request.Cookies["litclassic-cookie-particle"]["theme-type-2"] != null)
             {
                 if (Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["theme-type-2"]) == "1")
@@ -142,17 +161,164 @@ namespace litclassicbot
                 CheckBoxThemeType2.Checked = false;
                 Response.Cookies["litclassic-cookie-particle"]["theme-type-2"] = "0";
             }
+
+            // author-number-0
+            if (Request.Cookies["litclassic-cookie-particle"]["author-number-0"] != null)
+            {
+                if (Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["author-number-0"]) == "1")
+                    CheckBoxAuthor0.Checked = true;
+                else if (Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["author-number-0"]) == "0")
+                    CheckBoxAuthor0.Checked = false;
+            }
+            else
+            {
+                CheckBoxAuthor0.Checked = true;
+                Response.Cookies["litclassic-cookie-particle"]["author-number-0"] = "1";
+            }
+            // author-number-1
+            if (Request.Cookies["litclassic-cookie-particle"]["author-number-1"] != null)
+            {
+                if (Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["author-number-1"]) == "1")
+                    CheckBoxAuthor1.Checked = true;
+                else if (Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["author-number-1"]) == "0")
+                    CheckBoxAuthor1.Checked = false;
+            }
+            else
+            {
+                CheckBoxAuthor1.Checked = true;
+                Response.Cookies["litclassic-cookie-particle"]["author-number-1"] = "1";
+            }
+            // author-number-2
+            if (Request.Cookies["litclassic-cookie-particle"]["author-number-2"] != null)
+            {
+                if (Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["author-number-2"]) == "1")
+                    CheckBoxAuthor2.Checked = true;
+                else if (Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["author-number-2"]) == "0")
+                    CheckBoxAuthor2.Checked = false;
+            }
+            else
+            {
+                CheckBoxAuthor2.Checked = true;
+                Response.Cookies["litclassic-cookie-particle"]["author-number-2"] = "1";
+            }
+            // author-number-3
+            if (Request.Cookies["litclassic-cookie-particle"]["author-number-3"] != null)
+            {
+                if (Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["author-number-3"]) == "1")
+                    CheckBoxAuthor3.Checked = true;
+                else if (Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["author-number-3"]) == "0")
+                    CheckBoxAuthor3.Checked = false;
+            }
+            else
+            {
+                CheckBoxAuthor3.Checked = true;
+                Response.Cookies["litclassic-cookie-particle"]["author-number-3"] = "1";
+            }
+            // author-number-4
+            if (Request.Cookies["litclassic-cookie-particle"]["author-number-4"] != null)
+            {
+                if (Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["author-number-4"]) == "1")
+                    CheckBoxAuthor4.Checked = true;
+                else if (Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["author-number-4"]) == "0")
+                    CheckBoxAuthor4.Checked = false;
+            }
+            else
+            {
+                CheckBoxAuthor4.Checked = true;
+                Response.Cookies["litclassic-cookie-particle"]["author-number-4"] = "1";
+            }
+            // author-number-5
+            if (Request.Cookies["litclassic-cookie-particle"]["author-number-5"] != null)
+            {
+                if (Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["author-number-5"]) == "1")
+                    CheckBoxAuthor5.Checked = true;
+                else if (Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["author-number-5"]) == "0")
+                    CheckBoxAuthor5.Checked = false;
+            }
+            else
+            {
+                CheckBoxAuthor5.Checked = true;
+                Response.Cookies["litclassic-cookie-particle"]["author-number-5"] = "1";
+            }
+            // author-number-6
+            if (Request.Cookies["litclassic-cookie-particle"]["author-number-6"] != null)
+            {
+                if (Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["author-number-6"]) == "1")
+                    CheckBoxAuthor6.Checked = true;
+                else if (Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["author-number-6"]) == "0")
+                    CheckBoxAuthor6.Checked = false;
+            }
+            else
+            {
+                CheckBoxAuthor6.Checked = true;
+                Response.Cookies["litclassic-cookie-particle"]["author-number-6"] = "1";
+            }
+            // author-number-7
+            if (Request.Cookies["litclassic-cookie-particle"]["author-number-7"] != null)
+            {
+                if (Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["author-number-7"]) == "1")
+                    CheckBoxAuthor7.Checked = true;
+                else if (Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["author-number-7"]) == "0")
+                    CheckBoxAuthor7.Checked = false;
+            }
+            else
+            {
+                CheckBoxAuthor7.Checked = true;
+                Response.Cookies["litclassic-cookie-particle"]["author-number-7"] = "1";
+            }
+            // author-number-8
+            if (Request.Cookies["litclassic-cookie-particle"]["author-number-8"] != null)
+            {
+                if (Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["author-number-8"]) == "1")
+                    CheckBoxAuthor8.Checked = true;
+                else if (Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["author-number-8"]) == "0")
+                    CheckBoxAuthor8.Checked = false;
+            }
+            else
+            {
+                CheckBoxAuthor8.Checked = true;
+                Response.Cookies["litclassic-cookie-particle"]["author-number-8"] = "1";
+            }
         }
         private void SetParticleSettingsCookie()
         {
+            // theme-type-0
             if (CheckBoxThemeType0.Checked) Response.Cookies["litclassic-cookie-particle"]["theme-type-0"] = "1";
             else if (!CheckBoxThemeType0.Checked) Response.Cookies["litclassic-cookie-particle"]["theme-type-0"] = "0";
-
+            // theme-type-1
             if (CheckBoxThemeType1.Checked) Response.Cookies["litclassic-cookie-particle"]["theme-type-1"] = "1";
             else if (!CheckBoxThemeType1.Checked) Response.Cookies["litclassic-cookie-particle"]["theme-type-1"] = "0";
-
+            // theme-type-2
             if (CheckBoxThemeType2.Checked) Response.Cookies["litclassic-cookie-particle"]["theme-type-2"] = "1";
             else if (!CheckBoxThemeType2.Checked) Response.Cookies["litclassic-cookie-particle"]["theme-type-2"] = "0";
+
+            // author-number-0
+            if (CheckBoxAuthor0.Checked) Response.Cookies["litclassic-cookie-particle"]["author-number-0"] = "1";
+            else if (!CheckBoxAuthor0.Checked) Response.Cookies["litclassic-cookie-particle"]["author-number-0"] = "0";
+            // author-number-1
+            if (CheckBoxAuthor1.Checked) Response.Cookies["litclassic-cookie-particle"]["author-number-1"] = "1";
+            else if (!CheckBoxAuthor1.Checked) Response.Cookies["litclassic-cookie-particle"]["author-number-1"] = "0";
+            // author-number-2
+            if (CheckBoxAuthor2.Checked) Response.Cookies["litclassic-cookie-particle"]["author-number-2"] = "1";
+            else if (!CheckBoxAuthor2.Checked) Response.Cookies["litclassic-cookie-particle"]["author-number-2"] = "0";
+            // author-number-3
+            if (CheckBoxAuthor3.Checked) Response.Cookies["litclassic-cookie-particle"]["author-number-3"] = "1";
+            else if (!CheckBoxAuthor3.Checked) Response.Cookies["litclassic-cookie-particle"]["author-number-3"] = "0";
+            // author-number-4
+            if (CheckBoxAuthor4.Checked) Response.Cookies["litclassic-cookie-particle"]["author-number-4"] = "1";
+            else if (!CheckBoxAuthor4.Checked) Response.Cookies["litclassic-cookie-particle"]["author-number-4"] = "0";
+            // author-number-5
+            if (CheckBoxAuthor5.Checked) Response.Cookies["litclassic-cookie-particle"]["author-number-5"] = "1";
+            else if (!CheckBoxAuthor5.Checked) Response.Cookies["litclassic-cookie-particle"]["author-number-5"] = "0";
+            // author-number-6
+            if (CheckBoxAuthor6.Checked) Response.Cookies["litclassic-cookie-particle"]["author-number-6"] = "1";
+            else if (!CheckBoxAuthor6.Checked) Response.Cookies["litclassic-cookie-particle"]["author-number-6"] = "0";
+            // author-number-7
+            if (CheckBoxAuthor7.Checked) Response.Cookies["litclassic-cookie-particle"]["author-number-7"] = "1";
+            else if (!CheckBoxAuthor7.Checked) Response.Cookies["litclassic-cookie-particle"]["author-number-7"] = "0";
+            // author-number-8
+            if (CheckBoxAuthor8.Checked) Response.Cookies["litclassic-cookie-particle"]["author-number-8"] = "1";
+            else if (!CheckBoxAuthor8.Checked) Response.Cookies["litclassic-cookie-particle"]["author-number-8"] = "0";
 
             Response.Cookies["litclassic-cookie-particle"].Expires = DateTime.Now.AddYears(3);
             Response.Cookies["litclassic-cookie-user-info"]["last-visit"] = DateTime.Now.ToString();
@@ -160,25 +326,83 @@ namespace litclassicbot
         }
         private void CheckParticleSettingsSession()
         {
+            // theme-type-0
             if ((bool)Session["theme-type-0"]) CheckBoxThemeType0.Checked = true;
             else if (!(bool)Session["theme-type-0"]) CheckBoxThemeType0.Checked = false;
-
+            // theme-type-1
             if ((bool)Session["theme-type-1"]) CheckBoxThemeType1.Checked = true;
             else if (!(bool)Session["theme-type-1"]) CheckBoxThemeType1.Checked = false;
-
+            // theme-type-2
             if ((bool)Session["theme-type-2"]) CheckBoxThemeType2.Checked = true;
             else if (!(bool)Session["theme-type-2"]) CheckBoxThemeType2.Checked = false;
+
+            // author-number-0
+            if ((bool)Session["author-number-0"]) CheckBoxAuthor0.Checked = true;
+            else if (!(bool)Session["author-number-0"]) CheckBoxAuthor0.Checked = false;
+            // author-number-1
+            if ((bool)Session["author-number-1"]) CheckBoxAuthor1.Checked = true;
+            else if (!(bool)Session["author-number-1"]) CheckBoxAuthor1.Checked = false;
+            // author-number-2
+            if ((bool)Session["author-number-2"]) CheckBoxAuthor2.Checked = true;
+            else if (!(bool)Session["author-number-2"]) CheckBoxAuthor2.Checked = false;
+            // author-number-3
+            if ((bool)Session["author-number-3"]) CheckBoxAuthor3.Checked = true;
+            else if (!(bool)Session["author-number-3"]) CheckBoxAuthor3.Checked = false;
+            // author-number-4
+            if ((bool)Session["author-number-4"]) CheckBoxAuthor4.Checked = true;
+            else if (!(bool)Session["author-number-4"]) CheckBoxAuthor4.Checked = false;
+            // author-number-5
+            if ((bool)Session["author-number-5"]) CheckBoxAuthor5.Checked = true;
+            else if (!(bool)Session["author-number-5"]) CheckBoxAuthor5.Checked = false;
+            // author-number-6
+            if ((bool)Session["author-number-6"]) CheckBoxAuthor6.Checked = true;
+            else if (!(bool)Session["author-number-6"]) CheckBoxAuthor6.Checked = false;
+            // author-number-7
+            if ((bool)Session["author-number-7"]) CheckBoxAuthor7.Checked = true;
+            else if (!(bool)Session["author-number-7"]) CheckBoxAuthor7.Checked = false;
+            // author-number-8
+            if ((bool)Session["author-number-8"]) CheckBoxAuthor8.Checked = true;
+            else if (!(bool)Session["author-number-8"]) CheckBoxAuthor8.Checked = false;
         }
         private void SetParticleSettingsSession()
         {
+            // theme-type-0
             if (CheckBoxThemeType0.Checked) Session["theme-type-0"] = true;
             else Session["theme-type-0"] = false;
-
+            // theme-type-1
             if (CheckBoxThemeType1.Checked) Session["theme-type-1"] = true;
             else Session["theme-type-1"] = false;
-
+            // theme-type-2
             if (CheckBoxThemeType2.Checked) Session["theme-type-2"] = true;
             else Session["theme-type-2"] = false;
+
+            // author-number-0
+            if (CheckBoxAuthor0.Checked) Session["author-number-0"] = true;
+            else Session["author-number-0"] = false;
+            // author-number-1
+            if (CheckBoxAuthor1.Checked) Session["author-number-1"] = true;
+            else Session["author-number-1"] = false;
+            // author-number-2
+            if (CheckBoxAuthor2.Checked) Session["author-number-2"] = true;
+            else Session["author-number-2"] = false;
+            // author-number-3
+            if (CheckBoxAuthor3.Checked) Session["author-number-3"] = true;
+            else Session["author-number-3"] = false;
+            // author-number-4
+            if (CheckBoxAuthor4.Checked) Session["author-number-4"] = true;
+            else Session["author-number-4"] = false;
+            // author-number-5
+            if (CheckBoxAuthor5.Checked) Session["author-number-5"] = true;
+            else Session["author-number-5"] = false;
+            // author-number-6
+            if (CheckBoxAuthor6.Checked) Session["author-number-6"] = true;
+            else Session["author-number-6"] = false;
+            // author-number-7
+            if (CheckBoxAuthor7.Checked) Session["author-number-7"] = true;
+            else Session["author-number-7"] = false;
+            // author-number-8
+            if (CheckBoxAuthor8.Checked) Session["author-number-8"] = true;
+            else Session["author-number-8"] = false;
         }
         private void ShowParticle(int particleID)
         {
@@ -272,6 +496,16 @@ namespace litclassicbot
                 && (CheckBoxThemeType1.Checked == false)
                 && (CheckBoxThemeType2.Checked == false))
                 CheckBoxThemeType0.Checked = true;
+            if ((CheckBoxAuthor0.Checked == false)
+                && (CheckBoxAuthor1.Checked == false)
+                && (CheckBoxAuthor2.Checked == false)
+                && (CheckBoxAuthor3.Checked == false)
+                && (CheckBoxAuthor4.Checked == false)
+                && (CheckBoxAuthor5.Checked == false)
+                && (CheckBoxAuthor6.Checked == false)
+                && (CheckBoxAuthor7.Checked == false)
+                && (CheckBoxAuthor8.Checked == false))
+                CheckBoxAuthor0.Checked = true;
         }
 
         
