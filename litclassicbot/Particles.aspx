@@ -85,7 +85,8 @@
                      </div>
                 </div>
                 <div class="button">
-                    <asp:Button ID="Button1" runat="server" Text="Скрыть настройки" />
+                    <asp:Button ID="ButtonHideParticleSettings" runat="server" Text="СКРЫТЬ НАСТРОЙКИ" 
+                        CssClass="button-hide-particle-settings" />
                 </div>
             </Contenttemplate>
         </asp:UpdatePanel>
