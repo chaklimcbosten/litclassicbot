@@ -6,34 +6,89 @@
     <div class="main">
         <h1>Случайная "частица"</h1>
         <h2>Настройки получения "частиц"</h2>
-        <div class="particle-settings">
-            <asp:UpdatePanel ID="UpdatePanelParticleSettings" runat="server" UpdateMode="Conditional">
-                 <Contenttemplate>
+        <asp:UpdatePanel ID="UpdatePanelParticleSettings" runat="server" UpdateMode="Conditional">
+            <Contenttemplate>
+                <div class="particle-settings">
                      <div class ="particle-settings-theme-types-column">
-                         <asp:CheckBox ID="CheckBoxThemeType0" runat="server" 
-                            Text="Основные произведения" OnCheckedChanged="CheckBoxThemeType0_CheckedChanged" 
-                            ClientIDMode="Static"/>
-                        <asp:CheckBox ID="CheckBoxThemeType1" runat="server" 
-                            Text="Прочие произведения, заметки, письма и пр." OnCheckedChanged="CheckBoxThemeType1_CheckedChanged" 
-                            ClientIDMode="Static"/>
-                        <asp:CheckBox ID="CheckBoxThemeType2" runat="server" 
-                            Text="Примечания, приложения, комментарии и пр." OnCheckedChanged="CheckBoxThemeType2_CheckedChanged" 
-                            ClientIDMode="Static"/>
+                         <div class="particle-settings-checkboxes-text">
+                            <h3>Настройки тем "частиц"</h3>
+                         </div>
+                         <div class="particle-settings-checkboxes-theme-types">
+                             <div class="checkbox-span">
+                                <asp:CheckBox ID="CheckBoxThemeType0" runat="server" 
+                                    Text="Основные произведения" 
+                                    OnCheckedChanged="CheckBoxThemeType0_CheckedChanged" 
+                                    ClientIDMode="Static"/>
+                            </div>
+                            <div class="checkbox-span">
+                                <asp:CheckBox ID="CheckBoxThemeType1" runat="server" 
+                                    Text="Прочие произведения, заметки, письма и пр." 
+                                    OnCheckedChanged="CheckBoxThemeType1_CheckedChanged" 
+                                    ClientIDMode="Static"/>
+                            </div>
+                            <div class="checkbox-span">
+                                <asp:CheckBox ID="CheckBoxThemeType2" runat="server" 
+                                    Text="Примечания, приложения, комментарии и пр." 
+                                    OnCheckedChanged="CheckBoxThemeType2_CheckedChanged" 
+                                    ClientIDMode="Static"/>
+                            </div>   
+                         </div>                                          
                      </div>
                      <div class="particle-settings-authors-numbers-column">
-                         <asp:CheckBox ID="CheckBoxAuthor0" runat="server" ClientIDMode="Static" Text="Фёдор Михайлович Достоевский" />
-                         <asp:CheckBox ID="CheckBoxAuthor1" runat="server" ClientIDMode="Static" Text="Александр Сергеевич Пушкин" />
-                         <asp:CheckBox ID="CheckBoxAuthor2" runat="server" ClientIDMode="Static" Text="Николай Васильевич Гоголь" />
-                         <asp:CheckBox ID="CheckBoxAuthor3" runat="server" ClientIDMode="Static" Text="Василий Андреевич Жуковский" />
-                         <asp:CheckBox ID="CheckBoxAuthor4" runat="server" ClientIDMode="Static" Text="Иван Андреевич Крылов" />
-                         <asp:CheckBox ID="CheckBoxAuthor5" runat="server" ClientIDMode="Static" Text="Михаил Юрьевич Лермонтов" />
-                         <asp:CheckBox ID="CheckBoxAuthor6" runat="server" ClientIDMode="Static" Text="Алексей Николаевич Толстой" />
-                         <asp:CheckBox ID="CheckBoxAuthor7" runat="server" ClientIDMode="Static" Text="Фёдор Иванович Тютчев" />
-                         <asp:CheckBox ID="CheckBoxAuthor8" runat="server" ClientIDMode="Static" Text="Михаил Васильевич Ломоносов" />
-                     </div>                    
-                 </Contenttemplate>
-            </asp:UpdatePanel>
-        </div>
+                         <div class="particle-settings-checkboxes-text">
+                             <h3>Настройки авторов "частиц"</h3>
+                         </div>
+                         <div class="particle-settings-checkboxes-authors-numbers">
+                             <div class="particle-settings-authors-numbers-checkboxes-group">
+                                <div class="checkbox-span">
+                                    <asp:CheckBox ID="CheckBoxAuthor0" runat="server" ClientIDMode="Static" 
+                                        Text="Фёдор Михайлович Достоевский" />
+                                </div>
+                                <div class="checkbox-span">
+                                    <asp:CheckBox ID="CheckBoxAuthor1" runat="server" ClientIDMode="Static" 
+                                        Text="Александр Сергеевич Пушкин" />
+                                </div>
+                                <div class="checkbox-span">
+                                    <asp:CheckBox ID="CheckBoxAuthor2" runat="server" ClientIDMode="Static" 
+                                        Text="Николай Васильевич Гоголь" />
+                                </div>
+                            </div>
+                            <div class="particle-settings-authors-numbers-checkboxes-group">
+                                <div class="checkbox-span">
+                                    <asp:CheckBox ID="CheckBoxAuthor3" runat="server" ClientIDMode="Static" 
+                                        Text="Василий Андреевич Жуковский" />
+                                </div>
+                                <div class="checkbox-span">
+                                    <asp:CheckBox ID="CheckBoxAuthor4" runat="server" ClientIDMode="Static" 
+                                        Text="Иван Андреевич Крылов" />
+                                </div>
+                                <div class="checkbox-span">
+                                    <asp:CheckBox ID="CheckBoxAuthor5" runat="server" ClientIDMode="Static" 
+                                        Text="Михаил Юрьевич Лермонтов" />
+                                </div>
+                            </div>
+                            <div class="particle-settings-authors-numbers-checkboxes-group">
+                                <div class="checkbox-span">
+                                    <asp:CheckBox ID="CheckBoxAuthor6" runat="server" ClientIDMode="Static" 
+                                        Text="Алексей Николаевич Толстой" />
+                                </div>
+                                <div class="checkbox-span">
+                                    <asp:CheckBox ID="CheckBoxAuthor7" runat="server" ClientIDMode="Static" 
+                                        Text="Фёдор Иванович Тютчев" />
+                                </div>
+                                <div class="checkbox-span">
+                                    <asp:CheckBox ID="CheckBoxAuthor8" runat="server" ClientIDMode="Static" 
+                                        Text="Михаил Васильевич Ломоносов" />
+                                </div>                    
+                            </div>                        
+                         </div>
+                     </div>
+                </div>
+                <div class="button">
+                    <asp:Button ID="Button1" runat="server" Text="Скрыть настройки" />
+                </div>
+            </Contenttemplate>
+        </asp:UpdatePanel>
         <asp:UpdatePanel ID="UpdatePanelParticle" runat="server" UpdateMode="Conditional">
             <ContentTemplate>
                 <h2>Текст "частицы"</h2>
