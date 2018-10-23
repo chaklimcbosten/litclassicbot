@@ -12,6 +12,9 @@ namespace litclassicbot
     public partial class Particles : System.Web.UI.Page
     {
         private int currentParticleID = -1;
+        //private Dictionary<string, int> particleSettingsDictionary = new Dictionary<string, int>();
+        private int currentRandomThemeType = -1;
+        private int currentRandomAuthorNumber = -1;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -470,17 +473,78 @@ namespace litclassicbot
         }
         private void SetNewRandomIDParticle()
         {
+            // должен узнать, из каких цифр нужно будет выбирать случайные
+            // построить диапазон
+            // найти случайное
+            // найти, какое из выбранных соответствовало ему
+
+            // присваивание значениям настроек получения "частиц" значений
+            CheckThemeTypesAndAuthorsNumbers();
+
             BotDBConnect currentConnection = new BotDBConnect();
 
             currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
 
-            currentParticleID = currentConnection.GetRandomParticleID();
+            // если значениям настроек присвоены значения
+            if ((currentRandomThemeType == -1) && (currentRandomAuthorNumber == -1))
+                currentParticleID = currentConnection.GetRandomParticleID();
+            // если значениям настроек не присвоены значения
+            else currentParticleID = currentConnection.GetRandomParticleID(currentRandomAuthorNumber, currentRandomThemeType);
 
             // если браузер поддерживает cookie
             if (Request.Browser.Cookies) Response.Cookies["litclassic-cookie-particle"]["particleID"] 
                     = Convert.ToString(currentParticleID);
             // если браузер не поддерживает cookie
             else Session["particleID"] = currentParticleID;           
+        }
+        private void CheckThemeTypesAndAuthorsNumbers()
+        {
+            // если браузер поддерживает cookie
+            if (Request.Browser.Cookies)
+            {
+                List<int> listThemeTypes = new List<int>();
+                List<int> listAuthorsNumbers = new List<int>();
+
+                for (int iCookieThemeType = 0; iCookieThemeType < 3; iCookieThemeType++)
+                {
+                    if (Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["theme-type-" + iCookieThemeType]) == "1")
+                        listThemeTypes.Add(iCookieThemeType);
+                }
+
+                for (int iCookieAuthorNumber = 0; iCookieAuthorNumber < 9; iCookieAuthorNumber++)
+                {
+                    if (Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["author-number-" + iCookieAuthorNumber]) == "1")
+                        listAuthorsNumbers.Add(iCookieAuthorNumber);
+                }
+
+                Random randomThemeType = new Random();
+                Random randomAuthorNumber = new Random();
+                currentRandomThemeType = listThemeTypes[randomThemeType.Next(0, listThemeTypes.Count() - 1)];
+                currentRandomAuthorNumber = listAuthorsNumbers[randomAuthorNumber.Next(0, listAuthorsNumbers.Count() - 1)];                
+            }
+            // если браузер не поддерживает cookie
+            else
+            {
+                List<int> listThemeTypes = new List<int>();
+                List<int> listAuthorsNumbers = new List<int>();
+
+                for (int iSessionThemeType = 0; iSessionThemeType < 3; iSessionThemeType++)
+                {
+                    if ((bool)Session["theme-type-" + iSessionThemeType] == true)
+                        listThemeTypes.Add(iSessionThemeType);
+                }
+
+                for (int iSessionAuthorNumber = 0; iSessionAuthorNumber < 9; iSessionAuthorNumber++)
+                {
+                    if ((bool)Session["author-number-" + iSessionAuthorNumber] == true)
+                        listAuthorsNumbers.Add(iSessionAuthorNumber);
+                }
+
+                Random randomThemeType = new Random();
+                Random randomAuthorNumber = new Random();
+                currentRandomThemeType = listThemeTypes[randomThemeType.Next(0, listThemeTypes.Count() - 1)];
+                currentRandomAuthorNumber = listAuthorsNumbers[randomAuthorNumber.Next(0, listAuthorsNumbers.Count() - 1)];
+            }
         }
         private void ReportParticle()
         {

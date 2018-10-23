@@ -70,11 +70,11 @@
                             <div class="particle-settings-authors-numbers-checkboxes-group">
                                 <div class="checkbox-span">
                                     <asp:CheckBox ID="CheckBoxAuthor6" runat="server" ClientIDMode="Static" 
-                                        Text="Алексей Николаевич Толстой" />
+                                        Text="Фёдор Иванович Тютчев" />
                                 </div>
                                 <div class="checkbox-span">
                                     <asp:CheckBox ID="CheckBoxAuthor7" runat="server" ClientIDMode="Static" 
-                                        Text="Фёдор Иванович Тютчев" />
+                                        Text="Алексей Константинович Толстой" />
                                 </div>
                                 <div class="checkbox-span">
                                     <asp:CheckBox ID="CheckBoxAuthor8" runat="server" ClientIDMode="Static" 
