@@ -11,7 +11,7 @@ namespace litclassicbot
 {
     public partial class Particles : System.Web.UI.Page
     {
-        private int currentParticleID = -1;
+        private int currentParticleId = -1;
         //private Dictionary<string, int> particleSettingsDictionary = new Dictionary<string, int>();
         private int currentRandomThemeType = -1;
         private int currentRandomAuthorNumber = -1;
@@ -71,7 +71,7 @@ namespace litclassicbot
                         Response.Cookies["litclassic-cookie-particle"].Expires = DateTime.Now.AddYears(3);
 
                         SetNewRandomIDParticle();
-                        ShowParticle(currentParticleID);
+                        ShowParticle(currentParticleId);
                     }
                     // cookie-файл существует
                     else
@@ -83,10 +83,10 @@ namespace litclassicbot
                         if ((Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["particleID"]) == null))
                         {
                             SetNewRandomIDParticle();
-                            ShowParticle(currentParticleID);
+                            ShowParticle(currentParticleId);
 
                             Response.Cookies["litclassic-cookie-particle"]["particleID"] 
-                                = Convert.ToString(currentParticleID);
+                                = Convert.ToString(currentParticleId);
                         }
                         // если ID "частицы" задан
                         else
@@ -119,7 +119,7 @@ namespace litclassicbot
                     else CheckParticleSettingsSession();
 
                     SetNewRandomIDParticle();
-                    ShowParticle(currentParticleID);
+                    ShowParticle(currentParticleId);
                 }
             }           
         }
@@ -413,14 +413,13 @@ namespace litclassicbot
 
             currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
 
-            List<string> listGetParticle = new List<string>();
-            listGetParticle = currentConnection.GetParticle("web", particleID);
-            string particle = listGetParticle[0];
-            string title = listGetParticle[1];
-            int indeLastLine = Convert.ToInt32(listGetParticle[2]);
-            // для отправки сообщения об ошибке
-            currentParticleID = Convert.ToInt32(listGetParticle[3]);
-            int bookID = Convert.ToInt32(listGetParticle[4]);
+            Dictionary<string, object> particleQueryDictionary = new Dictionary<string, object>();
+            particleQueryDictionary = currentConnection.GetParticle(Session.SessionID, "web", particleID);
+            string particle = (string)particleQueryDictionary["line"];
+            string title = (string)particleQueryDictionary["title"]; ;
+            int indeLastLine = (int)particleQueryDictionary["indexLastLine"]; ;
+            currentParticleId = (int)particleQueryDictionary["particleId"]; ;
+            int bookId = (int)particleQueryDictionary["bookId"]; ;
             // создаёт "обёрточный" класс для всего содержания "частицы"
             string beginParticle = "<div class=\"black-label-main-content\"><p>";
             string endParticle = "</p></div>";
@@ -451,7 +450,7 @@ namespace litclassicbot
             string title = listGetRandomParticle[1];
             int indeLastLine = Convert.ToInt32(listGetRandomParticle[2]);
             // для отправки сообщения об ошибке
-            currentParticleID = Convert.ToInt32(listGetRandomParticle[3]);
+            currentParticleId = Convert.ToInt32(listGetRandomParticle[3]);
             int bookID = Convert.ToInt32(listGetRandomParticle[4]);
             // создаёт "обёрточный" класс для всего содержания "частицы"
             string beginParticle = "<div class=\"label-particle-line\"><p>";
@@ -487,15 +486,15 @@ namespace litclassicbot
 
             // если значениям настроек присвоены значения
             if ((currentRandomThemeType == -1) && (currentRandomAuthorNumber == -1))
-                currentParticleID = currentConnection.GetRandomParticleID();
+                currentParticleId = currentConnection.GetRandomParticleId();
             // если значениям настроек не присвоены значения
-            else currentParticleID = currentConnection.GetRandomParticleID(currentRandomAuthorNumber, currentRandomThemeType);
+            else currentParticleId = currentConnection.GetRandomParticleId(currentRandomAuthorNumber, currentRandomThemeType);
 
             // если браузер поддерживает cookie
             if (Request.Browser.Cookies) Response.Cookies["litclassic-cookie-particle"]["particleID"] 
-                    = Convert.ToString(currentParticleID);
+                    = Convert.ToString(currentParticleId);
             // если браузер не поддерживает cookie
-            else Session["particleID"] = currentParticleID;           
+            else Session["particleID"] = currentParticleId;           
         }
         private void CheckThemeTypesAndAuthorsNumbers()
         {
@@ -551,7 +550,7 @@ namespace litclassicbot
             BotDBConnect currentConnection = new BotDBConnect();
 
             currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
-            currentConnection.WriteNewParticleReportByParticleID(currentParticleID.ToString());
+            currentConnection.WriteNewParticleReportByParticleId(currentParticleId.ToString());
         }
         private void CheckCheckBoxes()
         {
@@ -582,7 +581,7 @@ namespace litclassicbot
             else SetParticleSettingsSession();           
 
             SetNewRandomIDParticle();
-            ShowParticle(currentParticleID);
+            ShowParticle(currentParticleId);
             UpdatePanelParticle.Update();
         }
         protected void CheckBoxThemeType0_CheckedChanged(object sender, EventArgs e)

@@ -76,7 +76,7 @@ namespace litclassicbot
 
             currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
 
-            currentWordID = currentConnection.GetRandomWordID();
+            currentWordID = currentConnection.GetRandomWordId();
 
             // если браузер поддерживает cookie
             if (Request.Browser.Cookies) Response.Cookies["litclassic-cookie-words"]["wordID"]

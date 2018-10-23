@@ -467,7 +467,7 @@ namespace litclassicbot.Dialogs
                     BotDBConnect currentConnection = new BotDBConnect();
 
                     currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
-                    currentConnection.WriteNewWordReportByConversationID(activity.Conversation.Id);
+                    currentConnection.WriteNewWordReportByConversationId(activity.Conversation.Id);
                     await context.PostAsync("Сообщение об ошибке отправлено!");
                 }
                 catch
@@ -482,7 +482,7 @@ namespace litclassicbot.Dialogs
                     BotDBConnect currentConnection = new BotDBConnect();
 
                     currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
-                    currentConnection.WriteNewParticleReportByConversationID(activity.Conversation.Id);
+                    currentConnection.WriteNewParticleReportByConversationId(activity.Conversation.Id);
                     await context.PostAsync("Сообщение об ошибке отправлено!");
                 }
                 catch
@@ -507,7 +507,7 @@ namespace litclassicbot.Dialogs
                     List<string> listFavouriteParticlesTitles = new List<string>();
                     // присвоение bookID
                     int bookID = Convert.ToInt32(activity.Text.Split('D')[1]);
-                    listFavouriteParticlesID = currentConnection.GetFavouriteParticlesID(Convert.ToInt32(bookID), activity.Conversation.Id);
+                    listFavouriteParticlesID = currentConnection.GetFavouriteParticlesId(Convert.ToInt32(bookID), activity.Conversation.Id);
                     // строка сообщения со списком книг
                     string stringFavouriteParticles = "Избранные Вами частицы:\n\r";
                     // переменная-разделитель
@@ -586,15 +586,15 @@ namespace litclassicbot.Dialogs
                     currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
 
                     // список получаемых данных из базы
-                    List<string> particle = new List<string>();
+                    Dictionary<string, object> particleQueryDictionary = new Dictionary<string, object>();
                     // присвоение particleID
                     int particleID = Convert.ToInt32(activity.Text.Split('l')[1]);
-                    particle = currentConnection.GetParticle(activity.Conversation.Id, particleID);
+                    particleQueryDictionary = currentConnection.GetParticle(activity.Conversation.Id, "telegram", particleID);
 
-                    string line = particle[0];
-                    string title = particle[1];
-                    int indeLastLine = Convert.ToInt32(particle[2]);
-                    int bookID = Convert.ToInt32(particle[4]);
+                    string line = (string)particleQueryDictionary["line"];
+                    string title = (string)particleQueryDictionary["title"];
+                    int indeLastLine = (int)particleQueryDictionary["indexLastLine"];
+                    int bookID = (int)particleQueryDictionary["bookId"];
                     var card = new HeroCard("Дальнейшие возможные действия:");
                     card.Buttons = new List<CardAction>()
         {
