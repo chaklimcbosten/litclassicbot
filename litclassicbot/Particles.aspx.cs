@@ -488,8 +488,8 @@ namespace litclassicbot
 
                 Random randomThemeType = new Random();
                 Random randomAuthorNumber = new Random();
-                currentRandomThemeType = listThemeTypes[randomThemeType.Next(0, listThemeTypes.Count() - 1)];
-                currentRandomAuthorNumber = listAuthorsNumbers[randomAuthorNumber.Next(0, listAuthorsNumbers.Count() - 1)];                
+                currentRandomThemeType = listThemeTypes[randomThemeType.Next(0, listThemeTypes.Count())];
+                currentRandomAuthorNumber = listAuthorsNumbers[randomAuthorNumber.Next(0, listAuthorsNumbers.Count())];                
             }
             // если браузер не поддерживает cookie
             else
@@ -511,8 +511,8 @@ namespace litclassicbot
 
                 Random randomThemeType = new Random();
                 Random randomAuthorNumber = new Random();
-                currentRandomThemeType = listThemeTypes[randomThemeType.Next(0, listThemeTypes.Count() - 1)];
-                currentRandomAuthorNumber = listAuthorsNumbers[randomAuthorNumber.Next(0, listAuthorsNumbers.Count() - 1)];
+                currentRandomThemeType = listThemeTypes[randomThemeType.Next(0, listThemeTypes.Count())];
+                currentRandomAuthorNumber = listAuthorsNumbers[randomAuthorNumber.Next(0, listAuthorsNumbers.Count())];
             }
         }
 
