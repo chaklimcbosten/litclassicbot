@@ -12,38 +12,28 @@ namespace litclassicbot
     public partial class Particles : System.Web.UI.Page
     {
         private int currentParticleId = -1;
-        //private Dictionary<string, int> particleSettingsDictionary = new Dictionary<string, int>();
         private int currentRandomThemeType = -1;
         private int currentRandomAuthorNumber = -1;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // 1. Cookie записывается верно при первом открытии страницы (когда cookie-файл не создан)
-            // 2. Cookie записывается верно при смене значения checkbox, когда, опять же, cookie-файл ещё не создан
-            // 3. Cookie сохраняется при обновлении страницы один раз после ситуации в п.2, далее обнуляется
-            // 4. Cookie обнуляется при обновлении страницы после п.1.
-
-            // если у пользователя разрешены cookie - использовать их
-            // сверять затем их с базой, привязать к логину (пока без пароля)
-            // если не разрешены - использовать сеансы без использования cookie
-
             // стихотворные "частицы" разделять на несколько блоков и с помощью свойств flex
             // распологать в несколько столбцов
-
-
-            // регистрация асинхронных запросов в ScriptManager
-            ScriptManagerSetting();
-            // настройка персонализации страницы, если она открывается впервые
-            PageSetting();
+            
+            ScriptManagerSetup();            
+            PageSetup();
         }
 
-        
-        private void ScriptManagerSetting()
+
+        // --- настройка необходимого при загрузке страницы --- 
+        // регистрация асинхронных запросов в ScriptManager
+        private void ScriptManagerSetup()
         {
             // UpdatePanelParticlesPage
             ScriptManagerParticlesPage.RegisterAsyncPostBackControl(ButtonParticleReload);
         }
-        private void PageSetting()
+        // настройка персонализации страницы, если она открывается впервые
+        private void PageSetup()
         {
             if (!IsPostBack)
             {
@@ -70,20 +60,20 @@ namespace litclassicbot
                         Response.Cookies["litclassic-cookie-particle"]["author-number-8"] = "1";
                         Response.Cookies["litclassic-cookie-particle"].Expires = DateTime.Now.AddYears(3);
 
-                        SetNewRandomIDParticle();
-                        ShowParticle(currentParticleId);
+                        SettingNewRandomIDParticle();
+                        ShowingParticle(currentParticleId);
                     }
                     // cookie-файл существует
                     else
                     {
                         // изменяются настройки
-                        CheckParticleSettingsCookie();
+                        CheckingParticleSettingsCookie();
 
                         // если cookie-файла с ID "частицы" нет, или этот ID обнулён
                         if ((Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["particleID"]) == null))
                         {
-                            SetNewRandomIDParticle();
-                            ShowParticle(currentParticleId);
+                            SettingNewRandomIDParticle();
+                            ShowingParticle(currentParticleId);
 
                             Response.Cookies["litclassic-cookie-particle"]["particleID"] 
                                 = Convert.ToString(currentParticleId);
@@ -91,7 +81,7 @@ namespace litclassicbot
                         // если ID "частицы" задан
                         else
                         {
-                            ShowParticle(Convert.ToInt32(Server.HtmlEncode(
+                            ShowingParticle(Convert.ToInt32(Server.HtmlEncode(
                                 Request.Cookies["litclassic-cookie-particle"]["particleID"])));
                         }
                     }
@@ -116,14 +106,17 @@ namespace litclassicbot
                         Session["author-number-8"] = true;
                     }
                     // если у текущей сессии уже есть данные
-                    else CheckParticleSettingsSession();
+                    else CheckingParticleSettingsSession();
 
-                    SetNewRandomIDParticle();
-                    ShowParticle(currentParticleId);
+                    SettingNewRandomIDParticle();
+                    ShowingParticle(currentParticleId);
                 }
             }           
         }
-        private void CheckParticleSettingsCookie()
+
+
+        // --- настройка данных cookie ---
+        private void CheckingParticleSettingsCookie()
         {
             // theme-type-0
             if (Request.Cookies["litclassic-cookie-particle"]["theme-type-0"] != null)
@@ -283,7 +276,7 @@ namespace litclassicbot
                 Response.Cookies["litclassic-cookie-particle"]["author-number-8"] = "1";
             }
         }
-        private void SetParticleSettingsCookie()
+        private void SettingParticleSettingsCookie()
         {
             // theme-type-0
             if (CheckBoxThemeType0.Checked) Response.Cookies["litclassic-cookie-particle"]["theme-type-0"] = "1";
@@ -327,7 +320,10 @@ namespace litclassicbot
             Response.Cookies["litclassic-cookie-user-info"]["last-visit"] = DateTime.Now.ToString();
             Response.Cookies["litclassic-cookie-user-info"].Expires = DateTime.Now.AddYears(3);
         }
-        private void CheckParticleSettingsSession()
+
+
+        // --- настройка данных сессии ---
+        private void CheckingParticleSettingsSession()
         {
             // theme-type-0
             if ((bool)Session["theme-type-0"]) CheckBoxThemeType0.Checked = true;
@@ -367,7 +363,7 @@ namespace litclassicbot
             if ((bool)Session["author-number-8"]) CheckBoxAuthor8.Checked = true;
             else if (!(bool)Session["author-number-8"]) CheckBoxAuthor8.Checked = false;
         }
-        private void SetParticleSettingsSession()
+        private void SettingParticleSettingsSession()
         {
             // theme-type-0
             if (CheckBoxThemeType0.Checked) Session["theme-type-0"] = true;
@@ -407,7 +403,38 @@ namespace litclassicbot
             if (CheckBoxAuthor8.Checked) Session["author-number-8"] = true;
             else Session["author-number-8"] = false;
         }
-        private void ShowParticle(int particleID)
+
+
+        // --- "частицы" ---       
+        // запрос случайного Id "частицы"
+        private void SettingNewRandomIDParticle()
+        {
+            // должен узнать, из каких цифр нужно будет выбирать случайные
+            // построить диапазон
+            // найти случайное
+            // найти, какое из выбранных соответствовало ему
+
+            // присваивание значениям настроек получения "частиц" значений
+            CheckingThemeTypesAndAuthorsNumbers();
+
+            BotDBConnect currentConnection = new BotDBConnect();
+
+            currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
+
+            // если значениям настроек присвоены значения
+            if ((currentRandomThemeType == -1) && (currentRandomAuthorNumber == -1))
+                currentParticleId = currentConnection.GetRandomParticleId();
+            // если значениям настроек не присвоены значения
+            else currentParticleId = currentConnection.GetRandomParticleId(currentRandomAuthorNumber, currentRandomThemeType);
+
+            // если браузер поддерживает cookie
+            if (Request.Browser.Cookies) Response.Cookies["litclassic-cookie-particle"]["particleID"] 
+                    = Convert.ToString(currentParticleId);
+            // если браузер не поддерживает cookie
+            else Session["particleID"] = currentParticleId;           
+        }
+        // запрос "частицы" по заданному Id
+        private void ShowingParticle(int particleID)
         {
             BotDBConnect currentConnection = new BotDBConnect();
 
@@ -438,33 +465,8 @@ namespace litclassicbot
             //randomParticalButtonText = partical;
             LabelParticleTitle.Text = title;
         }
-        private void SetNewRandomIDParticle()
-        {
-            // должен узнать, из каких цифр нужно будет выбирать случайные
-            // построить диапазон
-            // найти случайное
-            // найти, какое из выбранных соответствовало ему
-
-            // присваивание значениям настроек получения "частиц" значений
-            CheckThemeTypesAndAuthorsNumbers();
-
-            BotDBConnect currentConnection = new BotDBConnect();
-
-            currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
-
-            // если значениям настроек присвоены значения
-            if ((currentRandomThemeType == -1) && (currentRandomAuthorNumber == -1))
-                currentParticleId = currentConnection.GetRandomParticleId();
-            // если значениям настроек не присвоены значения
-            else currentParticleId = currentConnection.GetRandomParticleId(currentRandomAuthorNumber, currentRandomThemeType);
-
-            // если браузер поддерживает cookie
-            if (Request.Browser.Cookies) Response.Cookies["litclassic-cookie-particle"]["particleID"] 
-                    = Convert.ToString(currentParticleId);
-            // если браузер не поддерживает cookie
-            else Session["particleID"] = currentParticleId;           
-        }
-        private void CheckThemeTypesAndAuthorsNumbers()
+        // получение случайных значений типов тем и авторов
+        private void CheckingThemeTypesAndAuthorsNumbers()
         {
             // если браузер поддерживает cookie
             if (Request.Browser.Cookies)
@@ -513,14 +515,17 @@ namespace litclassicbot
                 currentRandomAuthorNumber = listAuthorsNumbers[randomAuthorNumber.Next(0, listAuthorsNumbers.Count() - 1)];
             }
         }
-        private void ReportParticle()
+
+
+        // --- прочее ---
+        private void ReportingParticle()
         {
             BotDBConnect currentConnection = new BotDBConnect();
 
             currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
             currentConnection.WriteNewParticleReportByParticleId(currentParticleId.ToString());
         }
-        private void CheckCheckBoxes()
+        private void CheckingCheckBoxes()
         {
             // нельзя оставлять все чекбоксы пустыми
             if ((CheckBoxThemeType0.Checked == false)
@@ -538,18 +543,18 @@ namespace litclassicbot
                 && (CheckBoxAuthor8.Checked == false))
                 CheckBoxAuthor0.Checked = true;
         }
-
         
 
+        // --- элементы формы ---
         protected void ButtonParticleReload_Click(object sender, EventArgs e)
         {
             // если браузер поддерживает cookie
-            if (Request.Browser.Cookies) SetParticleSettingsCookie();         
+            if (Request.Browser.Cookies) SettingParticleSettingsCookie();         
             // если браузер не поддерживает cookie
-            else SetParticleSettingsSession();           
+            else SettingParticleSettingsSession();           
 
-            SetNewRandomIDParticle();
-            ShowParticle(currentParticleId);
+            SettingNewRandomIDParticle();
+            ShowingParticle(currentParticleId);
             UpdatePanelParticle.Update();
         }
         protected void CheckBoxThemeType0_CheckedChanged(object sender, EventArgs e)

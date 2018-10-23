@@ -14,17 +14,19 @@ namespace litclassicbot
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ScriptManagerSetting();
-            PageSetting();
+            ScriptManagerSetup();
+            PageSetup();
         }
 
-
-        private void ScriptManagerSetting()
+        // --- настройка необходимого при загрузке страницы --- 
+        // регистрация асинхронных запросов в ScriptManager
+        private void ScriptManagerSetup()
         {
             // UpdatePanelWordsPage
             ScriptManagerWordsPage.RegisterAsyncPostBackControl(ButtonWordReload);
         }
-        private void PageSetting()
+        // настройка персонализации страницы, если она открывается впервые
+        private void PageSetup()
         {
             if (!IsPostBack)
             {
@@ -39,8 +41,8 @@ namespace litclassicbot
                     {
                         Response.Cookies["litclassic-cookie-words"].Expires = DateTime.Now.AddYears(3);
 
-                        SetNewRandomIdWord();
-                        ShowWord(currentWordID);
+                        SettingNewRandomIdWord();
+                        ShowingWord(Session.SessionID, "web", currentWordID);
                     }
                     // cookie-файл существует
                     else
@@ -48,8 +50,8 @@ namespace litclassicbot
                         // если cookie-файла с ID "частицы" нет, или этот ID обнулён
                         if ((Server.HtmlEncode(Request.Cookies["litclassic-cookie-words"]["wordID"]) == null))
                         {
-                            SetNewRandomIdWord();
-                            ShowWord(currentWordID);
+                            SettingNewRandomIdWord();
+                            ShowingWord(Session.SessionID, "web", currentWordID);
 
                             Response.Cookies["litclassic-cookie-words"]["wordID"]
                                 = Convert.ToString(currentWordID);
@@ -57,7 +59,7 @@ namespace litclassicbot
                         // если ID "частицы" задан
                         else
                         {
-                            ShowWord(Convert.ToInt32(Server.HtmlEncode(
+                            ShowingWord(Session.SessionID, "web", Convert.ToInt32(Server.HtmlEncode(
                                 Request.Cookies["litclassic-cookie-words"]["wordID"])));
                         }
                     }
@@ -65,12 +67,16 @@ namespace litclassicbot
                 // если браузер не поддерживает cookie
                 else
                 {
-                    SetNewRandomIdWord();
-                    ShowWord(currentWordID);
+                    SettingNewRandomIdWord();
+                    ShowingWord(Session.SessionID, "web", currentWordID);
                 }
             }
         }
-        private void SetNewRandomIdWord()
+
+
+        // --- слова ---       
+        // запрос случайного Id слова
+        private void SettingNewRandomIdWord()
         {
             BotDBConnect currentConnection = new BotDBConnect();
 
@@ -84,18 +90,17 @@ namespace litclassicbot
             // если браузер не поддерживает cookie
             else Session["wordID"] = currentWordID;
         }
-        private void ShowWord(int wordId)
+        // запрос слова по заданному Id
+        private void ShowingWord(string userId, string source, int wordId)
         {
             BotDBConnect currentConnection = new BotDBConnect();
+            Dictionary<string, object> wordQueryDictionary = new Dictionary<string, object>();
 
             currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
 
-            List<List<string>> listListsGetRandomWord = new List<List<string>>();
-            listListsGetRandomWord = currentConnection.GetWord("web", wordId);
-            // получение имени слова
-            string mainWordName = listListsGetRandomWord[0][0];
-            // получение значения слова
-            string mainWordValue = listListsGetRandomWord[0][1];
+            wordQueryDictionary = currentConnection.GetWord(userId, source, wordId);
+            string mainWordName = (string)wordQueryDictionary["name"];
+            string mainWordValue = (string)wordQueryDictionary["value"];
             // создаёт "обёрточный" класс для всего содержания значения слова
             string beginMainWordName = "<div class=\"black-label-word-name\">";
             string endMainWordName = "</div>";
@@ -109,29 +114,32 @@ namespace litclassicbot
             LabelWordValue.Text = mainWordValue;
             LabelWordName.Text = mainWordName;
 
-            if (listListsGetRandomWord.Count > 1)
+            // если ключей больше трёх - в значении слова присутствует ссылка
+            if (wordQueryDictionary.Keys.Count > 3)
             {
                 LabelWordLinks.Visible = true;
 
-                for (int i = 1; i < listListsGetRandomWord.Count; i++)
+                for (int i = 0; i < (int)wordQueryDictionary["linksCount"]; i++)
                 {
-                    string subWordName = listListsGetRandomWord[i][0];
-                    string subWordValue = listListsGetRandomWord[i][1];
+                    List<string> listWordLink = (List<string>)wordQueryDictionary["link" + i];
+                    string subWordName = listWordLink[0];
+                    string subWordValue = listWordLink[1];
                     string beginSubWord = "<div class=\"content-main-page\"><p>";
                     string endSubWord = "</p></div>";
                     string subWord = beginSubWord + subWordName + " - "
                         + subWordValue.Replace("\n\r", "<br>") + endSubWord;
-                    //string subWord = "<h2>" + subWordName + "</h2>" + beginWordValue + subWordValue + endWordValue;
                     LabelWordLinks.Text += subWord;
                 }
             }
         }
 
+
+        // --- элементы формы ---
         protected void ButtonWordReload_Click(object sender, EventArgs e)
         {
             LabelWordLinks.Text = "";
-            SetNewRandomIdWord();
-            ShowWord(currentWordID);
+            SettingNewRandomIdWord();
+            ShowingWord(Session.SessionID, "web", currentWordID);
             UpdatePanelWord.Update();
         }
     }
