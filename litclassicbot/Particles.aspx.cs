@@ -438,38 +438,6 @@ namespace litclassicbot
             //randomParticalButtonText = partical;
             LabelParticleTitle.Text = title;
         }
-        private void ShowRandomParticle()
-        {
-            BotDBConnect currentConnection = new BotDBConnect();
-
-            currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
-
-            List<string> listGetRandomParticle = new List<string>();
-            listGetRandomParticle = currentConnection.GetRandomParticle("web");
-            string particle = listGetRandomParticle[0];
-            string title = listGetRandomParticle[1];
-            int indeLastLine = Convert.ToInt32(listGetRandomParticle[2]);
-            // для отправки сообщения об ошибке
-            currentParticleId = Convert.ToInt32(listGetRandomParticle[3]);
-            int bookID = Convert.ToInt32(listGetRandomParticle[4]);
-            // создаёт "обёрточный" класс для всего содержания "частицы"
-            string beginParticle = "<div class=\"label-particle-line\"><p>";
-            string endParticle = "</p></div>";
-            // замена символов новой строки на тег, выполняющий это в html
-            particle = beginParticle + particle.Replace("\n\r", "</p><p>") + endParticle;
-            particle = particle.Replace("$$strong-open$$", "<strong>");
-            particle = particle.Replace("$$emphasis-open$$", "<emphasis>");
-            particle = particle.Replace("$$strong-close$$", "</strong>");
-            particle = particle.Replace("$$emphasis-close$$", "</emphasis>");
-            // создаёт "обёрточный" класс для всего содержания сведения о "частице"
-            string beginTitle = "<div class=\"label-particle-title\">";
-            string endTitle = "</div>";
-            // замена символов новой строки на тег, выполняющий это в html
-            title = beginTitle + title.Replace("\n\r", "<br>") + endTitle;
-            LabelParticleLine.Text = particle;
-            //randomParticalButtonText = partical;
-            LabelParticleTitle.Text = title;
-        }
         private void SetNewRandomIDParticle()
         {
             // должен узнать, из каких цифр нужно будет выбирать случайные
