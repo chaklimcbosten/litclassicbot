@@ -49,6 +49,15 @@ namespace litclassicbot {
         protected global::System.Web.UI.WebControls.Label LabelWordValue;
         
         /// <summary>
+        /// LabelSubtitleWordLinks элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelSubtitleWordLinks;
+        
+        /// <summary>
         /// LabelWordLinks элемент управления.
         /// </summary>
         /// <remarks>
@@ -65,5 +74,14 @@ namespace litclassicbot {
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ButtonWordReload;
+        
+        /// <summary>
+        /// ImageButtonWordReload элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ImageButtonWordReload;
     }
 }

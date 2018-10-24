@@ -429,11 +429,11 @@ h3 {
     .footer-images-buttons-left-column {
         display: flex;
         flex-direction: row;
-        width: 200px;
     }
     .footer-images-buttons-right-column {
         display: flex;
         flex-direction: row-reverse;
+        justify-content:flex-end;
     }
 
     h1 {
@@ -460,6 +460,8 @@ h3 {
 
     .black-label-main-content {
         padding: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
     .black-label-word-name {
         padding: 15px;

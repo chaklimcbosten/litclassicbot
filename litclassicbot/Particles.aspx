@@ -127,11 +127,12 @@
 </asp:Content>
 
 <asp:Content ID="FooterContentAdaptive" ContentPlaceHolderID="FooterContentAdaptive" runat="server">
-    <div class="image-button">
+<%--    <div class="image-button">
         <a href="Particles.aspx"><img src="Content/footer/particle-icon.png" height="24" width="24"/></a>
-    </div>
+    </div>--%>
     <asp:ImageButton ID="ImageButtonParticleReload" runat="server" 
-        ImageUrl="~/Content/icons/reload-icon.png" Height="24" Width="24" CssClass="image-button" />
+        ImageUrl="~/Content/icons/reload-icon.png" Height="24" Width="24" CssClass="image-button" 
+        OnClick="ButtonParticleReload_Click" />
 </asp:Content>
 
 

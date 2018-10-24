@@ -24,6 +24,7 @@ namespace litclassicbot
         {
             // UpdatePanelWordsPage
             ScriptManagerWordsPage.RegisterAsyncPostBackControl(ButtonWordReload);
+            ScriptManagerWordsPage.RegisterAsyncPostBackControl(ImageButtonWordReload);
         }
         // настройка персонализации страницы, если она открывается впервые
         private void PageSetup()
@@ -114,6 +115,7 @@ namespace litclassicbot
             // если ключей больше трёх - в значении слова присутствует ссылка
             if (wordQueryDictionary.Keys.Count > 3)
             {
+                LabelSubtitleWordLinks.Visible = true;
                 LabelWordLinks.Visible = true;
 
                 for (int i = 0; i < (int)wordQueryDictionary["linksCount"]; i++)
@@ -127,6 +129,12 @@ namespace litclassicbot
                         + subWordValue.Replace("\n\r", "<br>") + endSubWord;
                     LabelWordLinks.Text += subWord;
                 }
+            }
+            // если ссылок нет - скрываются их этикетки
+            else
+            {
+                LabelSubtitleWordLinks.Visible = false;
+                LabelWordLinks.Visible = false;
             }
         }
 

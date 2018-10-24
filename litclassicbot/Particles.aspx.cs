@@ -31,6 +31,7 @@ namespace litclassicbot
         {
             // UpdatePanelParticlesPage
             ScriptManagerParticlesPage.RegisterAsyncPostBackControl(ButtonParticleReload);
+            ScriptManagerParticlesPage.RegisterAsyncPostBackControl(ImageButtonParticleReload);
         }
         // настройка персонализации страницы, если она открывается впервые
         private void PageSetup()
