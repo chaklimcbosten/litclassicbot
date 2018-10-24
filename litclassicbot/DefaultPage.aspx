@@ -6,7 +6,7 @@
         <h1>Главная страница</h1>
         <asp:Label ID="LabelLastAction" runat="server" CssClass="label-last-action">
             <h2>Последние действия</h2>
-            <div class="content-main-page"><p>Кликайте по блокам для перехода в соответствующий раздел.</p></div>
+            <div class="content-main-page"><p>Кликните по чёрному блоку для перехода в соответствующий раздел сайта.</p></div>
             <div class="last-action">
                 <asp:Label ID="LabelParticleColumn" runat="server" CssClass="last-particle-column">
                     <h3>Вы смотрели эту "частицу":</h3>
