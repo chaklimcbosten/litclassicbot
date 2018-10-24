@@ -4,19 +4,25 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="main">
         <h1>Главная страница</h1>
-        <asp:Label ID="LabelSubtitleLastAction" runat="server">
+        <asp:Label ID="LabelLastAction" runat="server" CssClass="label-last-action">
             <h2>Последние действия</h2>
-            <p>У Вас остаётся открытой "частица":</p>
-            <asp:Label ID="LabelLastAction" runat="server"></asp:Label>
-            <p>Её чтение, а также и чтение других по ссылке ниже:</p>
-
+            <div class="last-action">
+                <div class="last-particle-column">
+                    <asp:Label ID="LabelSubtitleLastParticle" runat="server"><h3>Вы смотрели эту "частицу":</h3></asp:Label>
+                    <asp:Label ID="LabelLastParticle" runat="server"></asp:Label>
+                </div>
+                <div class="last-word-column">
+                    <asp:Label ID="LabelSubtitleLastWord" runat="server"><h3>Вы смотрели это слово:</h3></asp:Label>
+                    <asp:Label ID="LabelLastWord" runat="server"></asp:Label>
+                </div>  
+            </div>      
         </asp:Label>
         
-        <h2>Навигация</h2>
+        <%--<h2>Навигация</h2>
         <div class="content-main-page">
             <p>В верхней части сайта - "шапке" - клавиши ссылок на страницы с иными частями проекта, размещённых на других ресурсах.</p>
             <p>В нижней части сайта - "подвале" - клавиши ссылок на страницы с основными функциями сайта.</p>
-        </div>
+        </div>--%>
         <h2>О сайте</h2>
         <div class="content-main-page">
             <p>Человеку всегда необходимо прикасаться к ясному, осознанному для него самого взгляду на жизнь. 
@@ -49,10 +55,10 @@
         <div class="content-main-page">
             <asp:Label ID="LabelStatistics" runat="server" CssClass="label-statistics"></asp:Label>
         </div>
-        <h2>Благодарности</h2>
+<%--        <h2>Благодарности</h2>
         <div class="content-main-page">
 
-        </div>
+        </div>--%>
     </div>
     
 </asp:Content>

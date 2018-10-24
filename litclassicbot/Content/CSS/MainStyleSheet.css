@@ -158,10 +158,10 @@ header {
 .MainContent {
     width: 70%;
     margin-top: 80px;
-    margin-bottom: 100px;
+    margin-bottom: 110px;
     margin-left: 15%;
     margin-right: 15%;
-    text-align: justify;
+    /*text-align: justify;*/
     font-size: 16px;
     font-weight: 300;
     color: white;
@@ -197,6 +197,29 @@ h3 {
     letter-spacing: 0px;
 }
 
+a {
+    outline: none;
+}
+
+.label-last-action {
+    display: flex;
+    flex-direction: column;
+}
+.last-action {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;      
+}
+.last-particle-column,
+.last-word-column {
+    display: flex;
+    flex-direction: column;
+}
+.last-action-link {
+    text-decoration: none;
+    color: white;
+}
+
 .content-main-page {
     color: black;
 }
@@ -211,6 +234,8 @@ h3 {
     color: white;
     padding-top: 10px;
     padding-bottom: 10px;
+    margin-bottom: 10px;
+    /*justify-content: space-around;*/
 }
 .black-label-word-name {
     font-size: 34px;

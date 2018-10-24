@@ -15,6 +15,7 @@ namespace litclassicbot
         {
             PageSetting();
             GetTotalStatistics();
+            SettingLastAction();
         }
 
 
@@ -25,6 +26,104 @@ namespace litclassicbot
                 Response.Cookies["litclassic-cookie"]["last-visit"] = DateTime.Now.ToString();
                 Response.Cookies["litclassic-cookie"].Expires = DateTime.Now.AddYears(3);
             }
+        }
+        private void SettingLastAction()
+        {
+            // если браузер поддерживает cookie
+            if (Request.Browser.Cookies)
+            {
+                // текущая "частица"
+                if (Request.Cookies["litclassic-cookie-particle"] != null)
+                {
+                    BotDBConnect currentConnection = new BotDBConnect();
+
+                    currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
+
+                    string title = currentConnection.GetParticleTitle(
+                        Convert.ToInt32((Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["particleID"]))));
+                    // создаёт "обёрточный" класс для всего содержания сведения о "частице"
+                    string beginTitle = "<a class=\"last-action-link\" href=\"Particles.aspx\"><div class=\"black-label-main-content\"><p>";
+                    string endTitle = "</p></a></div>";
+                    // замена символов новой строки на тег, выполняющий это в html
+                    title = beginTitle + title.Replace("\n\r", "<br>") + endTitle;
+                    LabelLastParticle.Text = title;
+                }
+                else
+                {
+                    LabelSubtitleLastParticle.Visible = false;
+                    LabelLastParticle.Visible = false;
+                }
+
+                // текущее слово
+                if (Request.Cookies["litclassic-cookie-words"] != null)
+                {
+                    BotDBConnect currentConnection = new BotDBConnect();
+
+                    currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
+
+                    string name = currentConnection.GetWordName(
+                        Convert.ToInt32((Server.HtmlEncode(Request.Cookies["litclassic-cookie-words"]["wordID"]))));
+                    // создаёт "обёрточный" класс для всего содержания значения слова
+                    string beginWordName = "<a class=\"last-action-link\" href=\"Particles.aspx\"><div class=\"black-label-word-name\">";
+                    string endWordName = "</a></div>";
+                    // замена символов новой строки на тег, выполняющий это в html
+                    name = beginWordName + name.Replace("\n\r", "<br>") + endWordName;
+                    LabelLastWord.Text = name;
+                }
+                else
+                {
+                    LabelSubtitleLastWord.Visible = false;
+                    LabelLastWord.Visible = false;
+                }
+            }
+            // если браузер не поддерживает cookie
+            else
+            {
+                // текущая "частица"
+                if (Session["particleID"] != null)
+                {
+                    BotDBConnect currentConnection = new BotDBConnect();
+
+                    currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
+
+                    string title = currentConnection.GetParticleTitle((int)Session["particleID"]);
+                    // создаёт "обёрточный" класс для всего содержания сведения о "частице"
+                    string beginTitle = "<a class=\"last-action-link\" href=\"Words.aspx\"><div class=\"black-label-main-content\"><p>";
+                    string endTitle = "</p></a></div>";
+                    // замена символов новой строки на тег, выполняющий это в html
+                    title = beginTitle + title.Replace("\n\r", "<br>") + endTitle;
+                    LabelLastParticle.Text = title;
+                }
+                else
+                {
+                    LabelSubtitleLastParticle.Visible = false;
+                    LabelLastParticle.Visible = false;
+                }
+
+                // текущее слово
+                if (Session["wordID"] != null)
+                {
+                    BotDBConnect currentConnection = new BotDBConnect();
+
+                    currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
+
+                    string name = currentConnection.GetWordName((int)Session["wordID"]);
+                    // создаёт "обёрточный" класс для всего содержания значения слова
+                    string beginWordName = "<a class=\"last-action-link\" href=\"Words.aspx\"><div class=\"black-label-word-name\">";
+                    string endWordName = "</a></div>";
+                    // замена символов новой строки на тег, выполняющий это в html
+                    name = beginWordName + name.Replace("\n\r", "<br>") + endWordName;
+                    LabelLastWord.Text = name;
+                }
+                else
+                {
+                    LabelSubtitleLastWord.Visible = false;
+                    LabelLastWord.Visible = false;
+                }
+            }
+
+            if ((!LabelLastParticle.Visible) && (!LabelLastWord.Visible)) LabelLastAction.Visible = false;
+
         }
         private void GetTotalStatistics()
         {

@@ -13,15 +13,6 @@ namespace litclassicbot {
     public partial class _Default {
         
         /// <summary>
-        /// LabelSubtitleLastAction элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelSubtitleLastAction;
-        
-        /// <summary>
         /// LabelLastAction элемент управления.
         /// </summary>
         /// <remarks>
@@ -29,6 +20,42 @@ namespace litclassicbot {
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LabelLastAction;
+        
+        /// <summary>
+        /// LabelSubtitleLastParticle элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelSubtitleLastParticle;
+        
+        /// <summary>
+        /// LabelLastParticle элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelLastParticle;
+        
+        /// <summary>
+        /// LabelSubtitleLastWord элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelSubtitleLastWord;
+        
+        /// <summary>
+        /// LabelLastWord элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelLastWord;
         
         /// <summary>
         /// LabelStatistics элемент управления.
