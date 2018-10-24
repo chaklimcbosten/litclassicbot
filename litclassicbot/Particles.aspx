@@ -120,7 +120,7 @@
 <%--        <div class="footer-button-right">           
             <asp:Button ID="ButtonParticleSettingsFooter" runat="server" Text="НАСТРОЙКИ" 
                 CssClass="button-footer-right-column" OnClick="ButtonParticleSettings_Click" />
-        </div>--%>
+        </div>
         <div class="footer-button-right">           
             <a class="button-footer-right-column" href="Reader.aspx">ЧИТАТЬ</a>
         </div>
@@ -131,7 +131,7 @@
         <div class="footer-button-right">           
             <asp:Button ID="ButtonParticleReport" runat="server" Text="ОШИБКА!" 
                 CssClass="button-footer-right-column" />
-        </div>  
+        </div> --%> 
     </div>   
 </asp:Content>
 

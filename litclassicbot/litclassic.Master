@@ -27,7 +27,7 @@
                 <div class="logo"> LITCLASSIC </div>
             </div>
             <div class="logo-links">
-                <a href="Authorization.aspx" runat="server" class="link-button">АВТОРИЗАЦИЯ</a>
+                <%--<a href="Authorization.aspx" runat="server" class="link-button">АВТОРИЗАЦИЯ</a>--%>
                 <a href="https://t.me/litclassicbot" target="_blank" runat="server" 
                     class="link-button">TELEGRAM</a>
                 <a href="https://vk.com/litclassic" target="_blank" runat="server" 
