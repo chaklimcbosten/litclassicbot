@@ -18,7 +18,7 @@
                                 <asp:CheckBox ID="CheckBoxThemeType0" runat="server" 
                                     Text="Основные произведения" 
                                     OnCheckedChanged="CheckBoxThemeType0_CheckedChanged" 
-                                    ClientIDMode="Static"/>
+                                    ClientIDMode="Static" Checked="True" />
                             </div>
                             <div class="checkbox-span">
                                 <asp:CheckBox ID="CheckBoxThemeType1" runat="server" 
@@ -42,43 +42,43 @@
                              <div class="particle-settings-authors-numbers-checkboxes-group">
                                 <div class="checkbox-span">
                                     <asp:CheckBox ID="CheckBoxAuthor0" runat="server" ClientIDMode="Static" 
-                                        Text="Фёдор Михайлович Достоевский" />
+                                        Text="Фёдор Михайлович Достоевский" Checked="True" />
                                 </div>
                                 <div class="checkbox-span">
                                     <asp:CheckBox ID="CheckBoxAuthor1" runat="server" ClientIDMode="Static" 
-                                        Text="Александр Сергеевич Пушкин" />
+                                        Text="Александр Сергеевич Пушкин" Checked="True" />
                                 </div>
                                 <div class="checkbox-span">
                                     <asp:CheckBox ID="CheckBoxAuthor2" runat="server" ClientIDMode="Static" 
-                                        Text="Николай Васильевич Гоголь" />
+                                        Text="Николай Васильевич Гоголь" Checked="True" />
                                 </div>
                             </div>
                             <div class="particle-settings-authors-numbers-checkboxes-group">
                                 <div class="checkbox-span">
                                     <asp:CheckBox ID="CheckBoxAuthor3" runat="server" ClientIDMode="Static" 
-                                        Text="Василий Андреевич Жуковский" />
+                                        Text="Василий Андреевич Жуковский" Checked="True" />
                                 </div>
                                 <div class="checkbox-span">
                                     <asp:CheckBox ID="CheckBoxAuthor4" runat="server" ClientIDMode="Static" 
-                                        Text="Иван Андреевич Крылов" />
+                                        Text="Иван Андреевич Крылов" Checked="True" />
                                 </div>
                                 <div class="checkbox-span">
                                     <asp:CheckBox ID="CheckBoxAuthor5" runat="server" ClientIDMode="Static" 
-                                        Text="Михаил Юрьевич Лермонтов" />
+                                        Text="Михаил Юрьевич Лермонтов" Checked="True" />
                                 </div>
                             </div>
                             <div class="particle-settings-authors-numbers-checkboxes-group">
                                 <div class="checkbox-span">
                                     <asp:CheckBox ID="CheckBoxAuthor6" runat="server" ClientIDMode="Static" 
-                                        Text="Фёдор Иванович Тютчев" />
+                                        Text="Фёдор Иванович Тютчев" Checked="True" />
                                 </div>
                                 <div class="checkbox-span">
                                     <asp:CheckBox ID="CheckBoxAuthor7" runat="server" ClientIDMode="Static" 
-                                        Text="Алексей Константинович Толстой" />
+                                        Text="Алексей Константинович Толстой" Checked="True" />
                                 </div>
                                 <div class="checkbox-span">
                                     <asp:CheckBox ID="CheckBoxAuthor8" runat="server" ClientIDMode="Static" 
-                                        Text="Михаил Васильевич Ломоносов" />
+                                        Text="Михаил Васильевич Ломоносов" Checked="True" />
                                 </div>                    
                             </div>                        
                          </div>

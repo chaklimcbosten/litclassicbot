@@ -9,8 +9,8 @@
     <link href="Content/CSS/MainStyleSheet.css" rel="stylesheet" type="text/css"/>
     <%--Не знаю, нужна ли следующая строка--%>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <%--<link href="https://fonts.googleapis.com/css?family=Roboto:300&amp;subset=cyrillic-ext" rel="stylesheet" />--%> 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,500,500i&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet" /> 
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,500,500i&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="apple-touch-icon" href="Content/icons/fav-apple-icon.png" />
     <link rel="icon" type="image/png" href="Content/icons/favicon.png" />
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -68,7 +68,7 @@
                     </div>                   
                 </div>
                 <div class="footer-images-buttons">
-                     <%--левая колонка иконок-кнопок--%>
+                     <%--левая колонка иконок-кнопок адаптивной версии--%>
                     <div class="footer-images-buttons-left-column">
                         <div class="image-button-particle">
                             <a href="Particles.aspx"><img src="Content/footer/particle-icon.png" height="24" width="24"/></a>
@@ -77,7 +77,7 @@
                             <a href="Words.aspx"><img src="Content/footer/word-icon.png" height="24" width="24"/></a>
                         </div>           
                     </div>
-                    <%--правая колонка иконок-кнопок--%>
+                    <%--правая колонка иконок-кнопок адаптивной версии--%>
                     <div class="footer-images-buttons-right-column">                     
                         <div>
                             <asp:ContentPlaceHolder ID="FooterContentAdaptive" runat="server"></asp:ContentPlaceHolder>
