@@ -70,10 +70,10 @@
                 <div class="footer-images-buttons">
                      <%--левая колонка иконок-кнопок адаптивной версии--%>
                     <div class="footer-images-buttons-left-column">
-                        <div class="image-button-particle">
+                        <div class="image-button">
                             <a href="Particles.aspx"><img src="Content/footer/particle-icon.png" height="24" width="24"/></a>
                         </div>
-                        <div class="image-button-word">
+                        <div class="image-button">
                             <a href="Words.aspx"><img src="Content/footer/word-icon.png" height="24" width="24"/></a>
                         </div>           
                     </div>
