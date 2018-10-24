@@ -20,8 +20,8 @@ namespace litclassicbot
         {
             if (Request.Browser.Cookies)
             {
-                Response.Cookies["litclassic-cookie-user-info"]["last-visit"] = DateTime.Now.ToString();
-                Response.Cookies["litclassic-cookie-user-info"].Expires = DateTime.Now.AddYears(3);
+                Response.Cookies["litclassic-cookie"]["last-visit"] = DateTime.Now.ToString();
+                Response.Cookies["litclassic-cookie"].Expires = DateTime.Now.AddYears(3);
             }
         }
     }

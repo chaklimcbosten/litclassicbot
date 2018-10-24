@@ -32,6 +32,9 @@ namespace litclassicbot
             // UpdatePanelParticlesPage
             ScriptManagerParticlesPage.RegisterAsyncPostBackControl(ButtonParticleReload);
             ScriptManagerParticlesPage.RegisterAsyncPostBackControl(ImageButtonParticleReload);
+            //ScriptManagerParticlesPage.RegisterAsyncPostBackControl(ButtonParticleSettings);
+            //ScriptManagerParticlesPage.RegisterAsyncPostBackControl(ButtonParticleSettingsFooter);
+            //ScriptManagerParticlesPage.RegisterAsyncPostBackControl(ImageButtonParticleSettings);
         }
         // настройка персонализации страницы, если она открывается впервые
         private void PageSetup()
@@ -314,6 +317,12 @@ namespace litclassicbot
             if (CheckBoxAuthor8.Checked) Response.Cookies["litclassic-cookie-particle"]["author-number-8"] = "1";
             else if (!CheckBoxAuthor8.Checked) Response.Cookies["litclassic-cookie-particle"]["author-number-8"] = "0";
 
+            // particle-settings
+            //if (UpdatePanelParticleSettings.Visible == true)
+            //    Response.Cookies["litclassic-cookie"]["particle-settings-visible"] = "1";
+            //else if (UpdatePanelParticleSettings.Visible == false)
+            //    Response.Cookies["litclassic-cookie"]["particle-settings-visible"] = "0";
+
             Response.Cookies["litclassic-cookie-particle"].Expires = DateTime.Now.AddYears(3);
             Response.Cookies["litclassic-cookie"]["last-visit"] = DateTime.Now.ToString();
             Response.Cookies["litclassic-cookie"].Expires = DateTime.Now.AddYears(3);
@@ -400,6 +409,12 @@ namespace litclassicbot
             // author-number-8
             if (CheckBoxAuthor8.Checked) Session["author-number-8"] = true;
             else Session["author-number-8"] = false;
+
+            // particle-settings
+            //if (UpdatePanelParticleSettings.Visible == true)
+            //    Session["particle-settings-visible"] = true;
+            //else if (UpdatePanelParticleSettings.Visible == false)
+            //    Session["particle-settings-visible"] = false;
         }
 
 
@@ -547,13 +562,49 @@ namespace litclassicbot
         protected void ButtonParticleReload_Click(object sender, EventArgs e)
         {
             // если браузер поддерживает cookie
-            if (Request.Browser.Cookies) SettingParticleSettingsCookie();         
+            if (Request.Browser.Cookies) SettingParticleSettingsCookie();
             // если браузер не поддерживает cookie
-            else SettingParticleSettingsSession();           
+            else SettingParticleSettingsSession();
 
             SettingNewRandomIDParticle();
             ShowingParticle(currentParticleId);
             UpdatePanelParticle.Update();
+        }
+        protected void ButtonParticleSettings_Click(object sender, EventArgs e)
+        {
+            //// если панель настроек скрыта
+            //if (!UpdatePanelParticleSettings.Visible)
+            //{
+            //    UpdatePanelParticleSettings.Visible = true;
+            //    ButtonParticleSettings.Visible = true;
+            //    ButtonParticleSettingsFooter.Visible = false;
+            //    ImageButtonParticleSettings.Visible = false;
+            //}
+            //// если панель настроек отображена
+            //else
+            //{
+            //    // если браузер поддерживает cookie
+            //    if (Request.Browser.Cookies)
+            //    {
+            //        SettingParticleSettingsCookie();
+
+            //        Response.Cookies["litclassic-cookie"]["particle-settings-visible"] = "0";
+            //    }
+            //    // если браузер не поддерживает cookie
+            //    else
+            //    {
+            //        SettingParticleSettingsSession();
+
+            //        Session["particle-settings-visible"] = false;
+            //    }
+
+            //    UpdatePanelParticleSettings.Visible = false;
+            //    ButtonParticleSettings.Visible = false;
+            //    ButtonParticleSettingsFooter.Visible = true;
+            //    ImageButtonParticleSettings.Visible = true;
+            //}
+
+            //UpdatePanelParticleSettings.Update();
         }
         protected void CheckBoxThemeType0_CheckedChanged(object sender, EventArgs e)
         {

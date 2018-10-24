@@ -162,6 +162,7 @@
     <Content Include="Content\icons\copy-to-clipboard-icon.png" />
     <Content Include="Content\icons\favicon.png" />
     <Content Include="Authorization.aspx" />
+    <Content Include="Content\icons\particle-settings-icon.png" />
     <Content Include="Content\icons\reload-icon.png" />
     <Content Include="ErrorPage.aspx" />
     <Content Include="Particles.aspx" />
