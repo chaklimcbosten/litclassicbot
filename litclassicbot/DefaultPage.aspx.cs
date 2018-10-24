@@ -118,7 +118,10 @@ namespace litclassicbot
                 }
             }
 
-            if ((!LabelParticleColumn.Visible) && (!LabelWordColumn.Visible)) LabelLastAction.Visible = false;
+            if ((!LabelParticleColumn.Visible) && (!LabelWordColumn.Visible))
+                //LabelLastAction.Visible = false;
+                LabelLastAction.Text = "<div class=\"content-main-page\"><h2>Впервые на сайте?</h2>" +
+                    "<p>Выберите интересующий раздел - \"частиц\" или словаря - на полосе управления внизу этой страницы.</p></div>";
 
             if ((LabelParticleColumn.Visible) && (LabelWordColumn.Visible)) LabelEmtySpace.Visible = true;
 
