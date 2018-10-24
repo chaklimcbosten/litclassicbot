@@ -22,6 +22,33 @@ namespace litclassicbot {
         protected global::System.Web.UI.ScriptManager ScriptManagerParticlesPage;
         
         /// <summary>
+        /// UpdatePanelParticle элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanelParticle;
+        
+        /// <summary>
+        /// LabelParticleLine элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelParticleLine;
+        
+        /// <summary>
+        /// LabelParticleTitle элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelParticleTitle;
+        
+        /// <summary>
         /// UpdatePanelParticleSettings элемент управления.
         /// </summary>
         /// <remarks>
@@ -137,33 +164,6 @@ namespace litclassicbot {
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox CheckBoxAuthor8;
-        
-        /// <summary>
-        /// UpdatePanelParticle элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanelParticle;
-        
-        /// <summary>
-        /// LabelParticleLine элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelParticleLine;
-        
-        /// <summary>
-        /// LabelParticleTitle элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelParticleTitle;
         
         /// <summary>
         /// ButtonParticleReload элемент управления.

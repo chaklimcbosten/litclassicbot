@@ -9,7 +9,16 @@
             <ContentTemplate>
 
             </ContentTemplate>
-        </asp:UpdatePanel>--%>
+        </asp:UpdatePanel>--%>       
+        <asp:UpdatePanel ID="UpdatePanelParticle" runat="server" UpdateMode="Conditional">
+            <ContentTemplate>
+                <h2>Текст "частицы"</h2>
+                <asp:Label ID="LabelParticleLine" runat="server"></asp:Label>
+                <h2>Сведения о "частице"</h2>
+                <asp:Label ID="LabelParticleTitle" runat="server"></asp:Label>
+                <%--<h2>Копировать, сохранить, поделиться "частицей"</h2>--%>
+            </ContentTemplate>
+        </asp:UpdatePanel>
         <asp:UpdatePanel ID="UpdatePanelParticleSettings" runat="server" UpdateMode="Conditional">
             <Contenttemplate>
                 <h2>Настройки получения "частиц"</h2>
@@ -94,15 +103,6 @@
                         CssClass="button-hide-particle-settings" OnClick="ButtonParticleSettings_Click" />
                 </div>--%>
             </Contenttemplate>
-        </asp:UpdatePanel>
-        <asp:UpdatePanel ID="UpdatePanelParticle" runat="server" UpdateMode="Conditional">
-            <ContentTemplate>
-                <h2>Текст "частицы"</h2>
-                <asp:Label ID="LabelParticleLine" runat="server"></asp:Label>
-                <h2>Сведения о "частице"</h2>
-                <asp:Label ID="LabelParticleTitle" runat="server"></asp:Label>
-                <%--<h2>Копировать, сохранить, поделиться "частицей"</h2>--%>
-            </ContentTemplate>
         </asp:UpdatePanel>
         <%--<h2>О процессе формирования "частиц"</h2>--%>
     </div>  
