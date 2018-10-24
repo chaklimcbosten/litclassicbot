@@ -55,9 +55,9 @@
                             <div class="footer-button-left">                  
                                 <a class="button-footer-left-column" href="Words.aspx">СЛОВАРЬ</a>
                             </div>
-                            <div class="footer-button-left">                  
+<%--                            <div class="footer-button-left">                  
                                 <a class="button-footer-left-column" href="Proverbs.aspx">ПОСЛОВИЦЫ</a>
-                            </div>
+                            </div>--%>
                         </div>                      
                     </div>
                     <%--правая колонка кнопок--%>
