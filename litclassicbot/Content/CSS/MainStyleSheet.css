@@ -437,8 +437,8 @@ a {
         width: 96%;
         margin-left: 2%;
         margin-right: 2%;
-        margin-top: 55px;
-        margin-bottom: 70px;
+        margin-top: 60px;
+        margin-bottom: 65px;
     }
 
     .footer {
@@ -475,6 +475,9 @@ a {
         margin-top: 10px;
         margin-bottom: 10px;
     }
+    .h2-main-page {
+        margin-top: 0px;
+    }
     h2 {
         font-size: 20px;
         font-weight: 300;
@@ -492,6 +495,7 @@ a {
 
     .black-label-main-content {
         padding: 15px;
+        /*margin-bottom: 5px;*/
     }
     .black-label-word-name {
         padding: 15px;
