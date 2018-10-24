@@ -4,6 +4,14 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="main">
         <h1>Главная страница</h1>
+        <asp:Label ID="LabelSubtitleLastAction" runat="server">
+            <h2>Последние действия</h2>
+            <p>У Вас остаётся открытой "частица":</p>
+            <asp:Label ID="LabelLastAction" runat="server"></asp:Label>
+            <p>Её чтение, а также и чтение других по ссылке ниже:</p>
+
+        </asp:Label>
+        
         <h2>Навигация</h2>
         <div class="content-main-page">
             <p>В верхней части сайта - "шапке" - клавиши ссылок на страницы с иными частями проекта, размещённых на других ресурсах.</p>

@@ -13,6 +13,24 @@ namespace litclassicbot {
     public partial class _Default {
         
         /// <summary>
+        /// LabelSubtitleLastAction элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelSubtitleLastAction;
+        
+        /// <summary>
+        /// LabelLastAction элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelLastAction;
+        
+        /// <summary>
         /// LabelStatistics элемент управления.
         /// </summary>
         /// <remarks>

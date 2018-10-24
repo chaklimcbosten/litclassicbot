@@ -19,14 +19,12 @@
 
 <body>
     <form id="form1" runat="server">
-
-
         <header>
-            <div class="header-main">
-                <a href="~/" runat="server"><img class="logo_img" src="Content/header/main-logo-png-v3.png" /></a>
-                <div class="logo"> LITCLASSIC </div>
+            <div class="header-logo">
+                <a href="~/" runat="server"><img class="header-logo-img" src="Content/header/main-logo-png-v3.png" /></a>
+                <div class="header-logo-text"> LITCLASSIC </div>
             </div>
-            <div class="logo-links">
+            <div class="header-links">
                 <%--<a href="Authorization.aspx" runat="server" class="link-button">АВТОРИЗАЦИЯ</a>--%>
                 <a href="https://t.me/litclassicbot" target="_blank" runat="server" 
                     class="link-button">TELEGRAM</a>
