@@ -40,9 +40,6 @@ namespace litclassicbot
                 // если браузер поддерживает cookie
                 if (Request.Browser.Cookies)
                 {
-                    Response.Cookies["litclassic-cookie-user-info"]["last-visit"] = DateTime.Now.ToString();
-                    Response.Cookies["litclassic-cookie-user-info"].Expires = DateTime.Now.AddYears(3);
-
                     // первое посещение, если cookie не созданы
                     if (Request.Cookies["litclassic-cookie-particle"] == null)
                     {
@@ -317,8 +314,8 @@ namespace litclassicbot
             else if (!CheckBoxAuthor8.Checked) Response.Cookies["litclassic-cookie-particle"]["author-number-8"] = "0";
 
             Response.Cookies["litclassic-cookie-particle"].Expires = DateTime.Now.AddYears(3);
-            Response.Cookies["litclassic-cookie-user-info"]["last-visit"] = DateTime.Now.ToString();
-            Response.Cookies["litclassic-cookie-user-info"].Expires = DateTime.Now.AddYears(3);
+            Response.Cookies["litclassic-cookie"]["last-visit"] = DateTime.Now.ToString();
+            Response.Cookies["litclassic-cookie"].Expires = DateTime.Now.AddYears(3);
         }
 
 

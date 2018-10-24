@@ -12,7 +12,8 @@ namespace litclassicbot
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Response.Cookies["litclassic-cookie"]["last-visit"] = DateTime.Now.ToString();
+            Response.Cookies["litclassic-cookie"].Expires = DateTime.Now.AddYears(3);
         }
     }
 }
