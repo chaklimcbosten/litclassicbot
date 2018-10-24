@@ -172,7 +172,7 @@ header {
 h1 {
     width: 100%;
     margin-top: 0px;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
     color: black;
     font-size: 48px;
     font-weight: 300;
@@ -180,8 +180,8 @@ h1 {
 }
 h2 {
     width: 100%;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 16px;
+    margin-bottom: 16px;
     color: black;
     font-size: 34px;
     font-weight: 300;
@@ -240,7 +240,9 @@ a {
 }
 
 .black-label-word-name,
-.black-label-main-content {
+.black-label-main-content,
+.black-label-word-name-last-action,
+.black-label-main-content-last-action {
     background-color: black;
     border-radius: 20px;
     /*4 dp*/
@@ -249,10 +251,15 @@ a {
     color: white;
     padding-top: 10px;
     padding-bottom: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     /*justify-content: space-around;*/
 }
+.black-label-main-content,
 .black-label-word-name {
+    margin-bottom: 10px;
+}
+.black-label-word-name,
+.black-label-word-name-last-action {
     font-size: 34px;
     letter-spacing: 0.25px;
 }
@@ -503,14 +510,20 @@ a {
         margin-bottom: 10px;
     }
 
-    .black-label-main-content {
+    .black-label-main-content,
+    .black-label-main-content-last-action {
         padding: 15px;
         margin-bottom: 0px;
     }
-    .black-label-word-name {
+    .black-label-word-name,
+    .black-label-word-name-last-action {
         padding: 15px;
         font-size: 24px;
         letter-spacing: 0px;
+        margin-bottom: 0px;
+    }
+    .black-label-main-content-last-action {
+        margin-bottom: 10px;
     }
 
     p {

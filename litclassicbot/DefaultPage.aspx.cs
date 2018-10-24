@@ -42,7 +42,7 @@ namespace litclassicbot
                     string title = currentConnection.GetParticleTitle(
                         Convert.ToInt32((Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["particleID"]))));
                     // создаёт "обёрточный" класс для всего содержания сведения о "частице"
-                    string beginTitle = "<a class=\"last-action-link\" href=\"Particles.aspx\"><div class=\"black-label-main-content\"><p>";
+                    string beginTitle = "<a class=\"last-action-link\" href=\"Particles.aspx\"><div class=\"black-label-main-content-last-action\"><p>";
                     string endTitle = "</p></a></div>";
                     // замена символов новой строки на тег, выполняющий это в html
                     title = beginTitle + title.Replace("\n\r", "<br>") + endTitle;
@@ -63,7 +63,7 @@ namespace litclassicbot
                     string name = currentConnection.GetWordName(
                         Convert.ToInt32((Server.HtmlEncode(Request.Cookies["litclassic-cookie-words"]["wordID"]))));
                     // создаёт "обёрточный" класс для всего содержания значения слова
-                    string beginWordName = "<a class=\"last-action-link\" href=\"Words.aspx\"><div class=\"black-label-word-name\">";
+                    string beginWordName = "<a class=\"last-action-link\" href=\"Words.aspx\"><div class=\"black-label-word-name-last-action\">";
                     string endWordName = "</a></div>";
                     // замена символов новой строки на тег, выполняющий это в html
                     name = beginWordName + name.Replace("\n\r", "<br>") + endWordName;
@@ -86,7 +86,7 @@ namespace litclassicbot
 
                     string title = currentConnection.GetParticleTitle((int)Session["particleID"]);
                     // создаёт "обёрточный" класс для всего содержания сведения о "частице"
-                    string beginTitle = "<a class=\"last-action-link\" href=\"Particles.aspx\"><div class=\"black-label-main-content\"><p>";
+                    string beginTitle = "<a class=\"last-action-link\" href=\"Particles.aspx\"><div class=\"black-label-main-content-last-action\"><p>";
                     string endTitle = "</p></a></div>";
                     // замена символов новой строки на тег, выполняющий это в html
                     title = beginTitle + title.Replace("\n\r", "<br>") + endTitle;
@@ -106,7 +106,7 @@ namespace litclassicbot
 
                     string name = currentConnection.GetWordName((int)Session["wordID"]);
                     // создаёт "обёрточный" класс для всего содержания значения слова
-                    string beginWordName = "<a class=\"last-action-link\" href=\"Words.aspx\"><div class=\"black-label-word-name\">";
+                    string beginWordName = "<a class=\"last-action-link\" href=\"Words.aspx\"><div class=\"black-label-word-name-last-action\">";
                     string endWordName = "</a></div>";
                     // замена символов новой строки на тег, выполняющий это в html
                     name = beginWordName + name.Replace("\n\r", "<br>") + endWordName;
