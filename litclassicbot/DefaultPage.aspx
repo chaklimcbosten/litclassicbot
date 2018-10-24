@@ -6,16 +6,18 @@
         <h1>Главная страница</h1>
         <asp:Label ID="LabelLastAction" runat="server" CssClass="label-last-action">
             <h2>Последние действия</h2>
+            <%--<div class="content-main-page"><p>Кликайте по блокам для перехода в соответствующий раздел.</p></div>--%>
             <div class="last-action">
-                <div class="last-particle-column">
-                    <asp:Label ID="LabelSubtitleLastParticle" runat="server"><h3>Вы смотрели эту "частицу":</h3></asp:Label>
+                <asp:Label ID="LabelParticleColumn" runat="server" CssClass="last-particle-column">
+                    <h3>Вы смотрели эту "частицу":</h3>
                     <asp:Label ID="LabelLastParticle" runat="server"></asp:Label>
-                </div>
-                <div class="last-word-column">
-                    <asp:Label ID="LabelSubtitleLastWord" runat="server"><h3>Вы смотрели это слово:</h3></asp:Label>
+                </asp:Label>
+                <asp:Label ID="LabelEmtySpace" runat="server" CssClass="label-empty-space" Visible="False"></asp:Label>              
+                <asp:Label ID="LabelWordColumn" runat="server" CssClass="last-word-column">
+                    <h3>Вы смотрели это слово:</h3>
                     <asp:Label ID="LabelLastWord" runat="server"></asp:Label>
-                </div>  
-            </div>      
+                </asp:Label>              
+            </div>          
         </asp:Label>
         
         <%--<h2>Навигация</h2>
@@ -51,10 +53,10 @@
                 Пушкин, Гоголь, Достоевский, Лермонтов, Гончаров, Державин, Аксаков, Жуковский, Ломоносов и другие - помогают вспомнить 
                 себя и свой труд, посвящённый не силе безначального искусства, но человеческому пути к более чистому и светлому состоянию.</p>
         </div>
-        <h2>Статистика</h2>
+<%--        <h2>Статистика</h2>
         <div class="content-main-page">
             <asp:Label ID="LabelStatistics" runat="server" CssClass="label-statistics"></asp:Label>
-        </div>
+        </div>--%>
 <%--        <h2>Благодарности</h2>
         <div class="content-main-page">
 
