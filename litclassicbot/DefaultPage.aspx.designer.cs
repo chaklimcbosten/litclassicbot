@@ -13,13 +13,40 @@ namespace litclassicbot {
     public partial class _Default {
         
         /// <summary>
-        /// LabelStatistics элемент управления.
+        /// ScriptManagerDefaultPage элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelStatistics;
+        protected global::System.Web.UI.ScriptManager ScriptManagerDefaultPage;
+        
+        /// <summary>
+        /// UpdatePanelNotifications элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanelNotifications;
+        
+        /// <summary>
+        /// LabelParticleNotification элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelParticleNotification;
+        
+        /// <summary>
+        /// LabelWordNotification элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelWordNotification;
         
         /// <summary>
         /// LabelLastAction элемент управления.

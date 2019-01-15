@@ -49,6 +49,33 @@ namespace litclassicbot {
         protected global::System.Web.UI.WebControls.Label LabelParticleTitle;
         
         /// <summary>
+        /// UpdatePanelNotifications элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanelNotifications;
+        
+        /// <summary>
+        /// LabelParticleNotification элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelParticleNotification;
+        
+        /// <summary>
+        /// LabelWordNotification элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelWordNotification;
+        
+        /// <summary>
         /// UpdatePanelParticleSettings элемент управления.
         /// </summary>
         /// <remarks>

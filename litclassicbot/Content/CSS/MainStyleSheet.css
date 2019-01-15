@@ -156,6 +156,7 @@ header {
 
 .main-content {
     display: flex;
+    width: 100%;
     justify-content: center;
 }
 .main {
@@ -168,12 +169,12 @@ header {
     letter-spacing: 0.5px;
     line-height: 1.5;
 }
-
 .main-panel {
     display: inline-block;
     width: 777px;
     padding-right: 20px;
 }
+
 .interactive-panel {
     display: inline-block;
     position: fixed;
@@ -186,17 +187,41 @@ header {
     border-radius: 15px;
     margin-bottom: 10px;
 }
+.buttons-nav-panel {
+    display: flex;
+    justify-content: space-around;
+}
+
 .nav-button-wrapper {
-    display: inline-block;
+    /*display:inline-block;*/
     margin-top: 5px;
     margin-bottom: 5px;
 }
+.particles-notif,
+.words-notif {
+    padding-left: 6px;
+    padding-right: 6px;
+    position: absolute;
+    left: 120px;
+    top: 30px;
+    color: white;
+    background: lightskyblue;
+    border: 0px solid lightskyblue;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+}
+.words-notif {
+    left: 237px;
+}
+
 .nav-button,
-.nav-button-active {
+.nav-button-pressed {
     letter-spacing: 0.75px;
     font-size: 14px;
-    font-weight: 300;   
-    font-family: 'Roboto', sans-serif;    
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
     padding-top: 7px;
     padding-bottom: 7px;
     padding-left: 14px;
@@ -205,31 +230,33 @@ header {
     cursor: pointer;
     text-decoration: none;
 }
-    .nav-button:hover {
-        background-color: whitesmoke;
-    }
-    .nav-button:active {
-        background-color: lightgrey;
-    }
-    .nav-button-active:hover {
-        background-color: gray;
-        border-color: gray;
-    }
-    .nav-button-active:active {
-        background-color: lightgray;
-        border-color: lightgray;
-        color: black;
-    }
 .nav-button {
     background-color: white;
     color: black;
     border: 2px solid white;
 }
-.nav-button-active {
+.nav-button-pressed {
     background-color: black;
     color: white;
     border: 2px solid black;
 }
+    .nav-button:hover {
+        background-color: whitesmoke;
+        border-color: whitesmoke;
+    }
+    .nav-button:active {
+        background-color: lightgrey;
+        border-color: lightgrey;
+    }
+    .nav-button-pressed:hover {
+        background-color: gray;
+        border-color: gray;
+    }
+    .nav-button-pressed:active {
+        background-color: lightgray;
+        border-color: lightgray;
+        color: black;
+    }
 
 h1 {
     width: 100%;
@@ -265,7 +292,7 @@ h3 {
 h4 {
     width: 100%;
     margin-top: 0px;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
     color: black;
     font-size: 16px;
     font-weight: 300;
@@ -344,10 +371,12 @@ a {
 .particle-settings-theme-types-column {
     display: flex;
     flex-direction: column;
+    line-height: 1.2;
 }
 .particle-settings-authors-numbers-column {
     display: flex;
     flex-direction: column;
+    line-height: 1.2;
 }
 .particle-settings-checkboxes-text {
 
@@ -357,6 +386,8 @@ a {
     flex-direction: column;
     flex-wrap: wrap;
     margin-bottom: 10px;
+    /*line-height: 1.0;*/
+    /*letter-spacing: 0px;*/
 }
 .particle-settings-checkboxes-authors-numbers {
     display: flex;
@@ -527,6 +558,10 @@ a {
         margin-right: 2%;
         margin-top: 60px;
         margin-bottom: 65px;
+    }
+    .main-panel {
+        width: 100%;
+        padding-right: 0px;
     }
 
     .footer {

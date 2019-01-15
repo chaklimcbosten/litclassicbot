@@ -9,6 +9,10 @@ using litclassicbot.Classes;
 
 namespace litclassicbot
 {
+    // БАГИ
+    //
+    // Не присылает новую "частицу", когда не было выбрано ни одного автора и была нажата кнопка "новая частица"
+    // Обновляет настройки лишь со второго раза нажатия кнопки "новая частица"
     public partial class Particles : System.Web.UI.Page
     {
         private int currentParticleId = -1;

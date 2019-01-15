@@ -2,9 +2,10 @@
     AutoEventWireup="true" CodeBehind="DefaultPage.aspx.cs" Inherits="litclassicbot._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:ScriptManager ID="ScriptManagerDefaultPage" runat="server"></asp:ScriptManager>
     <div class="main">
         <div class="main-panel">   
-                    <h1>Главная страница</h1>
+        <h1>Главная страница</h1>
         <%--<h2>Навигация</h2>
         <div class="content-main-page">
             <p>В верхней части сайта - "шапке" - клавиши ссылок на страницы с иными частями проекта, размещённых на других ресурсах.</p>
@@ -38,44 +39,50 @@
                 Пушкин, Гоголь, Достоевский, Лермонтов, Гончаров, Державин, Аксаков, Жуковский, Ломоносов и другие - помогают вспомнить 
                 себя и свой труд, посвящённый не силе безначального искусства, но человеческому пути к более чистому и светлому состоянию.</p>
         </div>
-        <h2>Статистика</h2>
+<%--        <h2>Статистика</h2>
         <div class="content-main-page">
             <asp:Label ID="LabelStatistics" runat="server" CssClass="label-statistics"></asp:Label>
         </div>
         <h2>Благодарности</h2>
         <div class="content-main-page">
 
-        </div>
+        </div>--%>
     </div>
     <div class="interactive-panel">
         <div class="nav-panel">
-            <h2>Разделы сайта:</h2>
-            <div class="button-particles">
-                <a class="nav-button" href="Particles.aspx">"ЧАСТИЦЫ"</a>
-            </div>
-            <div class="button-words">                  
-                <a class="nav-button" href="Words.aspx">СЛОВАРЬ</a>
-            </div>
+            <h4>Разделы сайта:</h4>
+            <asp:UpdatePanel ID="UpdatePanelNotifications" runat="server">
+                <ContentTemplate>
+                    <div class="buttons-nav-panel">
+                        <div class="nav-button-wrapper">
+                            <a class="nav-button" href="Particles.aspx">"ЧАСТИЦЫ"</a>
+                            <div class="particles-notif"><asp:Label ID="LabelParticleNotification" runat="server" Text="1,2T"></asp:Label></div>
+                        </div>            
+                        <div class="nav-button-wrapper">
+                            <a class="nav-button" href="Words.aspx">СЛОВАРЬ</a>
+                            <div class="words-notif"><asp:Label ID="LabelWordNotification" runat="server" Text="1,2T"></asp:Label></div>
+                        </div>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel> 
         </div>
         <div class="options-panel">
             <asp:Label ID="LabelLastAction" runat="server" CssClass="label-last-action">
-                <h2 class="h2-last-action">Последние действия</h2>
+                <%--<h4>Последние действия</h4>--%>
                 <div class="content-main-page"><p class="p-last-action">Кликните по чёрному блоку для перехода в соответствующий раздел сайта.</p></div>
                 <div class="last-action">
                     <asp:Label ID="LabelParticleColumn" runat="server" CssClass="last-particle-column">
-                        <h3>Вы смотрели эту "частицу":</h3>
+                        <h4>Вы смотрели эту "частицу":</h4>
                         <asp:Label ID="LabelLastParticle" runat="server"></asp:Label>
                     </asp:Label>
                     <asp:Label ID="LabelEmtySpace" runat="server" CssClass="label-empty-space" Visible="False"></asp:Label>              
                     <asp:Label ID="LabelWordColumn" runat="server" CssClass="last-word-column">
-                        <h3>Вы смотрели это слово:</h3>
+                        <h4>Вы смотрели это слово:</h4>
                         <asp:Label ID="LabelLastWord" runat="server"></asp:Label>
                     </asp:Label>              
                 </div>          
             </asp:Label>
         </div>
     </div>
-    </div>
-    
-    
+    </div>   
 </asp:Content>
