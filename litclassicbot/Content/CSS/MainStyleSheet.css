@@ -82,7 +82,7 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: white;
 }
-.form1 {
+form {
     background-color: #FFFFFF;
     width: 100%;
 }
@@ -154,14 +154,14 @@ header {
         background-color: lightgrey;
     }
 
-.main,
-.MainContent {
-    width: 70%;
+.main-content {
+    display: flex;
+    justify-content: center;
+}
+.main {
+    width: 777px;
     margin-top: 80px;
     margin-bottom: 110px;
-    margin-left: 15%;
-    margin-right: 15%;
-    /*text-align: justify;*/
     font-size: 16px;
     font-weight: 300;
     color: white;
