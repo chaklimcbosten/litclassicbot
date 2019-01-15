@@ -159,7 +159,7 @@ header {
     justify-content: center;
 }
 .main {
-    width: 777px;
+    width: 1077px;
     margin-top: 80px;
     margin-bottom: 110px;
     font-size: 16px;
@@ -167,6 +167,68 @@ header {
     color: white;
     letter-spacing: 0.5px;
     line-height: 1.5;
+}
+
+.main-panel {
+    display: inline-block;
+    width: 777px;
+    padding-right: 20px;
+}
+.interactive-panel {
+    display: inline-block;
+    position: fixed;
+    width: 280px;
+}
+.nav-panel,
+.options-panel {
+    padding: 5px 15px 10px 15px;
+    border: 2px solid whitesmoke;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+.nav-button-wrapper {
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.nav-button,
+.nav-button-active {
+    letter-spacing: 0.75px;
+    font-size: 14px;
+    font-weight: 300;   
+    font-family: 'Roboto', sans-serif;    
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 14px;
+    padding-right: 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+    .nav-button:hover {
+        background-color: whitesmoke;
+    }
+    .nav-button:active {
+        background-color: lightgrey;
+    }
+    .nav-button-active:hover {
+        background-color: gray;
+        border-color: gray;
+    }
+    .nav-button-active:active {
+        background-color: lightgray;
+        border-color: lightgray;
+        color: black;
+    }
+.nav-button {
+    background-color: white;
+    color: black;
+    border: 2px solid white;
+}
+.nav-button-active {
+    background-color: black;
+    color: white;
+    border: 2px solid black;
 }
 
 h1 {
@@ -197,6 +259,15 @@ h3 {
     margin-bottom: 10px;
     color: black;
     font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 0px;
+}
+h4 {
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: black;
+    font-size: 16px;
     font-weight: 300;
     letter-spacing: 0px;
 }
@@ -347,8 +418,8 @@ a {
     justify-content: space-between;
 }
 
-.footer-buttons-left-column,
-.footer-buttons-right-column {
+.nav-buttons,
+.options-buttons {
     display: flex;
     flex-direction: column;
 }
@@ -395,6 +466,7 @@ a {
     border-radius: 3px;
     cursor: pointer;
     text-decoration: none;
+    outline: none;
 }
     .button-footer-left-column:hover,
     .button-footer-right-column:hover {
@@ -546,6 +618,7 @@ a {
         margin-bottom: 6px;
         border: 2px solid white;
         border-radius: 22px;
+        text-decoration: none;
     }
         .image-button:hover {
             background-color: whitesmoke;
@@ -553,5 +626,9 @@ a {
         .image-button:active {
             background-color: lightgrey;
         }     
+
+    .interactive-panel {
+        display: none;
+    }
 }
 

@@ -41,8 +41,8 @@
         <div class="footer">
             <div class="footer-main">
                 <div class="footer-buttons">
-                    <%--левая колонка кнопок--%>
-                    <div class="footer-buttons-left-column">
+                    <%--Кнопки навигации - левая колонка кнопок--%>
+                    <div class="nav-buttons">
                         <div class="footer-left-column-top">
                             <p class="footer-left-text">Разделы сайта:</p>
                         </div>
@@ -58,8 +58,8 @@
                             </div>--%>
                         </div>                      
                     </div>
-                    <%--правая колонка кнопок--%>
-                    <div class="footer-buttons-right-column"> 
+                    <%--Кнопки опций - правая колонка кнопок--%>
+                    <div class="options-buttons"> 
                         <div>
                             <asp:ContentPlaceHolder ID="FooterContent" runat="server"></asp:ContentPlaceHolder>
                         </div>                    
