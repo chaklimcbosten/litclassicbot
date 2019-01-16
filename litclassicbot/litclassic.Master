@@ -38,11 +38,16 @@
         </div>
 
         <div class="footer-desktop">
-            <hr />
-            <div class="about">LITCLASSIC</div>
-            <div class="bugs">Багтрекер</div>
-            <div class="feedback">Обратная связь</div>
-            <div class="year">2018 - 2019</div>
+            <div class="footer-hr"></div>
+            <div class="footer-desktop-letters">
+                <div class="footer-desktop-row">
+                    <div class="year">2018 - 2019</div>
+                    <div class="version">LITCLASSIC - v0.3.3(2)</div>
+                    <div class="bugs">Багтрекер</div>
+                    <div class="feedback">Обратная связь</div>
+                    <div class="donate">Помощь проекту</div>
+                </div>
+            </div>
         </div>
 
         <div class="footer-mobile">
@@ -50,15 +55,19 @@
                 <%--левая колонка иконок-кнопок адаптивной версии--%>
                 <div class="footer-mobile-buttons-left-column">
                     <div class="image-button">
-                        <a href="Particles.aspx"><img src="Content/footer/particle-icon.png" height="24" width="24" /></a>
+                        <a href="Particles.aspx">
+                            <img src="Content/footer/particle-icon.png" height="24" width="24" /></a>
                     </div>
                     <div class="image-button">
-                        <a href="Words.aspx"><img src="Content/footer/word-icon.png" height="24" width="24" /></a>
+                        <a href="Words.aspx">
+                            <img src="Content/footer/word-icon.png" height="24" width="24" /></a>
                     </div>
                 </div>
                 <%--правая колонка иконок-кнопок адаптивной версии--%>
                 <div class="footer-mobile-buttons-right-column">
-                    <div><asp:ContentPlaceHolder ID="FooterContentAdaptive" runat="server"></asp:ContentPlaceHolder></div>
+                    <div>
+                        <asp:ContentPlaceHolder ID="FooterContentAdaptive" runat="server"></asp:ContentPlaceHolder>
+                    </div>
                 </div>
             </div>
         </div>
