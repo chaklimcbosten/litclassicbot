@@ -39,7 +39,7 @@
             </div>
             <div class="options-panel">
                 <h4>Опции раздела:</h4>
-                <asp:Button ID="ButtonWordReload" runat="server" Text="ДРУГОЕ СЛОВО" CssClass="button-reload" OnClick="ButtonWordReload_Click" />
+                <asp:Button ID="ButtonWordReload" runat="server" Text="НОВОЕ СЛОВО" CssClass="button-reload" OnClick="ButtonWordReload_Click" />
             </div>
         </div>
     </div>

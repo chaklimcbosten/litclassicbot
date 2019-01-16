@@ -20,16 +20,17 @@
 <body>
     <form id="form1" runat="server">
         <header>
-            <div class="header-logo">
-                <a href="~/" runat="server">
-                    <img class="header-logo-img" src="Content/header/main-logo-png-v3.png" /></a>
-                <div class="header-logo-text">LITCLASSIC </div>
-            </div>
-            <div class="header-links">
-                <%--<a href="Authorization.aspx" runat="server" class="link-button">АВТОРИЗАЦИЯ</a>--%>
-                <a href="https://t.me/litclassicbot" target="_blank" runat="server" class="link-button">TELEGRAM</a>
-                <a href="https://vk.com/litclassic" target="_blank" runat="server" class="link-button">VK</a>
-                <a href="~/" runat="server" class="link-button">О САЙТЕ</a>
+            <div class="header">
+                <div class="header-logo">
+                    <a href="~/" runat="server"><img class="header-logo-img" src="Content/header/main-logo-png-v3.png" /></a>
+                    <div class="header-logo-text">LITCLASSIC </div>
+                </div>
+                <div class="header-links">
+                    <%--<a href="Authorization.aspx" runat="server" class="link-button">АВТОРИЗАЦИЯ</a>--%>
+                    <a href="https://t.me/litclassicbot" target="_blank" runat="server" class="link-button">TELEGRAM</a>
+                    <a href="https://vk.com/litclassic" target="_blank" runat="server" class="link-button">VK</a>
+                    <a href="~/" runat="server" class="link-button">О САЙТЕ</a>
+                </div>
             </div>
         </header>
 
@@ -42,9 +43,9 @@
             <div class="footer-desktop-letters">
                 <div class="footer-desktop-row">
                     <div class="year">2018 - 2019</div>
-                    <div class="version">LITCLASSIC - v0.3.3(2)</div>
+                    <div class="version">LITCLASSIC - v0.3.3(3)</div>
                     <div class="bugs">Багтрекер</div>
-                    <div class="feedback">Обратная связь</div>
+                    <div class="feedback">feedback@litclassic.com</div>
                     <div class="donate">Помощь проекту</div>
                 </div>
             </div>
