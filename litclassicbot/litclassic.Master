@@ -37,41 +37,28 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
         </div>
 
-        <div class="footer">
-            <div class="footer-main">
-                <div class="footer-buttons">
-                    <%--Кнопки навигации - левая колонка кнопок--%>
-                    <div class="nav-buttons">
-                        <div class="footer-left-column-top">
-                            <p class="footer-left-text">Разделы сайта:</p>
-                        </div>
-                        <div class="footer-left-column-bottom">
-                            <div class="footer-button-left"><a class="button-footer-left-column" href="Particles.aspx">"ЧАСТИЦЫ"</a></div>
-                            <div class="footer-button-left"><a class="button-footer-left-column" href="Words.aspx">СЛОВАРЬ</a></div>
-                            <%--<div class="footer-button-left"><a class="button-footer-left-column" href="Proverbs.aspx">ПОСЛОВИЦЫ</a></div>--%>
-                        </div>
+        <div class="footer-desktop">
+            <hr />
+            <div class="about">LITCLASSIC</div>
+            <div class="bugs">Багтрекер</div>
+            <div class="feedback">Обратная связь</div>
+            <div class="year">2018 - 2019</div>
+        </div>
+
+        <div class="footer-mobile">
+            <div class="footer-mobile-buttons">
+                <%--левая колонка иконок-кнопок адаптивной версии--%>
+                <div class="footer-mobile-buttons-left-column">
+                    <div class="image-button">
+                        <a href="Particles.aspx"><img src="Content/footer/particle-icon.png" height="24" width="24" /></a>
                     </div>
-                    <%--Кнопки опций - правая колонка кнопок--%>
-                    <div class="options-buttons">
-                        <div>
-                            <asp:ContentPlaceHolder ID="FooterContent" runat="server"></asp:ContentPlaceHolder>
-                        </div>
+                    <div class="image-button">
+                        <a href="Words.aspx"><img src="Content/footer/word-icon.png" height="24" width="24" /></a>
                     </div>
                 </div>
-                <div class="footer-images-buttons">
-                    <%--левая колонка иконок-кнопок адаптивной версии--%>
-                    <div class="footer-images-buttons-left-column">
-                        <div class="image-button"><a href="Particles.aspx">
-                            <img src="Content/footer/particle-icon.png" height="24" width="24" /></a></div>
-                        <div class="image-button"><a href="Words.aspx">
-                            <img src="Content/footer/word-icon.png" height="24" width="24" /></a></div>
-                    </div>
-                    <%--правая колонка иконок-кнопок адаптивной версии--%>
-                    <div class="footer-images-buttons-right-column">
-                        <div>
-                            <asp:ContentPlaceHolder ID="FooterContentAdaptive" runat="server"></asp:ContentPlaceHolder>
-                        </div>
-                    </div>
+                <%--правая колонка иконок-кнопок адаптивной версии--%>
+                <div class="footer-mobile-buttons-right-column">
+                    <div><asp:ContentPlaceHolder ID="FooterContentAdaptive" runat="server"></asp:ContentPlaceHolder></div>
                 </div>
             </div>
         </div>

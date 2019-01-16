@@ -123,7 +123,7 @@ header {
 }
 .main {
     width: 1077px;
-    margin: 80px 0px 110px 0px;
+    margin: 80px 0px 0px 0px;
     font-size: 16px;
     color: white;
     letter-spacing: 0.5px;
@@ -143,6 +143,8 @@ header {
 }
 .nav-panel,
 .options-panel {
+    display: flex;
+    flex-direction: column;
     padding: 5px 15px 10px 15px;
     border: 2px solid whitesmoke;
     border-radius: 15px;
@@ -250,6 +252,10 @@ h4 {
 /*Тег-ссылка*/
 a {
     outline: none;
+}
+
+hr {
+    color: red;
 }
 
 /*Раздел последний действий*/
@@ -370,58 +376,13 @@ a {
         background-color: lightgrey;
     }
 
-/*"Подвал"*/
-.footer {
-    width: 70%;
-    height: 90px;
-    background-color: white;
-    padding: 0px 15% 0px 15%;
-    text-decoration: none;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    /*6 dp*/
-    box-shadow: 0 -6px 10px 0 rgba(0,0,0,0.14), 0 -1px 18px 0 rgba(0,0,0,0.12), 0 -3px 5px 0 rgba(0,0,0,0.20);
-}
-
-.footer-main,
-.footer-buttons {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.nav-buttons,
-.options-buttons {
-    display: flex;
-    flex-direction: column;
-}
-
-.footer-left-text {
-    margin: 10px 0px 0px 0px;
-    text-align: left;
-}
-.footer-right-text {
-    margin: 10px 0px 0px 0px;
-    text-align: right;
-}
-
-.footer-button-left {
-    display: flex;
-    float: left;
-}
-.footer-button-right {
-    display: flex;
-    float: right;
-}
-
-.button-footer-left-column,
-.button-footer-right-column {
+/*Клавиша обновления "частиц" и слов*/
+.button-reload {
     letter-spacing: 0.75px;
     font-size: 14px;
     background-color: white;
     color: black;
-    margin: 10px 0px 10px 0px;
+    margin: 0;
     padding: 7px 14px 7px 14px;
     border: 2px solid black;
     border-radius: 3px;
@@ -429,28 +390,26 @@ a {
     text-decoration: none;
     outline: none;
 }
-    .button-footer-left-column:hover,
-    .button-footer-right-column:hover {
+    .button-reload:hover {
         background-color: whitesmoke;
     }
-    .button-footer-left-column:active,
-    .button-footer-right-column:active {
+    .button-reload:active {
         background-color: lightgrey;
     }
-.button-footer-left-column {
-    margin-right: 7px;
-    float: left;
-}
-.button-footer-right-column {
-    margin-left: 7px;
-    float: right;
+
+/*"Подвал" настольной версии*/
+.footer-desktop {
+    /*display: flex;
+    flex-direction: column;
+    justify-content: center;*/
 }
 
-.footer-images-buttons {
+/*"Подвал" мобильной версии*/
+.footer-mobile {
     display: none;
 }
 
-@media screen and (max-width:830px) {
+@media screen and (max-width:1160px) {
 
     header {
         width: 96%;
@@ -481,27 +440,34 @@ a {
         padding-right: 0px;
     }
 
-    .footer {
+    .footer-desktop {
+        display: none;
+    }
+    .footer-mobile {
+        background-color: white;
+        text-decoration: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        /*6 dp*/
+        box-shadow: 0 -6px 10px 0 rgba(0,0,0,0.14), 0 -1px 18px 0 rgba(0,0,0,0.12), 0 -3px 5px 0 rgba(0,0,0,0.20);
         width: 96%;
         height: 50px;
         padding: 0% 2% 0% 2%;
         display: flex;
     }
-    .footer-buttons {
-        display: none;
-    }
-    .footer-images-buttons {
+    .footer-mobile-buttons {
         width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
-    .footer-images-buttons-left-column {
+    .footer-mobile-buttons-left-column {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
     }
-    .footer-images-buttons-right-column {
+    .footer-mobile-buttons-right-column {
         display: flex;
         flex-direction: row-reverse;
         justify-content: flex-end;
@@ -529,6 +495,10 @@ a {
         margin: 0px 0px 10px 0px;
     }
 
+    p {
+        margin: 0px 0px 2px 0px;
+    }
+
     .black-label-main-content,
     .black-label-main-content-last-action {
         padding: 15px;
@@ -543,13 +513,6 @@ a {
     }
     .black-label-main-content-last-action {
         margin-bottom: 10px;
-    }
-
-    p {
-        margin: 0px 0px 2px 0px;
-    }
-    .p-last-action {
-        margin: 0px 0px 10px 0px;
     }
 
     .image-button {

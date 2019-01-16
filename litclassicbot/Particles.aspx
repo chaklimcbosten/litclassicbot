@@ -114,39 +114,9 @@
                         </div>
                     </ContentTemplate>
                 </asp:UpdatePanel>
-                <div class="footer-button-right">
-                    <asp:Button ID="ButtonParticleReload" runat="server" Text="НОВАЯ &#34;ЧАСТИЦА&#34;"
-                        CssClass="button-footer-right-column" OnClick="ButtonParticleReload_Click" />
-                </div>
+                <asp:Button ID="ButtonParticleReload" runat="server" Text="НОВАЯ &#34;ЧАСТИЦА&#34;" CssClass="button-reload" OnClick="ButtonParticleReload_Click" />
             </div>
         </div>
-    </div>
-</asp:Content>
-
-<asp:Content ID="FooterContent" ContentPlaceHolderID="FooterContent" runat="server">
-    <div class="footer-right-column-top">
-        <p class="footer-right-text">Опции текущего раздела:</p>
-    </div>
-    <div class="footer-right-column-bottom">
-        <%--        <div class="footer-button-right">           
-            <asp:Button ID="ButtonParticleReload" runat="server" Text="ОБНОВИТЬ" 
-                CssClass="button-footer-right-column" OnClick="ButtonParticleReload_Click" />
-        </div>--%>
-        <%--        <div class="footer-button-right">           
-            <asp:Button ID="ButtonParticleSettingsFooter" runat="server" Text="НАСТРОЙКИ" 
-                CssClass="button-footer-right-column" OnClick="ButtonParticleSettings_Click" />
-        </div>
-        <div class="footer-button-right">           
-            <a class="button-footer-right-column" href="Reader.aspx">ЧИТАТЬ</a>
-        </div>
-        <div class="footer-button-right">           
-            <asp:Button ID="ButtonParticleSave" runat="server" Text="СОХРАНИТЬ" 
-                CssClass="button-footer-right-column" />
-        </div> 
-        <div class="footer-button-right">           
-            <asp:Button ID="ButtonParticleReport" runat="server" Text="ОШИБКА!" 
-                CssClass="button-footer-right-column" />
-        </div> --%>
     </div>
 </asp:Content>
 

@@ -60,13 +60,11 @@
                         <div class="buttons-nav-panel">
                             <div class="nav-button-wrapper">
                                 <a class="nav-button" href="Particles.aspx">"ЧАСТИЦЫ"</a>
-                                <div class="particles-notif">
-                                    <asp:Label ID="LabelParticleNotification" runat="server" Text="1,2T"></asp:Label></div>
+                                <div class="particles-notif"><asp:Label ID="LabelParticleNotification" runat="server" Text="1,2T"></asp:Label></div>
                             </div>
                             <div class="nav-button-wrapper">
                                 <a class="nav-button" href="Words.aspx">СЛОВАРЬ</a>
-                                <div class="words-notif">
-                                    <asp:Label ID="LabelWordNotification" runat="server" Text="1,2T"></asp:Label></div>
+                                <div class="words-notif"><asp:Label ID="LabelWordNotification" runat="server" Text="1,2T"></asp:Label></div>
                             </div>
                         </div>
                     </ContentTemplate>

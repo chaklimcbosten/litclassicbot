@@ -39,23 +39,10 @@
             </div>
             <div class="options-panel">
                 <h4>Опции раздела:</h4>
-                <div class="footer-button-right">
-                    <asp:Button ID="ButtonWordReload" runat="server" Text="ОБНОВИТЬ"
-                        CssClass="button-footer-right-column" OnClick="ButtonWordReload_Click" />
-                </div>
+                <asp:Button ID="ButtonWordReload" runat="server" Text="ДРУГОЕ СЛОВО" CssClass="button-reload" OnClick="ButtonWordReload_Click" />
             </div>
         </div>
     </div>
-</asp:Content>
-
-<asp:Content ID="FooterContent" ContentPlaceHolderID="FooterContent" runat="server">
-    <div class="footer-right-column-top">
-        <p class="footer-right-text">Опции текущего раздела:</p>
-    </div>
-    <%--    <div class="footer-right-column-bottom">
-        <div class="footer-button-right"><asp:Button ID="ButtonWordReload" runat="server"Text="ОБНОВИТЬ" 
-            CssClass="button-footer-right-column" OnClick="ButtonWordReload_Click" /></div>
-    </div>--%>
 </asp:Content>
 
 <asp:Content ID="FooterContentAdaptive" ContentPlaceHolderID="FooterContentAdaptive" runat="server">
