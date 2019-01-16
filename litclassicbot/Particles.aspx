@@ -20,13 +20,13 @@
         <div class="interactive-panel">
             <div class="nav-panel">
                 <h4>Разделы сайта:</h4>
-                <asp:UpdatePanel ID="UpdatePanelNotifications" runat="server">
+                <asp:UpdatePanel ID="UpdatePanelNotifications" runat="server" UpdateMode="Conditional">
                     <ContentTemplate>
                         <div class="buttons-nav-panel">
                             <div class="nav-button-wrapper">
                                 <a class="nav-button-pressed" href="Particles.aspx">"ЧАСТИЦЫ"</a>
                                 <div class="particles-notif">
-                                    <asp:Label ID="LabelParticleNotification" runat="server" Text="1,2T"></asp:Label></div>
+                                    <asp:Label ID="LabelParticleNotification" runat="server" Text="!"></asp:Label></div>
                             </div>
                             <div class="nav-button-wrapper">
                                 <a class="nav-button" href="Words.aspx">СЛОВАРЬ</a>
@@ -114,6 +114,7 @@
                         </div>
                     </ContentTemplate>
                 </asp:UpdatePanel>
+                <%--&#x1f5d8;--%>
                 <asp:Button ID="ButtonParticleReload" runat="server" Text="НОВАЯ &#34;ЧАСТИЦА&#34;" CssClass="button-reload" OnClick="ButtonParticleReload_Click" />
             </div>
         </div>

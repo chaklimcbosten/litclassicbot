@@ -18,6 +18,7 @@ namespace litclassicbot
         private int currentParticleId = -1;
         private int currentRandomThemeType = -1;
         private int currentRandomAuthorNumber = -1;
+        private int currentParticlesCount = -1;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,6 +27,7 @@ namespace litclassicbot
             
             ScriptManagerSetup();            
             PageSetup();
+            SettingParticlesCountNotification();
         }
 
 
@@ -34,6 +36,7 @@ namespace litclassicbot
         private void ScriptManagerSetup()
         {
             // UpdatePanelParticlesPage
+            // регистрация тех элементов, нажатие на котоыре спровоцирует работу ScriptManager
             ScriptManagerParticlesPage.RegisterAsyncPostBackControl(ButtonParticleReload);
             ScriptManagerParticlesPage.RegisterAsyncPostBackControl(ImageButtonParticleReload);
             //ScriptManagerParticlesPage.RegisterAsyncPostBackControl(ButtonParticleSettings);
@@ -321,11 +324,18 @@ namespace litclassicbot
             if (CheckBoxAuthor8.Checked) Response.Cookies["litclassic-cookie-particle"]["author-number-8"] = "1";
             else if (!CheckBoxAuthor8.Checked) Response.Cookies["litclassic-cookie-particle"]["author-number-8"] = "0";
 
-            // particle-settings
-            //if (UpdatePanelParticleSettings.Visible == true)
-            //    Response.Cookies["litclassic-cookie"]["particle-settings-visible"] = "1";
-            //else if (UpdatePanelParticleSettings.Visible == false)
-            //    Response.Cookies["litclassic-cookie"]["particle-settings-visible"] = "0";
+            if (Request.Cookies["litclassic-cookie-particle"]["particles-count"] != null)
+            {
+                currentParticlesCount = Convert.ToInt32(Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["particles-count"])) + 1;
+                LabelParticleNotification.Text = Convert.ToString(currentParticlesCount);
+                Response.Cookies["litclassic-cookie-particle"]["particles-count"] = Convert.ToString(currentParticlesCount);
+            }
+            else
+            {
+                LabelParticleNotification.Text = "1";
+                currentParticlesCount = 1;
+                Response.Cookies["litclassic-cookie-particle"]["particles-count"] = "1";
+            }
 
             Response.Cookies["litclassic-cookie-particle"].Expires = DateTime.Now.AddYears(3);
             Response.Cookies["litclassic-cookie"]["last-visit"] = DateTime.Now.ToString();
@@ -413,6 +423,10 @@ namespace litclassicbot
             // author-number-8
             if (CheckBoxAuthor8.Checked) Session["author-number-8"] = true;
             else Session["author-number-8"] = false;
+
+            currentParticlesCount++;
+            LabelParticleNotification.Text = Convert.ToString(currentParticlesCount);
+            Session["particles-count"] = currentParticlesCount;
 
             // particle-settings
             //if (UpdatePanelParticleSettings.Visible == true)
@@ -532,6 +546,42 @@ namespace litclassicbot
                 currentRandomAuthorNumber = listAuthorsNumbers[randomAuthorNumber.Next(0, listAuthorsNumbers.Count())];
             }
         }
+        // настройка уведомления о количестве полученных "частиц"
+        private void SettingParticlesCountNotification()
+        {
+            // если браузер поддерживает cookie
+            if (Request.Browser.Cookies)
+            {
+                // particles-count
+                if (Request.Cookies["litclassic-cookie-particle"]["particles-count"] != null)
+                {
+                    LabelParticleNotification.Text = Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["particles-count"]);
+                    currentParticlesCount = Convert.ToInt32(LabelParticleNotification.Text);
+                }
+                else
+                {
+                    LabelParticleNotification.Text = "1";
+                    currentParticlesCount = 1;
+                    Response.Cookies["litclassic-cookie-particle"]["particles-count"] = "1";
+                }
+            }
+            // если браузер не поддерживает cookie
+            else
+            {
+                // particles-count
+                if (Session["particles-count"] != null)
+                {
+                    currentParticlesCount = (int)Session["particles-count"];
+                    LabelParticleNotification.Text = (string)Session["particles-count"];
+                }
+                else if (Session["particles-count"] == null)
+                {
+                    LabelParticleNotification.Text = "1";
+                    currentParticlesCount = 1;
+                    Session["particles-count"] = 1;
+                }
+            }
+        }
 
 
         // --- прочее ---
@@ -573,6 +623,7 @@ namespace litclassicbot
             SettingNewRandomIDParticle();
             ShowingParticle(currentParticleId);
             UpdatePanelParticle.Update();
+            UpdatePanelNotifications.Update();
         }
         protected void ButtonParticleSettings_Click(object sender, EventArgs e)
         {

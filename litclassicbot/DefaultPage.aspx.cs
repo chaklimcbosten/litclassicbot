@@ -11,11 +11,14 @@ namespace litclassicbot
 {
     public partial class _Default : Page
     {
+        private int currentParticlesCount = -1;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             SettingPage();
             GettingTotalStatistics();
             SettingLastActions();
+            SettingParticlesCountNotification();
         }
 
 
@@ -234,6 +237,42 @@ namespace litclassicbot
             {
                 //LabelStatistics.Text = "<p>Во время загрузки статистики произошёл сбой. " +
                 //"Для её отображения можете попробовать обновить страницу.</p>";
+            }
+        }
+        // настройка уведомления о количестве полученных "частиц"
+        private void SettingParticlesCountNotification()
+        {
+            // если браузер поддерживает cookie
+            if (Request.Browser.Cookies)
+            {
+                // particles-count
+                if (Request.Cookies["litclassic-cookie-particle"]["particles-count"] != null)
+                {
+                    LabelParticleNotification.Text = Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["particles-count"]);
+                    currentParticlesCount = Convert.ToInt32(LabelParticleNotification.Text);
+                }
+                else
+                {
+                    LabelParticleNotification.Text = "1";
+                    currentParticlesCount = 1;
+                    Response.Cookies["litclassic-cookie-particle"]["particles-count"] = "1";
+                }
+            }
+            // если браузер не поддерживает cookie
+            else
+            {
+                // particles-count
+                if (Session["particles-count"] != null)
+                {
+                    currentParticlesCount = (int)Session["particles-count"];
+                    LabelParticleNotification.Text = (string)Session["particles-count"];
+                }
+                else if (Session["particles-count"] == null)
+                {
+                    LabelParticleNotification.Text = "1";
+                    currentParticlesCount = 1;
+                    Session["particles-count"] = 1;
+                }
             }
         }
     }

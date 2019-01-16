@@ -20,7 +20,7 @@
         <div class="interactive-panel">
             <div class="nav-panel">
                 <h4>Разделы сайта:</h4>
-                <asp:UpdatePanel ID="UpdatePanelNotifications" runat="server">
+                <asp:UpdatePanel ID="UpdatePanelNotifications" runat="server" UpdateMode="Conditional">
                     <ContentTemplate>
                         <div class="buttons-nav-panel">
                             <div class="nav-button-wrapper">

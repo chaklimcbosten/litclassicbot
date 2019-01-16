@@ -13,6 +13,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="apple-touch-icon" href="Content/icons/fav-apple-icon.png" />
     <link rel="icon" type="image/png" href="Content/icons/favicon.png" />
+    <%--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />--%>
+    <%--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"/>--%>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -27,8 +29,8 @@
                 </div>
                 <div class="header-links">
                     <%--<a href="Authorization.aspx" runat="server" class="link-button">АВТОРИЗАЦИЯ</a>--%>
-                    <a href="https://t.me/litclassicbot" target="_blank" runat="server" class="link-button">TELEGRAM</a>
-                    <a href="https://vk.com/litclassic" target="_blank" runat="server" class="link-button">VK</a>
+                    <a href="https://t.me/litclassicbot" target="_blank" runat="server" class="link-button"><%--<i class="fab fa-telegram"></i>--%>TELEGRAM</a>
+                    <a href="https://vk.com/litclassic" target="_blank" runat="server" class="link-button"><%--<i class="fab fa-vk"></i>--%>VK</a>
                     <a href="~/" runat="server" class="link-button">О САЙТЕ</a>
                 </div>
             </div>
@@ -39,13 +41,13 @@
         </div>
 
         <div class="footer-desktop">
-            <div class="footer-hr"></div>
-            <div class="footer-desktop-letters">
+            <div class="footer-desktop-layout"><div class="footer-desktop-hr"></div></div>
+            <div class="footer-desktop-layout">
                 <div class="footer-desktop-row">
                     <div class="year">2018 - 2019</div>
                     <div class="version">LITCLASSIC - v0.3.3(3)</div>
-                    <div class="bugs">Багтрекер</div>
-                    <div class="feedback">feedback@litclassic.com</div>
+                    <%--<div class="bugs">Багтрекер</div>--%>
+                    <div class="feedback">Баги и отзывы отправляйте по адресу: feedback@litclassic.com</div>
                     <div class="donate">Помощь проекту</div>
                 </div>
             </div>
