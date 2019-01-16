@@ -4,9 +4,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>LITCLASSIC - сервис привлечения внимания к русской классической литературе</title>
-    <link href="Content/CSS/MainStyleSheet.css" rel="stylesheet" type="text/css"/>
+    <link href="Content/CSS/MainStyleSheet.css" rel="stylesheet" type="text/css" />
     <%--Не знаю, нужна ли следующая строка--%>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,500,500i&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet" />
@@ -21,49 +21,60 @@
     <form id="form1" runat="server">
         <header>
             <div class="header-logo">
-                <a href="~/" runat="server"><img class="header-logo-img" src="Content/header/main-logo-png-v3.png" /></a>
-                <div class="header-logo-text"> LITCLASSIC </div>
+                <a href="~/" runat="server">
+                    <img class="header-logo-img" src="Content/header/main-logo-png-v3.png" /></a>
+                <div class="header-logo-text">LITCLASSIC </div>
             </div>
             <div class="header-links">
                 <%--<a href="Authorization.aspx" runat="server" class="link-button">АВТОРИЗАЦИЯ</a>--%>
                 <a href="https://t.me/litclassicbot" target="_blank" runat="server" class="link-button">TELEGRAM</a>
                 <a href="https://vk.com/litclassic" target="_blank" runat="server" class="link-button">VK</a>
                 <a href="~/" runat="server" class="link-button">О САЙТЕ</a>
-            </div>           
+            </div>
         </header>
 
-        <div class="main-content"><asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder></div>
+        <div class="main-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+        </div>
 
         <div class="footer">
             <div class="footer-main">
                 <div class="footer-buttons">
                     <%--Кнопки навигации - левая колонка кнопок--%>
                     <div class="nav-buttons">
-                        <div class="footer-left-column-top"><p class="footer-left-text">Разделы сайта:</p></div>
+                        <div class="footer-left-column-top">
+                            <p class="footer-left-text">Разделы сайта:</p>
+                        </div>
                         <div class="footer-left-column-bottom">
                             <div class="footer-button-left"><a class="button-footer-left-column" href="Particles.aspx">"ЧАСТИЦЫ"</a></div>
                             <div class="footer-button-left"><a class="button-footer-left-column" href="Words.aspx">СЛОВАРЬ</a></div>
                             <%--<div class="footer-button-left"><a class="button-footer-left-column" href="Proverbs.aspx">ПОСЛОВИЦЫ</a></div>--%>
-                        </div>                      
+                        </div>
                     </div>
                     <%--Кнопки опций - правая колонка кнопок--%>
-                    <div class="options-buttons"> 
-                        <div><asp:ContentPlaceHolder ID="FooterContent" runat="server"></asp:ContentPlaceHolder></div>                    
-                    </div>                   
+                    <div class="options-buttons">
+                        <div>
+                            <asp:ContentPlaceHolder ID="FooterContent" runat="server"></asp:ContentPlaceHolder>
+                        </div>
+                    </div>
                 </div>
                 <div class="footer-images-buttons">
-                     <%--левая колонка иконок-кнопок адаптивной версии--%>
+                    <%--левая колонка иконок-кнопок адаптивной версии--%>
                     <div class="footer-images-buttons-left-column">
-                        <div class="image-button"><a href="Particles.aspx"><img src="Content/footer/particle-icon.png" height="24" width="24"/></a></div>
-                        <div class="image-button"><a href="Words.aspx"><img src="Content/footer/word-icon.png" height="24" width="24"/></a></div>           
+                        <div class="image-button"><a href="Particles.aspx">
+                            <img src="Content/footer/particle-icon.png" height="24" width="24" /></a></div>
+                        <div class="image-button"><a href="Words.aspx">
+                            <img src="Content/footer/word-icon.png" height="24" width="24" /></a></div>
                     </div>
                     <%--правая колонка иконок-кнопок адаптивной версии--%>
-                    <div class="footer-images-buttons-right-column">                     
-                        <div><asp:ContentPlaceHolder ID="FooterContentAdaptive" runat="server"></asp:ContentPlaceHolder></div>
-                    </div>  
-                </div>             
+                    <div class="footer-images-buttons-right-column">
+                        <div>
+                            <asp:ContentPlaceHolder ID="FooterContentAdaptive" runat="server"></asp:ContentPlaceHolder>
+                        </div>
+                    </div>
+                </div>
             </div>
-         </div>
+        </div>
     </form>
 </body>
 </html>

@@ -10,16 +10,16 @@ using litclassicbot.Classes;
 namespace litclassicbot
 {
     public partial class _Default : Page
-    {       
+    {
         protected void Page_Load(object sender, EventArgs e)
         {
-            PageSetting();
-            GetTotalStatistics();
-            SettingLastAction();
+            SettingPage();
+            GettingTotalStatistics();
+            SettingLastActions();
         }
 
 
-        private void PageSetting()
+        private void SettingPage()
         {
             if (Request.Browser.Cookies)
             {
@@ -27,12 +27,13 @@ namespace litclassicbot
                 Response.Cookies["litclassic-cookie"].Expires = DateTime.Now.AddYears(3);
             }
         }
-        private void SettingLastAction()
+        private void SettingLastActions()
         {
             // если браузер поддерживает cookie
             if (Request.Browser.Cookies)
             {
                 // текущая "частица"
+                // если есть сведения о "частице" в файле cookie
                 if (Request.Cookies["litclassic-cookie-particle"] != null)
                 {
                     BotDBConnect currentConnection = new BotDBConnect();
@@ -42,18 +43,20 @@ namespace litclassicbot
                     string title = currentConnection.GetParticleTitle(
                         Convert.ToInt32((Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["particleID"]))));
                     // создаёт "обёрточный" класс для всего содержания сведения о "частице"
-                    string beginTitle = "<a class=\"last-action-link\" href=\"Particles.aspx\"><div class=\"black-label-main-content-last-action\"><p>";
-                    string endTitle = "</p></a></div>";
+                    string beginTitle = "<div class=\"last-action-black-label-particle\"><a class=\"last-action-link\" href=\"Particles.aspx\">";
+                    string endTitle = "</a></div>";
                     // замена символов новой строки на тег, выполняющий это в html
                     title = beginTitle + title.Replace("\n\r", "<br>") + endTitle;
                     LabelLastParticle.Text = title;
                 }
+                // если сведений о "частице" в файле cookie нет
                 else
                 {
                     LabelParticleColumn.Visible = false;
                 }
 
                 // текущее слово
+                // если есть сведения о слове в файле cookie
                 if (Request.Cookies["litclassic-cookie-words"] != null)
                 {
                     BotDBConnect currentConnection = new BotDBConnect();
@@ -63,12 +66,13 @@ namespace litclassicbot
                     string name = currentConnection.GetWordName(
                         Convert.ToInt32((Server.HtmlEncode(Request.Cookies["litclassic-cookie-words"]["wordID"]))));
                     // создаёт "обёрточный" класс для всего содержания значения слова
-                    string beginWordName = "<a class=\"last-action-link\" href=\"Words.aspx\"><div class=\"black-label-word-name-last-action\">";
+                    string beginWordName = "<div class=\"last-action-black-label-word\"><a class=\"last-action-link\" href=\"Words.aspx\">";
                     string endWordName = "</a></div>";
                     // замена символов новой строки на тег, выполняющий это в html
                     name = beginWordName + name.Replace("\n\r", "<br>") + endWordName;
                     LabelLastWord.Text = name;
                 }
+                // если сведений о словах в файле cookie нет
                 else
                 {
                     LabelWordColumn.Visible = false;
@@ -78,6 +82,7 @@ namespace litclassicbot
             else
             {
                 // текущая "частица"
+                // если есть сведения о "частице" в данных сессии
                 if (Session["particleID"] != null)
                 {
                     BotDBConnect currentConnection = new BotDBConnect();
@@ -86,18 +91,20 @@ namespace litclassicbot
 
                     string title = currentConnection.GetParticleTitle((int)Session["particleID"]);
                     // создаёт "обёрточный" класс для всего содержания сведения о "частице"
-                    string beginTitle = "<a class=\"last-action-link\" href=\"Particles.aspx\"><div class=\"black-label-main-content-last-action\"><p>";
-                    string endTitle = "</p></a></div>";
+                    string beginTitle = "<div class=\"last-action-black-label-particle\"><a class=\"last-action-link\" href=\"Particles.aspx\">";
+                    string endTitle = "</a></div>";
                     // замена символов новой строки на тег, выполняющий это в html
                     title = beginTitle + title.Replace("\n\r", "<br>") + endTitle;
                     LabelLastParticle.Text = title;
                 }
+                // если сведений о "частицах" в данных сессии нет
                 else
                 {
                     LabelParticleColumn.Visible = false;
                 }
 
                 // текущее слово
+                // если есть сведения о словах в данных сессии
                 if (Session["wordID"] != null)
                 {
                     BotDBConnect currentConnection = new BotDBConnect();
@@ -106,12 +113,13 @@ namespace litclassicbot
 
                     string name = currentConnection.GetWordName((int)Session["wordID"]);
                     // создаёт "обёрточный" класс для всего содержания значения слова
-                    string beginWordName = "<a class=\"last-action-link\" href=\"Words.aspx\"><div class=\"black-label-word-name-last-action\">";
+                    string beginWordName = "<div class=\"last-action-black-label-word\"><a class=\"last-action-link\" href=\"Words.aspx\">";
                     string endWordName = "</a></div>";
                     // замена символов новой строки на тег, выполняющий это в html
                     name = beginWordName + name.Replace("\n\r", "<br>") + endWordName;
                     LabelLastWord.Text = name;
                 }
+                // если сведений о словах в данных сессии нет
                 else
                 {
                     LabelWordColumn.Visible = false;
@@ -122,11 +130,8 @@ namespace litclassicbot
                 //LabelLastAction.Visible = false;
                 LabelLastAction.Text = "<div class=\"content-main-page\"><h2>Впервые на сайте?</h2>" +
                     "<p>Выберите интересующий раздел - \"частиц\" или словаря.</p></div>";
-
-            if ((LabelParticleColumn.Visible) && (LabelWordColumn.Visible)) LabelEmtySpace.Visible = true;
-
         }
-        private void GetTotalStatistics()
+        private void GettingTotalStatistics()
         {
             try
             {
@@ -139,7 +144,7 @@ namespace litclassicbot
                 string books;
 
                 // если предпоследнее число - 1
-                if ((listGetTtotalStatistics[0].Length > 1) 
+                if ((listGetTtotalStatistics[0].Length > 1)
                     && (listGetTtotalStatistics[0][listGetTtotalStatistics[0].Count() - 2] == '1')) books = "книг";
                 // проверка последнего числа
                 else if (listGetTtotalStatistics[0].Last() == '1') books = "книгу";
@@ -207,7 +212,7 @@ namespace litclassicbot
                 else users = "пользователей";
 
                 string statistic = String.Format("<p>При составлении \"частиц\" сайт использует {0} " + books + " " +
-                    "{5} " + authors +". Всего \"частиц\" в базе сайте - {1}. " +
+                    "{5} " + authors + ". Всего \"частиц\" в базе сайте - {1}. " +
                     "Эти \"частицы\" покрывают {2}% общего содержания используемых книг. " +
                     "Стихов в книгах от их общего содержания - примерно {3}%. " +
                     "Стихотворных \"частиц\" от общего числа \"частиц\" - {4}%.</p> " +
@@ -216,12 +221,12 @@ namespace litclassicbot
                     "{8} " + favourites + " было добавлено в список \"избранных\".</p>" +
                     "<p>Ботом в Telegram воспользовались {10} " + users + ".</p>" +
                     "<p>Статистика же была обновлена в последний раз {11}.</p>",
-                    listGetTtotalStatistics[0], listGetTtotalStatistics[1], listGetTtotalStatistics[13], 
+                    listGetTtotalStatistics[0], listGetTtotalStatistics[1], listGetTtotalStatistics[13],
                     listGetTtotalStatistics[11], listGetTtotalStatistics[12], listGetTtotalStatistics[3],
-                        
-                    listGetTtotalStatistics[6], listGetTtotalStatistics[7], listGetTtotalStatistics[8], 
-                    listGetTtotalStatistics[9], listGetTtotalStatistics[10], 
-                    
+
+                    listGetTtotalStatistics[6], listGetTtotalStatistics[7], listGetTtotalStatistics[8],
+                    listGetTtotalStatistics[9], listGetTtotalStatistics[10],
+
                     listGetTtotalStatistics[14]);
                 //LabelStatistics.Text = statistic;
             }

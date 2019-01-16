@@ -1,32 +1,4 @@
-﻿/*@font-face {
-    font-family: 'Roboto';
-    src: url("../fonts/Roboto/RobotoLight/RobotoLight.eot");
-    src: url("../fonts/Roboto/RobotoLight/RobotoLight.eot?#iefix") format("embedded-opentype"), 
-        url("../fonts/Roboto/RobotoLight/RobotoLight.woff") format("woff"), 
-        url("../fonts/Roboto/RobotoLight/RobotoLight.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Roboto';
-    src: url('../fonts/Roboto/Roboto-LightItalic.ttf') format('truetype');
-    font-weight: normal;
-    font-style: italic;
-}
-@font-face {
-    font-family: 'Roboto';
-    src: url('../fonts/Roboto/Roboto-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Roboto';
-    src: url('../fonts/Roboto/Roboto-BoldItalic.ttf') format('truetype');
-    font-weight: bold;
-    font-style: italic;
-}*/
-
-.material-icons {
+﻿.material-icons {
     font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
@@ -80,6 +52,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    font-weight: 300;
     background-color: white;
 }
 form {
@@ -87,6 +60,7 @@ form {
     width: 100%;
 }
 
+/*Заголовок*/
 header {
     display: flex;
     flex-direction: row;
@@ -97,8 +71,7 @@ header {
     width: 70%;
     height: 70px;
     background-color: white;
-    padding-left: 15%;
-    padding-right: 15%;
+    padding: 0px 15% 0px 15%;
     /*8 dp*/ 
     /*box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 3px rgba(0,0,0,0.12), 0 4px 5px 0 rgba(0,0,0,0.20);*/
     /*6 dp*/
@@ -107,7 +80,6 @@ header {
     /*box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.20);*/
 }
 .header-logo {
-    /*float: left;*/
     display: flex;
 }
 .header-logo-img {
@@ -117,35 +89,24 @@ header {
 }
 .header-logo-text {
     color: black;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 14px;
-    margin-top: 14px;
+    margin: 14px 20px 14px 20px;
     letter-spacing: 0.25px;
-    font-size: 34px;
-    font-weight: 300;
+    font-size: 34px; 
 }
 .header-links {
     letter-spacing: 0.75px;
-    /*float: right;*/
     font-size: 14px;
-    font-weight: 300;
 }
 
+/*Клавиши-ссылки на заголовке*/
 .link-button {
     text-decoration: none;
     color: black;
-    margin-top: 17px;
-    margin-bottom: 17px;
+    margin: 17px 0px 17px 7px;
     float: right;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    padding-left: 14px;
-    padding-right: 14px;
+    padding: 7px 14px 7px 14px;
     border: 2px solid black;
     border-radius: 3px;
-    margin-right: 0px;
-    margin-left: 7px;
 }
     .link-button:hover {
         background-color: whitesmoke;
@@ -154,6 +115,7 @@ header {
         background-color: lightgrey;
     }
 
+/*Теги, содержащие весь контент сайта*/
 .main-content {
     display: flex;
     width: 100%;
@@ -161,10 +123,8 @@ header {
 }
 .main {
     width: 1077px;
-    margin-top: 80px;
-    margin-bottom: 110px;
+    margin: 80px 0px 110px 0px;
     font-size: 16px;
-    font-weight: 300;
     color: white;
     letter-spacing: 0.5px;
     line-height: 1.5;
@@ -175,6 +135,7 @@ header {
     padding-right: 20px;
 }
 
+/*Интерактивная панель*/
 .interactive-panel {
     display: inline-block;
     position: fixed;
@@ -192,40 +153,12 @@ header {
     justify-content: space-around;
 }
 
-.nav-button-wrapper {
-    /*display:inline-block;*/
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-.particles-notif,
-.words-notif {
-    padding-left: 6px;
-    padding-right: 6px;
-    position: absolute;
-    left: 120px;
-    top: 30px;
-    color: white;
-    background: lightskyblue;
-    border: 0px solid lightskyblue;
-    border-radius: 10px;
-    font-size: 12px;
-    font-weight: 400;
-    font-family: 'Roboto', sans-serif;
-}
-.words-notif {
-    left: 237px;
-}
-
+/*Клавиши навигации на интерактивной панели*/
 .nav-button,
 .nav-button-pressed {
     letter-spacing: 0.75px;
     font-size: 14px;
-    font-weight: 300;
-    font-family: 'Roboto', sans-serif;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    padding-left: 14px;
-    padding-right: 14px;
+    padding: 7px 14px 7px 14px;
     border-radius: 20px;
     cursor: pointer;
     text-decoration: none;
@@ -239,6 +172,7 @@ header {
     background-color: black;
     color: white;
     border: 2px solid black;
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.20);
 }
     .nav-button:hover {
         background-color: whitesmoke;
@@ -249,119 +183,137 @@ header {
         border-color: lightgrey;
     }
     .nav-button-pressed:hover {
-        background-color: gray;
-        border-color: gray;
+        background-color: grey;
+        border-color: grey;
     }
     .nav-button-pressed:active {
-        background-color: lightgray;
-        border-color: lightgray;
+        background-color: lightgrey;
+        border-color: lightgrey;
         color: black;
     }
 
+/*Значки уведомлений на клавишах навигации интерактивной панели*/
+.nav-button-wrapper {
+    margin: 5px 0px 5px 0px;
+}
+.particles-notif,
+.words-notif {
+    padding: 0px 6px 0px 6px;
+    position: absolute;
+    left: 120px;
+    top: 30px;
+    color: white;
+    background: lightskyblue;
+    border: 0px solid lightskyblue;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 400;
+}
+.words-notif {
+    left: 237px;
+}
+
+/*Теги-заголовки*/
 h1 {
     width: 100%;
-    margin-top: 0px;
-    margin-bottom: 16px;
+    margin: 0px 0px 16px 0px;
     color: black;
     font-size: 48px;
-    font-weight: 300;
     letter-spacing: 0px;
+    font-weight: 300;
 }
 h2 {
     width: 100%;
-    margin-top: 16px;
-    margin-bottom: 16px;
+    margin: 16px 0px 16px 0px;
     color: black;
     font-size: 34px;
-    font-weight: 300;
     letter-spacing: 0.25px;
-}
-.h2-last-action {
-    margin-top: 0px;
-    margin-bottom: 16px;
+    font-weight: 300;
 }
 h3 {
     width: 100%;
-    margin-top: 0px;
-    margin-bottom: 10px;
+    margin: 0px 0px 10px 0px;
     color: black;
     font-size: 24px;
-    font-weight: 300;
     letter-spacing: 0px;
+    font-weight: 300;
 }
 h4 {
     width: 100%;
-    margin-top: 0px;
-    margin-bottom: 5px;
+    margin: 0px 0px 5px 0px;
     color: black;
     font-size: 16px;
-    font-weight: 300;
     letter-spacing: 0px;
+    font-weight: 300;
 }
 
+/*Тег-ссылка*/
 a {
     outline: none;
 }
 
-.p-last-action {
-    margin-top: 0px;
-    margin-bottom: 16px;
-}
-
-.label-last-action {
+/*Раздел последний действий*/
+.last-actions {
     display: flex;
     flex-direction: column;
 }
-.last-action {
+.last-actions-tip {
+    color: black;
+}
+.last-actions-links {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;      
+    flex-wrap: wrap;
 }
-.last-particle-column,
-.last-word-column {
+.last-action-particle,
+.last-action-word {
     display: flex;
     flex-direction: column;
     flex-basis: 260px;
     flex-grow: 6;
 }
-.label-empty-space {
-    border-right: 5px solid white;
-    border-left: 5px solid white;
-}
 .last-action-link {
     text-decoration: none;
     color: white;
+}
+.last-action-black-label-word,
+.last-action-black-label-particle {
+    letter-spacing: 0.4px;
+    font-size: 14px;
+    background-color: black;
+    border-radius: 20px;
+    /*4 dp*/
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.20);
+    padding: 10px 20px 10px 20px;
+    color: white;
+    margin-bottom: 5px;
+}
+.last-action-black-label-word {
+    font-size: 18px;
+    margin-bottom: 0px;
 }
 
 .content-main-page {
     color: black;
 }
 
+/*Чёрные блоки*/
 .black-label-word-name,
-.black-label-main-content,
-.black-label-word-name-last-action,
-.black-label-main-content-last-action {
+.black-label-main-content {
     background-color: black;
     border-radius: 20px;
     /*4 dp*/
     box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.20);
-    padding: 30px;
+    padding: 10px 20px 10px 20px;
     color: white;
-    padding-top: 10px;
-    padding-bottom: 10px;
     margin-bottom: 0px;
-    /*justify-content: space-around;*/
 }
-.black-label-main-content,
 .black-label-word-name {
-    margin-bottom: 10px;
-}
-.black-label-word-name,
-.black-label-word-name-last-action {
     font-size: 34px;
     letter-spacing: 0.25px;
 }
 
+/*Блок настроек получения "частиц"*/
 .particle-settings {
     color: black;
     display: flex;
@@ -378,16 +330,11 @@ a {
     flex-direction: column;
     line-height: 1.2;
 }
-.particle-settings-checkboxes-text {
-
-}
 .particle-settings-checkboxes-theme-types {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     margin-bottom: 10px;
-    /*line-height: 1.0;*/
-    /*letter-spacing: 0px;*/
 }
 .particle-settings-checkboxes-authors-numbers {
     display: flex;
@@ -406,16 +353,11 @@ a {
     width: 100%;
     letter-spacing: 0.75px;
     font-size: 14px;
-    font-weight: 300;
     background-color: white;
     font-family: 'Roboto', sans-serif;
     color: black;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    padding-left: 14px;
-    padding-right: 14px;
+    margin: 10px 0px 10px 0px;
+    padding: 7px 14px 7px 14px;
     border: 2px solid black;
     border-radius: 3px;
     cursor: pointer;
@@ -428,12 +370,12 @@ a {
         background-color: lightgrey;
     }
 
+/*"Подвал"*/
 .footer {
     width: 70%;
     height: 90px;
     background-color: white;
-    padding-left: 15%;
-    padding-right: 15%;
+    padding: 0px 15% 0px 15%;
     text-decoration: none;
     position: fixed;
     bottom: 0;
@@ -456,16 +398,12 @@ a {
 }
 
 .footer-left-text {
-    margin-top: 10px;
-    margin-bottom: 0;
+    margin: 10px 0px 0px 0px;
     text-align: left;
-    font-weight: 300;
 }
 .footer-right-text {
-    margin-top: 10px;
-    margin-bottom: 0;
+    margin: 10px 0px 0px 0px;
     text-align: right;
-    font-weight: 300;
 }
 
 .footer-button-left {
@@ -481,18 +419,10 @@ a {
 .button-footer-right-column {
     letter-spacing: 0.75px;
     font-size: 14px;
-    font-weight: 300;
     background-color: white;
-    font-family: 'Roboto', sans-serif;
     color: black;
-    /*margin-right: 7px;*/
-    margin-top: 10px;
-    margin-bottom: 10px;
-    /*float: left;*/
-    padding-top: 7px;
-    padding-bottom: 7px;
-    padding-left: 14px;
-    padding-right: 14px;
+    margin: 10px 0px 10px 0px;
+    padding: 7px 14px 7px 14px;
     border: 2px solid black;
     border-radius: 3px;
     cursor: pointer;
@@ -520,19 +450,12 @@ a {
     display: none;
 }
 
-@media screen and (max-width:557px) {
-    .label-empty-space {
-        display: none;
-    }
-}
-
 @media screen and (max-width:830px) {
 
     header {
         width: 96%;
         height: 50px;
-        padding-left: 2%;
-        padding-right: 2%;
+        padding: 0% 2% 0% 2%;
     }
     .header-logo {
         width: 100%;
@@ -543,10 +466,7 @@ a {
         float: left;
     }
     .header-logo-text {
-        margin-left: 2%;
-        margin-right: 2%;
-        margin-bottom: 4px;
-        margin-top: 4px;
+        margin: 4px 2% 4px 2%;
     }
     .header-links {
         visibility: hidden;
@@ -554,10 +474,7 @@ a {
 
     .main {
         width: 96%;
-        margin-left: 2%;
-        margin-right: 2%;
-        margin-top: 60px;
-        margin-bottom: 65px;
+        margin: 60px 2% 65px 2%;
     }
     .main-panel {
         width: 100%;
@@ -567,8 +484,7 @@ a {
     .footer {
         width: 96%;
         height: 50px;
-        padding-left: 2%;
-        padding-right: 2%;
+        padding: 0% 2% 0% 2%;
         display: flex;
     }
     .footer-buttons {
@@ -595,26 +511,22 @@ a {
         font-size: 24px;
         font-weight: 300;
         letter-spacing: 0px;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        margin: 10px 0px 10px 0px;
     }
     .h2-last-action {
-        margin-top: 0px;
-        margin-bottom: 10px;
+        margin: 0px 0px 10px 0px;
     }
     h2 {
         font-size: 20px;
         font-weight: 300;
         letter-spacing: 0.15px;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        margin: 10px 0px 10px 0px;
     }
     h3 {
         font-size: 20px;
         font-weight: 300;
         letter-spacing: 0.15px;
-        margin-top: 0px;
-        margin-bottom: 10px;
+        margin: 0px 0px 10px 0px;
     }
 
     .black-label-main-content,
@@ -634,23 +546,17 @@ a {
     }
 
     p {
-        margin: 0;
-        margin-bottom: 2px;
+        margin: 0px 0px 2px 0px;
     }
     .p-last-action {
-        margin-top: 0px;
-        margin-bottom: 10px;
+        margin: 0px 0px 10px 0px;
     }
 
     .image-button {
-        /*display: flex;*/
         height: 24px;
         width: 24px;
         padding: 8px;
-        margin-right: 3px;
-        margin-left: 3px;
-        margin-top: 3px;
-        margin-bottom: 6px;
+        margin: 3px 3px 6px 3px;
         border: 2px solid white;
         border-radius: 22px;
         text-decoration: none;

@@ -14,12 +14,13 @@
 <body>
     <form id="form1" class="form1" runat="server">
         <div class="error-page-top">
-            <a href="~/" runat="server"><img class="logo_img" src="Content/header/main-logo-png-v3.png" /></a>
-            <a href="~/" class="logo"> LITCLASSIC </a>
+            <a href="~/" runat="server">
+                <img class="logo_img" src="Content/header/main-logo-png-v3.png" /></a>
+            <a href="~/" class="logo">LITCLASSIC </a>
         </div>
         <div class="error-page-bottom">
-            <h1> В веб-приложении возникла ошибка... </h1>
-            <h2> Надеемся, всё скоро вернётся в строй! </h2>
+            <h1>В веб-приложении возникла ошибка... </h1>
+            <h2>Надеемся, всё скоро вернётся в строй! </h2>
         </div>
     </form>
 </body>
