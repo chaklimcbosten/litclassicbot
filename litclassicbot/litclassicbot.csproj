@@ -221,6 +221,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Classes\AuthCookie.cs" />
     <Compile Include="Classes\BotDBConnect.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\NextQuoteController.cs" />

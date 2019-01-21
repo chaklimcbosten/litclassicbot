@@ -15,6 +15,7 @@ namespace litclassicbot
     // Обновляет настройки лишь со второго раза нажатия кнопки "новая частица"
     public partial class Particles : System.Web.UI.Page
     {
+        private string currentUserId;
         private int currentParticleId = -1;
         private int currentRandomThemeType = -1;
         private int currentRandomAuthorNumber = -1;
@@ -25,8 +26,8 @@ namespace litclassicbot
             // стихотворные "частицы" разделять на несколько блоков и с помощью свойств flex
             // распологать в несколько столбцов
             
-            ScriptManagerSetup();            
-            PageSetup();
+            ScriptManagerSetup();
+            GettingUserSettings();
             SettingParticlesCountNotification();
         }
 
@@ -44,10 +45,33 @@ namespace litclassicbot
             //ScriptManagerParticlesPage.RegisterAsyncPostBackControl(ImageButtonParticleSettings);
         }
         // настройка персонализации страницы, если она открывается впервые
-        private void PageSetup()
+        private void GettingUserSettings()
         {
             if (!IsPostBack)
             {
+                // если браузер поддерживает cookie
+                if (Request.Browser.Cookies)
+                {
+                    // если cookie-файл не существует
+                    if (Request.Cookies["litclassic-com"] == null)
+                    {
+                        // создание нового id пользователя
+                        currentUserId = Convert.ToString(Guid.NewGuid());
+                        // запись нового id в cookie-файл
+                        Response.Cookies["litclassic-com"]["user-id"] = currentUserId;
+
+                        // запись нового id пользователя в БД
+                    }
+                    else
+                    {
+                        // считывание id пользователя из cookie-файла
+                        currentUserId = Server.HtmlEncode(Request.Cookies["litclassic-com"]["user-id"]);
+
+                        // считывание данных с БД по существующему id пользователя из cookie-файла
+                    }
+                }
+
+
                 // если браузер поддерживает cookie
                 if (Request.Browser.Cookies)
                 {
@@ -66,6 +90,7 @@ namespace litclassicbot
                         Response.Cookies["litclassic-cookie-particle"]["author-number-6"] = "1";
                         Response.Cookies["litclassic-cookie-particle"]["author-number-7"] = "1";
                         Response.Cookies["litclassic-cookie-particle"]["author-number-8"] = "1";
+                        Response.Cookies["litclassic-cookie-particle"]["particle-count"] = "0";
                         Response.Cookies["litclassic-cookie-particle"].Expires = DateTime.Now.AddYears(3);
 
                         SettingNewRandomIDParticle();
@@ -78,7 +103,7 @@ namespace litclassicbot
                         CheckingParticleSettingsCookie();
 
                         // если cookie-файла с ID "частицы" нет, или этот ID обнулён
-                        if ((Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["particleID"]) == null))
+                        if (Server.HtmlEncode(Request.Cookies["litclassic-cookie-particle"]["particleID"]) == null)
                         {
                             SettingNewRandomIDParticle();
                             ShowingParticle(currentParticleId);

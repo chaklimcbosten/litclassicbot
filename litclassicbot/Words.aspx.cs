@@ -45,7 +45,7 @@ namespace litclassicbot
                     // cookie-файл существует
                     else
                     {
-                        // если cookie-файла с ID "частицы" нет, или этот ID обнулён
+                        // если cookie-файла с ID слова нет, или этот ID обнулён
                         if ((Server.HtmlEncode(Request.Cookies["litclassic-cookie-words"]["wordID"]) == null))
                         {
                             SettingNewRandomIdWord();
