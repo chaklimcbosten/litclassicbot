@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using litclassicbot.Classes;
+using litclassicbot.Classes.User;
 
 
 namespace litclassicbot
@@ -20,6 +21,7 @@ namespace litclassicbot
         private int currentRandomThemeType = -1;
         private int currentRandomAuthorNumber = -1;
         private int currentParticlesCount = -1;
+        private User user;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -27,7 +29,7 @@ namespace litclassicbot
             // распологать в несколько столбцов
             
             ScriptManagerSetup();
-            GettingUserSettings();
+            FirstLaunch();
             SettingParticlesCountNotification();
         }
 
@@ -45,8 +47,14 @@ namespace litclassicbot
             //ScriptManagerParticlesPage.RegisterAsyncPostBackControl(ImageButtonParticleSettings);
         }
         // настройка персонализации страницы, если она открывается впервые
-        private void GettingUserSettings()
+        private void FirstLaunch()
         {
+            if (!IsPostBack)
+            {
+                user = new User();
+
+            }
+
             if (!IsPostBack)
             {
                 // если браузер поддерживает cookie

@@ -172,7 +172,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\header\main_logo.png" />
     <Content Include="Content\Site.css" />
-    <Content Include="default.htm" />
     <Content Include="DefaultPage.aspx">
       <BrowseToURL>~/DefaultPage.aspx</BrowseToURL>
     </Content>
@@ -222,6 +221,15 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Classes\BotDBConnect.cs" />
+    <Compile Include="Classes\Connect\Connect.cs" />
+    <Compile Include="Classes\Connect\ConnectParticle.cs" />
+    <Compile Include="Classes\Connect\ConnectUser.cs" />
+    <Compile Include="Classes\Connect\ConnectWord.cs" />
+    <Compile Include="Classes\Particle.cs" />
+    <Compile Include="Classes\User\User.cs" />
+    <Compile Include="Classes\User\UserParticle.cs" />
+    <Compile Include="Classes\User\UserWord.cs" />
+    <Compile Include="Classes\Word.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\NextQuoteController.cs" />
     <Compile Include="Dialogs\RootDialog.cs" />

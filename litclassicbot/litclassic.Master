@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="litclassic.master.cs" Inherits="litclassicbot.litclassic" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="litclassic.Master.cs" Inherits="litclassicbot.litclassic" %>
 
 <!DOCTYPE html>
 
@@ -45,7 +45,7 @@
             <div class="footer-desktop-layout">
                 <div class="footer-desktop-row">
                     <div class="year">2018 - 2019</div>
-                    <div class="version">LITCLASSIC - v0.3.3(6)</div>
+                    <div class="version">LITCLASSIC - v0.3.3(7)</div>
                     <%--<div class="bugs">Багтрекер</div>--%>
                     <div class="feedback">Баги и отзывы отправляйте по адресу: feedback@litclassic.com</div>
                     <a href="https://yasobe.ru/na/litclassic" target="_blank" class="donate" runat="server">Помощь проекту</a>
