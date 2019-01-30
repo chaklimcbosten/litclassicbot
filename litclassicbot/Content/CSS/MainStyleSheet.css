@@ -426,6 +426,10 @@ a {
 .feedback {
     outline: none;
 }
+.donate{
+    color: grey;
+    text-decoration: none;
+}
 
 /*"Подвал" мобильной версии*/
 .footer-mobile {
