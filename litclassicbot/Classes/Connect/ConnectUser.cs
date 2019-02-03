@@ -5,7 +5,8 @@ using System.Web;
 
 namespace litclassicbot.Classes.Connect
 {
-    public class ConnectUser
+    public class ConnectUser:Connect
     {
+        private Connect connect;
     }
 }

@@ -50,15 +50,15 @@
                                 <div class="particle-settings-checkboxes-theme-types">
                                     <div class="checkbox-span">
                                         <asp:CheckBox ID="CheckBoxThemeType0" runat="server" Text="Основные произведения"
-                                            OnCheckedChanged="CheckBoxThemeType0_CheckedChanged" ClientIDMode="Static" Checked="True" Font-Size="Smaller" CssClass="check-box" />
+                                            ClientIDMode="Static" Checked="True" Font-Size="Smaller" CssClass="check-box" />
                                     </div>
                                     <div class="checkbox-span">
-                                        <asp:CheckBox ID="CheckBoxThemeType1" runat="server" Text="Прочие произведения, заметки, письма и пр."
-                                            OnCheckedChanged="CheckBoxThemeType1_CheckedChanged" ClientIDMode="Static" Font-Size="Smaller" />
+                                        <asp:CheckBox ID="CheckBoxThemeType1" runat="server" 
+                                            Text="Прочие произведения, заметки, письма и пр." ClientIDMode="Static" Font-Size="Smaller" />
                                     </div>
                                     <div class="checkbox-span">
-                                        <asp:CheckBox ID="CheckBoxThemeType2" runat="server" Text="Примечания, приложения, комментарии и пр."
-                                            OnCheckedChanged="CheckBoxThemeType2_CheckedChanged" ClientIDMode="Static" Font-Size="Smaller" />
+                                        <asp:CheckBox ID="CheckBoxThemeType2" runat="server"
+                                            Text="Примечания, приложения, комментарии и пр." ClientIDMode="Static" Font-Size="Smaller" />
                                     </div>
                                 </div>
                             </div>
@@ -122,9 +122,6 @@
 </asp:Content>
 
 <asp:Content ID="FooterContentAdaptive" ContentPlaceHolderID="FooterContentAdaptive" runat="server">
-    <%--    <asp:ImageButton ID="ImageButtonParticleSettings" runat="server" 
-        ImageUrl="~/Content/icons/particle-settings-icon.png" Height="24" Width="24" CssClass="image-button" 
-        OnClick="ButtonParticleSettings_Click" />--%>
     <asp:ImageButton ID="ImageButtonParticleReload" runat="server" ImageUrl="~/Content/icons/reload-icon.png"
         Height="24" Width="24" CssClass="image-button" OnClick="ButtonParticleReload_Click" />
 </asp:Content>

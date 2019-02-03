@@ -7,29 +7,13 @@ namespace litclassicbot.Classes.User
 {
     public class User
     {
-        private int webId;
+        private string id;
         private UserParticle userParticle;
         private UserWord userWord;
 
-        public UserParticle GetUserParticle()
-        {
-            return userParticle;
-        }
-        public UserWord GetUserWord()
-        {
-            return userWord;
-        }
-
-        public void SetWebId(int newWebId)
-        {
-            webId = newWebId;
-        }
-
-        private void GetUserSettings()
-        {
-            // запрос настроек по webId
-            // получение настроек и их запись в User, UserParticle и UserWord
-        }
+        public string Id { get => id; set => id = value; }
+        public UserParticle UserParticle { get => userParticle; set => userParticle = value; }
+        public UserWord UserWord { get => userWord; set => userWord = value; }
 
         // возвращение всех настроек
         // обновление/присваивание настроек

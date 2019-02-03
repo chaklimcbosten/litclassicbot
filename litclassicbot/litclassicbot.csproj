@@ -224,6 +224,8 @@
     <Compile Include="Classes\Connect\Connect.cs" />
     <Compile Include="Classes\Connect\ConnectParticle.cs" />
     <Compile Include="Classes\Connect\ConnectUser.cs" />
+    <Compile Include="Classes\Connect\ConnectUserParticle.cs" />
+    <Compile Include="Classes\Connect\ConnectUserWord.cs" />
     <Compile Include="Classes\Connect\ConnectWord.cs" />
     <Compile Include="Classes\Particle.cs" />
     <Compile Include="Classes\User\User.cs" />

@@ -9,9 +9,15 @@ namespace litclassicbot.Classes.User
     {
         private int wordId;
 
-        public int GetWordId()
+        public int WordId { get => wordId; set => wordId = value; }
+
+        public void NewUserWord()
         {
-            return wordId;
+
+        }
+        public void LoadUserWord()
+        {
+
         }
     }
 }

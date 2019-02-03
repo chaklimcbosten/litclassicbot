@@ -8,20 +8,20 @@ namespace litclassicbot.Classes.User
     public class UserParticle:User
     {
         private int particleId;
-        private Dictionary<string, bool> particleAuthors;
-        private Dictionary<string, bool> particleThemeTypes;
+        private Dictionary<string, bool> authors;
+        private Dictionary<string, bool> themeTypes;
 
-        public int GetParticleId()
+        public Dictionary<string, bool> Authors { get => authors; set => authors = value; }
+        public Dictionary<string, bool> ThemeTypes { get => themeTypes; set => themeTypes = value; }
+        public int ParticleId { get => particleId; set => particleId = value; }
+
+        public void NewUserParticle()
         {
-            return particleId;
+            
         }
-        public bool GetAuthor(string author)
+        public void LoadUserParticle()
         {
-            return particleAuthors[author];
-        }
-        public Dictionary<string, bool> GetAuthors()
-        {
-            return particleAuthors;
+
         }
     }
 }

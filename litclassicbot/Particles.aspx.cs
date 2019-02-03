@@ -51,12 +51,9 @@ namespace litclassicbot
         {
             if (!IsPostBack)
             {
+                // создание экземпляра пользователя
                 user = new User();
 
-            }
-
-            if (!IsPostBack)
-            {
                 // если браузер поддерживает cookie
                 if (Request.Browser.Cookies)
                 {
@@ -64,22 +61,30 @@ namespace litclassicbot
                     if (Request.Cookies["litclassic-com"] == null)
                     {
                         // создание нового id пользователя
-                        currentUserId = Convert.ToString(Guid.NewGuid());
+                        user.Id = Convert.ToString(Guid.NewGuid());
                         // запись нового id в cookie-файл
-                        Response.Cookies["litclassic-com"]["user-id"] = currentUserId;
+                        Response.Cookies["litclassic-com"]["id"] = user.Id;
 
-                        // запись нового id пользователя в БД
+                        // создание и запись в БД параметров по-умолчанию
+                        user.UserParticle.NewUserParticle();
+                        user.UserWord.NewUserWord();
                     }
+                    // если cookie-файл существует
                     else
                     {
-                        // считывание id пользователя из cookie-файла
-                        currentUserId = Server.HtmlEncode(Request.Cookies["litclassic-com"]["user-id"]);
+                        // запись в класс пользователя id из cookie-файла
+                        user.Id = Server.HtmlEncode(Request.Cookies["litclassic-com"]["id"]);
 
-                        // считывание данных с БД по существующему id пользователя из cookie-файла
+                        // загрузка из БД в класс пользователя всех параметров пользователя
+                        user.UserParticle.LoadUserParticle();
+                        user.UserWord.LoadUserWord();
                     }
                 }
+            }
 
 
+            if (!IsPostBack)
+            {
                 // если браузер поддерживает cookie
                 if (Request.Browser.Cookies)
                 {
@@ -615,35 +620,17 @@ namespace litclassicbot
                 }
             }
         }
-
-
-        // --- прочее ---
-        private void ReportingParticle()
-        {
-            BotDBConnect currentConnection = new BotDBConnect();
-
-            currentConnection.SetSQLConnectionToAzureDBLitClassicBooks();
-            currentConnection.WriteNewParticleReportByParticleId(currentParticleId.ToString());
-        }
-        private void CheckingCheckBoxes()
-        {
-            // нельзя оставлять все чекбоксы пустыми
-            if ((CheckBoxThemeType0.Checked == false)
-                && (CheckBoxThemeType1.Checked == false)
-                && (CheckBoxThemeType2.Checked == false))
-                CheckBoxThemeType0.Checked = true;
-            if ((CheckBoxAuthor0.Checked == false)
-                && (CheckBoxAuthor1.Checked == false)
-                && (CheckBoxAuthor2.Checked == false)
-                && (CheckBoxAuthor3.Checked == false)
-                && (CheckBoxAuthor4.Checked == false)
-                && (CheckBoxAuthor5.Checked == false)
-                && (CheckBoxAuthor6.Checked == false)
-                && (CheckBoxAuthor7.Checked == false)
-                && (CheckBoxAuthor8.Checked == false))
-                CheckBoxAuthor0.Checked = true;
-        }
         
+
+        private void SyncSettings()
+        {
+
+        }
+        private void LoadSettings()
+        {
+
+        }
+
 
         // --- элементы формы ---
         protected void ButtonParticleReload_Click(object sender, EventArgs e)
@@ -657,54 +644,6 @@ namespace litclassicbot
             ShowingParticle(currentParticleId);
             UpdatePanelParticle.Update();
             UpdatePanelNotifications.Update();
-        }
-        protected void ButtonParticleSettings_Click(object sender, EventArgs e)
-        {
-            //// если панель настроек скрыта
-            //if (!UpdatePanelParticleSettings.Visible)
-            //{
-            //    UpdatePanelParticleSettings.Visible = true;
-            //    ButtonParticleSettings.Visible = true;
-            //    ButtonParticleSettingsFooter.Visible = false;
-            //    ImageButtonParticleSettings.Visible = false;
-            //}
-            //// если панель настроек отображена
-            //else
-            //{
-            //    // если браузер поддерживает cookie
-            //    if (Request.Browser.Cookies)
-            //    {
-            //        SettingParticleSettingsCookie();
-
-            //        Response.Cookies["litclassic-cookie"]["particle-settings-visible"] = "0";
-            //    }
-            //    // если браузер не поддерживает cookie
-            //    else
-            //    {
-            //        SettingParticleSettingsSession();
-
-            //        Session["particle-settings-visible"] = false;
-            //    }
-
-            //    UpdatePanelParticleSettings.Visible = false;
-            //    ButtonParticleSettings.Visible = false;
-            //    ButtonParticleSettingsFooter.Visible = true;
-            //    ImageButtonParticleSettings.Visible = true;
-            //}
-
-            //UpdatePanelParticleSettings.Update();
-        }
-        protected void CheckBoxThemeType0_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-        protected void CheckBoxThemeType1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-        protected void CheckBoxThemeType2_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
