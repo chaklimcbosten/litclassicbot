@@ -221,17 +221,17 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Classes\BotDBConnect.cs" />
-    <Compile Include="Classes\Connect\Connect.cs" />
-    <Compile Include="Classes\Connect\ConnectParticle.cs" />
-    <Compile Include="Classes\Connect\ConnectUser.cs" />
-    <Compile Include="Classes\Connect\ConnectUserParticle.cs" />
-    <Compile Include="Classes\Connect\ConnectUserWord.cs" />
-    <Compile Include="Classes\Connect\ConnectWord.cs" />
-    <Compile Include="Classes\Particle.cs" />
-    <Compile Include="Classes\User\User.cs" />
-    <Compile Include="Classes\User\UserParticle.cs" />
-    <Compile Include="Classes\User\UserWord.cs" />
-    <Compile Include="Classes\Word.cs" />
+    <Compile Include="Controllers\Connect\Connect.cs" />
+    <Compile Include="Controllers\Connect\ConnectParticle.cs" />
+    <Compile Include="Controllers\Connect\ConnectUser.cs" />
+    <Compile Include="Controllers\Connect\ConnectUserParticle.cs" />
+    <Compile Include="Controllers\Connect\ConnectUserWord.cs" />
+    <Compile Include="Controllers\Connect\ConnectWord.cs" />
+    <Compile Include="Particles\Particle.cs" />
+    <Compile Include="User\User.cs" />
+    <Compile Include="User\UserParticle.cs" />
+    <Compile Include="User\UserWord.cs" />
+    <Compile Include="Words\Word.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\NextQuoteController.cs" />
     <Compile Include="Dialogs\RootDialog.cs" />
@@ -325,7 +325,6 @@
     <Folder Include="Content\Fonts\" />
     <Folder Include="Content\imgs\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\NextQuote\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

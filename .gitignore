@@ -448,4 +448,6 @@ ASALocalRun/
 
 /litclassicbot/Classes/BotDBConnect.cs
 
+/litclassicbot/Views/web.config
+
 BotDBConnect.cs
