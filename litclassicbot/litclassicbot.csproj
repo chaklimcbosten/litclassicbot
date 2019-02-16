@@ -221,19 +221,19 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Classes\BotDBConnect.cs" />
-    <Compile Include="Controllers\Connect\Connect.cs" />
-    <Compile Include="Controllers\Connect\ConnectParticle.cs" />
-    <Compile Include="Controllers\Connect\ConnectUser.cs" />
-    <Compile Include="Controllers\Connect\ConnectUserParticle.cs" />
-    <Compile Include="Controllers\Connect\ConnectUserWord.cs" />
-    <Compile Include="Controllers\Connect\ConnectWord.cs" />
-    <Compile Include="Particles\Particle.cs" />
-    <Compile Include="User\User.cs" />
-    <Compile Include="User\UserParticle.cs" />
-    <Compile Include="User\UserWord.cs" />
-    <Compile Include="Words\Word.cs" />
+    <Compile Include="Controllers\DataControllers\DataController.cs" />
+    <Compile Include="Controllers\DataControllers\ParticleDataController.cs" />
+    <Compile Include="Controllers\DataControllers\UserDataController.cs" />
+    <Compile Include="Controllers\DataControllers\UserParticleDataController.cs" />
+    <Compile Include="Controllers\DataControllers\UserWordDataController.cs" />
+    <Compile Include="Controllers\DataControllers\WordDataController.cs" />
+    <Compile Include="Controllers\ParticleControllers\ParticleController.cs" />
+    <Compile Include="Models\Particle\Particle.cs" />
+    <Compile Include="Models\User\User.cs" />
+    <Compile Include="Models\User\UserParticle.cs" />
+    <Compile Include="Models\User\UserWord.cs" />
+    <Compile Include="Models\Word\Word.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
-    <Compile Include="Controllers\NextQuoteController.cs" />
     <Compile Include="Dialogs\RootDialog.cs" />
     <Compile Include="Dialogs\Title.cs" />
     <Compile Include="DefaultPage.aspx.cs">
@@ -322,9 +322,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Connect\Particle\" />
+    <Folder Include="Connect\User\" />
+    <Folder Include="Connect\Word\" />
     <Folder Include="Content\Fonts\" />
     <Folder Include="Content\imgs\" />
-    <Folder Include="Models\" />
+    <Folder Include="Controllers\UserControllers\" />
+    <Folder Include="Controllers\WordControllers\" />
+    <Folder Include="Views\Particle\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

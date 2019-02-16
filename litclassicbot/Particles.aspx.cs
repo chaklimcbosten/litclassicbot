@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using litclassicbot.Classes;
-using litclassicbot.Classes.User;
+using litclassicbot.Models.User;
 
 
 namespace litclassicbot
